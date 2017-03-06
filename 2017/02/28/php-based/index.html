@@ -12,7 +12,7 @@
 
 
 
-  <meta name="description" content="talking-170227"/>
+  <meta name="description" content="PHP面试题整理"/>
 
 
 
@@ -29,19 +29,25 @@
 
 
 
-<link rel="canonical" href="https://nslyx.github.io/2017/02/27/talking-170227/"/>
+<link rel="canonical" href="https://nslyx.github.io/2017/02/28/php-based/"/>
 
 
-<meta name="description" content="其实挺尴尬的，一点坚持写博客的感觉都没有。犹豫了好半天，还是不知道该写点什么。想把一件事说清楚，那是真不容易，想随便抱怨点生活，又真不应该。有时候觉得应该坚持点什么，可又不知道自己的坚持到底算什么。也罢，或许少纠结些乱七八糟东西成长会更快些，就不那么多废话了。祝以后越来越好。">
+<meta name="description" content="作为phper也2年了，整理一些面试题方便知识回顾。因水平有限，如有错误欢迎指正。邮箱地址：nslyx@outlook.com。
+PHP初级
+Q:PHP有几种基本数据类型？A:8种，4种标量(bool,int,float,string)，2种复合(array,object)，2种特殊(resource,null)；另外为了确保代码易读，有3种伪类型(mixed,number,callback)。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="talking-170227">
-<meta property="og:url" content="https://nslyx.github.io/2017/02/27/talking-170227/index.html">
+<meta property="og:title" content="PHP面试题整理">
+<meta property="og:url" content="https://nslyx.github.io/2017/02/28/php-based/index.html">
 <meta property="og:site_name" content="Nslyx">
-<meta property="og:description" content="其实挺尴尬的，一点坚持写博客的感觉都没有。犹豫了好半天，还是不知道该写点什么。想把一件事说清楚，那是真不容易，想随便抱怨点生活，又真不应该。有时候觉得应该坚持点什么，可又不知道自己的坚持到底算什么。也罢，或许少纠结些乱七八糟东西成长会更快些，就不那么多废话了。祝以后越来越好。">
-<meta property="og:updated_time" content="2017-02-27T15:16:20.000Z">
+<meta property="og:description" content="作为phper也2年了，整理一些面试题方便知识回顾。因水平有限，如有错误欢迎指正。邮箱地址：nslyx@outlook.com。
+PHP初级
+Q:PHP有几种基本数据类型？A:8种，4种标量(bool,int,float,string)，2种复合(array,object)，2种特殊(resource,null)；另外为了确保代码易读，有3种伪类型(mixed,number,callback)。">
+<meta property="og:updated_time" content="2017-03-06T13:41:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="talking-170227">
-<meta name="twitter:description" content="其实挺尴尬的，一点坚持写博客的感觉都没有。犹豫了好半天，还是不知道该写点什么。想把一件事说清楚，那是真不容易，想随便抱怨点生活，又真不应该。有时候觉得应该坚持点什么，可又不知道自己的坚持到底算什么。也罢，或许少纠结些乱七八糟东西成长会更快些，就不那么多废话了。祝以后越来越好。">
+<meta name="twitter:title" content="PHP面试题整理">
+<meta name="twitter:description" content="作为phper也2年了，整理一些面试题方便知识回顾。因水平有限，如有错误欢迎指正。邮箱地址：nslyx@outlook.com。
+PHP初级
+Q:PHP有几种基本数据类型？A:8种，4种标量(bool,int,float,string)，2种复合(array,object)，2种特殊(resource,null)；另外为了确保代码易读，有3种伪类型(mixed,number,callback)。">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -78,7 +84,7 @@
 
 
 
-    <title> talking-170227 · Nslyx </title>
+    <title> PHP面试题整理 · Nslyx </title>
   </head>
 
   <body>
@@ -163,23 +169,40 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          talking-170227
+          PHP面试题整理
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          Feb 27, 2017
+          Feb 28, 2017
         </span>
       </div>
     </header>
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP初级"><span class="toc-text">PHP初级</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        <p>其实挺尴尬的，一点坚持写博客的感觉都没有。犹豫了好半天，还是不知道该写点什么。<br>想把一件事说清楚，那是真不容易，想随便抱怨点生活，又真不应该。<br>有时候觉得应该坚持点什么，可又不知道自己的坚持到底算什么。<br>也罢，或许少纠结些乱七八糟东西成长会更快些，就不那么多废话了。<br>祝以后越来越好。</p>
+        <p>作为phper也2年了，整理一些面试题方便知识回顾。<br>因水平有限，如有错误欢迎指正。邮箱地址：nslyx@outlook.com。</p>
+<h1 id="PHP初级"><a href="#PHP初级" class="headerlink" title="PHP初级"></a>PHP初级</h1><hr>
+<p>Q:PHP有几种基本数据类型？<br>A:8种，4种标量(bool,int,float,string)，2种复合(array,object)，2种特殊(resource,null)；<br>另外为了确保代码易读，有3种伪类型(mixed,number,callback)。</p>
+<p>Q:include 与 require 有何异同？<br>A:他们是都是在当前位置引入脚本的函数，区别在于它们如何处理失败。<br>若 include 的文件未找到，将显示警告，脚本继续执行；<br>若 require 的文件未找到，将报致命错误，并终止脚本。</p>
+<p>Q:给一个变量赋值为0123，但是输出该变量的值总为其他数字，为何？<br>A:PHP解释器会将以0开头的数字看作八进制数，但输出会默认转化为十进制，<br>所以输出结果应为八进制数123对应的十进制数83。</p>
+<p>Q:PHP中如何定义常量？<br>A:用define函数，如 define(‘CONST_NAME’,’CONST_VALUE’);</p>
+<p>Q:<br>A:</p>
+<p>Q:<br>A:</p>
+<p>Q:<br>A:</p>
+<p>Q:<br>A:</p>
+<p>Q:<br>A:</p>
 
       
     </div>
@@ -199,7 +222,7 @@
     </p>
     <p class="copyright-item">
       <span>链接: </span>
-      <a href="https://nslyx.github.io/2017/02/27/talking-170227/">https://nslyx.github.io/2017/02/27/talking-170227/</a>
+      <a href="https://nslyx.github.io/2017/02/28/php-based/">https://nslyx.github.io/2017/02/28/php-based/</a>
     </p>
 
     <p class="copyright-item lincese">
