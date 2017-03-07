@@ -42,7 +42,7 @@ Q:PHP有几种基本数据类型？A:8种，4种标量(bool,int,float,string)，
 <meta property="og:description" content="作为phper也2年了，整理一些面试题方便知识回顾。因水平有限，如有错误欢迎指正。邮箱地址：nslyx@outlook.com。
 PHP初级
 Q:PHP有几种基本数据类型？A:8种，4种标量(bool,int,float,string)，2种复合(array,object)，2种特殊(resource,null)；另外为了确保代码易读，有3种伪类型(mixed,number,callback)。">
-<meta property="og:updated_time" content="2017-03-06T13:41:58.000Z">
+<meta property="og:updated_time" content="2017-03-07T07:28:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP面试题整理">
 <meta name="twitter:description" content="作为phper也2年了，整理一些面试题方便知识回顾。因水平有限，如有错误欢迎指正。邮箱地址：nslyx@outlook.com。
@@ -196,6 +196,7 @@ Q:PHP有几种基本数据类型？A:8种，4种标量(bool,int,float,string)，
 <h1 id="PHP初级"><a href="#PHP初级" class="headerlink" title="PHP初级"></a>PHP初级</h1><hr>
 <p>Q:PHP有几种基本数据类型？<br>A:8种，4种标量(bool,int,float,string)，2种复合(array,object)，2种特殊(resource,null)；<br>另外为了确保代码易读，有3种伪类型(mixed,number,callback)。</p>
 <p>Q:include 与 require 有何异同？<br>A:他们是都是在当前位置引入脚本的函数，区别在于它们如何处理失败。<br>若 include 的文件未找到，将显示警告，脚本继续执行；<br>若 require 的文件未找到，将报致命错误，并终止脚本。</p>
+<a id="more"></a>
 <p>Q:给一个变量赋值为0123，但是输出该变量的值总为其他数字，为何？<br>A:PHP解释器会将以0开头的数字看作八进制数，但输出会默认转化为十进制，<br>所以输出结果应为八进制数123对应的十进制数83。</p>
 <p>Q:PHP中如何定义常量？<br>A:用define函数，如 define(‘CONST_NAME’,’CONST_VALUE’);</p>
 <p>Q:<br>A:</p>

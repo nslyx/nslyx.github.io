@@ -44,7 +44,7 @@
 首先附上链接=&amp;gt;Hexo官网与Hexo中文文档，
 官方说Hexo是：A fast, simple &amp;amp; powerful blog framework =&amp;gt; 一个快速，简单并且强大的博客框架。另外还需要知道它是一个基于Node的静态网页生成工具。
 既然基于Node,那么肯定得安装Node。安装方法镜像源什么的就不详细叙">
-<meta property="og:updated_time" content="2017-02-26T14:47:23.000Z">
+<meta property="og:updated_time" content="2017-03-07T07:24:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo blog 创建部署">
 <meta name="twitter:description" content="这两天在家折腾Hexo,自己搭建博客,顺便写点什么做点记录。
@@ -192,6 +192,7 @@
 <p>首先附上链接=&gt;<a href="https://hexo.io/" target="_blank" rel="external">Hexo官网</a>与<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo中文文档</a>，</p>
 <p>官方说Hexo是：A fast, simple &amp; powerful blog framework =&gt; 一个快速，简单并且强大的博客框架。另外还需要知道它是一个基于Node的静态网页生成工具。</p>
 <p>既然基于Node,那么肯定得安装Node。安装方法镜像源什么的就不详细叙述了，因非本文重点详见<a href="http://nodejs.cn/" target="_blank" rel="external">Node官网</a>。</p>
+<a id="more"></a>
 <p>Node环境OK的情况下官方的几条命令就能在本地构建完成：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli -g   <span class="comment">## 全局安装hexo-cli</span></div><div class="line">$ hexo init blog            <span class="comment">## 在blog目录初始化hexo</span></div><div class="line">$ <span class="built_in">cd</span> blog                   <span class="comment">## 进入blog目录</span></div><div class="line">$ npm install               <span class="comment">## 安装依赖</span></div><div class="line">$ hexo server               <span class="comment">## 启动自带的WebServer</span></div></pre></td></tr></table></figure></p>
 <p>这几个命令官网首页就有，顺利执行后可以通过<a href="locahost:4000" target="_blank" rel="external">localhost:4000</a>进行访问。另外，Hexo有下面4个常用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span>    <span class="comment">## 创建一篇博客</span></div><div class="line">$ hexo server               <span class="comment">## 启动自带的WebServer</span></div><div class="line">$ hexo generate             <span class="comment">## 生成静态文件</span></div><div class="line">$ hexo deploy               <span class="comment">## 部署，使用前需要先配置</span></div></pre></td></tr></table></figure></p>
 <p>这几个命令关键字都可以简写为首字母，如:<em> hexo server </em>命令等价于<em> hexo s </em>。</p>

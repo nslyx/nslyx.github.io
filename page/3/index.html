@@ -27,12 +27,12 @@
 
 
 
-<link rel="canonical" href="https://nslyx.github.io/archives/2017/"/>
+<link rel="canonical" href="https://nslyx.github.io/page/3/"/>
 
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nslyx">
-<meta property="og:url" content="https://nslyx.github.io/archives/2017/index.html">
+<meta property="og:url" content="https://nslyx.github.io/page/3/index.html">
 <meta property="og:site_name" content="Nslyx">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nslyx">
@@ -72,11 +72,7 @@
 
 
 
-    <title>
-  
-    Archives · Nslyx
-  
-</title>
+    <title> Nslyx </title>
   </head>
 
   <body>
@@ -156,98 +152,154 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  
-  <section id="archive" class="archive">
+  <section id="posts" class="posts">
     
       
-        <div class="archive-title">
-          <h2 class="archive-name"> All </h2>
-          <span class="archive-post-counter">
-            10 Posts In Total
-          </span>
-        </div>
-      
-    
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/02/28/php-based/">PHP面试题整理</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Feb 28, 2017
+        </span>
+      </div>
+    </header>
 
     
+    
+
+    <div class="post-content">
       
         
-        
-
         
           
-          <div class="collection-title">
-            <h2 class="archive-year">2017</h2>
+        
+
+        
+          <p>作为phper也2年了，整理一些面试题方便知识回顾。<br>因水平有限，如有错误欢迎指正。邮箱地址：nslyx@outlook.com。</p>
+<h1 id="PHP初级"><a href="#PHP初级" class="headerlink" title="PHP初级"></a>PHP初级</h1><hr>
+<p>Q:PHP有几种基本数据类型？<br>A:8种，4种标量(bool,int,float,string)，2种复合(array,object)，2种特殊(resource,null)；<br>另外为了确保代码易读，有3种伪类型(mixed,number,callback)。</p>
+<p>Q:include 与 require 有何异同？<br>A:他们是都是在当前位置引入脚本的函数，区别在于它们如何处理失败。<br>若 include 的文件未找到，将显示警告，脚本继续执行；<br>若 require 的文件未找到，将报致命错误，并终止脚本。</p>
+          <div class="read-more">
+            <a href="/2017/02/28/php-based/" class="read-more-link">Read more..</a>
           </div>
         
       
-      
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            03-07
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/03/07/coder/" class="archive-post-link">
-            Coder(编程开发者)
-          </a>
-        </span>
-      </div>
+    </div>
+
+    
+
+    
+  </article>
+
     
       
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
         
+          <a class="post-link" href="/2017/02/27/talking-170227/">talking-170227</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Feb 27, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
         
 
         
+          <p>其实挺尴尬的，一点坚持写博客的感觉都没有。犹豫了好半天，还是不知道该写点什么。<br>想把一件事说清楚，那是真不容易，想随便抱怨点生活，又真不应该。<br>有时候觉得应该坚持点什么，可又不知道自己的坚持到底算什么。<br>也罢，或许少纠结些乱七八糟东西成长会更快些，就不那么多废话了。</p>
+          <div class="read-more">
+            <a href="/2017/02/27/talking-170227/" class="read-more-link">Read more..</a>
+          </div>
+        
       
-      
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            03-07
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/03/07/phper/" class="archive-post-link">
-            phper
-          </a>
-        </span>
-      </div>
+    </div>
+
+    
+
+    
+  </article>
+
     
       
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
         
+          <a class="post-link" href="/2017/02/26/hexo-blog-create/">Hexo blog 创建部署</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Feb 26, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
         
 
         
+          <p>这两天在家折腾Hexo,自己搭建博客,顺便写点什么做点记录。</p>
+<p>首先附上链接=&gt;<a href="https://hexo.io/">Hexo官网</a>与<a href="https://hexo.io/zh-cn/docs/index.html">Hexo中文文档</a>，</p>
+<p>官方说Hexo是：A fast, simple &amp; powerful blog framework =&gt; 一个快速，简单并且强大的博客框架。另外还需要知道它是一个基于Node的静态网页生成工具。</p>
+<p>既然基于Node,那么肯定得安装Node。安装方法镜像源什么的就不详细叙述了，因非本文重点详见<a href="http://nodejs.cn/">Node官网</a>。</p>
+          <div class="read-more">
+            <a href="/2017/02/26/hexo-blog-create/" class="read-more-link">Read more..</a>
+          </div>
+        
       
-      
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            03-07
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/03/07/w3c/" class="archive-post-link">
-            w3c => 万维网联盟
-          </a>
-        </span>
-      </div>
+    </div>
+
+    
+
+    
+  </article>
+
     
   </section>
 
   
   <nav class="pagination">
     
+      <a class="prev" href="/page/2/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">Prev</span>
+      </a>
     
-      <a class="next" href="/archives/2017/page/2/">
+    
+      <a class="next" href="/page/4/">
         <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
   </nav>
-
 
 
           </div>

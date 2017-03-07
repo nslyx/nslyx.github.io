@@ -214,16 +214,18 @@
       
         
         
+          
+        
 
         
           <p>我觉得很多从业者或者是招聘单位都像我一样，根本就没有一个客观可量化的标准来区分初中高级的程序员。 </p>
-<p>知乎答案<a href="https://www.zhihu.com/question/22408080/answer/21253504" target="_blank" rel="external">原文</a>：</p>
+<p>知乎答案<a href="https://www.zhihu.com/question/22408080/answer/21253504">原文</a>：</p>
 <blockquote>
 <p>基础：熟悉C，熟悉c++和java中至少一个，数据结构，算法有一定了解，英语过关。<br>初级：熟悉oop，了解常见的设计模式，能看懂别人的代码，世面上的cms和framework拿来即用。知道php不能做什么。<br>中级：能设计模块，熟悉队列缓存分布式。<br>高级：架构的设计，团队的管理。</p>
 </blockquote>
-<p>其实我并不觉得这个答案足够具体，希望我能找到我自己的答案。</p>
-<p>供参考：<br><a href="http://bbs.php100.com/read-htm-tid-18707.html" target="_blank" rel="external">http://bbs.php100.com/read-htm-tid-18707.html</a></p>
-
+          <div class="read-more">
+            <a href="/2017/03/07/phper/" class="read-more-link">Read more..</a>
+          </div>
         
       
     </div>
@@ -257,395 +259,14 @@
       
         
         
+          
+        
 
         
           <p>w3c(World Wide Web Consortium)，中文名为：万维网联盟。<br>万维网联盟创建于1994年，是Web技术领域最具权威和影响力的国际中立性技术标准机构。<br>w3c标准不是某一个标准，而是一系列标准的集合。网页主要由三部分组成：结构（Structure）、表现（Presentation）和行为（Behavior）。</p>
-<p>供参考：<br><a href="https://www.w3.org/" target="_blank" rel="external">w3c官网</a><br><a href="http://www.chinaw3c.org/" target="_blank" rel="external">w3c中国</a><br><a href="https://www.w3.org/TR/tr-technology-stds" target="_blank" rel="external">W3C的所有正式推荐标准（W3C Recommendations）列表</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/06/markdown/">Markdown</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Mar 6, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Markdown 是一种轻量级的「标记语言」。其语法的目标是：成为一种适用于网络的书写语言。<br>Markdown 是一个 Web 上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。<br>好吧，不废话，附上地址：<a href="http://www.markdown.cn/" target="_blank" rel="external">Markdown中文网</a>。<br>当然，Markdown 也需要有个好的编辑器才能更好的专注创作。<br>目前在用的编辑器是MarkEditor，详细见 <a href="http://zrey.com/app/markeditor" target="_blank" rel="external">MarkEditor官网</a><br>另外，虽然Markdown十分简单，但并不表示不需要学习和练习，毕竟熟能生巧。<br>下面尝试用Markdown语法描述其本身。</p>
-<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="兼容-HTML"><a href="#兼容-HTML" class="headerlink" title="兼容 HTML"></a>兼容 HTML</h2><ul>
-<li>Markdown 是书写语言，HTML 是发布格式；</li>
-<li>Markdown 兼容 HTML 语法；</li>
-<li>Markdown 语法在 HTML 区块标签间无效，而在区段标签间有效。</li>
-</ul>
-<h2 id="特殊字符自动转换"><a href="#特殊字符自动转换" class="headerlink" title="特殊字符自动转换"></a>特殊字符自动转换</h2><ul>
-<li>在 HTML 文件中，有两个字符需要特殊处理： &lt; 和 &amp; ；</li>
-<li>在 HTML 文中要用 <code>&amp;lt;</code> 和 <code>&amp;amp;</code> 表示使用  &lt; 和 &amp; 实体；</li>
-<li>Markdown 中可以自然地书写字符，需要转换的由它来处理好了</li>
-<li>code 范围内，不论是行内还是区块， &lt; 和 &amp; 两个符号都一定会被转换成 HTML 实体。</li>
-</ul>
-<h2 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h2><ul>
-<li>一个 Markdown 段落是由一个或多个连续的文本行组成；</li>
-<li>想要在 Markdown 来插入 <code>&lt;br /&gt;</code> 标签的话，在插入处先按入两个以上的空格然后回车。</li>
-</ul>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><ul>
-<li>Markdown 支持两种标题的语法，类 Setext 和类 atx 形式；</li>
-<li>类 Setext 形式是用底线的形式，利用 = （最高阶标题）和 - （第二阶标题），任何数量的 = 和 - 都可以有效果；</li>
-<li>类 Atx 形式则是在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶，可选择性地「闭合」类 atx 样式的标题以求视觉美观</li>
-</ul>
-<h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><ul>
-<li>Markdown 标记区块引用是使用类似 email 中用 &gt; 的引用方式；</li>
-<li>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 &gt;  ；</li>
-<li>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 &gt; ；</li>
-<li>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等。</li>
-</ul>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
-<li>Markdown 支持有序列表和无序列表；</li>
-<li>无序列表使用星号、加号或是减号作为列表标记；</li>
-<li>有序列表则使用数字接着一个英文句点；</li>
-<li>在列表标记上使用的数字并不会影响输出的 HTML 结果；</li>
-<li>Markdown 未来可能会支持有序列表的 start 属性；</li>
-<li>列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符；</li>
-<li>如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 <p> 标签包起来；</p></li>
-<li>列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符；</li>
-<li>如果要在列表项目内放进引用，那 &gt; 就需要缩进；</li>
-<li>如果要放代码区块的话，该区块就需要缩进两次，也就是 8 个空格或是 2 个制表符；</li>
-<li>在行首出现数字-句点-空白，要避免这样的状况，你可以在句点前面加上反斜杠。</li>
-</ul>
-<h2 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2><ul>
-<li>Markdown 会用 <code>&lt;pre&gt;</code> 和 <code>&lt;code&gt;</code> 标签来把代码区块包起来；</li>
-<li>一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）;</li>
-<li>在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体；</li>
-<li>代码区块中，一般的 Markdown 语法不会被转换。</li>
-</ul>
-<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><ul>
-<li>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西；</li>
-<li>可以在星号或是减号中间插入空格。</li>
-</ul>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><ul>
-<li>Markdown 支持两种形式的链接语法： 行内式和参考式两种形式；</li>
-<li>要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可；</li>
-<li>如果你是要链接到同样主机的资源，你可以使用相对路径；</li>
-<li>参考式的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记，可以选择性地在两个方括号中间加上一个空格，接着，在文件的任意处，你可以把这个标记的链接内容定义出来；</li>
-<li>链接内容定义的形式为：<ul>
-<li>方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字</li>
-<li>接着一个冒号</li>
-<li>接着一个以上的空格或制表符</li>
-<li>接着链接的网址</li>
-<li>选择性地接着 title 内容，可以用单引号、双引号或是括弧包着</li>
-</ul>
-</li>
-<li>有一个已知的问题是 Markdown.pl 1.0.1 会忽略单引号包起来的链接 title；</li>
-<li>链接网址也可以用方括号包起来；</li>
-<li>可以把 title 属性放到下一行，也可以加一些缩进，若网址太长的话，这样会比较好看；</li>
-<li>链接辨别标签可以有字母、数字、空白和标点符号，但是并不区分大小写；</li>
-<li>隐式链接标记功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字</li>
-</ul>
-<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><ul>
-<li>Markdown 使用星号（*）和底线（_）作为标记强调字词的符号；</li>
-<li>被 * 或 _ 包围的字词会被转成用 \<em> 标签包围；</em></li>
-<li>用两个 * 或 _ 包起来的话，则会被转成 \<strong>；</strong></li>
-<li>如果你的 * 和 _ 两边都有空白的话，它们就只会被当成普通的符号。</li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
-<li>如果要标记一小段行内代码，你可以用反引号把它包起来（`）；</li>
-<li>如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段；</li>
-<li>代码区段的起始和结束端都可以放入一个空白，起始端后面一个，结束端前面一个，这样你就可以在区段的一开始就插入反引号；</li>
-<li>在代码区段内，&amp; 和方括号都会被自动地转成 HTML 实体；</li>
-</ul>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
-<li>Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： 行内式和参考式；<ul>
-<li>一个惊叹号 !</li>
-<li>接着一个方括号，里面放上图片的替代文字</li>
-<li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上 选择性的 ‘title’ 文字。</li>
-</ul>
-</li>
-<li>到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 <img> 标签。</li>
-</ul>
-<h2 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠"></a>反斜杠</h2><ul>
-<li>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号；</li>
-<li>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">\   反斜线</div><div class="line">`   反引号</div><div class="line">*   星号</div><div class="line">_   底线</div><div class="line">&#123;&#125;  花括号</div><div class="line">[]  方括号</div><div class="line">()  括弧</div><div class="line">#   井字号</div><div class="line">+   加号</div><div class="line">-   减号</div><div class="line">.   英文句点</div><div class="line">!   惊叹号</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><ul>
-<li>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱；</li>
-</ul>
-<p>参考文章：<br><a href="https://sspai.com/post/25137" target="_blank" rel="external">https://sspai.com/post/25137</a><br><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">http://wowubuntu.com/markdown/</a><br><a href="http://www.cnblogs.com/dezheng/p/3834813.html" target="_blank" rel="external">http://www.cnblogs.com/dezheng/p/3834813.html</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/02/slim-sth/">slim-sth</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Mar 2, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/01/skill-level/">skill-level</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Mar 1, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/02/28/php-based/">PHP面试题整理</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Feb 28, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>作为phper也2年了，整理一些面试题方便知识回顾。<br>因水平有限，如有错误欢迎指正。邮箱地址：nslyx@outlook.com。</p>
-<h1 id="PHP初级"><a href="#PHP初级" class="headerlink" title="PHP初级"></a>PHP初级</h1><hr>
-<p>Q:PHP有几种基本数据类型？<br>A:8种，4种标量(bool,int,float,string)，2种复合(array,object)，2种特殊(resource,null)；<br>另外为了确保代码易读，有3种伪类型(mixed,number,callback)。</p>
-<p>Q:include 与 require 有何异同？<br>A:他们是都是在当前位置引入脚本的函数，区别在于它们如何处理失败。<br>若 include 的文件未找到，将显示警告，脚本继续执行；<br>若 require 的文件未找到，将报致命错误，并终止脚本。</p>
-<p>Q:给一个变量赋值为0123，但是输出该变量的值总为其他数字，为何？<br>A:PHP解释器会将以0开头的数字看作八进制数，但输出会默认转化为十进制，<br>所以输出结果应为八进制数123对应的十进制数83。</p>
-<p>Q:PHP中如何定义常量？<br>A:用define函数，如 define(‘CONST_NAME’,’CONST_VALUE’);</p>
-<p>Q:<br>A:</p>
-<p>Q:<br>A:</p>
-<p>Q:<br>A:</p>
-<p>Q:<br>A:</p>
-<p>Q:<br>A:</p>
-
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/02/27/talking-170227/">talking-170227</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Feb 27, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>其实挺尴尬的，一点坚持写博客的感觉都没有。犹豫了好半天，还是不知道该写点什么。<br>想把一件事说清楚，那是真不容易，想随便抱怨点生活，又真不应该。<br>有时候觉得应该坚持点什么，可又不知道自己的坚持到底算什么。<br>也罢，或许少纠结些乱七八糟东西成长会更快些，就不那么多废话了。<br>祝以后越来越好。</p>
-
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/02/26/hexo-blog-create/">Hexo blog 创建部署</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Feb 26, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>这两天在家折腾Hexo,自己搭建博客,顺便写点什么做点记录。</p>
-<p>首先附上链接=&gt;<a href="https://hexo.io/" target="_blank" rel="external">Hexo官网</a>与<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo中文文档</a>，</p>
-<p>官方说Hexo是：A fast, simple &amp; powerful blog framework =&gt; 一个快速，简单并且强大的博客框架。另外还需要知道它是一个基于Node的静态网页生成工具。</p>
-<p>既然基于Node,那么肯定得安装Node。安装方法镜像源什么的就不详细叙述了，因非本文重点详见<a href="http://nodejs.cn/" target="_blank" rel="external">Node官网</a>。</p>
-<p>Node环境OK的情况下官方的几条命令就能在本地构建完成：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli -g   <span class="comment">## 全局安装hexo-cli</span></div><div class="line">$ hexo init blog            <span class="comment">## 在blog目录初始化hexo</span></div><div class="line">$ <span class="built_in">cd</span> blog                   <span class="comment">## 进入blog目录</span></div><div class="line">$ npm install               <span class="comment">## 安装依赖</span></div><div class="line">$ hexo server               <span class="comment">## 启动自带的WebServer</span></div></pre></td></tr></table></figure></p>
-<p>这几个命令官网首页就有，顺利执行后可以通过<a href="locahost:4000" target="_blank" rel="external">localhost:4000</a>进行访问。另外，Hexo有下面4个常用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span>    <span class="comment">## 创建一篇博客</span></div><div class="line">$ hexo server               <span class="comment">## 启动自带的WebServer</span></div><div class="line">$ hexo generate             <span class="comment">## 生成静态文件</span></div><div class="line">$ hexo deploy               <span class="comment">## 部署，使用前需要先配置</span></div></pre></td></tr></table></figure></p>
-<p>这几个命令关键字都可以简写为首字母，如:<em> hexo server </em>命令等价于<em> hexo s </em>。</p>
-<p>下面说说博客的部署。<br>文档说要先装个git部署工具，命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>别问我本地没装git能不能用，我没试过，不过我猜猜…不能吧。</p>
-<p>看过不少说什么教你用Github搭建免费博客的文章，其实就是利用那些Github的pages服务。<br>国内类似的还有Coding和开源中国的码云，都有pages服务，也都可以用于构建博客。需要注意的是这几家的pages服务不是说完全一致的，包括默认部署分支，项目部署地址，源的大小限制什么的可能都不大一致，详情参见文档<a href="https://help.github.com/categories/github-pages-basics/" target="_blank" rel="external">Github Pages文档</a>、<a href="https://coding.net/help/doc/pages/index.html" target="_blank" rel="external">Coding Pages文档</a>和<a href="http://git.mydoc.io/?t=154714" target="_blank" rel="external">码云Pages文档</a>。</p>
-<p>以Github来说，User Pages site 需要项目命名为 {username}.github.io，部署分支只能是master。先在Github上面创建这么个仓库，然后在你成功构建hexo的根目录下需要配置下_config.yml文件，大致类似于下面这样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:nslyx/nslyx.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
-<p>type为git就好，不一定要指定为github，可能会报错。<br>repository就是你的项目托管地址。<br>branch就是指定要部署到的分支。<br>另外强调下，冒号后面有个空格的。</p>
-<p>最后执行部署命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
-<p>然后就到<a href="https://{username}.github.io看你部署的成果吧。" target="_blank" rel="external">https://{username}.github.io看你部署的成果吧。</a></p>
-<p>其实还有不少东西，像是博客源的保存、数据的分离|备份、主题的变更什么的，后续再说吧，基本的创建这样就算是轻车熟路了。</p>
-
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/02/25/preface/">博客-序</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Feb 25, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>在IT行业也折腾了有些时间，不多不少的写了点代码、搞了点环境，貌似渐入佳境。然后公司倒闭了，又得另投他处。在找工作的过程中，看着公司各种各样的要求，这才意识到：或许做过的东西不少，却并未如何成长。该怎么办？一下子的不知所措。</p>
-<p>如果能很轻松的找到工作也就没什么了，可能也不会反思，没有想法，依旧浑浑噩噩。然而这次却足以让我意识到：被动的工作经验并不能让自己迅速提升，也就意味不能带来更多的就业机会与更好的发展前景。</p>
-<p>我呢，目前也没什么远大的抱负，就希望能靠自己的力量过的好点。多点的工作收入，好点的生活品质，更健康的生活方式…诸如此类，便是一直努力的方向。我也相信在此追求的过程中，自己也会不断迭代出新，日渐优秀。</p>
-<p>在某片文章中看到‘在北京生活的像条狗’这样的感慨，着眼当前，深以为然。如果不渴望改变生活，就这样日复一日，那么累就是累，苦就是苦，委屈就是委屈，挣扎也仅仅是挣扎。无论如何，不能指望中彩票这种微概率事件破开这轻易挣不脱，逃不离的困局。得有所筹划，厚积薄发，尽可能的提升个人价值。</p>
-<p>博客是个开始，记录些学习的过程，方便回顾，总结些实用的经验，以此进步。除此之外，在自我雕琢的过程中，需要尝试、努力、坚持的事情还很多。诸如提升学历、增加专业、强化技能、优化人际等。当然，健康的身体是一切的原始资本，要记得照顾好自己。</p>
-<p>最后总结下：失业并不可怕，可怕的是你不够强大！</p>
-
+          <div class="read-more">
+            <a href="/2017/03/07/w3c/" class="read-more-link">Read more..</a>
+          </div>
         
       
     </div>
@@ -661,6 +282,11 @@
   
   <nav class="pagination">
     
+    
+      <a class="next" href="/page/2/">
+        <span class="next-text">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
