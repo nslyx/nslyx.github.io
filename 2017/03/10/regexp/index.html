@@ -38,7 +38,7 @@
 <meta property="og:url" content="https://nslyx.github.io/2017/03/10/regexp/index.html">
 <meta property="og:site_name" content="Nslyx">
 <meta property="og:description" content="详细可学习：正则表达式菜鸟教程。以下皆为摘要，不定期补充更新。">
-<meta property="og:updated_time" content="2017-03-10T10:22:33.000Z">
+<meta property="og:updated_time" content="2017-03-10T11:20:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RegExp - 正则表达式">
 <meta name="twitter:description" content="详细可学习：正则表达式菜鸟教程。以下皆为摘要，不定期补充更新。">
@@ -179,7 +179,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RegExp"><span class="toc-text">RegExp</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#认知"><span class="toc-text">认知</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#概念"><span class="toc-text">概念</span></a></li></ol>
     </div>
   </div>
 
@@ -188,7 +188,7 @@
       
         <p>详细可学习：<a href="http://www.runoob.com/regexp/regexp-tutorial.html" target="_blank" rel="external">正则表达式菜鸟教程</a>。以下皆为摘要，不定期补充更新。</p>
 <a id="more"></a>
-<h1 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h1><ul>
+<h1 id="认知"><a href="#认知" class="headerlink" title="认知"></a>认知</h1><ul>
 <li>正则表达式是一种文本模式，可用于校验文本</li>
 <li>不同语言甚至相同语言的不同版本对正则表达式的支持可能不尽相同，但大同小异</li>
 <li>在使用正则的时候最好先测试一下正则的正确性</li>
@@ -196,32 +196,26 @@
 <li>精细正则需要详细规则，多数情况下会选择粗略的匹配</li>
 <li>正则写法优化也需要学习，高阶用法更有待深入研究…</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>水果</th>
-<th style="text-align:right">价格</th>
-<th style="text-align:center">数量</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>香蕉</td>
-<td style="text-align:right">$1</td>
-<td style="text-align:center">5</td>
-</tr>
-<tr>
-<td>苹果</td>
-<td style="text-align:right">$1</td>
-<td style="text-align:center">6</td>
-</tr>
-<tr>
-<td>草莓</td>
-<td style="text-align:right">$1</td>
-<td style="text-align:center">7</td>
-</tr>
-</tbody>
-</table>
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><ul>
+<li>普通字符：普通字符包括没有显式指定为元字符的所有可打印和不可打印字符。这包括所有大写和小写字母、所有数字、所有标点符号和一些其他符号。</li>
+<li>非打印字符</li>
+<li>特殊字符</li>
+<li>限定符</li>
+<li>定位符</li>
+<li>选择？捕获！</li>
+<li><p>反向引用：<br>&gt;<br>对一个正则表达式模式或部分模式两边添加圆括号将导致相关匹配存储到一个临时缓冲区中，<br>所捕获的每个子匹配都按照在正则表达式模式中从左到右出现的顺序存储。<br>缓冲区编号从 1 开始，最多可存储 99 个捕获的子表达式。<br>每个缓冲区都可以使用 ‘\n’ 访问，其中 n 为一个标识特定缓冲区的一位或两位十进制数。<br>可以使用非捕获元字符 ‘?:’、’?=’ 或 ‘?!’ 来重写捕获，忽略对相关匹配的保存。<br>反向引用的最简单的、最有用的应用之一，是提供查找文本中两个相同的相邻单词的匹配项的能力。</p>
+</li>
+<li><p>元字符：包含上述所有字符</p>
+</li>
+<li>运算符优先级</li>
+<li>字符簇</li>
+<li>确定重复出现</li>
+<li>简单表达式：正则表达式的最简单形式是在搜索字符串中匹配其本身的单个普通字符(单字符正则表达式)</li>
+<li>字符匹配：句点 (.) 匹配字符串中的各种打印或非打印字符，只有一个字符例外。这个例外就是换行符 (\n)</li>
+<li>中括号表达式：] 字符本身需放在首位 和 \ 字符仍然需要转义 </li>
+<li>替换和分组：替换匹配 | 字符任一侧最大的表达式</li>
+<li>非捕获元字符</li>
+</ul>
 
       
     </div>
@@ -232,15 +226,15 @@
 
   <div class="post-copyright">
     <p class="copyright-item">
-      <span>Author: </span>
+      <span>作者: </span>
       <span>zhang xiaotian</span>
     </p>
     <p class="copyright-item">
-      <span>Origin: </span>
+      <span>来源: </span>
       <a href="https://nslyx.github.io">https://nslyx.github.io</a>
     </p>
     <p class="copyright-item">
-      <span>Link: </span>
+      <span>链接: </span>
       <a href="https://nslyx.github.io/2017/03/10/regexp/">https://nslyx.github.io/2017/03/10/regexp/</a>
     </p>
 
@@ -256,7 +250,7 @@
       
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
-    <label class="reward-button" for="reward">Reward</label>
+    <label class="reward-button" for="reward">赞赏支持</label>
     <div class="qr-code">
       
       
