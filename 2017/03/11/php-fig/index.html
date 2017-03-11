@@ -12,7 +12,7 @@
 
 
 
-  <meta name="description" content="PhpStorm"/>
+  <meta name="description" content="PHP-FIG"/>
 
 
 
@@ -29,19 +29,22 @@
 
 
 
-<link rel="canonical" href="https://nslyx.github.io/2017/03/08/phpstorm/"/>
+<link rel="canonical" href="https://nslyx.github.io/2017/03/11/php-fig/"/>
 
 
-<meta name="description" content="记录点关于IDE的东西">
+<meta name="description" content="在PHP框架介绍中PSR规范时常被提及，PhpStorm IDE 也有对该规范的支持。So, just learn something about it.
+PHP框架互操作组(PHP-FIG — PHP Framework Interop Group)旨在通过合作和标准推进PHP的发展。PSRs系列标准规范(PHP Standards Recommendations)应运而生。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PhpStorm">
-<meta property="og:url" content="https://nslyx.github.io/2017/03/08/phpstorm/index.html">
+<meta property="og:title" content="PHP-FIG">
+<meta property="og:url" content="https://nslyx.github.io/2017/03/11/php-fig/index.html">
 <meta property="og:site_name" content="Nslyx">
-<meta property="og:description" content="记录点关于IDE的东西">
-<meta property="og:updated_time" content="2017-03-10T15:58:12.000Z">
+<meta property="og:description" content="在PHP框架介绍中PSR规范时常被提及，PhpStorm IDE 也有对该规范的支持。So, just learn something about it.
+PHP框架互操作组(PHP-FIG — PHP Framework Interop Group)旨在通过合作和标准推进PHP的发展。PSRs系列标准规范(PHP Standards Recommendations)应运而生。">
+<meta property="og:updated_time" content="2017-03-11T09:46:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PhpStorm">
-<meta name="twitter:description" content="记录点关于IDE的东西">
+<meta name="twitter:title" content="PHP-FIG">
+<meta name="twitter:description" content="在PHP框架介绍中PSR规范时常被提及，PhpStorm IDE 也有对该规范的支持。So, just learn something about it.
+PHP框架互操作组(PHP-FIG — PHP Framework Interop Group)旨在通过合作和标准推进PHP的发展。PSRs系列标准规范(PHP Standards Recommendations)应运而生。">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -78,7 +81,7 @@
 
 
 
-    <title> PhpStorm · Nslyx </title>
+    <title> PHP-FIG · Nslyx </title>
   </head>
 
   <body>
@@ -163,30 +166,38 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          PhpStorm
+          PHP-FIG
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          Mar 8, 2017
+          Mar 11, 2017
         </span>
       </div>
     </header>
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PSRs-PHP-Standards-Recommendations"><span class="toc-text">PSRs - PHP Standards Recommendations</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        <p>记录点关于IDE的东西</p>
+        <p>在PHP框架介绍中PSR规范时常被提及，PhpStorm IDE 也有对该规范的支持。So, just learn something about it.</p>
+<p>PHP框架互操作组(<a href="http://www.php-fig.org/" target="_blank" rel="external">PHP-FIG — PHP Framework Interop Group</a>)旨在通过合作和标准推进PHP的发展。<br>PSRs系列标准规范(<a href="http://www.php-fig.org/psr/" target="_blank" rel="external">PHP Standards Recommendations</a>)应运而生。</p>
 <a id="more"></a>
-<p>配置调试引擎</p>
-<p>本节将介绍如何配置在PHP调试时使用两种最流行的工具：</p>
-<p>Xdebug的<br>Zend调试<br>这些工具可以，因为他们阻止对方不能同时使用。为了避免这个问题，你需要更新相应的部分 php.ini文件。要打开活动php.ini在编辑器中的文件：</p>
-<p>打开 设置/首选项对话框按⌘,或选择文件| 设置 Windows和Linux或 PhpStorm | 首选项为OS X和点击PHP下语言与框架。<br>在 PHP打开网页，点击browseButton.png旁边翻译领域。<br>在里面 口译对话框打开时，配置文件只读字段显示的路径到活动php.ini文件。点击打开编辑器。<br>在这一部分：</p>
-<p>配置Xdebug的<br>配置Zend调试<br>验证调试引擎的配置</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[Xdebug]</div><div class="line">zend_extension="&lt;path to php_xdebug.dll&gt;"</div><div class="line">xdebug.remote_enable=1</div><div class="line">xdebug.remote_port="&lt;the port for Xdebug to listen to&gt;" (the default port is 9000)</div><div class="line">xdebug.profiler_enable=1</div><div class="line">xdebug.profiler_output_dir="&lt;AMP home\tmp&gt;"</div></pre></td></tr></table></figure>
+<h1 id="PSRs-PHP-Standards-Recommendations"><a href="#PSRs-PHP-Standards-Recommendations" class="headerlink" title="PSRs - PHP Standards Recommendations"></a>PSRs - PHP Standards Recommendations</h1><blockquote>
+<p>According to the PSR Workflow Bylaw each PSR has a status as it is being worked on. Once a proposal has passed the Entrance Vote it will be listed here as “Draft”. Unless a PSR is marked as “Accepted” it is subject to change. Draft can change drastically, but Review will only have minor changes.</p>
+<p>As also described in the PSR Workflow Bylaw. The Editor, or editors, of a proposal are the essentially the lead contributors and writers of the PSRs and they are supported by two voting members. Those voting members are the Coordinator who is responsible for managing the review stage and votes; and a second sponsor.</p>
+</blockquote>
+<p>供参考：<br><a href="https://github.com/PizzaLiu/PHP-FIG" target="_blank" rel="external">PHP-FIG PSR中文版</a></p>
+
       
     </div>
 
@@ -205,7 +216,7 @@
     </p>
     <p class="copyright-item">
       <span>链接: </span>
-      <a href="https://nslyx.github.io/2017/03/08/phpstorm/">https://nslyx.github.io/2017/03/08/phpstorm/</a>
+      <a href="https://nslyx.github.io/2017/03/11/php-fig/">https://nslyx.github.io/2017/03/11/php-fig/</a>
     </p>
 
     <p class="copyright-item lincese">

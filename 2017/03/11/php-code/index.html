@@ -12,7 +12,7 @@
 
 
 
-  <meta name="description" content="PhpStorm"/>
+  <meta name="description" content="php-code"/>
 
 
 
@@ -29,19 +29,19 @@
 
 
 
-<link rel="canonical" href="https://nslyx.github.io/2017/03/08/phpstorm/"/>
+<link rel="canonical" href="https://nslyx.github.io/2017/03/11/php-code/"/>
 
 
-<meta name="description" content="记录点关于IDE的东西">
+<meta name="description" content="一些代码记录。Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PhpStorm">
-<meta property="og:url" content="https://nslyx.github.io/2017/03/08/phpstorm/index.html">
+<meta property="og:title" content="php-code">
+<meta property="og:url" content="https://nslyx.github.io/2017/03/11/php-code/index.html">
 <meta property="og:site_name" content="Nslyx">
-<meta property="og:description" content="记录点关于IDE的东西">
-<meta property="og:updated_time" content="2017-03-10T15:58:12.000Z">
+<meta property="og:description" content="一些代码记录。Algorithm">
+<meta property="og:updated_time" content="2017-03-11T02:05:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PhpStorm">
-<meta name="twitter:description" content="记录点关于IDE的东西">
+<meta name="twitter:title" content="php-code">
+<meta name="twitter:description" content="一些代码记录。Algorithm">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -78,7 +78,7 @@
 
 
 
-    <title> PhpStorm · Nslyx </title>
+    <title> php-code · Nslyx </title>
   </head>
 
   <body>
@@ -163,30 +163,32 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          PhpStorm
+          php-code
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          Mar 8, 2017
+          Mar 11, 2017
         </span>
       </div>
     </header>
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#冒泡排序法"><span class="toc-text">冒泡排序法</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        <p>记录点关于IDE的东西</p>
+        <p>一些代码记录。<br>Algorithm</p>
 <a id="more"></a>
-<p>配置调试引擎</p>
-<p>本节将介绍如何配置在PHP调试时使用两种最流行的工具：</p>
-<p>Xdebug的<br>Zend调试<br>这些工具可以，因为他们阻止对方不能同时使用。为了避免这个问题，你需要更新相应的部分 php.ini文件。要打开活动php.ini在编辑器中的文件：</p>
-<p>打开 设置/首选项对话框按⌘,或选择文件| 设置 Windows和Linux或 PhpStorm | 首选项为OS X和点击PHP下语言与框架。<br>在 PHP打开网页，点击browseButton.png旁边翻译领域。<br>在里面 口译对话框打开时，配置文件只读字段显示的路径到活动php.ini文件。点击打开编辑器。<br>在这一部分：</p>
-<p>配置Xdebug的<br>配置Zend调试<br>验证调试引擎的配置</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[Xdebug]</div><div class="line">zend_extension="&lt;path to php_xdebug.dll&gt;"</div><div class="line">xdebug.remote_enable=1</div><div class="line">xdebug.remote_port="&lt;the port for Xdebug to listen to&gt;" (the default port is 9000)</div><div class="line">xdebug.profiler_enable=1</div><div class="line">xdebug.profiler_output_dir="&lt;AMP home\tmp&gt;"</div></pre></td></tr></table></figure>
+<h1 id="冒泡排序法"><a href="#冒泡排序法" class="headerlink" title="冒泡排序法"></a>冒泡排序法</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span><span class="params">($numbers)</span></span>&#123;</div><div class="line">    $len = count($numbers);    </div><div class="line">    <span class="keyword">for</span>($i = <span class="number">0</span>; $i &lt; $len - <span class="number">1</span>; $i++)&#123; </div><div class="line">        <span class="keyword">for</span>($j = $i + <span class="number">1</span>; $j &lt; $len; $j++)&#123;</div><div class="line">             <span class="keyword">if</span>($numbers[$i] &gt; $numbers[$j])&#123; </div><div class="line">                $temp = $numbers[$i]; </div><div class="line">                $numbers[$i] = $numbers[$j];</div><div class="line">                $numbers[$j] = $temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> $numbers;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubble_sort</span><span class="params">($array_of_numbers)</span></span>&#123;    </div><div class="line">    $len = count($numbers);    </div><div class="line">    <span class="keyword">for</span>($i = <span class="number">0</span>; $i &lt; $len; $i++)&#123;</div><div class="line">        <span class="keyword">for</span>($j = <span class="number">0</span>; $j &lt; $len - $i - <span class="number">1</span>; $j++)&#123;</div><div class="line">            <span class="keyword">if</span>($numbers[$j] &gt; $numbers[$j + <span class="number">1</span>])&#123;</div><div class="line">                $temp = $numbers[$j];</div><div class="line">                $numbers[$j] = $numbers[$j + <span class="number">1</span>];</div><div class="line">                $numbers[$j + <span class="number">1</span>] = $temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> $numbers;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -205,7 +207,7 @@
     </p>
     <p class="copyright-item">
       <span>链接: </span>
-      <a href="https://nslyx.github.io/2017/03/08/phpstorm/">https://nslyx.github.io/2017/03/08/phpstorm/</a>
+      <a href="https://nslyx.github.io/2017/03/11/php-code/">https://nslyx.github.io/2017/03/11/php-code/</a>
     </p>
 
     <p class="copyright-item lincese">
