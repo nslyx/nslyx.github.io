@@ -12,6 +12,8 @@
 
 
 
+  <meta name="description" content="界面开发记录"/>
+
 
 
 
@@ -27,15 +29,22 @@
 
 
 
-<link rel="canonical" href="https://nslyx.github.io/"/>
+<link rel="canonical" href="https://nslyx.github.io/2017/03/31/html-meta/"/>
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nslyx">
-<meta property="og:url" content="https://nslyx.github.io/index.html">
+<meta name="description" content="1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1&amp;quot;/&amp;gt;
+viewport是网页默认的宽度和高度，上面这行代码的意思是，网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积">
+<meta property="og:type" content="article">
+<meta property="og:title" content="界面开发记录">
+<meta property="og:url" content="https://nslyx.github.io/2017/03/31/html-meta/index.html">
 <meta property="og:site_name" content="Nslyx">
+<meta property="og:description" content="1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1&amp;quot;/&amp;gt;
+viewport是网页默认的宽度和高度，上面这行代码的意思是，网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积">
+<meta property="og:updated_time" content="2017-03-31T09:08:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nslyx">
+<meta name="twitter:title" content="界面开发记录">
+<meta name="twitter:description" content="1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1&amp;quot;/&amp;gt;
+viewport是网页默认的宽度和高度，上面这行代码的意思是，网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -72,7 +81,7 @@
 
 
 
-    <title> Nslyx </title>
+    <title> 界面开发记录 · Nslyx </title>
   </head>
 
   <body>
@@ -152,94 +161,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/04/13/charles-https/">Charles Https  抓包 步骤</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Apr 13, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>废话不多说，普通的http抓包也不多说了，简单叙述记录下如何实现 对 https 的抓取，</p>
-<h1 id="监听本机请求"><a href="#监听本机请求" class="headerlink" title="监听本机请求"></a>监听本机请求</h1><p>需要点击charles的帮助中的 SSLProxying 选项，里面有 Install Charles Root Certificate 选项，点击后就在当前机器上安装了Charles 软件作为代理服务器的 SSL 证书，接下来 需要信任该证书，然后浏览器再访问 https 使用 charles 代理的时候就能信任 charles , 但是并没有结束，需要在 Charles 的 Proxy 菜单中的  SSL Proxying Setting 选项中设置要监听的域名和端口  一般 SSL 端口在 443;</p>
-<p>#监听其他机器请求<br>打开 Charles  的 Help-&gt;SSL Proxying -&gt;Install Charles Root Certificate on a Mobile Device or Remote Browser…   选项，然后在需要监听的机器上先配置好普通的 http  监听， 然后 按照提示 用浏览器下载安装 Charles 证书，最后那个Charles 仍然需要配置要监听的域名和端口的。<br> OVER.</p>
-
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/04/01/npm-notes/">npm-notes</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Apr 1, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>一些关于 npm 命令的笔记<br>
-          <div class="read-more">
-            <a href="/2017/04/01/npm-notes/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/31/html-meta/">界面开发记录</a>
+          界面开发记录
         
       </h1>
 
@@ -255,116 +182,71 @@
 
     <div class="post-content">
       
-        
-        
-
-        
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;/&gt;</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;/&gt;</div></pre></td></tr></table></figure>
 <p>viewport是网页默认的宽度和高度，上面这行代码的意思是，网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积的100%。<br>所有主流浏览器都支持这个设置，包括IE9。对于那些老式浏览器（主要是IE6、7、8），需要使用css3-mediaqueries.js。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">//手机端判断各个平台浏览器及操作系统平台</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">checkPlatform</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="regexp">/android/i</span>.test(navigator.userAgent))&#123;</div><div class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Android'browser."</span>);<span class="comment">//这是Android平台下浏览器</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(<span class="regexp">/(iPhone|iPad|iPod|iOS)/i</span>.test(navigator.userAgent))&#123;</div><div class="line">            <span class="built_in">document</span>.write(<span class="string">"This is iOS'browser."</span>);<span class="comment">//这是iOS平台下浏览器</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(<span class="regexp">/Linux/i</span>.test(navigator.userAgent))&#123;</div><div class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Linux'browser."</span>);<span class="comment">//这是Linux平台下浏览器</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(<span class="regexp">/Linux/i</span>.test(navigator.platform))&#123;</div><div class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Linux operating system."</span>);<span class="comment">//这是Linux操作系统平台</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(<span class="regexp">/MicroMessenger/i</span>.test(navigator.userAgent))&#123;</div><div class="line">            <span class="built_in">document</span>.write(<span class="string">"This is MicroMessenger'browser."</span>);<span class="comment">//这是微信平台下浏览器</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="keyword">var</span> browser = &#123;</div><div class="line">      <span class="attr">versions</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="keyword">var</span> u = navigator.userAgent, app = navigator.appVersion;</div><div class="line"></div><div class="line">          <span class="keyword">return</span> &#123;</div><div class="line">            <span class="comment">//移动终端浏览器版本信息</span></div><div class="line">            Trident     :   nu.indexOf(<span class="string">'Trident'</span>)   &gt; <span class="number">-1</span>,      <span class="comment">//IE内核</span></div><div class="line">            Presto      :   nu.indexOf(<span class="string">'Presto'</span>)    &gt; <span class="number">-1</span>,        <span class="comment">//opera内核</span></div><div class="line">            AppleWebKit :   nu.indexOf(<span class="string">'AppleWebKit'</span>)   &gt; <span class="number">-1</span>,   <span class="comment">//苹果、谷歌内核</span></div><div class="line">            Gecko       :   nu.indexOf(<span class="string">'Gecko'</span>)     &gt; <span class="number">-1</span> &amp;&amp; nu.indexOf(<span class="string">'KHTML'</span>) == <span class="number">-1</span>,  <span class="comment">//火狐内核</span></div><div class="line">            Mobile      :   !!nu.match(<span class="regexp">/AppleWebKit.*Mobile/i</span>) || !!nu.match(<span class="regexp">/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/</span>),   <span class="comment">//是否为移动终端</span></div><div class="line">            ios         :   !!nu.match(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>),     <span class="comment">//ios终端</span></div><div class="line">            iPad        :   nu.indexOf(<span class="string">'iPad'</span>)      &gt; <span class="number">-1</span>,            <span class="comment">//是否iPad</span></div><div class="line">            iPhone      :   nu.indexOf(<span class="string">'iPhone'</span>)    &gt; <span class="number">-1</span> || nu.indexOf(<span class="string">'Mac'</span>)   &gt; <span class="number">-1</span>, <span class="comment">//是否为iPhone或者QQHD浏览器</span></div><div class="line">            Android     :   nu.indexOf(<span class="string">'Android'</span>)   &gt; <span class="number">-1</span> || nu.indexOf(<span class="string">'Linux'</span>) &gt; <span class="number">-1</span>, <span class="comment">//android终端或者uc浏览器           </span></div><div class="line">            webApp      :   nu.indexOf(<span class="string">'Safari'</span>)    == <span class="number">-1</span>        <span class="comment">//是否web应该程序，没有头部与底部</span></div><div class="line">          &#125;;</div><div class="line">      &#125;(),</div><div class="line">      <span class="attr">language</span>: (navigator.browserLanguage || navigator.language).toLowerCase()</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">load</span> (<span class="params"></span>)</span>&#123;</div><div class="line"> </div><div class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchstart'</span>,touch, <span class="literal">false</span>);</div><div class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchmove'</span>,touch, <span class="literal">false</span>);</div><div class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchend'</span>,touch, <span class="literal">false</span>);</div><div class="line">     </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">touch</span> (<span class="params">event</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> event = event || <span class="built_in">window</span>.event;</div><div class="line">         </div><div class="line">        <span class="keyword">var</span> oInp = <span class="built_in">document</span>.getElementById(<span class="string">"inp"</span>);</div><div class="line"> </div><div class="line">        <span class="keyword">switch</span>(event.type)&#123;</div><div class="line">            <span class="keyword">case</span> <span class="string">"touchstart"</span>:</div><div class="line">                oInp.innerHTML = <span class="string">"Touch started ("</span> + event.touches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.touches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">"touchend"</span>:</div><div class="line">                oInp.innerHTML = <span class="string">"&lt;br&gt;Touch end ("</span> + event.changedTouches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.changedTouches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">"touchmove"</span>:</div><div class="line">                event.preventDefault();</div><div class="line">                oInp.innerHTML = <span class="string">"&lt;br&gt;Touch moved ("</span> + event.touches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.touches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">         </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>,load, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
-        
       
     </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>作者: </span>
+      <span>zhang xiaotian</span>
+    </p>
+    <p class="copyright-item">
+      <span>来源: </span>
+      <a href="https://nslyx.github.io">https://nslyx.github.io</a>
+    </p>
+    <p class="copyright-item">
+      <span>链接: </span>
+      <a href="https://nslyx.github.io/2017/03/31/html-meta/">https://nslyx.github.io/2017/03/31/html-meta/</a>
+    </p>
+
+    <p class="copyright-item lincese">
+      
+      本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
 
     
 
     
   </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/29/mac-notes/">mac-notes</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Mar 29, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h2 id="在安装软件隐私中找不到任何来源选项解决方法"><a href="#在安装软件隐私中找不到任何来源选项解决方法" class="headerlink" title="在安装软件隐私中找不到任何来源选项解决方法"></a>在安装软件隐私中找不到任何来源选项解决方法</h2><p>在终端执行下面的命令   【master前面为两短-】<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo spctl --master-disable</div></pre></td></tr></table></figure></p>
-
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/29/wechat-dev/">微信公众号开发笔记</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Mar 29, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>没有必要注册微信公众平台账号</p>
-<p>需要申请测试账号，可以用于测试接口<br>需要有自己的域名和web服务器</p>
-<p>后台管理永远离不开一款富文本编辑器，最好能定制化应对手机展示效果</p>
-
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
-    
-      <a class="next" href="/page/2/">
-        <span class="next-text">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    
-  </nav>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
         </div>  
       </main>
 
