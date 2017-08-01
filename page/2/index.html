@@ -159,6 +159,45 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2017/03/31/html-meta/">界面开发记录</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Mar 31, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;/&gt;</div></pre></td></tr></table></figure>
+<p>viewport是网页默认的宽度和高度，上面这行代码的意思是，网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积的100%。<br>所有主流浏览器都支持这个设置，包括IE9。对于那些老式浏览器（主要是IE6、7、8），需要使用css3-mediaqueries.js。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">//手机端判断各个平台浏览器及操作系统平台</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">checkPlatform</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="regexp">/android/i</span>.test(navigator.userAgent))&#123;</div><div class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Android'browser."</span>);<span class="comment">//这是Android平台下浏览器</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(<span class="regexp">/(iPhone|iPad|iPod|iOS)/i</span>.test(navigator.userAgent))&#123;</div><div class="line">            <span class="built_in">document</span>.write(<span class="string">"This is iOS'browser."</span>);<span class="comment">//这是iOS平台下浏览器</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(<span class="regexp">/Linux/i</span>.test(navigator.userAgent))&#123;</div><div class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Linux'browser."</span>);<span class="comment">//这是Linux平台下浏览器</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(<span class="regexp">/Linux/i</span>.test(navigator.platform))&#123;</div><div class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Linux operating system."</span>);<span class="comment">//这是Linux操作系统平台</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(<span class="regexp">/MicroMessenger/i</span>.test(navigator.userAgent))&#123;</div><div class="line">            <span class="built_in">document</span>.write(<span class="string">"This is MicroMessenger'browser."</span>);<span class="comment">//这是微信平台下浏览器</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="keyword">var</span> browser = &#123;</div><div class="line">      <span class="attr">versions</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="keyword">var</span> u = navigator.userAgent, app = navigator.appVersion;</div><div class="line"></div><div class="line">          <span class="keyword">return</span> &#123;</div><div class="line">            <span class="comment">//移动终端浏览器版本信息</span></div><div class="line">            Trident     :   nu.indexOf(<span class="string">'Trident'</span>)   &gt; <span class="number">-1</span>,      <span class="comment">//IE内核</span></div><div class="line">            Presto      :   nu.indexOf(<span class="string">'Presto'</span>)    &gt; <span class="number">-1</span>,        <span class="comment">//opera内核</span></div><div class="line">            AppleWebKit :   nu.indexOf(<span class="string">'AppleWebKit'</span>)   &gt; <span class="number">-1</span>,   <span class="comment">//苹果、谷歌内核</span></div><div class="line">            Gecko       :   nu.indexOf(<span class="string">'Gecko'</span>)     &gt; <span class="number">-1</span> &amp;&amp; nu.indexOf(<span class="string">'KHTML'</span>) == <span class="number">-1</span>,  <span class="comment">//火狐内核</span></div><div class="line">            Mobile      :   !!nu.match(<span class="regexp">/AppleWebKit.*Mobile/i</span>) || !!nu.match(<span class="regexp">/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/</span>),   <span class="comment">//是否为移动终端</span></div><div class="line">            ios         :   !!nu.match(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>),     <span class="comment">//ios终端</span></div><div class="line">            iPad        :   nu.indexOf(<span class="string">'iPad'</span>)      &gt; <span class="number">-1</span>,            <span class="comment">//是否iPad</span></div><div class="line">            iPhone      :   nu.indexOf(<span class="string">'iPhone'</span>)    &gt; <span class="number">-1</span> || nu.indexOf(<span class="string">'Mac'</span>)   &gt; <span class="number">-1</span>, <span class="comment">//是否为iPhone或者QQHD浏览器</span></div><div class="line">            Android     :   nu.indexOf(<span class="string">'Android'</span>)   &gt; <span class="number">-1</span> || nu.indexOf(<span class="string">'Linux'</span>) &gt; <span class="number">-1</span>, <span class="comment">//android终端或者uc浏览器           </span></div><div class="line">            webApp      :   nu.indexOf(<span class="string">'Safari'</span>)    == <span class="number">-1</span>        <span class="comment">//是否web应该程序，没有头部与底部</span></div><div class="line">          &#125;;</div><div class="line">      &#125;(),</div><div class="line">      <span class="attr">language</span>: (navigator.browserLanguage || navigator.language).toLowerCase()</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">load</span> (<span class="params"></span>)</span>&#123;</div><div class="line"> </div><div class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchstart'</span>,touch, <span class="literal">false</span>);</div><div class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchmove'</span>,touch, <span class="literal">false</span>);</div><div class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchend'</span>,touch, <span class="literal">false</span>);</div><div class="line">     </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">touch</span> (<span class="params">event</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> event = event || <span class="built_in">window</span>.event;</div><div class="line">         </div><div class="line">        <span class="keyword">var</span> oInp = <span class="built_in">document</span>.getElementById(<span class="string">"inp"</span>);</div><div class="line"> </div><div class="line">        <span class="keyword">switch</span>(event.type)&#123;</div><div class="line">            <span class="keyword">case</span> <span class="string">"touchstart"</span>:</div><div class="line">                oInp.innerHTML = <span class="string">"Touch started ("</span> + event.touches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.touches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">"touchend"</span>:</div><div class="line">                oInp.innerHTML = <span class="string">"&lt;br&gt;Touch end ("</span> + event.changedTouches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.changedTouches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">"touchmove"</span>:</div><div class="line">                event.preventDefault();</div><div class="line">                oInp.innerHTML = <span class="string">"&lt;br&gt;Touch moved ("</span> + event.touches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.touches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">         </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>,load, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2017/03/29/mac-notes/">mac-notes</a>
         
       </h1>
@@ -294,46 +333,6 @@
 
         
           <h1 id="Yaf-框架-Nginx-推荐配置"><a href="#Yaf-框架-Nginx-推荐配置" class="headerlink" title="Yaf 框架 Nginx 推荐配置"></a>Yaf 框架 Nginx 推荐配置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"># drtest virtual host using mix of IP-, name-, and port-based configuration</div><div class="line">#</div><div class="line">server &#123;</div><div class="line">    listen       80;</div><div class="line">#    listen       somename:8080;</div><div class="line">#    server_name  somename  alias  another.alias;</div><div class="line">    server_name www.drtest.com;</div><div class="line"></div><div class="line">    root   /Users/zxtian/code/drtest;</div><div class="line">    location / &#123;</div><div class="line">        index  index.php index.html index.htm;</div><div class="line">        if (!-e $request_filename) &#123;</div><div class="line">            rewrite  ^/(.*)$  /index.php/$1  last;</div><div class="line">            break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$ &#123;</div><div class="line">        expires 100d;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    location ~ .*\.(js|css)?$ &#123;</div><div class="line">        expires 30d;</div><div class="line">    &#125;</div><div class="line">    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</div><div class="line">    #</div><div class="line">    location ~ \.php$ &#123;</div><div class="line">        fastcgi_pass   127.0.0.1:9000;</div><div class="line">        fastcgi_index  index.php;</div><div class="line">        fastcgi_param  SCRIPT_FILENAME  /$document_root$fastcgi_script_name;</div><div class="line">        include        fastcgi_params;</div><div class="line"></div><div class="line">        set $fastcgi_script_name2 $fastcgi_script_name;</div><div class="line">        if ($fastcgi_script_name ~ &quot;^(.+\.php)(/.+)$&quot;) &#123;</div><div class="line">            set $fastcgi_script_name2 $1;</div><div class="line">            set $path_info $2;</div><div class="line">        &#125;</div><div class="line">        fastcgi_param   PATH_INFO $path_info;</div><div class="line">        fastcgi_param   SCRIPT_FILENAME   $document_root$fastcgi_script_name2;</div><div class="line">        fastcgi_param   SCRIPT_NAME   $fastcgi_script_name2;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"># another virtual host using mix of IP-, name-, and port-based configuration</div><div class="line">#</div><div class="line">#server &#123;</div><div class="line">#    listen       8000;</div><div class="line">#    listen       somename:8080;</div><div class="line">#    server_name  somename  alias  another.alias;</div><div class="line"></div><div class="line">#    location / &#123;</div><div class="line">#        root   html;</div><div class="line">#        index  index.html index.htm;</div><div class="line">#    &#125;</div><div class="line">#&#125;</div></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/28/svn/">svn</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Mar 28, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>Svn 常见的版本控制器之一，全名叫 Subversion。<br>Svn 是集中式的版本控制器，有。。。</p>
-<p>Linux 中Svn 在本地的路径前需要加上文件协议名，像是<code>file:///Users/zxtian/code/tmp/repo/zrepo/</code>这样。</p>
-<p>Svn 仓库管理命令<br>svnadmin 命令</p>
-<p>Svn 检出仓库命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn checkout RepoPath --username=xxx --password=xxx</div></pre></td></tr></table></figure></p>
-
         
       
     </div>
