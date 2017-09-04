@@ -12,6 +12,8 @@
 
 
 
+  <meta name="description" content="shell-command"/>
+
 
 
 
@@ -27,15 +29,19 @@
 
 
 
-<link rel="canonical" href="https://nslyx.github.io/"/>
+<link rel="canonical" href="https://nslyx.github.io/2017/09/04/shell-command/"/>
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nslyx">
-<meta property="og:url" content="https://nslyx.github.io/index.html">
+<meta name="description" content="删除ctrl + d ctrl + h ctrl + k ctrl + u ctrl + w ctrl + y ctrl + ? alt + r alt + d移动ctrl + actrl + ectrl + fctrl + bctrl + 方向键左键 ctrl + 方向键右键 ctrl + xalt + f替换 ctrl + t删除光标所在位置上的字符相当于 VIM 里 x 或者 dl 删除光标">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell-command">
+<meta property="og:url" content="https://nslyx.github.io/2017/09/04/shell-command/index.html">
 <meta property="og:site_name" content="Nslyx">
+<meta property="og:description" content="删除ctrl + d ctrl + h ctrl + k ctrl + u ctrl + w ctrl + y ctrl + ? alt + r alt + d移动ctrl + actrl + ectrl + fctrl + bctrl + 方向键左键 ctrl + 方向键右键 ctrl + xalt + f替换 ctrl + t删除光标所在位置上的字符相当于 VIM 里 x 或者 dl 删除光标">
+<meta property="og:updated_time" content="2017-09-04T03:43:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nslyx">
+<meta name="twitter:title" content="shell-command">
+<meta name="twitter:description" content="删除ctrl + d ctrl + h ctrl + k ctrl + u ctrl + w ctrl + y ctrl + ? alt + r alt + d移动ctrl + actrl + ectrl + fctrl + bctrl + 方向键左键 ctrl + 方向键右键 ctrl + xalt + f替换 ctrl + t删除光标所在位置上的字符相当于 VIM 里 x 或者 dl 删除光标">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -72,7 +78,7 @@
 
 
 
-    <title> Nslyx </title>
+    <title> shell-command · Nslyx </title>
   </head>
 
   <body>
@@ -152,14 +158,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/09/04/inode/">inode</a>
+          shell-command
         
       </h1>
 
@@ -175,49 +179,7 @@
 
     <div class="post-content">
       
-        
-        
-
-        
-          <h1 id="Jenkins-构建时报错：-No-space-left-on-device"><a href="#Jenkins-构建时报错：-No-space-left-on-device" class="headerlink" title="Jenkins 构建时报错： No space left on device"></a>Jenkins 构建时报错： No space left on device</h1><p>报错的意思时磁盘上没有空间了，但是上服务器看了看，空间明明还有一堆。。。<br>这个时候就应该意识到时 inode 不足了，<code>df</code> 查看磁盘空间余量，<code>df -i</code> 查看 inode 余量。</p>
-<p>inode 感觉一般默认设置的上限是够用的，如果发生溢满就需要进行追究原因，如果是正常情况不够用了，可以考虑修改上限默认值。很明显，这里并不准备讲正常情况。<br>在服务器 <code>/var/spool/clientmqueue/</code>目录下有定时任务的输出记录文件，多数情况下 inode 是被这里的文件占用消耗完的。所以在设置定时任务的时候需要注意将不必要的输出销毁。这里的文件一般都可以之间删掉就可以释放很多inode ，没什么影响。不过因为文件数量太多，所以直接 <code>rm -rf  *</code> 会因为目录信息太大而执行不了。可以用 <code>lsattr ./|awk -F&quot;/&quot; &#39;{print $3}&#39;|xargs -i rm -rf {}</code> 命令删除，文件多删除执行时间也会比较长。<br>释放完inode 后，上述报错也就自然没有了</p>
-
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/09/04/shell-command/">shell-command</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Sep 4, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>删除<br>ctrl + d ctrl + h ctrl + k ctrl + u ctrl + w ctrl + y ctrl + ? alt + r alt + d<br>移动<br>ctrl + a<br>ctrl + e<br>ctrl + f<br>ctrl + b<br>ctrl + 方向键左键 ctrl + 方向键右键 ctrl + x<br>alt + f<br>替换 ctrl + t<br>删除光标所在位置上的字符相当于 VIM 里 x 或者 dl 删除光标所在位置前的字符相当于 VIM 里 hx 或者 dh 删除光标后面所有字符相当于 VIM 里 d shift+$ 删除光标前面所有字符相当于 VIM 里 d shift+^ 删除光标前一个单词相当于 VIM 里 db<br>恢复 ctrl+u 上次执行时删除的字符 撤消前一次输入<br>撤消前一次动作 删除光标所在位置的后单词<br>将光标移动到命令行开头相当于 VIM 里 shift+^ 将光标移动到命令行结尾处相当于 VIM 里 shift+$ 光标向后移动一个字符相当于 VIM 里 l 光标向前移动一个字符相当于 VIM 里 h<br>光标移动到前一个单词开头<br>光标移动到后一个单词结尾 在上次光标所在字符和当前光标所在字符之间跳转<br>跳到光标所在位置单词尾部<br>将光标当前字符与前面一个字符替换 交换两个光标当前所处位置单词和光标前一个单词 把光标当前位置单词变为大写<br>把光标当前位置单词变为小写 把光标当前位置单词头一个字母变为大写 替换前一次命令中字符串<br>alt<br>alt<br>alt<br>alt ^oldstr^newstr</p>
+        <p>删除<br>ctrl + d ctrl + h ctrl + k ctrl + u ctrl + w ctrl + y ctrl + ? alt + r alt + d<br>移动<br>ctrl + a<br>ctrl + e<br>ctrl + f<br>ctrl + b<br>ctrl + 方向键左键 ctrl + 方向键右键 ctrl + x<br>alt + f<br>替换 ctrl + t<br>删除光标所在位置上的字符相当于 VIM 里 x 或者 dl 删除光标所在位置前的字符相当于 VIM 里 hx 或者 dh 删除光标后面所有字符相当于 VIM 里 d shift+$ 删除光标前面所有字符相当于 VIM 里 d shift+^ 删除光标前一个单词相当于 VIM 里 db<br>恢复 ctrl+u 上次执行时删除的字符 撤消前一次输入<br>撤消前一次动作 删除光标所在位置的后单词<br>将光标移动到命令行开头相当于 VIM 里 shift+^ 将光标移动到命令行结尾处相当于 VIM 里 shift+$ 光标向后移动一个字符相当于 VIM 里 l 光标向前移动一个字符相当于 VIM 里 h<br>光标移动到前一个单词开头<br>光标移动到后一个单词结尾 在上次光标所在字符和当前光标所在字符之间跳转<br>跳到光标所在位置单词尾部<br>将光标当前字符与前面一个字符替换 交换两个光标当前所处位置单词和光标前一个单词 把光标当前位置单词变为大写<br>把光标当前位置单词变为小写 把光标当前位置单词头一个字母变为大写 替换前一次命令中字符串<br>alt<br>alt<br>alt<br>alt ^oldstr^newstr</p>
 <ul>
 <li>t + u + l + c<br>历史命令编辑<br>ctrl + p 返回上一次输入命令字符 ctrl + r 输入单词搜索历史命令<br>alt alt<br>其它 ctrl + ctrl + ctrl + ctrl + ctrl + ctrl + alt</li>
 <li>+<br>s q l c i o +<br>p 输入字符查找与字符相接近的历史命令 &gt; 返回上一次执行命令<br>锁住终端 解锁终端<br>清屏相当于命令 clear 另起一行<br>类似 TAB 健补全功能 重复执行命令<br>数字键 操作的次数<br>#c+l 清屏先 minuit@suse:~&gt;str1 str2 str3 到开头按 a+c<br>minuit@suse:~&gt; Str1 str2 str3<br>个单词要全大写(这样的命令真是玩死人:( )好吧如果你当前光标在第二个单词,那直 接 a+u 把这个单词改变,如果不在的话那按住 c+a 接着 c+f 跳到第二个单词那再 a+u 就 OK 了结果像下面所示。<br>minuit@suse:~&gt; Str1 STR2 str3 #我想换过来怎么办我的位置已经在最后一个单 词这个好办按住 a+2+b 哈哈跳到了第二个单词再来一下 a+l 这下第二个单词全小写了<br>实际操作:<br>minuit@suse:~&gt; welcome to chinaunix! a+3+c 看看效果<br>minuit@suse:~&gt; Welcome To Chinaunix! 我们再来试试替换<br>#不就是变个大小写吗? 按住 c+a 接着 #GOOD 很简单<br>#还是这三单词 c+a 跳到开头再接着跳到<br>#输入三个单词发现第一单词需要大写好按 c+a 跳<br>#好现在单词就变成了现在这个样子,又发现第二<br>minuit@suse:~&gt; Welcome To Chinaunix!<br>第二个单词那(因为 a+t 只能跟前一个单词做替换所以不能在第一个单词按 a+t)按住<br>a+t<br>minuit@suse:~&gt; To Welcome Chinaunix!<br>那又变了一个样<br>minuit@suse:~&gt; Chinaunix!<br>minuit@suse:~&gt;ls /tmp/<br>file1 file2 file3 ….. ..<br>minuit@suse:~&gt;^ls^cd 就行了在命令很长时用这个替换可以省掉很多按 a+b 或 a+f 的时间 cd /tmp/<br>minuit@suse:/tmp&gt; #进入了 tmp 目录了 跳转的命令就不试了大家自己体会试也看不见^_^</li>
@@ -241,145 +203,67 @@ Alt+D
   Ctrl+Y
 </code></pre><p>  粘贴最近的文本<br>  粘贴最近剪切的文本<br>         Alt+Y<br>       粘贴早期的文本<br>       轮回到先前剪切的文本并粘贴它<br>         Ctrl+C<br>          删除整行<br>           删除一整行<br>    表2- 4<br>用于文本补全的组合键<br>            组合键<br>用于<br>              Alt+~<br>用用户名补全文本<br>               Alt+$<br>用变量补全文本<br>            Alt+@<br>用主机名补全文本<br>              Alt+!<br>shell<br>用命令名(以别名、保留字、   函数、   内置命令和文 件名的顺序依次检查)补全文本。换句话说，用以前运行过 的命令补全这个按键序列<br>shell<br>                Ctrl+X+/<br>列出可能的补全用户名文本<br>               Ctrl+X+$<br>列出可能的补全环境变量<br>                Ctrl+X+@<br>列出可能的补全主机名<br>                Ctrl+X+!<br>列出可能的补全命令名<br>       表2- 5<br>使用命令历史的击键<br>                  键<br>功能名<br>描述<br>                     方向键 (↑或↓)<br>步进<br>按上和下箭头可步进浏览历史列表中的每个 命令行，直到所需的位置(Ctrl+P 和 Ctrl+N 分 别有同样的功能)<br>                       Ctrl+R<br>反向渐进搜索<br>按下这些键后，输入一个搜索字符串进行反向 搜索。输入此字符串后，匹配的命令行即会出 现，可以运行或编辑它<br>                   Ctrl+S<br>前向渐进搜索<br>与前一个功能相似，只不过是前向搜索<br>                      Alt+P<br>反向搜索<br>按下这些键后，输入一个字符串进行反向搜 索。输入一个字符串并且按 Enter 键可看到包 含该字符串的最近已用命令<br>                      Alt+N<br>前向搜索<br>与前一个功能类似，只不过是前向搜索<br>                     Alt+&lt;<br>历史列表的开 头<br>到历史列表的第一项<br>                      Alt+&gt;<br>历史列表的末 尾<br>到历史列表的最后一项</p>
 
-        
       
     </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>作者: </span>
+      <span>zhang xiaotian</span>
+    </p>
+    <p class="copyright-item">
+      <span>来源: </span>
+      <a href="https://nslyx.github.io">https://nslyx.github.io</a>
+    </p>
+    <p class="copyright-item">
+      <span>链接: </span>
+      <a href="https://nslyx.github.io/2017/09/04/shell-command/">https://nslyx.github.io/2017/09/04/shell-command/</a>
+    </p>
+
+    <p class="copyright-item lincese">
+      
+      本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
 
     
 
     
   </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/08/03/linux-mixed/">Linux 学习笔记</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Aug 3, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>Linux 系统，话说我也不知道该怎么说这玩意，反正就是用着用着就不想它是个什么东西了，只要记住是个操作系统就行了，跟 windows 性质一样，是个计算机系统。Linux 属于 unix 派系，下面的分支众多，反正常用的(我听说过的)也就几种，因为一大堆乱七八糟的理由，这玩意普遍用作服务端系统，里面有很多道道是需要掌握和学习的，了解了这玩意儿，就会发现与之前 玩windows时 被灌输的诸多认知有多么大的差异。</p>
-<h2 id="vim-编辑器"><a href="#vim-编辑器" class="headerlink" title="vim 编辑器"></a>vim 编辑器</h2><pre><code>话说 vi 与 vim  不是一回事，虽然时常有人 将 vim 命令 alias 成 vi, 但是不一样就是不一样。
-</code></pre><p>vim 的配置文件为 ～／.vimrc 这里可以对vim 进行配置，如果没有该文件，可自行创建.<br>我常用的简单配置如下，这时的配色是默认的。配色文件在 /usr/share/vim/vim74/colors/ 里面 ，  不同版本的数字可能不一样，指定配色文件只需要 在配置文件中加上<code>colorscheme  file_name</code>即可，file_name 不含<code>.vim</code>后缀。然后应该就会在下次使用vim命令时生效。就是这样子。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">set tabstop=4</div><div class="line">set shiftwidth=4</div><div class="line">set expandtab</div><div class="line">set autoindent</div><div class="line"></div><div class="line">set cindent</div><div class="line">set modeline</div><div class="line">set ruler</div><div class="line">set showcmd</div><div class="line">set  nu</div><div class="line">set showfulltag</div><div class="line">set showmode</div><div class="line">set smartcase</div><div class="line">set smartindent</div><div class="line">set imcmdline</div><div class="line">set previewwindow</div><div class="line">set hlsearch</div><div class="line">syntax on</div></pre></td></tr></table></figure></p>
-
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/08/01/daily-2017-08-01/">daily-2017-08-01</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Aug 1, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>买的服务器快到期了，一直以来都没能充分利用上，在思考要不要续下去。Coding 现在也收费了，送的钻石会员也没几天了，一堆陈旧的没嚼透的代码都扔在上面，不久后或许就不能正常访问了，以前整理过，背过的知识点又经历了一次漫长的遗忘，不知道什么时候能捡起来，而这段时间又经受了一波知识轰炸，还没融汇贯通，只感觉脑袋中乱糟糟一团东西，并且电脑上也堆积了许多的未整理的网页书签和参考项目代码有待梳理消减，还有就是王者荣耀掉段也掉的心塞。或许是时候强制一波打理了，希望能有所收获，加油。</p>
-
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/07/17/jenkins/">jenkins</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Jul 17, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h1 id="Jenkins-持续集成解决方案"><a href="#Jenkins-持续集成解决方案" class="headerlink" title="Jenkins - 持续集成解决方案"></a>Jenkins - 持续集成解决方案</h1><pre><code>一样是可以使用的东西，
-</code></pre>
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
-    
-      <a class="next" href="/page/2/">
-        <span class="next-text">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    
-  </nav>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
         </div>  
       </main>
 
