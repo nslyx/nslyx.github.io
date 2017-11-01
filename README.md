@@ -1,6 +1,9 @@
 # nslyx.github.io
 
 ### Branches Description
-    Deploy      master  
+    Static:
+    Deploy      master 
+    
+    Source(without posts):
     Root        hexo
     AddTheme    hexo-{ThemeName}
