@@ -1,85 +1,11 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="TypeScriptTypeScript是一种由微软开发的自由和开源的编程语言。它是JavaScript的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。">
+  <title>TypeScript | Nslyx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="TypeScriptTypeScript是一种由微软开发的自由和开源的编程语言。它是JavaScript的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TypeScript">
 <meta property="og:url" content="http://yoursite.com/2017/03/09/typescript/index.html">
@@ -89,216 +15,75 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TypeScript">
 <meta name="twitter:description" content="TypeScriptTypeScript是一种由微软开发的自由和开源的编程语言。它是JavaScript的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2017/03/09/typescript/"/>
-
-
-
-
-
-  <title>TypeScript | Nslyx</title>
   
-
-
-
-
-
-
-
+    <link rel="alternate" href="/atom.xml" title="Nslyx" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-    
-    <a href="https://github.com/nslyx/nslyx.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Nslyx</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Nslyx</a>
+      </h1>
+      
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
   </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-typescript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/09/typescript/" class="article-date">
+  <time datetime="2017-03-09T11:59:15.000Z" itemprop="datePublished">2017-03-09</time>
+</a>
+    
   </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Startseite
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archiv
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+  <div class="article-inner">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/09/typescript/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
     
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">TypeScript</h1>
-        
+  
+    <h1 class="article-title" itemprop="name">
+      TypeScript
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-09T19:59:15+08:00">
-                2017-03-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
+    <div class="article-entry" itemprop="articleBody">
       
         <h1 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h1><p>TypeScript是一种由微软开发的自由和开源的编程语言。<br>它是JavaScript的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。</p>
 <a id="more"></a>
@@ -306,336 +91,141 @@
 <h2 id="tsc-h"><a href="#tsc-h" class="headerlink" title="tsc -h"></a>tsc -h</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$tsc</span> -h</div><div class="line">Version 2.2.1</div><div class="line">Syntax:   tsc [options] [file ...]</div><div class="line"></div><div class="line">Examples: tsc hello.ts</div><div class="line">          tsc --outFile file.js file.ts</div><div class="line">          tsc @args.txt</div><div class="line"></div><div class="line">Options:</div><div class="line"> --allowJs                                          Allow javascript files to be compiled.</div><div class="line"> --allowSyntheticDefaultImports                     Allow default imports from modules with no default <span class="built_in">export</span>. This does not affect code emit, just typechecking.</div><div class="line"> --allowUnreachableCode                             Do not report errors on unreachable code.</div><div class="line"> --allowUnusedLabels                                Do not report errors on unused labels.</div><div class="line"> --alwaysStrict                                     Parse <span class="keyword">in</span> strict mode and emit <span class="string">"use strict"</span> <span class="keyword">for</span> each <span class="built_in">source</span> file</div><div class="line"> --baseUrl                                          Base directory to resolve non-absolute module names.</div><div class="line"> -d, --declaration                                  Generates corresponding <span class="string">'.d.ts'</span> file.</div><div class="line"> --experimentalDecorators                           Enables experimental support <span class="keyword">for</span> ES7 decorators.</div><div class="line"> --forceConsistentCasingInFileNames                 Disallow inconsistently-cased references to the same file.</div><div class="line"> -h, --<span class="built_in">help</span>                                         Print this message.</div><div class="line"> --importHelpers                                    Import emit helpers from <span class="string">'tslib'</span>.</div><div class="line"> --init                                             Initializes a TypeScript project and creates a tsconfig.json file.</div><div class="line"> --jsx KIND                                         Specify JSX code generation: <span class="string">'preserve'</span>, <span class="string">'react-native'</span>, or <span class="string">'react'</span></div><div class="line"> --jsxFactory                                       Specify the JSX factory <span class="keyword">function</span> to use when targeting <span class="string">'react'</span> JSX emit, e.g. <span class="string">'React.createElement'</span> or <span class="string">'h'</span>.</div><div class="line"> --lib                                              Specify library files to be included <span class="keyword">in</span> the compilation: </div><div class="line">                                                      <span class="string">'es5'</span> <span class="string">'es6'</span> <span class="string">'es2015'</span> <span class="string">'es7'</span> <span class="string">'es2016'</span> <span class="string">'es2017'</span> <span class="string">'dom'</span> <span class="string">'dom.iterable'</span> <span class="string">'webworker'</span> <span class="string">'scripthost'</span> <span class="string">'es2015.core'</span> <span class="string">'es2015.collection'</span> <span class="string">'es2015.generator'</span> <span class="string">'es2015.iterable'</span> <span class="string">'es2015.promise'</span> <span class="string">'es2015.proxy'</span> <span class="string">'es2015.reflect'</span> <span class="string">'es2015.symbol'</span> <span class="string">'es2015.symbol.wellknown'</span> <span class="string">'es2016.array.include'</span> <span class="string">'es2017.object'</span> <span class="string">'es2017.sharedmemory'</span> <span class="string">'es2017.string'</span> </div><div class="line"> --mapRoot LOCATION                                 Specify the location <span class="built_in">where</span> debugger should locate map files instead of generated locations.</div><div class="line"> --maxNodeModuleJsDepth                             The maximum dependency depth to search under node_modules and load JavaScript files</div><div class="line"> -m KIND, --module KIND                             Specify module code generation: <span class="string">'commonjs'</span>, <span class="string">'amd'</span>, <span class="string">'system'</span>, <span class="string">'umd'</span> or <span class="string">'es2015'</span></div><div class="line"> --moduleResolution STRATEGY                        Specify module resolution strategy: <span class="string">'node'</span> (Node.js) or <span class="string">'classic'</span> (TypeScript pre-1.6).</div><div class="line"> --newLine NEWLINE                                  Specify the end of line sequence to be used when emitting files: <span class="string">'CRLF'</span> (dos) or <span class="string">'LF'</span> (unix).</div><div class="line"> --noEmit                                           Do not emit outputs.</div><div class="line"> --noEmitOnError                                    Do not emit outputs <span class="keyword">if</span> any errors were reported.</div><div class="line"> --noFallthroughCasesInSwitch                       Report errors <span class="keyword">for</span> fallthrough cases <span class="keyword">in</span> switch statement.</div><div class="line"> --noImplicitAny                                    Raise error on expressions and declarations with an implied <span class="string">'any'</span> <span class="built_in">type</span>.</div><div class="line"> --noImplicitReturns                                Report error when not all code paths <span class="keyword">in</span> <span class="keyword">function</span> <span class="built_in">return</span> a value.</div><div class="line"> --noImplicitThis                                   Raise error on <span class="string">'this'</span> expressions with an implied <span class="string">'any'</span> <span class="built_in">type</span>.</div><div class="line"> --noImplicitUseStrict                              Do not emit <span class="string">'use strict'</span> directives <span class="keyword">in</span> module output.</div><div class="line"> --noUnusedLocals                                   Report errors on unused locals.</div><div class="line"> --noUnusedParameters                               Report errors on unused parameters.</div><div class="line"> --outDir DIRECTORY                                 Redirect output structure to the directory.</div><div class="line"> --outFile FILE                                     Concatenate and emit output to single file.</div><div class="line"> --preserveConstEnums                               Do not erase const enum declarations <span class="keyword">in</span> generated code.</div><div class="line"> --pretty                                           Stylize errors and messages using color and context. (experimental)</div><div class="line"> -p FILE OR DIRECTORY, --project FILE OR DIRECTORY  Compile the project given the path to its configuration file, or to a folder with a <span class="string">'tsconfig.json'</span></div><div class="line"> --reactNamespace                                   Specify the object invoked <span class="keyword">for</span> createElement and __spread when targeting <span class="string">'react'</span> JSX emit</div><div class="line"> --removeComments                                   Do not emit comments to output.</div><div class="line"> --rootDir LOCATION                                 Specify the root directory of input files. Use to control the output directory structure with --outDir.</div><div class="line"> --skipLibCheck                                     Skip <span class="built_in">type</span> checking of declaration files.</div><div class="line"> --sourceMap                                        Generates corresponding <span class="string">'.map'</span> file.</div><div class="line"> --sourceRoot LOCATION                              Specify the location <span class="built_in">where</span> debugger should locate TypeScript files instead of <span class="built_in">source</span> locations.</div><div class="line"> --strictNullChecks                                 Enable strict null checks.</div><div class="line"> --suppressImplicitAnyIndexErrors                   Suppress noImplicitAny errors <span class="keyword">for</span> indexing objects lacking index signatures.</div><div class="line"> -t VERSION, --target VERSION                       Specify ECMAScript target version: <span class="string">'ES3'</span> (default), <span class="string">'ES5'</span>, <span class="string">'ES2015'</span>, <span class="string">'ES2016'</span>, <span class="string">'ES2017'</span>, or <span class="string">'ESNEXT'</span></div><div class="line"> --traceResolution                                  Enable tracing of the name resolution process.</div><div class="line"> --types                                            Type declaration files to be included <span class="keyword">in</span> compilation.</div><div class="line"> -v, --version                                      Print the compiler<span class="string">'s version.</span></div><div class="line"><span class="string"> -w, --watch                                        Watch input files.</span></div><div class="line"><span class="string"> @&lt;file&gt;                                            Insert command line options and files from a file.</span></div></pre></td></tr></table></figure>
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/03/08/phpstorm/" rel="next" title="PhpStorm">
-                <i class="fa fa-chevron-left"></i> PhpStorm
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/09/commonjs/" rel="prev" title="CommonJS">
-                CommonJS <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/09/typescript/" data-id="cja9bl26v001fha3cevoq3s5h" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
     
-    <div class="sidebar-inner">
+<nav id="article-nav">
+  
+    <a href="/2017/03/09/commonjs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CommonJS
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/08/phpstorm/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">PhpStorm</div>
+    </a>
+  
+</nav>
 
-      
+  
+</article>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/c1/">c1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/tag1/">tag1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/tag1/" style="font-size: 10px;">tag1</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/17/coffee-tasting/">About Coffee ~</a>
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+        
+          <li>
+            <a href="/2017/11/09/verify/">验证</a>
           </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">zhang xiaotian</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">51</span>
-                  <span class="site-state-item-name">Artikel</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TypeScript"><span class="nav-number">1.</span> <span class="nav-text">TypeScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-number">1.1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tsc-h"><span class="nav-number">1.2.</span> <span class="nav-text">tsc -h</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
+        
+          <li>
+            <a href="/2017/11/06/sip/">Linux 下通过域名获取ip</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/02/vim/">vim</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/02/dev-language/">开发语言</a>
+          </li>
+        
+      </ul>
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">zhang xiaotian</span>
-
-  
-</div>
-
-
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
+</aside>
+        
+      </div>
+      <footer id="footer">
   
-
-
-
-
-
-
-
-
-
-
-
-
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 zhang xiaotian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
+    <a href="/" class="mobile-nav-link">Home</a>
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+</nav>
+    
 
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+<script src="/js/script.js"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+  </div>
 </body>
 </html>

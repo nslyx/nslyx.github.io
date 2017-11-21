@@ -1,802 +1,446 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
+  <title>Nslyx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Nslyx">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Nslyx">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nslyx">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
-
-  <title>Nslyx</title>
   
-
-
-
-
-
-
-
+    <link rel="alternate" href="/atom.xml" title="Nslyx" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-    
-    <a href="https://github.com/nslyx/nslyx.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Nslyx</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Nslyx</a>
+      </h1>
+      
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
   </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-coffee-tasting" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/17/coffee-tasting/" class="article-date">
+  <time datetime="2017-11-17T01:30:16.000Z" itemprop="datePublished">2017-11-17</time>
+</a>
+    
   </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Startseite
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archiv
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/02/dev-language/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
     
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/02/dev-language/" itemprop="url">开发语言</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/17/coffee-tasting/">About Coffee ~</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-02T10:37:43+08:00">
-                2017-11-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
+        <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>接触了一段时间的咖啡，记录点相关的知识。</p>
+<h1 id="咖啡种类"><a href="#咖啡种类" class="headerlink" title="咖啡种类"></a>咖啡种类</h1><p>1、浓缩咖啡（Espresso）<br>浓缩咖啡即是意大利特浓咖啡，味苦但浓香。 浓缩咖啡（Espresso）》》》<br>2、玛奇朵（Espresso Macchiato）<br>玛奇朵经常会在浓缩咖啡的基础上加上一层奶泡，甜甜的奶泡冲淡了浓缩咖啡的苦涩味。 玛奇朵（Espresso Macchiato）》》》<br>3、美式咖啡（Americano）<br>美式咖啡是采用虹吸壶、法压壶等等制作出来的黑咖啡，同时也可以在浓缩咖啡中加入大量的水制作而成，口味比较淡。 美式咖啡（Americano）》》》<br>4、白咖啡（Flat White）<br>白咖啡不是说这个咖啡是白色，而是在浓缩咖啡上加入牛奶制作而成，充满奶香味而不伤胃。 白咖啡（Flat White）》》》<br>5、拿铁（Caffè Latte）<br>在浓缩咖啡上加入接近沸腾的牛奶就好，牛奶可多可少，看个人喜好。 拿铁（Caffè Latte）》》》<br>6、康宝蓝（Espresso Con Panna）<br>康宝蓝即是在浓缩咖啡上加上一层奶油。<br>7、布雷卫/半拿铁（Cafe Breve）<br>这种咖啡是在浓缩咖啡上加入半牛奶半奶油的混合物，或者再加入少许的奶泡。<br>8、卡布奇诺（Cappuccino）<br>卡布奇诺是由浓缩咖啡、蒸汽牛奶、泡沫牛奶各用三分之一制作而成。 卡布奇诺（Cappuccino）》》》<br>9、摩卡（Caffè Mocha）<br>这种古老的咖啡是由浓缩咖啡、巧克力浆、奶油以及牛奶混合而成，听起来就非常好喝啊。 摩卡（Caffè Mocha）》》》<br>10、焦糖玛奇朵（Caramel Macchiato）<br>就是加了焦糖的玛奇朵，在热乎乎的牛奶里加入浓缩咖啡、香草最后加入焦糖而成。 焦糖玛奇朵（Caramel Macchiato）》》》<br>11、爱尔兰咖啡（Irish Coffee）<br>带有酒味的咖啡，内含爱尔兰威士忌。 爱尔兰咖啡（Irish Coffee）》》》<br>12、维也纳咖啡（Viennese Coffee）<br>在温热的咖啡底撒上砂糖，接着倒入滚烫的黑咖啡，最后在咖啡表面放上装饰的奶油就可以啦。 维也纳咖啡（Viennese Coffee）》》》</p>
+<h1 id="味觉的认知"><a href="#味觉的认知" class="headerlink" title="味觉的认知"></a>味觉的认知</h1><p>基本味觉主要为甜咸酸苦四种，这四种为普遍承认，鲜味是后话。辣是刺激，属于触觉。<br>在四种基本味觉中，人对咸味的感觉最快，对苦味的感觉最慢，但就人对味觉的敏感性来讲，苦味比其他味觉都敏感，更容易被觉察<br>阈值：感受到某中成为物质的味觉所需要的该物质的最低浓度。常温下蔗糖（甜）为0.1%，氯化钠（咸）0.05%，柠檬酸（酸）0.0025%，硫酸奎宁（苦）0.0001%。<br>根据阈值的测定方法的不同，又可将阈值分为：<br>绝对阈值：是指人从感觉某种物质的味觉从无到有的刺激量。<br>差别阈值：是指人感觉某种物质的味觉有显著差别的 刺激量的差值。<br>最终阈值：是指人感觉某种物质的刺激不随刺激量的增加而增加的刺激量。</p>
+<p>糖类—甜味，酸类—酸味，盐类—咸味，生物碱—苦味。<br>成为物质必须有一定的水溶性才可能有一定的味感，完全不溶于水的物质是无味的，溶解度小于阈值的物质也是无味的。水溶性越高，味觉产生的越快，消失的也越快，一般呈现酸味、甜味、咸味的物质有较大的水溶性，而呈现苦味的物质的水溶性一般。</p>
+<h1 id="品鉴的步骤"><a href="#品鉴的步骤" class="headerlink" title="品鉴的步骤"></a>品鉴的步骤</h1><p> 干香、湿香、啜吸、回味</p>
+<h1 id="角度"><a href="#角度" class="headerlink" title="角度"></a>角度</h1><p>品鉴一款单品咖啡，主要从味觉、触觉、嗅觉三个角度来剖析它的好坏。<br>香气、醇厚&amp;轻薄、甜咸酸苦的汇聚特点形成独特的风味。</p>
+<h1 id="描述体验感受"><a href="#描述体验感受" class="headerlink" title="描述体验感受"></a>描述体验感受</h1><p>让一个不知道什么是咸的人尝盐，他是不会告诉你那是咸的。<br>首先要有基础体验，然后再就是联想体验，最终是感受的体验。</p>
+<h2 id="香气"><a href="#香气" class="headerlink" title="香气"></a>香气</h2><p>花香</p>
+<p>果香：仁果(苹果，梨)、核果(水蜜桃，油桃，李子)、浆果(猕猴桃，柿子)、聚复果(红色浆果如 草莓，树莓)、热带水果(凤梨，香蕉，荔枝，龙眼)、柑果(柠檬、橙子)、果酱果脯(果酱，蜜饯)</p>
+<p>植物：树木、蔬菜、香草(薄荷，薰衣草，莳萝，香草，黑醋栗芽孢)</p>
+<p>香料： 桂皮、丁香、胡椒、甘草</p>
+<p>菌类：蘑菇、松露</p>
+<p>动物气味： 皮革、毛发、麝香、黄油、奶油</p>
+<p>等等。</p>
+<h1 id="味觉"><a href="#味觉" class="headerlink" title="味觉"></a>味觉</h1><p>甜(舌尖)<br>咸(舌边前)<br>酸(舌边后)<br>苦(舌根)</p>
+<p>鲜<br>腻</p>
+<h1 id="触觉"><a href="#触觉" class="headerlink" title="触觉"></a>触觉</h1><p>油脂感<br>滑<br>涩</p>
+<p>醇<br>淡</p>
+<p>辣</p>
+<p>  淡 甘 涩 辛 鲜 腻 味道 滋味 鲜味 美味 异味 五味 焦味 甜蜜 甜美 甘甜 香甜 甘美 苦涩 苦水 辛辣 麻辣 清淡 可口 适口 爽口 醇厚 浓郁 清醇 甜滋滋 甜丝丝 甜津津 甜腻腻 酸溜溜 甘之如饴 酸不溜丢 美味可口 甜酸苦辣 五味俱全 香甜可口 香甜酥脆 又苦又涩 喷香 馨香 清香 浓香 花香 果香 稻香 草香 饭香 檀香 菜香 沉香 奇香 香泽 芳泽 馥郁 浓郁 芬芳 芳菲 异香 香甜 郁烈 香喷喷 清香扑鼻 馨香阵阵 香气缕缕 四季飘香 一缕幽香 香气熏人 桂花飘香 荷花清香 茉莉芳香 玉兰郁香 芬芳馥郁 如兰之馨</p>
+<h1 id="杯测的八个原则"><a href="#杯测的八个原则" class="headerlink" title="杯测的八个原则"></a>杯测的八个原则</h1><ol>
+<li>乾净：淡的时候乾净，浓的时候更要乾净。就像一个房间，空空的很容易乾净，但是推满物品的时候也要是乾净的。</li>
+<li>主轴味道：也就是代表这个產区的特色。乾净是基础，一杯不乾净的咖啡代表著瑕疵，但是乾净的咖啡很容易变成[无味]，所以一定要有一个主轴味道。这个主轴味道是从热到冷，任何煮法，任何烘焙度都要有。不能浅焙有深焙没有或深焙有浅焙没有，煮法也是一样。</li>
+<li>位置：有味道一定有位置，如果你说了有野薑花的味道，那麼请你标出这个味道的位置，如果标不出来，那麼这个味道可能只是杯测报告的文字叙述，被你想像出来而已。</li>
+<li>移动路径：味道不会只固定在某个位置，味道是会移动的。如果固定在某位置那麼这个味道就是[死]的，如果从头到尾都是那个味道不会变化那也是[死]的。好的咖啡是[活]的，会在每一个有感觉的位置留下足跡。</li>
+<li>层次：[层]是阶层排列，[次]是有秩序。就是有秩序的排列。[层次]至少包括8类，浓淡、深浅、轻重、强弱、厚薄、宽窄、刚柔、黏稀。</li>
+<li>丰富度与复杂度：所谓的[丰富度]–丰者美也多也，富者多而足也，指[充足而美好的味道]，[复杂度]，复者重也，杂者乱也，意指[类似而杂乱的味道]。都是好的味道叫做[丰富]，五味杂陈的叫做[复杂]。</li>
+<li>质感：所谓的质感是指—气质，个性，质地，触感等等。如果用布料来比喻就会比较清楚–綾、罗、绸、缎，丝、绒，棉、麻、开丝米龙、羊毛、亚克力丝(裡布)、聚脂纤维等等，不同的材料有不同的质感个性，当中也区分出高级、普通，华丽、简洁，优雅、粗旷等等。</li>
+<li>协调：所谓的[协调]是指–有天有地，有前有后，有上有下，有头有尾，有左有右。</li>
+</ol>
+<h1 id="打分标准"><a href="#打分标准" class="headerlink" title="打分标准"></a>打分标准</h1><p>自从美国SCAA 精品咖啡学会 推广杯评（cupping） 标准以来， 是有明确的打分方法的， 公认的打分标准是从：嗅觉，包括干香，湿香， 味觉， 酸甜苦咸的平衡， 口感， 顺滑还是粗糙，以及后味（喝完咖啡后的余韵） 来评价一杯咖啡。espresso的评价和单品类似，但是因为espreso对口感（mouthfeel/body） 的要求更高一些， 对香气的要求较单品咖啡为弱（混豆，重烘培在香气上会有较大损失）</p>
+<p>作者：知乎用户<br>链接：<a href="https://www.zhihu.com/question/19550911/answer/15818197" target="_blank" rel="external">https://www.zhihu.com/question/19550911/answer/15818197</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://www.zhihu.com/question/22679371" target="_blank" rel="external">知乎：如何品鉴一款单品咖啡？</a><br><a href="https://www.chalook.net/doc/201607/4710.shtml" target="_blank" rel="external">咖啡种类介绍</a><br><a href="http://www.coffeebug.org/knowledge/cupping/2013/1014/38.html" target="_blank" rel="external">杯测时评判咖啡的八个原则</a></p>
 
-      
-        
-          <p>想总概一下编程语言，<br>却发现学识尚浅。<br>也罢，毕竟学海无涯，<br>唯有边学边记…</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/02/dev-language/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/17/coffee-tasting/" data-id="cja9bl23u0003ha3cxllwm81n" class="article-share-link">Share</a>
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-verify" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/09/verify/" class="article-date">
+  <time datetime="2017-11-09T02:42:13.000Z" itemprop="datePublished">2017-11-09</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/01/full-stack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/01/full-stack/" itemprop="url">Full Stack Developer</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/09/verify/">验证</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-01T11:57:09+08:00">
-                2017-11-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
+        <h1 id="字符串验证"><a href="#字符串验证" class="headerlink" title="字符串验证"></a>字符串验证</h1><h2 id="身份证号码验证算法"><a href="#身份证号码验证算法" class="headerlink" title="身份证号码验证算法"></a>身份证号码验证算法</h2><p>参考：<a href="cnblogs.com/xudong-bupt/p/3293838.html">旭东的博客-身份证号码验证算法</a> </p>
 
-      
-        
-          <p>How can I be a Full Stack Developer ? </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/01/full-stack/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/09/verify/" data-id="cja9bl26w001hha3cod32ghcl" class="article-share-link">Share</a>
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-sip" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/06/sip/" class="article-date">
+  <time datetime="2017-11-06T07:44:41.000Z" itemprop="datePublished">2017-11-06</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/31/hexo/" itemprop="url">Hexo</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/06/sip/">Linux 下通过域名获取ip</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T17:46:09+08:00">
-                2017-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;  </span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netdb.h&gt;  </span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span>  </span></div><div class="line"><span class="function"></span>&#123;  </div><div class="line">        <span class="keyword">if</span> (argc != <span class="number">2</span>)  </div><div class="line">        &#123;  </div><div class="line">                        <span class="built_in">printf</span>(<span class="string">"Usage:%s domain_name\n"</span>, argv[<span class="number">0</span>]);  </div><div class="line">                        <span class="keyword">return</span> <span class="number">1</span>;  </div><div class="line">                &#125;  </div><div class="line">  </div><div class="line">  </div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">hostent</span> *<span class="title">he</span>;</span>   </div><div class="line">        he = gethostbyname( argv[<span class="number">1</span>] );  </div><div class="line">        <span class="keyword">char</span> destIP[<span class="number">128</span>];  </div><div class="line">        <span class="keyword">char</span> **phe = <span class="literal">NULL</span>;  </div><div class="line">        <span class="keyword">for</span>( phe=he-&gt;h_addr_list ; <span class="literal">NULL</span> != *phe ; ++phe )&#123;  </div><div class="line">                        inet_ntop(he-&gt;h_addrtype,*phe,destIP,<span class="keyword">sizeof</span>(destIP));  </div><div class="line">                        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,destIP);  </div><div class="line">          </div><div class="line">          </div><div class="line">                &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -o gh gh.c</div></pre></td></tr></table></figure>
+<h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><p>./gh 域名</p>
+<h1 id="原文地址"><a href="#原文地址" class="headerlink" title="原文地址"></a>原文地址</h1><p><a href="http://blog.csdn.net/zzz_781111/article/details/7372247" target="_blank" rel="external">linux 通过域名获得ip</a></p>
 
       
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/06/sip/" data-id="cja9bl26u001eha3cvlgnb5h3" class="article-share-link">Share</a>
       
+      
+    </footer>
+  </div>
+  
+</article>
 
+
+  
+    <article id="post-vim" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/02/vim/" class="article-date">
+  <time datetime="2017-11-02T04:28:27.000Z" itemprop="datePublished">2017-11-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/vim/">vim</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         
-          
-            <p>在 GitHub 上用 Hexo 构建了自己的 Blog ，整体都挺好，就怕某天 GFW 不让上这个，没事还得多学习如何科学上网～～<br>好吧，废话偏多，这里记录下使用 heox 的一些点，慢慢的维护吧。</p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/02/vim/" data-id="cja9bl26x001jha3cj9coa6z1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-dev-language" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/02/dev-language/" class="article-date">
+  <time datetime="2017-11-02T02:37:43.000Z" itemprop="datePublished">2017-11-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/dev-language/">开发语言</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>想总概一下编程语言，<br>却发现学识尚浅。<br>也罢，毕竟学海无涯，<br>唯有边学边记…</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/11/02/dev-language/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/02/dev-language/" data-id="cja9bl23x0006ha3ctni8k51p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-full-stack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/01/full-stack/" class="article-date">
+  <time datetime="2017-11-01T03:57:09.000Z" itemprop="datePublished">2017-11-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/01/full-stack/">Full Stack Developer</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>How can I be a Full Stack Developer ? </p>
+        
+          <p class="article-more-link">
+            <a href="/2017/11/01/full-stack/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/01/full-stack/" data-id="cja9bl23y0007ha3ctxh7kdhb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/31/hexo/" class="article-date">
+  <time datetime="2017-10-31T09:46:09.000Z" itemprop="datePublished">2017-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/31/hexo/">Hexo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Hexo-是什么"><a href="#Hexo-是什么" class="headerlink" title="Hexo 是什么"></a>Hexo 是什么</h1><h1 id="TA可以做什么"><a href="#TA可以做什么" class="headerlink" title="TA可以做什么"></a>TA可以做什么</h1><p>在 GitHub 上用 Hexo 构建了自己的 Blog ，整体都挺好，就怕某天 GFW 不让上这个，没事还得多学习如何科学上网～～<br>好吧，废话偏多，这里记录下使用 heox 的一些点，慢慢的维护吧。</p>
+<h1 id="Hexo-Blog-榜样"><a href="#Hexo-Blog-榜样" class="headerlink" title="Hexo Blog 榜样"></a>Hexo Blog 榜样</h1><p>我学习搞这东西的时候它已经不是什么新鲜的玩意儿了，网上有一堆优秀的应用案例，下面是我发现的，值得学习和借鉴～后续有新发现也会加入这个List：</p>
+<ul>
+<li><a href="http://shenzekun.cn/" target="_blank" rel="external">Moorez</a></li>
+<li><a href="https://www.ezlippi.com/" target="_blank" rel="external">ezlippi</a></li>
+</ul>
 <h2 id="主题样式"><a href="#主题样式" class="headerlink" title="主题样式"></a>主题样式</h2><ul>
 <li><a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">GitHub Ribbons</a></li>
 </ul>
+<h2 id="参考学习"><a href="#参考学习" class="headerlink" title="参考学习"></a>参考学习</h2><p><a href="https://www.ezlippi.com/blog/2017/02/hexo-search.html" target="_blank" rel="external">hexo  站内搜索</a></p>
 
-          
-        
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/31/hexo/" data-id="cja9bl24b000iha3cbwipen38" class="article-share-link">Share</a>
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-excel" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/31/excel/" class="article-date">
+  <time datetime="2017-10-31T08:40:12.000Z" itemprop="datePublished">2017-10-31</time>
+</a>
     
-      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c1/">c1</a>
+  </div>
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/excel/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/31/excel/" itemprop="url">Excel</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/31/excel/">Excel</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T16:40:12+08:00">
-                2017-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
-
-      
+        <h2 id="Excel-相关的记录"><a href="#Excel-相关的记录" class="headerlink" title="Excel 相关的记录"></a>Excel 相关的记录</h2>
         
-          <h2 id="Excel-相关的记录"><a href="#Excel-相关的记录" class="headerlink" title="Excel 相关的记录"></a>Excel 相关的记录</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/31/excel/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          <p class="article-more-link">
+            <a href="/2017/10/31/excel/#more">Read More</a>
+          </p>
         
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/31/excel/" data-id="cja9bl244000eha3cp5ftp98d" class="article-share-link">Share</a>
       
       
-        <div class="post-eof"></div>
-      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tag1/">tag1</a></li></ul>
+
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/31/vue/" class="article-date">
+  <time datetime="2017-10-31T02:13:06.000Z" itemprop="datePublished">2017-10-31</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/31/vue/" itemprop="url">Vue.js</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/31/vue/">Vue.js</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T10:13:06+08:00">
-                2017-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
-
-      
-        
-          
-            <h1 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h1><p><a href="https://cn.vuejs.org" target="_blank" rel="external">官网 cn.vuejs.org</a> </p>
+        <h1 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h1><p><a href="https://cn.vuejs.org" target="_blank" rel="external">官网 cn.vuejs.org</a> </p>
 <p><a href="https://ssr.vuejs.org/zh/" target="_blank" rel="external">服务端渲染指南</a></p>
 <p>Vue:<a href="http://www.runoob.com/w3cnote/vue-js-quickstart.html" target="_blank" rel="external">菜鸟教程</a>、<a href="http://wiki.jikexueyuan.com/project/vue-js/" target="_blank" rel="external">极客学院</a></p>
 <h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用 node.js 构建 或者 在页面中直接引入 </span></div><div class="line">&lt;script src=<span class="string">"https://unpkg.com/vue"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
@@ -804,899 +448,166 @@
 <h2 id="Notes-for-Bulid-Backend-with-Vue-js"><a href="#Notes-for-Bulid-Backend-with-Vue-js" class="headerlink" title="Notes for Bulid Backend with  Vue.js"></a>Notes for Bulid Backend with  Vue.js</h2><p>Vue 相关资源：<br>wesomes <a href="https://www.awesomes.cn/subject/vue#应用-框架" target="_blank" rel="external">Vue专题</a><br><a href="http://vue.ydui.org/" target="_blank" rel="external">YDUI</a>:一只基于Vue2.x的移动端&amp;微信UI</p>
 <p>Vue 后台管理系统模版：<a href="http://blog.gdfengshuo.com/example/work" target="_blank" rel="external">gdfengshuo</a>、<a href="http://cangdu.org/manage/" target="_blank" rel="external">cangdu</a>、<a href="https://luosijie.github.io/vue-manager" target="_blank" rel="external">VUEMANAGER</a></p>
 
-          
-        
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/31/vue/" data-id="cja9bl26y001kha3c40gjes4t" class="article-share-link">Share</a>
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-linux-orders" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/30/linux-orders/" class="article-date">
+  <time datetime="2017-10-30T07:17:45.000Z" itemprop="datePublished">2017-10-30</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/30/linux-orders/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/30/linux-orders/" itemprop="url">linux-orders</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/30/linux-orders/">Linux 命令笔记</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-30T15:17:45+08:00">
-                2017-10-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
+        <h1 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h1><p>tailf<br>set paste<br>set nopaste</p>
 
-      
-        
-          
-            <h1 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h1><p>tailf<br>set paste<br>set nopaste</p>
-
-          
-        
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/30/linux-orders/" data-id="cja9bl24j000qha3c6jzc314x" class="article-share-link">Share</a>
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
-
-    
-      
 
   
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/30/mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/30/mysql/" itemprop="url">MySQL - Sth</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-30T14:49:44+08:00">
-                2017-10-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="MySQL-命令"><a href="#MySQL-命令" class="headerlink" title="MySQL 命令"></a>MySQL 命令</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">select @@sql_mode;</div><div class="line">set global sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</div><div class="line">set session sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</div><div class="line"></div><div class="line"></div><div class="line">GRANT ALL PRIVILEGES ON iread.* TO &apos;iread&apos;@&apos;%&apos; IDENTIFIED BY &apos;aXJlYWRwYXNz&apos; WITH GRANT OPTION;</div><div class="line">GRANT ALL PRIVILEGES ON iread.* TO &apos;iread&apos;@&apos;%&apos; IDENTIFIED BY &apos;aXJlYWRwYXNz&apos; WITH GRANT OPTION;</div></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"></div><div class="line">SPWD=workpath</div><div class="line"></div><div class="line">d=`date <span class="string">"+%Y%m%d%H%M%S"</span>`</div><div class="line"><span class="built_in">cd</span> <span class="variable">$SPWD</span></div><div class="line">/usr/bin/mysqldump -h[domain|ip] -u[user] -p<span class="string">'password'</span> dbname &gt; export_to_file.sql</div><div class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> -e <span class="string">"drop database dbname;"</span></div><div class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> -e <span class="string">"create database dbname default charset utf8mb4"</span></div><div class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> dbname &lt; <span class="variable">$SPWD</span>/import_data_file.sql</div><div class="line">mv data_bk_file.sql backup/<span class="variable">$d</span>.bk_name.sql</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/30/iterm2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/30/iterm2/" itemprop="url">iTerm2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-30T14:46:40+08:00">
-                2017-10-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>iTerm2<br>⌘ + d: 垂直分屏，<br>⌘ + shift + d: 水平分屏。<br>⌘ + ]和⌘ + [在最近使用的分屏直接切换.<br>⌘ + opt + 方向键切换到指定位置的分屏。<br>⌘ + 数字: 切换标签页。<br>⌘ + 方向键 按方向切换标签页。<br>shift + ⌘ + s: 保存当前窗口快照。<br>⌘ + opt + b: 快照回放。很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/17/data-unit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/17/data-unit/" itemprop="url">闲扯点数据/信息单位</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-17T16:55:59+08:00">
-                2017-10-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p> 话说，在电子设备泛滥现在，作为一名编程人员，我竟然一直没深刻认识了解过与信息相关的单位，实在惭愧。也罢，正好这几天对这个问题有了更清晰了解，就顺手记录一下～～</p>
-<p>从基础唠起～～，首先，单位大家都不会陌生，日常生活场景中充斥着各个单位的应用。不过还是描述下我的理解：单位呢是一种尺度，用于衡量事物，就这呗。可能在我们认知中常见的有质量单位，体积单位，时间单位等等一堆，但估计很多人都不知道实际上，在<a href="[https://baike.baidu.com/item/%E5%9B%BD%E9%99%85%E5%8D%95%E4%BD%8D%E5%88%B6/1189599?fr=aladdin#4_4">国际单位制</a>中，基础单位还是比较少的，一个维度类别可能就一个或两个基础单位。然后相关规则和基础概念这里就不再赘述了，可以自己去百度下（虽然百度搜索有时候不是很靠谱，但是有些时候还是很方便的～）。<br>拿长度单位举个例子吧，长度单位的基础单位是<code>m</code>，也就是常用的‘米’，只有这一个的，然后像是 <code>cm</code>、<code>dm</code>、<code>km</code>什么的，都是再基础单位前加上了SI前缀，每个前缀有相应的倍率，也就对基础单位进行了相应的放大或者缩小的功能（什么里，公里，或者说英寸什么的都不是国际单位制，这里不说那些）。</p>
-<p>再说数据单位，这玩意儿好像不是国际单位制里的，但是有些套路还是通用的，比如，它实际上没有多少基础单位，因为目前都是二进制计算机，所以信息数据的最底层也就是二进制数据，对应的最小的数据单位为<code>bit</code>‘位’，1bit只能存储0或1，应该是最小最基础的数据单位了，然后8bit=1B，<code>B</code>就是<code>Byte</code>字节，一个字节等于八位，这个算是第二小的单位，也是常用的基础单位，剩下的 <code>KB</code> 、<code>MB</code> 、 <code>GB</code> 、<code>TB</code>等等都是在<code>B</code>的基础上加上了前缀，因为数据的进制为2^10 即1024，所以对应就乘进制递增的样子，再大的数据单位没有了解，不知道有没有特殊情况，不过这些就是最常见的数据单位了。</p>
-<p>然后说一下1000为进制的情况，一般情况下数据单位的进制都是1024，不过再硬件生产中，为了便利往往用1000 来作为进制，这样的化在计算机上又会用1024为进制来计算大小，所以也就造成了误差，这也是为什么买到的存储介质在电脑上显示实际容量会小一些的原因之一，对原因之一，还有部分空间会被一些设备软件占用。或者还有别的原因？我也不清楚。</p>
-<p>然后提一下平时听到的网速的单位，网速单位默认的是Mb/s，看清楚，是b，对大小写很重要，8b=1B， 前面的M是前缀，所以说，这个速率大小转成MB/s需要除以8的，不要被误导了～～～<br>说了这么多，总结下，数据单位就只需要记住b和B以及进制就好，别的自己琢磨琢磨嘛～～</p>
-<p>先说到这边吧，想到别的再补充。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/04/inode/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/04/inode/" itemprop="url">inode</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-04T17:14:46+08:00">
-                2017-09-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Jenkins-构建时报错：-No-space-left-on-device"><a href="#Jenkins-构建时报错：-No-space-left-on-device" class="headerlink" title="Jenkins 构建时报错： No space left on device"></a>Jenkins 构建时报错： No space left on device</h1><p>报错的意思时磁盘上没有空间了，但是上服务器看了看，空间明明还有一堆。。。<br>这个时候就应该意识到时 inode 不足了，<code>df</code> 查看磁盘空间余量，<code>df -i</code> 查看 inode 余量。</p>
-<p>inode 感觉一般默认设置的上限是够用的，如果发生溢满就需要进行追究原因，如果是正常情况不够用了，可以考虑修改上限默认值。很明显，这里并不准备讲正常情况。<br>在服务器 <code>/var/spool/clientmqueue/</code>目录下有定时任务的输出记录文件，多数情况下 inode 是被这里的文件占用消耗完的。所以在设置定时任务的时候需要注意将不必要的输出销毁。这里的文件一般都可以之间删掉就可以释放很多inode ，没什么影响。不过因为文件数量太多，所以直接 <code>rm -rf  *</code> 会因为目录信息太大而执行不了。可以用 <code>lsattr ./|awk -F&quot;/&quot; &#39;{print $3}&#39;|xargs -i rm -rf {}</code> 命令删除，文件多删除执行时间也会比较长。<br>释放完inode 后，上述报错也就自然没有了</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
   </nav>
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
+</section>
         
-          
+          <aside id="sidebar">
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/c1/">c1</a></li></ul>
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">zhang xiaotian</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">51</span>
-                  <span class="site-state-item-name">Artikel</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">zhang xiaotian</span>
 
   
-</div>
-
-
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/tag1/">tag1</a></li></ul>
+    </div>
+  </div>
 
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/tag1/" style="font-size: 10px;">tag1</a>
+    </div>
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
 
 
   
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/17/coffee-tasting/">About Coffee ~</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/09/verify/">验证</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/06/sip/">Linux 下通过域名获取ip</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/02/vim/">vim</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/02/dev-language/">开发语言</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 
   
+</aside>
+        
+      </div>
+      <footer id="footer">
   
-
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 zhang xiaotian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
   
-
+    <a href="/" class="mobile-nav-link">Home</a>
   
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
+<script src="/js/script.js"></script>
 
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+  </div>
 </body>
 </html>

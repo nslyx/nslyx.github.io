@@ -1,640 +1,237 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="Excel 相关的记录">
+  <title>Excel | Nslyx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Excel 相关的记录">
+<meta name="keywords" content="tag1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Excel">
 <meta property="og:url" content="http://yoursite.com/2017/10/31/excel/index.html">
 <meta property="og:site_name" content="Nslyx">
 <meta property="og:description" content="Excel 相关的记录">
-<meta property="og:updated_time" content="2017-10-31T08:52:44.000Z">
+<meta property="og:updated_time" content="2017-11-02T07:30:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Excel">
 <meta name="twitter:description" content="Excel 相关的记录">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2017/10/31/excel/"/>
-
-
-
-
-
-  <title>Excel | Nslyx</title>
   
-
-
-
-
-
-
-
+    <link rel="alternate" href="/atom.xml" title="Nslyx" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-    
-    <a href="https://github.com/nslyx/nslyx.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Nslyx</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Nslyx</a>
+      </h1>
+      
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-excel" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/31/excel/" class="article-date">
+  <time datetime="2017-10-31T08:40:12.000Z" itemprop="datePublished">2017-10-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c1/">c1</a>
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
   </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Startseite
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archiv
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+  <div class="article-inner">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/excel/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
     
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">Excel</h1>
-        
+  
+    <h1 class="article-title" itemprop="name">
+      Excel
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T16:40:12+08:00">
-                2017-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
+    <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Excel-相关的记录"><a href="#Excel-相关的记录" class="headerlink" title="Excel 相关的记录"></a>Excel 相关的记录</h2><a id="more"></a>
 <h3 id="去密码保护宏"><a href="#去密码保护宏" class="headerlink" title="去密码保护宏"></a>去密码保护宏</h3><figure class="highlight v"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div></pre></td><td class="code"><pre><div class="line">Option Explicit</div><div class="line">Public Sub AllInternalPasswords()</div><div class="line">' Breaks worksheet <span class="keyword">and</span> workbook structure passwords. Bob McCormick</div><div class="line">' probably originator of base code algorithm modified <span class="keyword">for</span> coverage</div><div class="line">' of workbook structure / windows passwords <span class="keyword">and</span> <span class="keyword">for</span> multiple passwords</div><div class="line">'</div><div class="line">' Norman Harker <span class="keyword">and</span> JE McGimpsey <span class="number">27</span>-Dec-<span class="number">2002</span> (Version <span class="number">1</span><span class="variable">.1</span>)</div><div class="line">' Modified <span class="number">2003</span>-Apr-<span class="number">04</span> by JEM: All msgs to constants, <span class="keyword">and</span></div><div class="line">' eliminate one Exit Sub (Version <span class="number">1</span><span class="variable">.1</span><span class="variable">.1</span>)</div><div class="line">' Reveals hashed passwords NOT original passwords</div><div class="line">Const DBLSPACE As String = vbNewLine &amp; vbNewLine</div><div class="line">Const AUTHORS As String = DBLSPACE &amp; vbNewLine &amp; <span class="number">_</span></div><div class="line"><span class="string">"Adapted from Bob McCormick base code by"</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"Norman Harker and JE McGimpsey"</span></div><div class="line">Const HEADER As String = <span class="string">"AllInternalPasswords User Message"</span></div><div class="line">Const VERSION As String = DBLSPACE &amp; <span class="string">"Version 1.1.1 2003-Apr-04"</span></div><div class="line">Const REPBACK As String = DBLSPACE &amp; <span class="string">"Please report failure "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"to the microsoft.public.excel.programming newsgroup."</span></div><div class="line">Const ALLCLEAR As String = DBLSPACE &amp; <span class="string">"The workbook should "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"now be free of all password protection, so make sure you:"</span> &amp; <span class="number">_</span></div><div class="line">DBLSPACE &amp; <span class="string">"SAVE IT NOW!"</span> &amp; DBLSPACE &amp; <span class="string">"and also"</span> &amp; <span class="number">_</span></div><div class="line">DBLSPACE &amp; <span class="string">"BACKUP!, BACKUP!!, BACKUP!!!"</span> &amp; <span class="number">_</span></div><div class="line">DBLSPACE &amp; <span class="string">"Also, remember that the password was "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"put there for a reason. Don't stuff up crucial formulas "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"or data."</span> &amp; DBLSPACE &amp; <span class="string">"Access and use of some data "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"may be an offense. If in doubt, don't."</span></div><div class="line">Const MSGNOPWORDS1 As String = <span class="string">"There were no passwords on "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"sheets, or workbook structure or windows."</span> &amp; AUTHORS &amp; VERSION</div><div class="line">Const MSGNOPWORDS2 As String = <span class="string">"There was no protection to "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"workbook structure or windows."</span> &amp; DBLSPACE &amp; <span class="number">_</span></div><div class="line"><span class="string">"Proceeding to unprotect sheets."</span> &amp; AUTHORS &amp; VERSION</div><div class="line">Const MSGTAKETIME As String = <span class="string">"After pressing OK button this "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"will take some time."</span> &amp; DBLSPACE &amp; <span class="string">"Amount of time "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"depends on how many different passwords, the "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"passwords, and your computer's specification."</span> &amp; DBLSPACE &amp; <span class="number">_</span></div><div class="line"><span class="string">"Just be patient! Make me a coffee!"</span> &amp; AUTHORS &amp; VERSION</div><div class="line">Const MSGPWORDFOUND1 As String = <span class="string">"You had a Worksheet "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"Structure or Windows Password set."</span> &amp; DBLSPACE &amp; <span class="number">_</span></div><div class="line"><span class="string">"The password found was: "</span> &amp; DBLSPACE &amp; <span class="string">"$$"</span> &amp; DBLSPACE &amp; <span class="number">_</span></div><div class="line"><span class="string">"Note it down for potential future use in other workbooks by "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"the same person who set this password."</span> &amp; DBLSPACE &amp; <span class="number">_</span></div><div class="line"><span class="string">"Now to check and clear other passwords."</span> &amp; AUTHORS &amp; VERSION</div><div class="line">Const MSGPWORDFOUND2 As String = <span class="string">"You had a Worksheet "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"password set."</span> &amp; DBLSPACE &amp; <span class="string">"The password found was: "</span> &amp; <span class="number">_</span></div><div class="line">DBLSPACE &amp; <span class="string">"$$"</span> &amp; DBLSPACE &amp; <span class="string">"Note it down for potential "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"future use in other workbooks by same person who "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"set this password."</span> &amp; DBLSPACE &amp; <span class="string">"Now to check and clear "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"other passwords."</span> &amp; AUTHORS &amp; VERSION</div><div class="line">Const MSGONLYONE As String = <span class="string">"Only structure / windows "</span> &amp; <span class="number">_</span></div><div class="line"><span class="string">"protected with the password that was just found."</span> &amp; <span class="number">_</span></div><div class="line">ALLCLEAR &amp; AUTHORS &amp; VERSION &amp; REPBACK</div><div class="line">Dim w1 As Worksheet, w2 As Worksheet</div><div class="line">Dim i As Integer, j As Integer, k As Integer, l As Integer</div><div class="line">Dim m As Integer, n As Integer, i1 As Integer, i2 As Integer</div><div class="line">Dim i3 As Integer, i4 As Integer, i5 As Integer, i6 As Integer</div><div class="line">Dim PWord1 As String</div><div class="line">Dim ShTag As Boolean, WinTag As Boolean</div><div class="line">Application<span class="variable">.ScreenUpdating</span> = False</div><div class="line">With ActiveWorkbook</div><div class="line">WinTag = <span class="variable">.ProtectStructure</span> Or <span class="variable">.ProtectWindows</span></div><div class="line">End With</div><div class="line">ShTag = False</div><div class="line">For Each w1 In Worksheets</div><div class="line">ShTag = ShTag Or w1<span class="variable">.ProtectContents</span></div><div class="line">Next w1</div><div class="line">If Not ShTag And Not WinTag Then</div><div class="line">MsgBox MSGNOPWORDS1, vbInformation, HEADER</div><div class="line">Exit Sub</div><div class="line">End If</div><div class="line">MsgBox MSGTAKETIME, vbInformation, HEADER</div><div class="line">If Not WinTag Then</div><div class="line">MsgBox MSGNOPWORDS2, vbInformation, HEADER</div><div class="line">Else</div><div class="line">On Error Resume Next</div><div class="line">Do 'dummy <span class="keyword">do</span> loop</div><div class="line">For i = <span class="number">65</span> To <span class="number">66</span>: For j = <span class="number">65</span> To <span class="number">66</span>: For k = <span class="number">65</span> To <span class="number">66</span></div><div class="line">For l = <span class="number">65</span> To <span class="number">66</span>: For m = <span class="number">65</span> To <span class="number">66</span>: For i1 = <span class="number">65</span> To <span class="number">66</span></div><div class="line">For i2 = <span class="number">65</span> To <span class="number">66</span>: For i3 = <span class="number">65</span> To <span class="number">66</span>: For i4 = <span class="number">65</span> To <span class="number">66</span></div><div class="line">For i5 = <span class="number">65</span> To <span class="number">66</span>: For i6 = <span class="number">65</span> To <span class="number">66</span>: For n = <span class="number">32</span> To <span class="number">126</span></div><div class="line">With ActiveWorkbook</div><div class="line"><span class="variable">.Unprotect</span> Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; <span class="number">_</span></div><div class="line">Chr(l) &amp; Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; <span class="number">_</span></div><div class="line">Chr(i3) &amp; Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)</div><div class="line">If <span class="variable">.ProtectStructure</span> = False And <span class="number">_</span></div><div class="line"><span class="variable">.ProtectWindows</span> = False Then</div><div class="line">PWord1 = Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; Chr(l) &amp; <span class="number">_</span></div><div class="line">Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; Chr(i3) &amp; <span class="number">_</span></div><div class="line">Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)</div><div class="line">MsgBox Application<span class="variable">.Substitute</span>(MSGPWORDFOUND1, <span class="number">_</span></div><div class="line"><span class="string">"$$"</span>, PWord1), vbInformation, HEADER</div><div class="line">Exit Do 'Bypass all <span class="keyword">for</span>..<span class="variable">.nexts</span></div><div class="line">End If</div><div class="line">End With</div><div class="line">Next: Next: Next: Next: Next: Next</div><div class="line">Next: Next: Next: Next: Next: Next</div><div class="line">Loop Until True</div><div class="line">On Error GoTo <span class="number">0</span></div><div class="line">End If</div><div class="line">If WinTag And Not ShTag Then</div><div class="line">MsgBox MSGONLYONE, vbInformation, HEADER</div><div class="line">Exit Sub</div><div class="line">End If</div><div class="line">On Error Resume Next</div><div class="line">For Each w1 In Worksheets</div><div class="line">'Attempt clearance <span class="keyword">with</span> PWord1</div><div class="line">w1<span class="variable">.Unprotect</span> PWord1</div><div class="line">Next w1</div><div class="line">On Error GoTo <span class="number">0</span></div><div class="line">ShTag = False</div><div class="line">For Each w1 In Worksheets</div><div class="line">'Checks <span class="keyword">for</span> all clear ShTag triggered to <span class="number">1</span> <span class="keyword">if</span> <span class="keyword">not</span>.</div><div class="line">ShTag = ShTag Or w1<span class="variable">.ProtectContents</span></div><div class="line">Next w1</div><div class="line">If ShTag Then</div><div class="line">For Each w1 In Worksheets</div><div class="line">With w1</div><div class="line">If <span class="variable">.ProtectContents</span> Then</div><div class="line">On Error Resume Next</div><div class="line">Do 'Dummy <span class="keyword">do</span> loop</div><div class="line">For i = <span class="number">65</span> To <span class="number">66</span>: For j = <span class="number">65</span> To <span class="number">66</span>: For k = <span class="number">65</span> To <span class="number">66</span></div><div class="line">For l = <span class="number">65</span> To <span class="number">66</span>: For m = <span class="number">65</span> To <span class="number">66</span>: For i1 = <span class="number">65</span> To <span class="number">66</span></div><div class="line">For i2 = <span class="number">65</span> To <span class="number">66</span>: For i3 = <span class="number">65</span> To <span class="number">66</span>: For i4 = <span class="number">65</span> To <span class="number">66</span></div><div class="line">For i5 = <span class="number">65</span> To <span class="number">66</span>: For i6 = <span class="number">65</span> To <span class="number">66</span>: For n = <span class="number">32</span> To <span class="number">126</span></div><div class="line"><span class="variable">.Unprotect</span> Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; <span class="number">_</span></div><div class="line">Chr(l) &amp; Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; Chr(i3) &amp; <span class="number">_</span></div><div class="line">Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)</div><div class="line">If Not <span class="variable">.ProtectContents</span> Then</div><div class="line">PWord1 = Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; Chr(l) &amp; <span class="number">_</span></div><div class="line">Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; Chr(i3) &amp; <span class="number">_</span></div><div class="line">Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)</div><div class="line">MsgBox Application<span class="variable">.Substitute</span>(MSGPWORDFOUND2, <span class="number">_</span></div><div class="line"><span class="string">"$$"</span>, PWord1), vbInformation, HEADER</div><div class="line">'leverage finding Pword by trying on other sheets</div><div class="line">For Each w2 In Worksheets</div><div class="line">w2<span class="variable">.Unprotect</span> PWord1</div><div class="line">Next w2</div><div class="line">Exit Do 'Bypass all <span class="keyword">for</span>..<span class="variable">.nexts</span></div><div class="line">End If</div><div class="line">Next: Next: Next: Next: Next: Next</div><div class="line">Next: Next: Next: Next: Next: Next</div><div class="line">Loop Until True</div><div class="line">On Error GoTo <span class="number">0</span></div><div class="line">End If</div><div class="line">End With</div><div class="line">Next w1</div><div class="line">End If</div><div class="line">MsgBox ALLCLEAR &amp; AUTHORS &amp; VERSION &amp; REPBACK, vbInformation, HEADER</div><div class="line">End Sub</div></pre></td></tr></table></figure>
 
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/31/excel/" data-id="cja9bl244000eha3cp5ftp98d" class="article-share-link">Share</a>
       
       
-      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tag1/">tag1</a></li></ul>
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/10/31/vue/" rel="next" title="Vue.js">
-                <i class="fa fa-chevron-left"></i> Vue.js
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/31/hexo/" rel="prev" title="Hexo">
-                Hexo <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
     </footer>
   </div>
   
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
     
-    <div class="sidebar-inner">
+<nav id="article-nav">
+  
+    <a href="/2017/10/31/hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hexo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/31/vue/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue.js</div>
+    </a>
+  
+</nav>
 
-      
+  
+</article>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/c1/">c1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/tag1/">tag1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/tag1/" style="font-size: 10px;">tag1</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/17/coffee-tasting/">About Coffee ~</a>
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+        
+          <li>
+            <a href="/2017/11/09/verify/">验证</a>
           </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">zhang xiaotian</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">51</span>
-                  <span class="site-state-item-name">Artikel</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Excel-相关的记录"><span class="nav-number">1.</span> <span class="nav-text">Excel 相关的记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#去密码保护宏"><span class="nav-number">1.1.</span> <span class="nav-text">去密码保护宏</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
+        
+          <li>
+            <a href="/2017/11/06/sip/">Linux 下通过域名获取ip</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/02/vim/">vim</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/02/dev-language/">开发语言</a>
+          </li>
+        
+      </ul>
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">zhang xiaotian</span>
-
-  
-</div>
-
-
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
+</aside>
+        
+      </div>
+      <footer id="footer">
   
-
-
-
-
-
-
-
-
-
-
-
-
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 zhang xiaotian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
+    <a href="/" class="mobile-nav-link">Home</a>
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+</nav>
+    
 
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+<script src="/js/script.js"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+  </div>
 </body>
 </html>
