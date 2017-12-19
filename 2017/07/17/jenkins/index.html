@@ -192,6 +192,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -301,8 +321,8 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="https://jenkins.io/" target="_blank" rel="external">Jenkins</a> 是一个 CI(<a href="https://en.wikipedia.org/wiki/Continuous_integration" target="_blank" rel="external">Continuous integrati</a>) 工具.</p>
-<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p><a href="https://jenkins.io/doc/" target="_blank" rel="external">Jenkins User Documentation </a></p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="https://jenkins.io/" target="_blank" rel="noopener">Jenkins</a> 是一个 CI(<a href="https://en.wikipedia.org/wiki/Continuous_integration" target="_blank" rel="noopener">Continuous integrati</a>) 工具.</p>
+<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p><a href="https://jenkins.io/doc/" target="_blank" rel="noopener">Jenkins User Documentation </a></p>
 <h1 id="FQA"><a href="#FQA" class="headerlink" title="FQA"></a>FQA</h1><h2 id="构建时报错：-No-space-left-on-device"><a href="#构建时报错：-No-space-left-on-device" class="headerlink" title="构建时报错： No space left on device"></a>构建时报错： No space left on device</h2><p>报错的意思是磁盘上没有空间了，但是上服务器看了看，空间明明还有一堆。。。<br>这个时候就应该意识到时 inode 不足了，<code>df</code> 查看磁盘空间余量，<code>df -i</code> 查看 inode 余量。</p>
 <p>inode 感觉一般默认设置的上限是够用的，如果发生溢满就需要进行追究原因，如果是正常情况不够用了，可以考虑修改上限默认值。很明显，这里并不准备讲正常情况。<br>在服务器 <code>/var/spool/clientmqueue/</code>目录下有定时任务的输出记录文件，多数情况下 inode 是被这里的文件占用消耗完的。所以在设置定时任务的时候需要注意将不必要的输出销毁。这里的文件一般都可以之间删掉就可以释放很多inode ，没什么影响。不过因为文件数量太多，所以直接 <code>rm -rf  *</code> 会因为目录信息太大而执行不了。可以用 <code>lsattr ./|awk -F&quot;/&quot; &#39;{print $3}&#39;|xargs -i rm -rf {}</code> 命令删除，文件多删除执行时间也会比较长。<br>释放完inode 后，上述报错也就自然没有了</p>
 
@@ -416,7 +436,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -427,7 +447,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -438,7 +458,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -473,7 +493,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文档"><span class="nav-number">2.</span> <span class="nav-text">文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FQA"><span class="nav-number">3.</span> <span class="nav-text">FQA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构建时报错：-No-space-left-on-device"><span class="nav-number">3.1.</span> <span class="nav-text">构建时报错： No space left on device</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x7B80;&#x4ECB;" class="headerlink" title="&#x7B80;&#x4ECB;"></a>&#x7B80;&#x4ECB;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文档"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x6587;&#x6863;" class="headerlink" title="&#x6587;&#x6863;"></a>&#x6587;&#x6863;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FQA"><span class="nav-number">3.</span> <span class="nav-text"><a href="#FQA" class="headerlink" title="FQA"></a>FQA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构建时报错：-No-space-left-on-device"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x6784;&#x5EFA;&#x65F6;&#x62A5;&#x9519;&#xFF1A;-No-space-left-on-device" class="headerlink" title="&#x6784;&#x5EFA;&#x65F6;&#x62A5;&#x9519;&#xFF1A; No space left on device"></a>&#x6784;&#x5EFA;&#x65F6;&#x62A5;&#x9519;&#xFF1A; No space left on device</span></a></li></ol></li></ol></div>
             
 
           </div>

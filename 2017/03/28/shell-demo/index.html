@@ -192,6 +192,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -301,8 +321,8 @@
       
 
       
-        <h2 id="SSH-登陆脚本"><a href="#SSH-登陆脚本" class="headerlink" title="SSH 登陆脚本"></a>SSH 登陆脚本</h2><p>可以用终端登陆远程服务器的 expect 脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#! /usr/bin/expect -f</div><div class="line"></div><div class="line">set user [login name  maybe root]</div><div class="line">set host [remote host]</div><div class="line">set port 22</div><div class="line">set pass [password for login name]</div><div class="line">set timeout -1</div><div class="line"></div><div class="line">spawn ssh -p$port $user@$host</div><div class="line"></div><div class="line">expect &#123;</div><div class="line">    &quot;*(yes/no)?&quot; &#123;</div><div class="line">        send &quot;yes\r&quot;</div><div class="line">        expect &quot;$pass&quot;</div><div class="line">    &#125;   </div><div class="line">    &quot;*assword:*&quot; &#123;</div><div class="line">        send &quot;$pass\r&quot;</div><div class="line">    &#125;   </div><div class="line">&#125;</div><div class="line"></div><div class="line">interact</div></pre></td></tr></table></figure></p>
-<h2 id="SSH-映射到本地端口"><a href="#SSH-映射到本地端口" class="headerlink" title="SSH 映射到本地端口"></a>SSH 映射到本地端口</h2><p>打通一个 SSH 通道并且映射到本地的一个端口，可以支持 phpstorm 远程调试设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/expect -f</div><div class="line"></div><div class="line">set user [username]</div><div class="line">set host [host]</div><div class="line">set port 22</div><div class="line">set password [password]</div><div class="line">set timeout -1</div><div class="line"></div><div class="line">#spawn ssh -p$port $user@$host</div><div class="line">spawn ssh -R 7777:localhost:7778 -p$port $user@$host</div><div class="line"></div><div class="line">#expect &quot;*yes/no*\?&quot;</div><div class="line">#send &quot;yes\r&quot;</div><div class="line"></div><div class="line">expect &quot;*assword:*&quot;</div><div class="line">send &quot;$password\r&quot;</div><div class="line"></div><div class="line">interact</div></pre></td></tr></table></figure></p>
+        <h2 id="SSH-登陆脚本"><a href="#SSH-登陆脚本" class="headerlink" title="SSH 登陆脚本"></a>SSH 登陆脚本</h2><p>可以用终端登陆远程服务器的 expect 脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#! /usr/bin/expect -f</span><br><span class="line"></span><br><span class="line">set user [login name  maybe root]</span><br><span class="line">set host [remote host]</span><br><span class="line">set port 22</span><br><span class="line">set pass [password for login name]</span><br><span class="line">set timeout -1</span><br><span class="line"></span><br><span class="line">spawn ssh -p$port $user@$host</span><br><span class="line"></span><br><span class="line">expect &#123;</span><br><span class="line">    &quot;*(yes/no)?&quot; &#123;</span><br><span class="line">        send &quot;yes\r&quot;</span><br><span class="line">        expect &quot;$pass&quot;</span><br><span class="line">    &#125;   </span><br><span class="line">    &quot;*assword:*&quot; &#123;</span><br><span class="line">        send &quot;$pass\r&quot;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interact</span><br></pre></td></tr></table></figure></p>
+<h2 id="SSH-映射到本地端口"><a href="#SSH-映射到本地端口" class="headerlink" title="SSH 映射到本地端口"></a>SSH 映射到本地端口</h2><p>打通一个 SSH 通道并且映射到本地的一个端口，可以支持 phpstorm 远程调试设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/expect -f</span><br><span class="line"></span><br><span class="line">set user [username]</span><br><span class="line">set host [host]</span><br><span class="line">set port 22</span><br><span class="line">set password [password]</span><br><span class="line">set timeout -1</span><br><span class="line"></span><br><span class="line">#spawn ssh -p$port $user@$host</span><br><span class="line">spawn ssh -R 7777:localhost:7778 -p$port $user@$host</span><br><span class="line"></span><br><span class="line">#expect &quot;*yes/no*\?&quot;</span><br><span class="line">#send &quot;yes\r&quot;</span><br><span class="line"></span><br><span class="line">expect &quot;*assword:*&quot;</span><br><span class="line">send &quot;$password\r&quot;</span><br><span class="line"></span><br><span class="line">interact</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -414,7 +434,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -425,7 +445,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -436,7 +456,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -471,7 +491,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-登陆脚本"><span class="nav-number">1.</span> <span class="nav-text">SSH 登陆脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-映射到本地端口"><span class="nav-number">2.</span> <span class="nav-text">SSH 映射到本地端口</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-登陆脚本"><span class="nav-number">1.</span> <span class="nav-text"><a href="#SSH-&#x767B;&#x9646;&#x811A;&#x672C;" class="headerlink" title="SSH &#x767B;&#x9646;&#x811A;&#x672C;"></a>SSH &#x767B;&#x9646;&#x811A;&#x672C;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-映射到本地端口"><span class="nav-number">2.</span> <span class="nav-text"><a href="#SSH-&#x6620;&#x5C04;&#x5230;&#x672C;&#x5730;&#x7AEF;&#x53E3;" class="headerlink" title="SSH &#x6620;&#x5C04;&#x5230;&#x672C;&#x5730;&#x7AEF;&#x53E3;"></a>SSH &#x6620;&#x5C04;&#x5230;&#x672C;&#x5730;&#x7AEF;&#x53E3;</span></a></li></ol></div>
             
 
           </div>

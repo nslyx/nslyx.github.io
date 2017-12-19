@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Android简介Android(安卓系统)与IOS(苹果ios系统) 是移动端的两大系统。 ApkAndroid 的软件安装包打包格式(后缀名)是 apk。 Develop逆向Tools apktool.jar  下载最新版本就好  http://macappstore.org/jd-gui/http://blog.csdn.net/qq_16430735/article/details/500">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The World of Anoroid">
+<meta property="og:url" content="http://yoursite.com/2017/11/22/android/index.html">
+<meta property="og:site_name" content="Nslyx">
+<meta property="og:description" content="Android简介Android(安卓系统)与IOS(苹果ios系统) 是移动端的两大系统。 ApkAndroid 的软件安装包打包格式(后缀名)是 apk。 Develop逆向Tools apktool.jar  下载最新版本就好  http://macappstore.org/jd-gui/http://blog.csdn.net/qq_16430735/article/details/500">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-23T07:30:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The World of Anoroid">
+<meta name="twitter:description" content="Android简介Android(安卓系统)与IOS(苹果ios系统) 是移动端的两大系统。 ApkAndroid 的软件安装包打包格式(后缀名)是 apk。 Develop逆向Tools apktool.jar  下载最新版本就好  http://macappstore.org/jd-gui/http://blog.csdn.net/qq_16430735/article/details/500">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/22/android/"/>
+
+
+
+
+
+  <title>The World of Anoroid | Nslyx</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <a href="https://github.com/nslyx/nslyx.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nslyx</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/22/android/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">The World of Anoroid</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-22T14:46:58+08:00">
+                2017-11-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Android(安卓系统)与IOS(苹果ios系统) 是移动端的两大系统。</p>
+<h2 id="Apk"><a href="#Apk" class="headerlink" title="Apk"></a>Apk</h2><p>Android 的软件安装包打包格式(后缀名)是 apk。</p>
+<h1 id="Develop"><a href="#Develop" class="headerlink" title="Develop"></a>Develop</h1><h2 id="逆向"><a href="#逆向" class="headerlink" title="逆向"></a>逆向</h2><h3 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h3><ul>
+<li>apktool.jar  下载最新版本就好</li>
+</ul>
+<p><a href="http://macappstore.org/jd-gui/" target="_blank" rel="noopener">http://macappstore.org/jd-gui/</a><br><a href="http://blog.csdn.net/qq_16430735/article/details/50084625" target="_blank" rel="noopener">http://blog.csdn.net/qq_16430735/article/details/50084625</a><br><a href="http://blog.csdn.net/dongshengding/article/details/45064181" target="_blank" rel="noopener">http://blog.csdn.net/dongshengding/article/details/45064181</a></p>
+<p>这两天为了玩spring4.x, 要安装jdk8. 因此本文将总结下Mac上同时安装jdk6，jdk7，jdk8的方法。<br>jdk官方下载地址<br>安装目录</p>
+<ol>
+<li>MAC自带JDK6, 安装目录在：/System/Library/Java/JavaVirtualMachines/</li>
+</ol>
+<p>dingdong@dingdongdeMacBook-Air ~$ cd /System/Library/Java/JavaVirtualMachines/<br>dingdong@dingdongdeMacBook-Air JavaVirtualMachines$ ls<br>1.6.0.jdk</p>
+<ol>
+<li>用户自己安装JDK都默认安装到目录：/Library/Java/JavaVirtualMachines/<br>dingdong@dingdongdeMacBook-Air JavaVirtualMachines$ cd /Library/Java/JavaVirtualMachines/<br>dingdong@dingdongdeMacBook-Air JavaVirtualMachines$ ls<br>jdk1.7.0_67.jdk jdk1.8.0_45.jdk</li>
+</ol>
+<p>环境变量设置</p>
+<ol>
+<li>Mac系统的环境变量加载顺序为：/etc/profile -&gt; /etc/paths -&gt; ~/.bash_profile  -&gt; ~/.bash_login -&gt; ~/.profile (~/.bashrc)<br>系统启动的时候会加载/etc/profile和/etc/paths两个系统配置文件，然后会依次读~/.bash_profile ~/.bash_login ~/.profile，如果前面的文件存在，后面的文件将会被忽略。<br>然而~/.bashrc例外，它在bash shell打开的时候会被加载。<br>通常配置用户环境变量的时候都在~/.bash_profile或者~/.bashrc里面。<br>本文的例子在~/.bash_profile中做配置。</li>
+<li>如果你的系统版本是Mac OSX 10.5 及以上的版本，Apple推荐使用$(/usr/libexec/java_home)来设置环境变量,例子如下：<br>1) 显示所有jdk版本：/usr/libexec/java_home -V</li>
+</ol>
+<hr>
+<p>dingdong@dingdongdeMacBook-Air ~$ /usr/libexec/java_home -V<br>Matching Java Virtual Machines (4):<br>    1.8.0_45, x86_64: “Java SE 8” /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home<br>    1.7.0_67, x86_64: “Java SE 7” /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home<br>    1.6.0_65-b14-462, x86_64: “Java SE 6” /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home<br>    1.6.0_65-b14-462, i386: “Java SE 6” /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home</p>
+<h2 id="Library-Java-JavaVirtualMachines-jdk1-8-0-45-jdk-Contents-Home"><a href="#Library-Java-JavaVirtualMachines-jdk1-8-0-45-jdk-Contents-Home" class="headerlink" title="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"></a>/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home</h2><p>2) 在我的机器(air 10.9.4)上默认查找最新的版本: /usr/libexec/java_home</p>
+<hr>
+<p>dingdong@dingdongdeMacBook-Air ~$ /usr/libexec/java_home</p>
+<h2 id="Library-Java-JavaVirtualMachines-jdk1-8-0-45-jdk-Contents-Home-1"><a href="#Library-Java-JavaVirtualMachines-jdk1-8-0-45-jdk-Contents-Home-1" class="headerlink" title="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"></a>/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home</h2><h2 id="java-version的原理："><a href="#java-version的原理：" class="headerlink" title="java -version的原理："></a>java -version的原理：</h2><p>dingdong@dingdongdeMacBook-Air ~$ which java<br>/usr/bin/java<br>dingdong@dingdongdeMacBook-Air ~$ ls -al /usr/bin/java</p>
+<h2 id="lrwxr-xr-x-1-root-wheel-74-9-12-2014-usr-bin-java-gt-System-Library-Frameworks-JavaVM-framework-Versions-Current-Commands-java"><a href="#lrwxr-xr-x-1-root-wheel-74-9-12-2014-usr-bin-java-gt-System-Library-Frameworks-JavaVM-framework-Versions-Current-Commands-java" class="headerlink" title="lrwxr-xr-x  1 root  wheel  74  9 12  2014 /usr/bin/java -&gt; /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java"></a>lrwxr-xr-x  1 root  wheel  74  9 12  2014 /usr/bin/java -&gt; /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java</h2><p>其实当用户在shell中输入java -version的时候，会执行’/usr/bin/java’这个链接文件，如上图所示，通过实际的指向的java去查找版本号，读者可以命令行里输入:<br>/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java 查看下它的参数。<br>我的配置文件如下：</p>
+<hr>
+<p>export JAVA_6_HOME=$(/usr/libexec/java_home -v1.6)<br>export JAVA_7_HOME=$(/usr/libexec/java_home -v1.7)<br>export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)</p>
+<p>export JAVA_HOME=$JAVA_7_HOME</p>
+<p>alias jdk6=”export JAVA_HOME=$JAVA_6_HOME”<br>alias jdk7=”export JAVA_HOME=$JAVA_7_HOME”</p>
+<h2 id="alias-jdk8-”export-JAVA-HOME-JAVA-8-HOME”"><a href="#alias-jdk8-”export-JAVA-HOME-JAVA-8-HOME”" class="headerlink" title="alias jdk8=”export JAVA_HOME=$JAVA_8_HOME”"></a>alias jdk8=”export JAVA_HOME=$JAVA_8_HOME”</h2><p>我默认配置为jdk7<br>配置好保存文件，然后 source ~/.bash_profile 让配置文件生效。<br>然后打开shell，可以自由切换jdk版本了：</p>
+<p>大功告成！<br>PS: 如果你的系统版本是Mac OSX 10.5以前的，可以用jdk具体版本的绝对路径来代替：$(/usr/libexec/java_home -v 1.x).<br>参考资料：</p>
+<ol>
+<li><a href="http://stackoverflow.com/questions/1348842/what-should-i-set-java-home-to-on-osx" target="_blank" rel="noopener">http://stackoverflow.com/questions/1348842/what-should-i-set-java-home-to-on-osx</a></li>
+<li><a href="http://www.tuicool.com/articles/uUJjEb" target="_blank" rel="noopener">http://www.tuicool.com/articles/uUJjEb</a></li>
+<li><a href="http://www.flakor.cn/2014-09-14-714.html" target="_blank" rel="noopener">http://www.flakor.cn/2014-09-14-714.html</a></li>
+<li><a href="http://www.mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/" target="_blank" rel="noopener">http://www.mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/</a></li>
+</ol>
+<p><a href="http://blog.csdn.net/liuyanggofurther/article/details/46712601" target="_blank" rel="noopener">http://blog.csdn.net/liuyanggofurther/article/details/46712601</a></p>
+<p>使用apktool解包和打包apk</p>
+<p>下载apktool工具<br>解包<br>apktool d xxx.apk -f<br>植入代码<br>使用apktool解包要植入代码的apk(以下称为A),<br>使用apktool解包包含待植入代码的apk(以下称为B).<br>-将B的AndroidManifest.xml中相应的权限和各组件声明信息复制到A中.<br>-把B的相应的smali文件复制到A中.<br>-把B的相应的布局文件复制到A中.<br>-把植入布局中相应的id从B的values/ids.xml复制到A中.<br>-把植入布局中相应的id从B的values/public.xml复制到A中.<br>-把B中相应方法的调用从B复制到A中(注意方法签名).<br>破解别人的apk是一种耍流氓的行为, 本文仅供学习, 不要乱来.<br>重新打包<br>apktool b xxx -o xxx-new.apk<br>生成keystore<br>keytool -genkeypair -alias - app.keystore -keyalg RSA -validity 100 -keystore app.keystore<br>输入密码:<br>一路回车<br>到最后时输入y<br>给apk签名<br>jarsigner -verbose -keystore app.keystore -signedjar xxx-new.apk xxx-new.apk $alias<br>zipalign<br>zipalign -f -v 4 xxx-new.apk xxx-new-new.apk</p>
+<p><a href="http://blog.csdn.net/ljianhui/article/details/38985441" target="_blank" rel="noopener">http://blog.csdn.net/ljianhui/article/details/38985441</a></p>
+<p>本人的系统为ubuntu12.04<br>1、所需要的工具<br>1）apktool，功能：反编译出apk所需要的资源文件和布局设置文件等，<br>下载地址：<a href="https://code.google.com/p/android-apktool/downloads/list" target="_blank" rel="noopener">https://code.google.com/p/android-apktool/downloads/list</a><br>需要下载apktool1.5.2.tar.bz2 和apktool-install-linux-r05-ibot.tar.bz2 这两个文件，并把解压后的文件放在同一个文件夹中。</p>
+<p>2）dex2jar，功能：反编译出jar文件，即apk的源程序文件的字节码，<br>下载地址：<a href="http://code.google.com/p/dex2jar/downloads/list" target="_blank" rel="noopener">http://code.google.com/p/dex2jar/downloads/list</a></p>
+<p>3）jdgui，功能：查看dex2jar反编译出的jar文件，使用该工具可以看到字节码对应的java源代码，这个我在官网上没有找到，然后自己在网上下载的，但试验过能用。点击打开后，如下图所示：</p>
+<p>2、反编译过程<br>1）反编译出资源文件<br>使用apktool工具，进入apktool所在的目录下，使用如下的命令：<br>    ./apktool d ./xxx.apk（apk所在的路径）<br>d表示decode，在当前目录下就会生成一个名为xxx的目录，里面就是反编译出来的各种资源文件，其中res表示资源文件，smali表示源代码，不过是字节码，不能直接查看。<br>以本人的实验为例子，如下图所示：</p>
+<p>此时会在当前目录下生成一个目录app-debug。</p>
+<p>2）源代码的反编译<br>a）因为apk文件其实是使用zip进行打包压缩生成的文件，所以先把xxx.apk文件改名为xxx.zip文件，并对其进行解压。<br>b）进入解压后的目录，其中有一个classes.dex文件，这个文件就是java文件编译再通过dx工具打包而成的，源代码就包含在这个文件中。<br>c）把前一步生成的文件classes.dex复制到dex2jar工具的根目录中，并使用如下命令对其进行反编译：<br>    ./dex2jar.sh d classes.dex<br>就会在当前目录下生成一个classes_dex2jar.jar文件<br>d）点击打开jdgui工具，这是一个图形化的工具，然后打开上上述的classes_dex2jar.jar文件就可以看到apk对应的源代码。<br>对于本人的实验如下：</p>
+<p>源代码与反编译出来的代码比较如下（白色为反编译内容，黑色为原内容）：</p>
+<p><a href="http://blog.csdn.net/krubo1/article/details/51791535" target="_blank" rel="noopener">http://blog.csdn.net/krubo1/article/details/51791535</a><br>本文参考<a href="http://blog.csdn.net/hanhailong726188/article/details/42368295" target="_blank" rel="noopener">http://blog.csdn.net/hanhailong726188/article/details/42368295</a><br>一、准备工作</p>
+<p>工具准备，下载工具</p>
+<p>1.apktool<br>2.dex2jar<br>3.jd-gui<br>下载地址：戳我</p>
+<p>安装工具</p>
+<p>apktool安装</p>
+<p>解压下载的文件，进入apktool文件夹中，可以看到apktool，apltool.jar和aapt三个文件，将这三个文件拷贝到/usr/local/bin中</p>
+<p>ps: 操作/usr/local/bin文件夹需要权限许可，要输入密码<br>由于/usr/local/bin属于隐藏保护的，磁盘上看不到，除了通过命令行进行复制操作外，我们也可以通过一下方式用Finder进行查看<br>使用Finder进行操作</p>
+<p>打开Finder，点击菜单栏上的前往&gt;前往文件夹，然后在弹出框内输入/usr/local/bin，就能进入该文件夹了，然后将上面所述的三个文件拷贝到bin文件夹中</p>
+<p>使用命令行进行操作</p>
+<p>1.打开终端，输入命令cd /usr/local/bin，进入bin文件夹，此操作需要输入密码进行授权<br>2.输入命令cd xxx/xxx/apltool，进入下载的apktool文件夹中<br>3.输入命令sudo cp apltool apktool.jar aapt /usr/local/bin，讲上面所述的三个文件拷贝到bin文件夹中</p>
+<p>判断apktool是否安装成功</p>
+<p>打开终端，执行apktool命令，看是否出现以下数据，如果出现，说么安装成功</p>
+<p>Apktool v2.0.0-RC2 - a tool for reengineering Android apk files<br>with smali v2.0.3 and baksmali v2.0.3<br>Copyright 2010 Ryszard Wiśniewski <a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#58;&#98;&#x72;&#x75;&#x74;&#46;&#97;&#108;&#108;&#x6c;&#x40;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#98;&#x72;&#x75;&#x74;&#46;&#97;&#108;&#108;&#x6c;&#x40;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a><br>Updated by Connor Tumbleson <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x63;&#111;&#110;&#110;&#111;&#114;&#x2e;&#116;&#x75;&#x6d;&#98;&#108;&#x65;&#115;&#111;&#110;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x63;&#111;&#110;&#110;&#111;&#114;&#x2e;&#116;&#x75;&#x6d;&#98;&#108;&#x65;&#115;&#111;&#110;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></p>
+<p>usage: apktool<br> -advance,–advanced   prints advance information.<br> -version,–version    prints the version then exits<br>usage: apktool if|install-framework [options] <framework.apk><br> -p,–frame-path <dir>   Stores framework files into <dir>.<br> -t,–tag <tag>          Tag frameworks using <tag>.<br>usage: apktool d[ecode] [options] <file_apk><br> -f,–force              Force delete destination directory.<br> -o,–output <dir>       The name of folder that gets written. Default is apk.out<br> -p,–frame-path <dir>   Uses framework files located in <dir>.<br> -r,–no-res             Do not decode resources.<br> -s,–no-src             Do not decode sources.<br> -t,–frame-tag <tag>    Uses framework files tagged by <tag>.<br>usage: apktool b[uild] [options] <app_path><br> -f,–force-all          Skip changes detection and build all files.<br> -o,–output <dir>       The name of apk that gets written. Default is dist/name.apk<br> -p,–frame-path <dir>   Uses framework files located in <dir>.</dir></dir></dir></app_path></tag></tag></dir></dir></dir></file_apk></tag></tag></dir></dir></framework.apk></p>
+<p>For additional info, see: <a href="http://code.google.com/p/android-apktool/" target="_blank" rel="noopener">http://code.google.com/p/android-apktool/</a><br>For smali/baksmali info, see: <a href="http://code.google.com/p/smali/" target="_blank" rel="noopener">http://code.google.com/p/smali/</a></p>
+<p>dex2jar不需要安装</p>
+<p>jd-gui安装</p>
+<p>点击jd-gui-0.2.7.osx.i686.dmg运行即可</p>
+<p>二、使用工具进行反编译</p>
+<p>使用apktool获取资源文件</p>
+<p>1.打开终端，输入命令cd xxxx/xxxx ，进入所要反编译的apk文件夹<br>2.输入命令apktool d xxxx.apk，进行反编译apk，结束后我们会发现在该文件夹下回出现一个新的文件夹，名称和apk的名称一样，打开后里面有AndroidManifest.xml文件和res文件夹，里面为反编译后的资源文件</p>
+<p>使用dex2jar，jd-gui反编译classes.dex文件</p>
+<p>1.将所要反编译的apk重命名，修改后缀为zip，并解压，我们会发现解压后的文件夹中有个classes.dex文件，获取该文件的路径<br>2.打开终端，输入命令cd xxx/xxx/dex2jar，进入下载的dex2jar文件夹中<br>3.输入命令sh dextool.sh xxx/xxx/xxx/classes.dex，进行反编译classes.dex文件，操作完成后，会在dex2jar文件夹中生成一个classes-dex2jar.jar文件<br>4.打开jd-gui文件，将classes-dex2jar.jar拖入jd-gui界面上，就能够看到java文件了</p>
+<p>版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+<p><a href="http://blog.csdn.net/yanzi1225627/article/details/48215549" target="_blank" rel="noopener">http://blog.csdn.net/yanzi1225627/article/details/48215549</a></p>
+<p>apktool d hongbao.apk<br>apktool b hongbao </p>
+<p>keytool -genkey -keystore hongbao.keystore -keyalg RSA -validity 10000 -alias hongbao</p>
+<p>jarsigner -digestalg SHA1 -sigalg MD5withRSA -tsa -verbose -keystore hongbao.keystore -signedjar hongbao-signed.apk hongbao.apk hongbao<br>1</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/17/coffee-tasting/" rel="next" title="About Coffee ~">
+                <i class="fa fa-chevron-left"></i> About Coffee ~
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/07/self-taught/" rel="prev" title="自考、自考，">
+                自考、自考， <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">zhang xiaotian</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Android" class="headerlink" title="Android"></a>Android</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x7B80;&#x4ECB;" class="headerlink" title="&#x7B80;&#x4ECB;"></a>&#x7B80;&#x4ECB;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apk"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#Apk" class="headerlink" title="Apk"></a>Apk</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Develop"><span class="nav-number">2.</span> <span class="nav-text"><a href="#Develop" class="headerlink" title="Develop"></a>Develop</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#逆向"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x9006;&#x5411;" class="headerlink" title="&#x9006;&#x5411;"></a>&#x9006;&#x5411;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tools"><span class="nav-number">2.1.1.</span> <span class="nav-text"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Library-Java-JavaVirtualMachines-jdk1-8-0-45-jdk-Contents-Home"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#Library-Java-JavaVirtualMachines-jdk1-8-0-45-jdk-Contents-Home" class="headerlink" title="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"></a>/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Library-Java-JavaVirtualMachines-jdk1-8-0-45-jdk-Contents-Home-1"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#Library-Java-JavaVirtualMachines-jdk1-8-0-45-jdk-Contents-Home-1" class="headerlink" title="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"></a>/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-version的原理："><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#java-version&#x7684;&#x539F;&#x7406;&#xFF1A;" class="headerlink" title="java -version&#x7684;&#x539F;&#x7406;&#xFF1A;"></a>java -version&#x7684;&#x539F;&#x7406;&#xFF1A;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lrwxr-xr-x-1-root-wheel-74-9-12-2014-usr-bin-java-gt-System-Library-Frameworks-JavaVM-framework-Versions-Current-Commands-java"><span class="nav-number">2.5.</span> <span class="nav-text"><a href="#lrwxr-xr-x-1-root-wheel-74-9-12-2014-usr-bin-java-gt-System-Library-Frameworks-JavaVM-framework-Versions-Current-Commands-java" class="headerlink" title="lrwxr-xr-x  1 root  wheel  74  9 12  2014 /usr/bin/java -&gt; /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java"></a>lrwxr-xr-x  1 root  wheel  74  9 12  2014 /usr/bin/java -&gt; /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias-jdk8-”export-JAVA-HOME-JAVA-8-HOME”"><span class="nav-number">2.6.</span> <span class="nav-text"><a href="#alias-jdk8-&#x201D;export-JAVA-HOME-JAVA-8-HOME&#x201D;" class="headerlink" title="alias jdk8=&#x201D;export JAVA_HOME=$JAVA_8_HOME&#x201D;"></a>alias jdk8=&#x201D;export JAVA_HOME=$JAVA_8_HOME&#x201D;</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhang xiaotian</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

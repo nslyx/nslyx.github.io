@@ -192,6 +192,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -302,9 +322,9 @@
 
       
         <p>一些关于 npm 命令的笔记<br><a id="more"></a></p>
-<p>##先总揽一下看看帮助信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">$npm -h</div><div class="line"></div><div class="line">Usage: npm &lt;command&gt;</div><div class="line"></div><div class="line">where &lt;command&gt; is one of:</div><div class="line">    access, adduser, bin, bugs, c, cache, completion, config,</div><div class="line">    ddp, dedupe, deprecate, dist-tag, docs, doctor, edit,</div><div class="line">    explore, get, help, help-search, i, init, install,</div><div class="line">    install-test, it, link, list, ln, login, logout, ls,</div><div class="line">    outdated, owner, pack, ping, prefix, prune, publish, rb,</div><div class="line">    rebuild, repo, restart, root, run, run-script, s, se,</div><div class="line">    search, set, shrinkwrap, star, stars, start, stop, t, team,</div><div class="line">    test, tst, un, uninstall, unpublish, unstar, up, update, v,</div><div class="line">    version, view, whoami</div><div class="line"></div><div class="line">npm &lt;cmd&gt; -h     quick help on &lt;cmd&gt;</div><div class="line">npm -l           display full usage info</div><div class="line">npm help &lt;term&gt;  search for help on &lt;term&gt;</div><div class="line">npm help npm     involved overview</div><div class="line"></div><div class="line">Specify configs in the ini-formatted file:</div><div class="line">    /Users/zxtian/.npmrc</div><div class="line">or on the command line via: npm &lt;command&gt; --key value</div><div class="line">Config info can be viewed via: npm help config</div><div class="line"></div><div class="line">npm@4.2.0 /usr/local/lib/node_modules/npm</div></pre></td></tr></table></figure></p>
+<p>##先总揽一下看看帮助信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$npm -h</span><br><span class="line"></span><br><span class="line">Usage: npm &lt;command&gt;</span><br><span class="line"></span><br><span class="line">where &lt;command&gt; is one of:</span><br><span class="line">    access, adduser, bin, bugs, c, cache, completion, config,</span><br><span class="line">    ddp, dedupe, deprecate, dist-tag, docs, doctor, edit,</span><br><span class="line">    explore, get, help, help-search, i, init, install,</span><br><span class="line">    install-test, it, link, list, ln, login, logout, ls,</span><br><span class="line">    outdated, owner, pack, ping, prefix, prune, publish, rb,</span><br><span class="line">    rebuild, repo, restart, root, run, run-script, s, se,</span><br><span class="line">    search, set, shrinkwrap, star, stars, start, stop, t, team,</span><br><span class="line">    test, tst, un, uninstall, unpublish, unstar, up, update, v,</span><br><span class="line">    version, view, whoami</span><br><span class="line"></span><br><span class="line">npm &lt;cmd&gt; -h     quick help on &lt;cmd&gt;</span><br><span class="line">npm -l           display full usage info</span><br><span class="line">npm help &lt;term&gt;  search for help on &lt;term&gt;</span><br><span class="line">npm help npm     involved overview</span><br><span class="line"></span><br><span class="line">Specify configs in the ini-formatted file:</span><br><span class="line">    /Users/zxtian/.npmrc</span><br><span class="line">or on the command line via: npm &lt;command&gt; --key value</span><br><span class="line">Config info can be viewed via: npm help config</span><br><span class="line"></span><br><span class="line">npm@4.2.0 /usr/local/lib/node_modules/npm</span><br></pre></td></tr></table></figure></p>
 <p>##</p>
-<p>从无到有，创建 package.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init</div></pre></td></tr></table></figure></p>
+<p>从无到有，创建 package.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -407,7 +427,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -418,7 +438,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -429,7 +449,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

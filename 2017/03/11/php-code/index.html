@@ -192,6 +192,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -303,8 +323,8 @@
       
         <p>一些代码记录。<br>Algorithm</p>
 <a id="more"></a>
-<h1 id="排序法"><a href="#排序法" class="headerlink" title="排序法"></a>排序法</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span><span class="params">($numbers)</span></span>&#123;</div><div class="line">    $len = count($numbers);    </div><div class="line">    <span class="keyword">for</span>($i = <span class="number">0</span>; $i &lt; $len - <span class="number">1</span>; $i++)&#123; </div><div class="line">        <span class="keyword">for</span>($j = $i + <span class="number">1</span>; $j &lt; $len; $j++)&#123;</div><div class="line">             <span class="keyword">if</span>($numbers[$i] &gt; $numbers[$j])&#123; </div><div class="line">                $temp = $numbers[$i]; </div><div class="line">                $numbers[$i] = $numbers[$j];</div><div class="line">                $numbers[$j] = $temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> $numbers;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubble_sort</span><span class="params">($array_of_numbers)</span></span>&#123;    </div><div class="line">    $len = count($numbers);    </div><div class="line">    <span class="keyword">for</span>($i = <span class="number">0</span>; $i &lt; $len; $i++)&#123;</div><div class="line">        <span class="keyword">for</span>($j = <span class="number">0</span>; $j &lt; $len - $i - <span class="number">1</span>; $j++)&#123;</div><div class="line">            <span class="keyword">if</span>($numbers[$j] &gt; $numbers[$j + <span class="number">1</span>])&#123;</div><div class="line">                $temp = $numbers[$j];</div><div class="line">                $numbers[$j] = $numbers[$j + <span class="number">1</span>];</div><div class="line">                $numbers[$j + <span class="number">1</span>] = $temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> $numbers;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="获取-SERVER中http部分"><a href="#获取-SERVER中http部分" class="headerlink" title="获取 $_SERVER中http部分"></a>获取 $_SERVER中http部分</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span>   </div><div class="line"></div><div class="line"><span class="keyword">if</span> (!function_exists(<span class="string">'getallheaders'</span>))   </div><div class="line">&#123;  </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getallheaders</span><span class="params">()</span>   </span></div><div class="line"><span class="function">    </span>&#123;  </div><div class="line">       <span class="keyword">foreach</span> ($_SERVER <span class="keyword">as</span> $name =&gt; $value)   </div><div class="line">       &#123;  </div><div class="line">           <span class="keyword">if</span> (substr($name, <span class="number">0</span>, <span class="number">5</span>) == <span class="string">'HTTP_'</span>)   </div><div class="line">           &#123;  </div><div class="line">               $headers[str_replace(<span class="string">' '</span>, <span class="string">'-'</span>, ucwords(strtolower(str_replace(<span class="string">'_'</span>, <span class="string">' '</span>, substr($name, <span class="number">5</span>)))))] = $value;  </div><div class="line">           &#125;  </div><div class="line">       &#125;  </div><div class="line">       <span class="keyword">return</span> $headers;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div><div class="line">$arr = array_merge([<span class="string">'a'</span> =&gt; getallheaders (), <span class="string">'b'</span>=&gt;$_SERVER]);</div><div class="line"><span class="keyword">echo</span> json_encode($arr);</div></pre></td></tr></table></figure>
+<h1 id="排序法"><a href="#排序法" class="headerlink" title="排序法"></a>排序法</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span><span class="params">($numbers)</span></span>&#123;</span><br><span class="line">    $len = count($numbers);    </span><br><span class="line">    <span class="keyword">for</span>($i = <span class="number">0</span>; $i &lt; $len - <span class="number">1</span>; $i++)&#123; </span><br><span class="line">        <span class="keyword">for</span>($j = $i + <span class="number">1</span>; $j &lt; $len; $j++)&#123;</span><br><span class="line">             <span class="keyword">if</span>($numbers[$i] &gt; $numbers[$j])&#123; </span><br><span class="line">                $temp = $numbers[$i]; </span><br><span class="line">                $numbers[$i] = $numbers[$j];</span><br><span class="line">                $numbers[$j] = $temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $numbers;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubble_sort</span><span class="params">($array_of_numbers)</span></span>&#123;    </span><br><span class="line">    $len = count($numbers);    </span><br><span class="line">    <span class="keyword">for</span>($i = <span class="number">0</span>; $i &lt; $len; $i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>($j = <span class="number">0</span>; $j &lt; $len - $i - <span class="number">1</span>; $j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>($numbers[$j] &gt; $numbers[$j + <span class="number">1</span>])&#123;</span><br><span class="line">                $temp = $numbers[$j];</span><br><span class="line">                $numbers[$j] = $numbers[$j + <span class="number">1</span>];</span><br><span class="line">                $numbers[$j + <span class="number">1</span>] = $temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $numbers;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="获取-SERVER中http部分"><a href="#获取-SERVER中http部分" class="headerlink" title="获取 $_SERVER中http部分"></a>获取 $_SERVER中http部分</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span>   </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!function_exists(<span class="string">'getallheaders'</span>))   </span><br><span class="line">&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getallheaders</span><span class="params">()</span>   </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">       <span class="keyword">foreach</span> ($_SERVER <span class="keyword">as</span> $name =&gt; $value)   </span><br><span class="line">       &#123;  </span><br><span class="line">           <span class="keyword">if</span> (substr($name, <span class="number">0</span>, <span class="number">5</span>) == <span class="string">'HTTP_'</span>)   </span><br><span class="line">           &#123;  </span><br><span class="line">               $headers[str_replace(<span class="string">' '</span>, <span class="string">'-'</span>, ucwords(strtolower(str_replace(<span class="string">'_'</span>, <span class="string">' '</span>, substr($name, <span class="number">5</span>)))))] = $value;  </span><br><span class="line">           &#125;  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="keyword">return</span> $headers;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line">$arr = array_merge([<span class="string">'a'</span> =&gt; getallheaders (), <span class="string">'b'</span>=&gt;$_SERVER]);</span><br><span class="line"><span class="keyword">echo</span> json_encode($arr);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -415,7 +435,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -426,7 +446,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -437,7 +457,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -472,7 +492,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#排序法"><span class="nav-number">1.</span> <span class="nav-text">排序法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取-SERVER中http部分"><span class="nav-number">2.</span> <span class="nav-text">获取 $_SERVER中http部分</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#排序法"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6392;&#x5E8F;&#x6CD5;" class="headerlink" title="&#x6392;&#x5E8F;&#x6CD5;"></a>&#x6392;&#x5E8F;&#x6CD5;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取-SERVER中http部分"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x83B7;&#x53D6;-SERVER&#x4E2D;http&#x90E8;&#x5206;" class="headerlink" title="&#x83B7;&#x53D6; $_SERVER&#x4E2D;http&#x90E8;&#x5206;"></a>&#x83B7;&#x53D6; $_SERVER&#x4E2D;http&#x90E8;&#x5206;</span></a></li></ol></div>
             
 
           </div>
