@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="language,php,slice," />
+  <meta name="keywords" content="slice,language,php," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="PHP Language code slicemysqlmysqli 链接数据库1234567891011// 面向对象$mysqli = @new mysqli(&apos;localhost&apos;, &apos;fake_user&apos;, &apos;my_password&apos;, &apos;my_db&apos;);if ($mysqli-&amp;gt;connect_error) &amp;#123;    die(&apos;Connect Error: &apos; . $my">
-<meta name="keywords" content="language,php,slice">
+<meta name="description" content="PHP Language code slice时间计算123456$timestamp = date(&apos;Y-m-d H:i:s&apos;); // 任意时间节点$nextSunday = date(&quot;Y-m-d&quot;, strtotime(&quot;$timestamp Sunday&quot;));$lastMonday = date(&quot;Y-m-d&quot;, strtotime(&quot;$nextSunday - 6 days&quot;));">
+<meta name="keywords" content="slice,language,php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php-slice">
 <meta property="og:url" content="http://yoursite.com/2017/12/19/php-slice/index.html">
 <meta property="og:site_name" content="Nslyx">
-<meta property="og:description" content="PHP Language code slicemysqlmysqli 链接数据库1234567891011// 面向对象$mysqli = @new mysqli(&apos;localhost&apos;, &apos;fake_user&apos;, &apos;my_password&apos;, &apos;my_db&apos;);if ($mysqli-&amp;gt;connect_error) &amp;#123;    die(&apos;Connect Error: &apos; . $my">
+<meta property="og:description" content="PHP Language code slice时间计算123456$timestamp = date(&apos;Y-m-d H:i:s&apos;); // 任意时间节点$nextSunday = date(&quot;Y-m-d&quot;, strtotime(&quot;$timestamp Sunday&quot;));$lastMonday = date(&quot;Y-m-d&quot;, strtotime(&quot;$nextSunday - 6 days&quot;));">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-19T01:47:00.000Z">
+<meta property="og:updated_time" content="2017-12-25T08:17:45.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php-slice">
-<meta name="twitter:description" content="PHP Language code slicemysqlmysqli 链接数据库1234567891011// 面向对象$mysqli = @new mysqli(&apos;localhost&apos;, &apos;fake_user&apos;, &apos;my_password&apos;, &apos;my_db&apos;);if ($mysqli-&amp;gt;connect_error) &amp;#123;    die(&apos;Connect Error: &apos; . $my">
+<meta name="twitter:description" content="PHP Language code slice时间计算123456$timestamp = date(&apos;Y-m-d H:i:s&apos;); // 任意时间节点$nextSunday = date(&quot;Y-m-d&quot;, strtotime(&quot;$timestamp Sunday&quot;));$lastMonday = date(&quot;Y-m-d&quot;, strtotime(&quot;$nextSunday - 6 days&quot;));">
 
 
 
@@ -322,7 +322,8 @@
       
 
       
-        <h1 id="PHP-Language-code-slice"><a href="#PHP-Language-code-slice" class="headerlink" title="PHP Language code slice"></a>PHP Language code slice</h1><h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><h3 id="mysqli-链接数据库"><a href="#mysqli-链接数据库" class="headerlink" title="mysqli 链接数据库"></a>mysqli 链接数据库</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 面向对象</span></span><br><span class="line">$mysqli = @<span class="keyword">new</span> mysqli(<span class="string">'localhost'</span>, <span class="string">'fake_user'</span>, <span class="string">'my_password'</span>, <span class="string">'my_db'</span>);</span><br><span class="line"><span class="keyword">if</span> ($mysqli-&gt;connect_error) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">'Connect Error: '</span> . $mysqli-&gt;connect_error);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 面向过程</span></span><br><span class="line">$link = @mysqli_connect(<span class="string">'localhost'</span>, <span class="string">'fake_user'</span>, <span class="string">'my_password'</span>, <span class="string">'my_db'</span>);</span><br><span class="line"><span class="keyword">if</span> (!$link) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">'Connect Error: '</span> . mysqli_connect_error());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="PHP-Language-code-slice"><a href="#PHP-Language-code-slice" class="headerlink" title="PHP Language code slice"></a>PHP Language code slice</h1><h2 id="时间计算"><a href="#时间计算" class="headerlink" title="时间计算"></a>时间计算</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$timestamp = date(<span class="string">'Y-m-d H:i:s'</span>); <span class="comment">// 任意时间节点</span></span><br><span class="line">$nextSunday = date(<span class="string">"Y-m-d"</span>, strtotime(<span class="string">"$timestamp Sunday"</span>));</span><br><span class="line">$lastMonday = date(<span class="string">"Y-m-d"</span>, strtotime(<span class="string">"$nextSunday - 6 days"</span>)); </span><br><span class="line"></span><br><span class="line">$thisMonthBegin = date(<span class="string">'Y-m-01'</span>, strtotime($timestamp));</span><br><span class="line">$lastMonthEnd = date(<span class="string">'Y-m-d'</span>, strtotime(<span class="string">"$thisMonthBegin +1 month -1 day"</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><h3 id="mysqli-链接数据库"><a href="#mysqli-链接数据库" class="headerlink" title="mysqli 链接数据库"></a>mysqli 链接数据库</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 面向对象</span></span><br><span class="line">$mysqli = @<span class="keyword">new</span> mysqli(<span class="string">'localhost'</span>, <span class="string">'fake_user'</span>, <span class="string">'my_password'</span>, <span class="string">'my_db'</span>);</span><br><span class="line"><span class="keyword">if</span> ($mysqli-&gt;connect_error) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">'Connect Error: '</span> . $mysqli-&gt;connect_error);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 面向过程</span></span><br><span class="line">$link = @mysqli_connect(<span class="string">'localhost'</span>, <span class="string">'fake_user'</span>, <span class="string">'my_password'</span>, <span class="string">'my_db'</span>);</span><br><span class="line"><span class="keyword">if</span> (!$link) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">'Connect Error: '</span> . mysqli_connect_error());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -340,11 +341,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/slice/" rel="tag"># slice</a>
+          
             <a href="/tags/language/" rel="tag"># language</a>
           
             <a href="/tags/php/" rel="tag"># php</a>
-          
-            <a href="/tags/slice/" rel="tag"># slice</a>
           
         </div>
       
@@ -444,7 +445,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -466,7 +467,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -501,7 +502,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP-Language-code-slice"><span class="nav-number">1.</span> <span class="nav-text"><a href="#PHP-Language-code-slice" class="headerlink" title="PHP Language code slice"></a>PHP Language code slice</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mysqli-链接数据库"><span class="nav-number">1.1.1.</span> <span class="nav-text"><a href="#mysqli-&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="mysqli &#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;"></a>mysqli &#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP-Language-code-slice"><span class="nav-number">1.</span> <span class="nav-text"><a href="#PHP-Language-code-slice" class="headerlink" title="PHP Language code slice"></a>PHP Language code slice</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间计算"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x65F6;&#x95F4;&#x8BA1;&#x7B97;" class="headerlink" title="&#x65F6;&#x95F4;&#x8BA1;&#x7B97;"></a>&#x65F6;&#x95F4;&#x8BA1;&#x7B97;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mysqli-链接数据库"><span class="nav-number">1.2.1.</span> <span class="nav-text"><a href="#mysqli-&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="mysqli &#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;"></a>mysqli &#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
