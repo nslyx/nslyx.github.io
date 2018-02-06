@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Nslyx">
 <meta property="og:description" content="Jenkins 构建时报错： No space left on device报错的意思是磁盘上没有空间了，但是上服务器看了看，空间明明还有一堆。。。这个时候就应该意识到时 inode 不足了，df 查看磁盘空间余量，df -i 查看 inode 余量。 inode 感觉一般默认设置的上限是够用的，如果发生溢满就需要进行追究原因，如果是正常情况不够用了，可以考虑修改上限默认值。很明显，这里并不准备讲">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-02T06:23:28.000Z">
+<meta property="og:updated_time" content="2018-01-10T09:17:05.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="inode">
 <meta name="twitter:description" content="Jenkins 构建时报错： No space left on device报错的意思是磁盘上没有空间了，但是上服务器看了看，空间明明还有一堆。。。这个时候就应该意识到时 inode 不足了，df 查看磁盘空间余量，df -i 查看 inode 余量。 inode 感觉一般默认设置的上限是够用的，如果发生溢满就需要进行追究原因，如果是正常情况不够用了，可以考虑修改上限默认值。很明显，这里并不准备讲">
@@ -322,7 +322,8 @@
 
       
         <h1 id="Jenkins-构建时报错：-No-space-left-on-device"><a href="#Jenkins-构建时报错：-No-space-left-on-device" class="headerlink" title="Jenkins 构建时报错： No space left on device"></a>Jenkins 构建时报错： No space left on device</h1><p>报错的意思是磁盘上没有空间了，但是上服务器看了看，空间明明还有一堆。。。<br>这个时候就应该意识到时 inode 不足了，<code>df</code> 查看磁盘空间余量，<code>df -i</code> 查看 inode 余量。</p>
-<p>inode 感觉一般默认设置的上限是够用的，如果发生溢满就需要进行追究原因，如果是正常情况不够用了，可以考虑修改上限默认值。很明显，这里并不准备讲正常情况。<br>在服务器 <code>/var/spool/clientmqueue/</code>目录下有定时任务的输出记录文件，多数情况下 inode 是被这里的文件占用消耗完的。所以在设置定时任务的时候需要注意将不必要的输出销毁。这里的文件一般都可以之间删掉就可以释放很多inode ，没什么影响。不过因为文件数量太多，所以直接 <code>rm -rf  *</code> 会因为目录信息太大而执行不了。可以用 <code>lsattr ./|awk -F&quot;/&quot; &#39;{print $3}&#39;|xargs -i rm -rf {}</code> 命令删除，文件多删除执行时间也会比较长。<br>释放完inode 后，上述报错也就自然没有了</p>
+<p>inode 感觉一般默认设置的上限是够用的，如果发生溢满就需要进行追究原因，如果是正常情况不够用了，可以考虑修改上限默认值。很明显，这里并不准备讲正常情况。<br>在服务器 <code>/var/spool/clientmqueue/</code>目录下有定时任务的输出记录文件，多数情况下 inode 是被这里的文件占用消耗完的。所以在设置定时任务的时候需要注意将不必要的输出销毁。这里的文件一般都可以之间删掉就可以释放很多inode ，没什么影响。不过因为文件数量太多，所以直接 <code>rm -rf  *</code> 会因为目录信息太大而执行不了。可以用 <code>lsattr ./|awk -F&quot;/&quot; &#39;{print $2}&#39;|xargs -i rm -rf {}</code> 命令删除，文件多删除执行时间也会比较长。需要注意下 $2 是不是文件名称。<br>释放完inode 后，上述报错也就自然没有了</p>
+<h1 id="查看-inode-数量"><a href="#查看-inode-数量" class="headerlink" title="查看 inode 数量"></a>查看 inode 数量</h1><p><code>for i in /*; do echo $i; find $i | wc -l | sort -nr; done</code></p>
 
       
     </div>
@@ -434,7 +435,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -445,7 +446,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -456,7 +457,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -491,7 +492,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Jenkins-构建时报错：-No-space-left-on-device"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Jenkins-&#x6784;&#x5EFA;&#x65F6;&#x62A5;&#x9519;&#xFF1A;-No-space-left-on-device" class="headerlink" title="Jenkins &#x6784;&#x5EFA;&#x65F6;&#x62A5;&#x9519;&#xFF1A; No space left on device"></a>Jenkins &#x6784;&#x5EFA;&#x65F6;&#x62A5;&#x9519;&#xFF1A; No space left on device</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Jenkins-构建时报错：-No-space-left-on-device"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Jenkins-&#x6784;&#x5EFA;&#x65F6;&#x62A5;&#x9519;&#xFF1A;-No-space-left-on-device" class="headerlink" title="Jenkins &#x6784;&#x5EFA;&#x65F6;&#x62A5;&#x9519;&#xFF1A; No space left on device"></a>Jenkins &#x6784;&#x5EFA;&#x65F6;&#x62A5;&#x9519;&#xFF1A; No space left on device</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看-inode-数量"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x67E5;&#x770B;-inode-&#x6570;&#x91CF;" class="headerlink" title="&#x67E5;&#x770B; inode &#x6570;&#x91CF;"></a>&#x67E5;&#x770B; inode &#x6570;&#x91CF;</span></a></li></ol></div>
             
 
           </div>
@@ -511,7 +512,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

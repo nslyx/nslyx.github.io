@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="markdown," />
 
 
 
@@ -80,13 +80,14 @@
 
 
 <meta name="description" content="简介Markdown 是一种轻量级的「标记语言」。其语法的目标是：成为一种适用于网络的书写语言。Markdown 是一个 Web 上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。好吧，不废话，附上地址：Markdown中文网。当然，Markdown 也需要有个好的编辑器才能更好的专注创作。目前在用的编辑器是MarkEditor，详细见 MarkEdito">
+<meta name="keywords" content="markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown">
 <meta property="og:url" content="http://yoursite.com/2017/03/06/markdown/index.html">
 <meta property="og:site_name" content="Nslyx">
 <meta property="og:description" content="简介Markdown 是一种轻量级的「标记语言」。其语法的目标是：成为一种适用于网络的书写语言。Markdown 是一个 Web 上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。好吧，不废话，附上地址：Markdown中文网。当然，Markdown 也需要有个好的编辑器才能更好的专注创作。目前在用的编辑器是MarkEditor，详细见 MarkEdito">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-02T02:36:19.000Z">
+<meta property="og:updated_time" content="2017-12-28T07:46:54.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown">
 <meta name="twitter:description" content="简介Markdown 是一种轻量级的「标记语言」。其语法的目标是：成为一种适用于网络的书写语言。Markdown 是一个 Web 上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。好吧，不废话，附上地址：Markdown中文网。当然，Markdown 也需要有个好的编辑器才能更好的专注创作。目前在用的编辑器是MarkEditor，详细见 MarkEdito">
@@ -294,6 +295,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index">
+                    <span itemprop="name">Language</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/语言/" itemprop="url" rel="index">
+                    <span itemprop="name">语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -420,35 +454,40 @@
 <h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><ul>
 <li>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱；</li>
 </ul>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>形如：<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">| 水果        | 价格    |  数量  |</span><br><span class="line">| --------   | -----:   | :----: |</span><br><span class="line">| 香蕉        | $1      |   5    |</span><br><span class="line">| 苹果        | $1      |   6    |</span><br><span class="line">| 草莓        | $1      |   7    |</span><br></pre></td></tr></table></figure></p>
-<p>效果：</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>语法为：<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">| 水果 | 价格 | 数量 |</span><br><span class="line">| :-- | :-- | :-- |</span><br><span class="line">| 香蕉 | $1 | 5 |</span><br><span class="line">| 苹果 | $1 | 6 |</span><br><span class="line">|</span><br><span class="line">| 草莓 | $1 | 7 |</span><br></pre></td></tr></table></figure></p>
+<p>效果:</p>
 <table>
 <thead>
 <tr>
-<th>水果</th>
-<th style="text-align:right">价格</th>
-<th style="text-align:center">数量</th>
+<th style="text-align:left">水果</th>
+<th style="text-align:left">价格</th>
+<th style="text-align:left">数量</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>香蕉</td>
-<td style="text-align:right">$1</td>
-<td style="text-align:center">5</td>
+<td style="text-align:left">香蕉</td>
+<td style="text-align:left">$1</td>
+<td style="text-align:left">5</td>
 </tr>
 <tr>
-<td>苹果</td>
-<td style="text-align:right">$1</td>
-<td style="text-align:center">6</td>
+<td style="text-align:left">苹果</td>
+<td style="text-align:left">$1</td>
+<td style="text-align:left">6</td>
 </tr>
 <tr>
-<td>草莓</td>
-<td style="text-align:right">$1</td>
-<td style="text-align:center">7</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">草莓</td>
+<td style="text-align:left">$1</td>
+<td style="text-align:left">7</td>
 </tr>
 </tbody>
 </table>
-<p>参考文章：<br><a href="https://sspai.com/post/25137" target="_blank" rel="noopener">https://sspai.com/post/25137</a><br><a href="http://wowubuntu.com/markdown/" target="_blank" rel="noopener">http://wowubuntu.com/markdown/</a><br><a href="http://www.cnblogs.com/dezheng/p/3834813.html" target="_blank" rel="noopener">http://www.cnblogs.com/dezheng/p/3834813.html</a></p>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>在文字左右包上 <code>~~</code>   就能显示出删除线效果，链接文字都适用<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~删除线效果~~</span><br></pre></td></tr></table></figure></p>
+<p><del>删除线效果</del></p>
+<p>参考文章：<br><a href="https://sspai.com/post/25137" target="_blank" rel="noopener">https://sspai.com/post/25137</a><br><a href="http://wowubuntu.com/markdown/" target="_blank" rel="noopener">http://wowubuntu.com/markdown/</a><br><a href="http://www.cnblogs.com/dezheng/p/3834813.html" target="_blank" rel="noopener">http://www.cnblogs.com/dezheng/p/3834813.html</a><br><a href="https://www.jianshu.com/p/cd044443a1a6" target="_blank" rel="noopener">https://www.jianshu.com/p/cd044443a1a6</a></p>
 
       
     </div>
@@ -463,6 +502,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/markdown/" rel="tag"># markdown</a>
+          
+        </div>
       
 
       
@@ -560,7 +605,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -571,7 +616,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -582,7 +627,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -617,7 +662,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x7B80;&#x4ECB;" class="headerlink" title="&#x7B80;&#x4ECB;"></a>&#x7B80;&#x4ECB;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x8BED;&#x6CD5;" class="headerlink" title="&#x8BED;&#x6CD5;"></a>&#x8BED;&#x6CD5;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容-HTML"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x517C;&#x5BB9;-HTML" class="headerlink" title="&#x517C;&#x5BB9; HTML"></a>&#x517C;&#x5BB9; HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊字符自动转换"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x81EA;&#x52A8;&#x8F6C;&#x6362;" class="headerlink" title="&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x81EA;&#x52A8;&#x8F6C;&#x6362;"></a>&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#段落和换行"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#&#x6BB5;&#x843D;&#x548C;&#x6362;&#x884C;" class="headerlink" title="&#x6BB5;&#x843D;&#x548C;&#x6362;&#x884C;"></a>&#x6BB5;&#x843D;&#x548C;&#x6362;&#x884C;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标题"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#&#x6807;&#x9898;" class="headerlink" title="&#x6807;&#x9898;"></a>&#x6807;&#x9898;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块引用"><span class="nav-number">2.5.</span> <span class="nav-text"><a href="#&#x533A;&#x5757;&#x5F15;&#x7528;" class="headerlink" title="&#x533A;&#x5757;&#x5F15;&#x7528;"></a>&#x533A;&#x5757;&#x5F15;&#x7528;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">2.6.</span> <span class="nav-text"><a href="#&#x5217;&#x8868;" class="headerlink" title="&#x5217;&#x8868;"></a>&#x5217;&#x8868;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码区块"><span class="nav-number">2.7.</span> <span class="nav-text"><a href="#&#x4EE3;&#x7801;&#x533A;&#x5757;" class="headerlink" title="&#x4EE3;&#x7801;&#x533A;&#x5757;"></a>&#x4EE3;&#x7801;&#x533A;&#x5757;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分隔线"><span class="nav-number">2.8.</span> <span class="nav-text"><a href="#&#x5206;&#x9694;&#x7EBF;" class="headerlink" title="&#x5206;&#x9694;&#x7EBF;"></a>&#x5206;&#x9694;&#x7EBF;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">2.9.</span> <span class="nav-text"><a href="#&#x94FE;&#x63A5;" class="headerlink" title="&#x94FE;&#x63A5;"></a>&#x94FE;&#x63A5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强调"><span class="nav-number">2.10.</span> <span class="nav-text"><a href="#&#x5F3A;&#x8C03;" class="headerlink" title="&#x5F3A;&#x8C03;"></a>&#x5F3A;&#x8C03;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.11.</span> <span class="nav-text"><a href="#&#x4EE3;&#x7801;" class="headerlink" title="&#x4EE3;&#x7801;"></a>&#x4EE3;&#x7801;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片"><span class="nav-number">2.12.</span> <span class="nav-text"><a href="#&#x56FE;&#x7247;" class="headerlink" title="&#x56FE;&#x7247;"></a>&#x56FE;&#x7247;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反斜杠"><span class="nav-number">2.13.</span> <span class="nav-text"><a href="#&#x53CD;&#x659C;&#x6760;" class="headerlink" title="&#x53CD;&#x659C;&#x6760;"></a>&#x53CD;&#x659C;&#x6760;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动链接"><span class="nav-number">2.14.</span> <span class="nav-text"><a href="#&#x81EA;&#x52A8;&#x94FE;&#x63A5;" class="headerlink" title="&#x81EA;&#x52A8;&#x94FE;&#x63A5;"></a>&#x81EA;&#x52A8;&#x94FE;&#x63A5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">2.15.</span> <span class="nav-text"><a href="#&#x8868;&#x683C;" class="headerlink" title="&#x8868;&#x683C;"></a>&#x8868;&#x683C;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x7B80;&#x4ECB;" class="headerlink" title="&#x7B80;&#x4ECB;"></a>&#x7B80;&#x4ECB;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x8BED;&#x6CD5;" class="headerlink" title="&#x8BED;&#x6CD5;"></a>&#x8BED;&#x6CD5;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容-HTML"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x517C;&#x5BB9;-HTML" class="headerlink" title="&#x517C;&#x5BB9; HTML"></a>&#x517C;&#x5BB9; HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊字符自动转换"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x81EA;&#x52A8;&#x8F6C;&#x6362;" class="headerlink" title="&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x81EA;&#x52A8;&#x8F6C;&#x6362;"></a>&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#段落和换行"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#&#x6BB5;&#x843D;&#x548C;&#x6362;&#x884C;" class="headerlink" title="&#x6BB5;&#x843D;&#x548C;&#x6362;&#x884C;"></a>&#x6BB5;&#x843D;&#x548C;&#x6362;&#x884C;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标题"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#&#x6807;&#x9898;" class="headerlink" title="&#x6807;&#x9898;"></a>&#x6807;&#x9898;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块引用"><span class="nav-number">2.5.</span> <span class="nav-text"><a href="#&#x533A;&#x5757;&#x5F15;&#x7528;" class="headerlink" title="&#x533A;&#x5757;&#x5F15;&#x7528;"></a>&#x533A;&#x5757;&#x5F15;&#x7528;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">2.6.</span> <span class="nav-text"><a href="#&#x5217;&#x8868;" class="headerlink" title="&#x5217;&#x8868;"></a>&#x5217;&#x8868;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码区块"><span class="nav-number">2.7.</span> <span class="nav-text"><a href="#&#x4EE3;&#x7801;&#x533A;&#x5757;" class="headerlink" title="&#x4EE3;&#x7801;&#x533A;&#x5757;"></a>&#x4EE3;&#x7801;&#x533A;&#x5757;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分隔线"><span class="nav-number">2.8.</span> <span class="nav-text"><a href="#&#x5206;&#x9694;&#x7EBF;" class="headerlink" title="&#x5206;&#x9694;&#x7EBF;"></a>&#x5206;&#x9694;&#x7EBF;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">2.9.</span> <span class="nav-text"><a href="#&#x94FE;&#x63A5;" class="headerlink" title="&#x94FE;&#x63A5;"></a>&#x94FE;&#x63A5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强调"><span class="nav-number">2.10.</span> <span class="nav-text"><a href="#&#x5F3A;&#x8C03;" class="headerlink" title="&#x5F3A;&#x8C03;"></a>&#x5F3A;&#x8C03;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.11.</span> <span class="nav-text"><a href="#&#x4EE3;&#x7801;" class="headerlink" title="&#x4EE3;&#x7801;"></a>&#x4EE3;&#x7801;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片"><span class="nav-number">2.12.</span> <span class="nav-text"><a href="#&#x56FE;&#x7247;" class="headerlink" title="&#x56FE;&#x7247;"></a>&#x56FE;&#x7247;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反斜杠"><span class="nav-number">2.13.</span> <span class="nav-text"><a href="#&#x53CD;&#x659C;&#x6760;" class="headerlink" title="&#x53CD;&#x659C;&#x6760;"></a>&#x53CD;&#x659C;&#x6760;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动链接"><span class="nav-number">2.14.</span> <span class="nav-text"><a href="#&#x81EA;&#x52A8;&#x94FE;&#x63A5;" class="headerlink" title="&#x81EA;&#x52A8;&#x94FE;&#x63A5;"></a>&#x81EA;&#x52A8;&#x94FE;&#x63A5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">2.15.</span> <span class="nav-text"><a href="#&#x8868;&#x683C;" class="headerlink" title="&#x8868;&#x683C;"></a>&#x8868;&#x683C;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除线"><span class="nav-number">2.16.</span> <span class="nav-text"><a href="#&#x5220;&#x9664;&#x7EBF;" class="headerlink" title="&#x5220;&#x9664;&#x7EBF;"></a>&#x5220;&#x9664;&#x7EBF;</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -637,7 +682,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
