@@ -321,8 +321,7 @@
 
       
         
-          
-            <h2 id="常见的进制："><a href="#常见的进制：" class="headerlink" title="常见的进制："></a>常见的进制：</h2><table>
+          <h2 id="常见的进制："><a href="#常见的进制：" class="headerlink" title="常见的进制："></a>常见的进制：</h2><table>
 <thead>
 <tr>
 <th style="text-align:left">Des</th>
@@ -353,51 +352,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="提供的函数"><a href="#提供的函数" class="headerlink" title="提供的函数"></a>提供的函数</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">转换关系</th>
-<th style="text-align:left">bin</th>
-<th style="text-align:left">oct</th>
-<th style="text-align:left">dec</th>
-<th style="text-align:left">hex</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">bin</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">binoct()</td>
-<td style="text-align:left">bindec()</td>
-<td style="text-align:left">binhex()</td>
-</tr>
-<tr>
-<td style="text-align:left">oct</td>
-<td style="text-align:left">octbin()</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">octdec()</td>
-<td style="text-align:left">octhex()</td>
-</tr>
-<tr>
-<td style="text-align:left">dec</td>
-<td style="text-align:left">decbin()</td>
-<td style="text-align:left">decoct()</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">dechex()</td>
-</tr>
-<tr>
-<td style="text-align:left">hex</td>
-<td style="text-align:left">hexbin()</td>
-<td style="text-align:left">hexoct()</td>
-<td style="text-align:left">hexdec()</td>
-<td style="text-align:left">-</td>
-</tr>
-</tbody>
-</table>
-<p>也可以使用通用转换函数<code>base_convert()</code> 爱咋转咋转<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// string base_convert ( string $number , int $frombase , int $tobase )</span></span><br><span class="line"><span class="keyword">echo</span> base_convert(<span class="string">'125458'</span>, <span class="number">10</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure></p>
-<h2 id="自己实现互转"><a href="#自己实现互转" class="headerlink" title="自己实现互转"></a>自己实现互转</h2><p>自实现换算，十进制为转换桥梁，字符包含数字与字母，可支持36以内任意进制数<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NumTrans</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 因阿拉伯数字+字母共可表示 36个数字，所以支持 36 进制以内</span></span><br><span class="line"><span class="comment">     * 十进制数字描述进制映射关系，键 =&gt;值</span></span><br><span class="line"><span class="comment">     * Mapping with positive or negative.</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="keyword">public</span> $mp = [</span><br><span class="line">        <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>,</span><br><span class="line">        <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>,</span><br><span class="line">        <span class="string">'G'</span>, <span class="string">'H'</span>, <span class="string">'I'</span>, <span class="string">'J'</span>, <span class="string">'K'</span>, <span class="string">'L'</span>, <span class="string">'M'</span>,</span><br><span class="line">        <span class="string">'N'</span>, <span class="string">'O'</span>, <span class="string">'P'</span>, <span class="string">'Q'</span>, <span class="string">'R'</span>, <span class="string">'S'</span>, <span class="string">'T'</span>,</span><br><span class="line">        <span class="string">'U'</span>, <span class="string">'V'</span>, <span class="string">'W'</span>, <span class="string">'X'</span>, <span class="string">'Y'</span>, <span class="string">'Z'</span></span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> $mn = [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> $n = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> $ns = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;mn = array_flip(<span class="keyword">$this</span>-&gt;mp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">t2o</span><span class="params">($num, $num_sys)</span></span>&#123;</span><br><span class="line">        $n  = <span class="keyword">$this</span>-&gt;n  = $num;</span><br><span class="line">        $ns = <span class="keyword">$this</span>-&gt;ns = $num_sys;</span><br><span class="line">        $mp = <span class="keyword">$this</span>-&gt;mp;</span><br><span class="line"></span><br><span class="line">        $rs = [];               <span class="comment">// 短除法,存余数</span></span><br><span class="line">        <span class="keyword">while</span> ($n &gt;= $ns) &#123;     <span class="comment">// 被转换数 &gt;= 进制数</span></span><br><span class="line">            $r = $n % $ns;      <span class="comment">// 求余</span></span><br><span class="line">            $n = $n / $ns;      <span class="comment">// 求商, 作为下次循环的被转数</span></span><br><span class="line">            $rs[] = $mp[$r];    <span class="comment">// 存余</span></span><br><span class="line">        &#125;</span><br><span class="line">        $rs[] = $mp[$n];        <span class="comment">// 存余</span></span><br><span class="line">        $ret = implode(<span class="string">''</span>, array_reverse($rs)); <span class="comment">// 余数反序拼接为结果</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> $ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">o2t</span><span class="params">($num, $num_sys)</span></span>&#123;</span><br><span class="line">        $n  = <span class="keyword">$this</span>-&gt;n  = $num;</span><br><span class="line">        $ns = <span class="keyword">$this</span>-&gt;ns = $num_sys;</span><br><span class="line">        $mn = <span class="keyword">$this</span>-&gt;mn;</span><br><span class="line"></span><br><span class="line">        $ret = <span class="number">0</span>; <span class="comment">// 结果值</span></span><br><span class="line">        $sn = array_reverse(str_split($n)); <span class="comment">// 拆解数位并反序</span></span><br><span class="line">        <span class="keyword">foreach</span> ($sn <span class="keyword">as</span> $k =&gt; $n) &#123;</span><br><span class="line">            $cn = $mn[$n] * pow($ns, $k); <span class="comment">// 当前位的十进制数值</span></span><br><span class="line">            $ret += $cn;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> $ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试部分</span></span><br><span class="line">$n  = $argv[<span class="number">1</span>]; $ns = $argv[<span class="number">2</span>];</span><br><span class="line">$ret =  <span class="keyword">empty</span>($argv[<span class="number">3</span>]) </span><br><span class="line">    ? ( <span class="keyword">new</span> NumTrans())-&gt;t2o($n, $ns) </span><br><span class="line">    : ( <span class="keyword">new</span> NumTrans())-&gt;o2t($n, $ns);</span><br><span class="line"><span class="keyword">echo</span> $ret;</span><br></pre></td></tr></table></figure></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/06/php-num-convert/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
