@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Nslyx">
 <meta property="og:description" content="Say somethingGit 是一种辅助版本控制的软件。版本控制器是在软件开发过程中帮助多人协作和版本控制的软件，目前最常见的版本控制器有 svn 和 git 。 Learn about it 代码仓库 分布式 基于行的差异算法 托管 基本构成工作区、暂存取和本地仓库 本地仓库和远端仓库  Git官网 和  廖雪峰Git教程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T08:29:24.191Z">
+<meta property="og:updated_time" content="2018-03-30T16:49:52.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Around  Git">
 <meta name="twitter:description" content="Say somethingGit 是一种辅助版本控制的软件。版本控制器是在软件开发过程中帮助多人协作和版本控制的软件，目前最常见的版本控制器有 svn 和 git 。 Learn about it 代码仓库 分布式 基于行的差异算法 托管 基本构成工作区、暂存取和本地仓库 本地仓库和远端仓库  Git官网 和  廖雪峰Git教程">
@@ -342,6 +342,7 @@
 </ol>
 <p>Step.3 以镜像形式导入新的库地址。在裸库目录中执行下述命令将裸库以镜像写入新仓库地址。<br><code>git push --mirror git@new-server-url/new-store.git</code></p>
 <p>Step.4  There is no step four， everything was already done.</p>
+<h2 id="获取远程所有分支"><a href="#获取远程所有分支" class="headerlink" title="获取远程所有分支"></a>获取远程所有分支</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -r | grep -v &apos;\-&gt;&apos; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;; done</span><br><span class="line">git fetch --all</span><br><span class="line">git pull --all</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -459,7 +460,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-count">77</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -470,7 +471,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -481,7 +482,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -516,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Say-something"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Say-something" class="headerlink" title="Say something"></a>Say something</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Learn-about-it"><span class="nav-number">2.</span> <span class="nav-text"><a href="#Learn-about-it" class="headerlink" title="Learn about it"></a>Learn about it</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见的-Git-Server"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5E38;&#x89C1;&#x7684;-Git-Server" class="headerlink" title="&#x5E38;&#x89C1;&#x7684; Git Server"></a>&#x5E38;&#x89C1;&#x7684; Git Server</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需求操作"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x9700;&#x6C42;&#x64CD;&#x4F5C;" class="headerlink" title="&#x9700;&#x6C42;&#x64CD;&#x4F5C;"></a>&#x9700;&#x6C42;&#x64CD;&#x4F5C;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#仓库迁移"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#&#x4ED3;&#x5E93;&#x8FC1;&#x79FB;" class="headerlink" title="&#x4ED3;&#x5E93;&#x8FC1;&#x79FB;"></a>&#x4ED3;&#x5E93;&#x8FC1;&#x79FB;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Say-something"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Say-something" class="headerlink" title="Say something"></a>Say something</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Learn-about-it"><span class="nav-number">2.</span> <span class="nav-text"><a href="#Learn-about-it" class="headerlink" title="Learn about it"></a>Learn about it</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见的-Git-Server"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5E38;&#x89C1;&#x7684;-Git-Server" class="headerlink" title="&#x5E38;&#x89C1;&#x7684; Git Server"></a>&#x5E38;&#x89C1;&#x7684; Git Server</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需求操作"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x9700;&#x6C42;&#x64CD;&#x4F5C;" class="headerlink" title="&#x9700;&#x6C42;&#x64CD;&#x4F5C;"></a>&#x9700;&#x6C42;&#x64CD;&#x4F5C;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#仓库迁移"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#&#x4ED3;&#x5E93;&#x8FC1;&#x79FB;" class="headerlink" title="&#x4ED3;&#x5E93;&#x8FC1;&#x79FB;"></a>&#x4ED3;&#x5E93;&#x8FC1;&#x79FB;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取远程所有分支"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#&#x83B7;&#x53D6;&#x8FDC;&#x7A0B;&#x6240;&#x6709;&#x5206;&#x652F;" class="headerlink" title="&#x83B7;&#x53D6;&#x8FDC;&#x7A0B;&#x6240;&#x6709;&#x5206;&#x652F;"></a>&#x83B7;&#x53D6;&#x8FDC;&#x7A0B;&#x6240;&#x6709;&#x5206;&#x652F;</span></a></li></ol></li></ol></div>
             
 
           </div>

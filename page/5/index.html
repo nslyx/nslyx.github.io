@@ -251,6 +251,753 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/17/gitlab/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/17/gitlab/" itemprop="url">GitLab</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-17T18:03:00+08:00">
+                2017-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Gitlab-Git-Server-自建方案"><a href="#Gitlab-Git-Server-自建方案" class="headerlink" title="Gitlab - Git Server  自建方案"></a>Gitlab - Git Server  自建方案</h1><pre><code>本来一直一位Gitlab与Github、Coding和码云这些Git Server 是同类型的第三方服务，直到这段时间才知道Gitlab不仅仅提供直接的Git Server , 也提供用于自建Git Server 的方案，功能感觉大家有的他也都有了，并且常用的功能在社区版都有而且是完全免费的。除了有些重外都挺好。可以十分便捷的构建自己的Git Server 。目前尚未了解多深，许多特性还有待亲自体验。
+</code></pre><h1 id="About-it"><a href="#About-it" class="headerlink" title="About it"></a>About it</h1><p><a href="https://docs.gitlab.com/ce/administration/custom_hooks.html" target="_blank" rel="noopener">Doc WebHook</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/charles-https/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/13/charles-https/" itemprop="url">Charles Https  抓包 步骤</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T00:42:44+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>废话不多说，普通的http抓包也不多说了，简单叙述记录下如何实现 对 https 的抓取，</p>
+<h1 id="监听本机请求"><a href="#监听本机请求" class="headerlink" title="监听本机请求"></a>监听本机请求</h1><p>需要点击charles的帮助中的 SSLProxying 选项，里面有 Install Charles Root Certificate 选项，点击后就在当前机器上安装了Charles 软件作为代理服务器的 SSL 证书，接下来 需要信任该证书，然后浏览器再访问 https 使用 charles 代理的时候就能信任 charles , 但是并没有结束，需要在 Charles 的 Proxy 菜单中的  SSL Proxying Setting 选项中设置要监听的域名和端口  一般 SSL 端口在 443;</p>
+<p>#监听其他机器请求<br>打开 Charles  的 Help-&gt;SSL Proxying -&gt;Install Charles Root Certificate on a Mobile Device or Remote Browser…   选项，然后在需要监听的机器上先配置好普通的 http  监听， 然后 按照提示 用浏览器下载安装 Charles 证书，最后那个Charles 仍然需要配置要监听的域名和端口的。<br> OVER.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/01/npm-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/01/npm-notes/" itemprop="url">npm-notes</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-01T13:26:36+08:00">
+                2017-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>一些关于 npm 命令的笔记<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/01/npm-notes/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/html-meta/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/31/html-meta/" itemprop="url">界面开发记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T07:34:39+08:00">
+                2017-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>viewport是网页默认的宽度和高度，上面这行代码的意思是，网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积的100%。<br>所有主流浏览器都支持这个设置，包括IE9。对于那些老式浏览器（主要是IE6、7、8），需要使用css3-mediaqueries.js。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//手机端判断各个平台浏览器及操作系统平台</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">checkPlatform</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="regexp">/android/i</span>.test(navigator.userAgent))&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Android'browser."</span>);<span class="comment">//这是Android平台下浏览器</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="regexp">/(iPhone|iPad|iPod|iOS)/i</span>.test(navigator.userAgent))&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"This is iOS'browser."</span>);<span class="comment">//这是iOS平台下浏览器</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="regexp">/Linux/i</span>.test(navigator.userAgent))&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Linux'browser."</span>);<span class="comment">//这是Linux平台下浏览器</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="regexp">/Linux/i</span>.test(navigator.platform))&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Linux operating system."</span>);<span class="comment">//这是Linux操作系统平台</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="regexp">/MicroMessenger/i</span>.test(navigator.userAgent))&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"This is MicroMessenger'browser."</span>);<span class="comment">//这是微信平台下浏览器</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> browser = &#123;</span><br><span class="line">      versions: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">var</span> u = navigator.userAgent, app = navigator.appVersion;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="comment">//移动终端浏览器版本信息</span></span><br><span class="line">            Trident     :   nu.indexOf(<span class="string">'Trident'</span>)   &gt; <span class="number">-1</span>,      <span class="comment">//IE内核</span></span><br><span class="line">            Presto      :   nu.indexOf(<span class="string">'Presto'</span>)    &gt; <span class="number">-1</span>,        <span class="comment">//opera内核</span></span><br><span class="line">            AppleWebKit :   nu.indexOf(<span class="string">'AppleWebKit'</span>)   &gt; <span class="number">-1</span>,   <span class="comment">//苹果、谷歌内核</span></span><br><span class="line">            Gecko       :   nu.indexOf(<span class="string">'Gecko'</span>)     &gt; <span class="number">-1</span> &amp;&amp; nu.indexOf(<span class="string">'KHTML'</span>) == <span class="number">-1</span>,  <span class="comment">//火狐内核</span></span><br><span class="line">            Mobile      :   !!nu.match(<span class="regexp">/AppleWebKit.*Mobile/i</span>) || !!nu.match(<span class="regexp">/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/</span>),   <span class="comment">//是否为移动终端</span></span><br><span class="line">            ios         :   !!nu.match(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>),     <span class="comment">//ios终端</span></span><br><span class="line">            iPad        :   nu.indexOf(<span class="string">'iPad'</span>)      &gt; <span class="number">-1</span>,            <span class="comment">//是否iPad</span></span><br><span class="line">            iPhone      :   nu.indexOf(<span class="string">'iPhone'</span>)    &gt; <span class="number">-1</span> || nu.indexOf(<span class="string">'Mac'</span>)   &gt; <span class="number">-1</span>, <span class="comment">//是否为iPhone或者QQHD浏览器</span></span><br><span class="line">            Android     :   nu.indexOf(<span class="string">'Android'</span>)   &gt; <span class="number">-1</span> || nu.indexOf(<span class="string">'Linux'</span>) &gt; <span class="number">-1</span>, <span class="comment">//android终端或者uc浏览器           </span></span><br><span class="line">            webApp      :   nu.indexOf(<span class="string">'Safari'</span>)    == <span class="number">-1</span>        <span class="comment">//是否web应该程序，没有头部与底部</span></span><br><span class="line">          &#125;;</span><br><span class="line">      &#125;(),</span><br><span class="line">      language: (navigator.browserLanguage || navigator.language).toLowerCase()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">load</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchstart'</span>,touch, <span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchmove'</span>,touch, <span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchend'</span>,touch, <span class="literal">false</span>);</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">touch</span> (<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> event = event || <span class="built_in">window</span>.event;</span><br><span class="line">         </span><br><span class="line">        <span class="keyword">var</span> oInp = <span class="built_in">document</span>.getElementById(<span class="string">"inp"</span>);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">switch</span>(event.type)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"touchstart"</span>:</span><br><span class="line">                oInp.innerHTML = <span class="string">"Touch started ("</span> + event.touches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.touches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"touchend"</span>:</span><br><span class="line">                oInp.innerHTML = <span class="string">"&lt;br&gt;Touch end ("</span> + event.changedTouches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.changedTouches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"touchmove"</span>:</span><br><span class="line">                event.preventDefault();</span><br><span class="line">                oInp.innerHTML = <span class="string">"&lt;br&gt;Touch moved ("</span> + event.touches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.touches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>,load, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/mac-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/29/mac-notes/" itemprop="url">mac-notes</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T17:00:53+08:00">
+                2017-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="在安装软件隐私中找不到任何来源选项解决方法"><a href="#在安装软件隐私中找不到任何来源选项解决方法" class="headerlink" title="在安装软件隐私中找不到任何来源选项解决方法"></a>在安装软件隐私中找不到任何来源选项解决方法</h2><p>在终端执行下面的命令   【master前面为两短-】<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure></p>
+<h2 id="DS-Store"><a href="#DS-Store" class="headerlink" title=".DS_Store"></a>.DS_Store</h2><p>.DS_Store是Mac OS保存文件夹的自定义属性的隐藏文件，如文件的图标位置或背景色，相当于Windows的desktop.ini . 打开   “终端” ，复制黏贴下面的命令，回车执行，重启Mac即可生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 禁止.DS_store生成</span><br><span class="line">defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE2</span><br><span class="line">// 恢复.DS_store生成</span><br><span class="line">defaults delete com.apple.desktopservices DSDontWriteNetworkStores</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/wechat-dev/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/29/wechat-dev/" itemprop="url">微信服务号开发笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T13:27:32+08:00">
+                2017-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="基础配置验证"><a href="#基础配置验证" class="headerlink" title="基础配置验证"></a>基础配置验证</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$request_method = strtoupper($_SERVER[<span class="string">'REQUEST_METHOD'</span>]);</span><br><span class="line"><span class="string">'GET'</span> == $request_method || <span class="keyword">die</span>(<span class="string">'Http method Error!'</span>);</span><br><span class="line">!<span class="keyword">empty</span>($_GET[<span class="string">'echostr'</span>]) || <span class="keyword">die</span>(<span class="string">'Not the right Request!'</span>);</span><br><span class="line"></span><br><span class="line">$echostr 	= trim($_GET[<span class="string">"echostr"</span>]);</span><br><span class="line">$signature 	= $_GET[<span class="string">"signature"</span>];</span><br><span class="line"></span><br><span class="line">$token		= <span class="string">'The token which you set'</span>; <span class="comment">// 必须与配置页面设置的一致</span></span><br><span class="line">$timestamp 	= $_GET[<span class="string">"timestamp"</span>];</span><br><span class="line">$nonce 		= $_GET[<span class="string">"nonce"</span>];</span><br><span class="line"></span><br><span class="line">$tmpArr = [$token, $timestamp, $nonce];</span><br><span class="line">sort($tmpArr, SORT_STRING); <span class="comment">// 字典序</span></span><br><span class="line">$tmpStr = implode($tmpArr);</span><br><span class="line">$tmpStr = sha1($tmpStr); <span class="comment">// 计算签名</span></span><br><span class="line"></span><br><span class="line">$echostr = ($tmpStr == $signature) ? $echostr : <span class="string">'The Wechat is not supported!'</span>;</span><br><span class="line"><span class="keyword">die</span>($echostr);</span><br></pre></td></tr></table></figure>
+<h1 id="服务号开发"><a href="#服务号开发" class="headerlink" title="服务号开发"></a>服务号开发</h1><p>微信公众平台 - 开发 - 基本配置<br>这里面的有开发需要的基本设置<br>开发者ID<br>开发者密码<br>IP白名单</p>
+<p>服务器配置<br>服务器地址<br>令牌消息加解密密钥<br>消息加解密方式</p>
+<p>微信公众平台 - 设置 - 公众号设置</p>
+<h3 id="业务域名"><a href="#业务域名" class="headerlink" title="业务域名"></a>业务域名</h3><p>设置业务域名后，在微信内访问该域名下页面时，不会被重新排版。用户在该域名上进行输入时，不出现下图所示的安全提示。<br>注意事项：<br>1、可填写三个域名或路径（例：wx.qq.com或wx.qq.com/mp），需使用字母、数字及“-”的组合，不支持IP地址、端口号及短链域名。<br>2、填写的域名须通过ICP备案的验证。<br>3、将文件MP_verify_4GgDwWddnaSwTLuY.txt（点击下载）上传至填写域名或路径指向的web服务器（或虚拟主机）的目录（若填写域名，将文件放置在域名根目录下，例如wx.qq.com/MP_verify_4GgDwWddnaSwTLuY.txt；若填写路径，将文件放置在路径目录下，例如wx.qq.com/mp/MP_verify_4GgDwWddnaSwTLuY.txt），并确保可以访问。<br>4、一个自然月内最多可修改并保存三次，本月剩余保存次数：3</p>
+<h3 id="JS接口安全域名"><a href="#JS接口安全域名" class="headerlink" title="JS接口安全域名"></a>JS接口安全域名</h3><p>设置JS接口安全域名后，公众号开发者可在该域名下调用微信开放的JS接口。<br>注意事项：<br>1、可填写三个域名或路径（例：wx.qq.com或wx.qq.com/mp），需使用字母、数字及“-”的组合，不支持IP地址、端口号及短链域名。<br>2、填写的域名须通过ICP备案的验证。<br>3、将文件MP_verify_4GgDwWddnaSwTLuY.txt（点击下载）上传至填写域名或路径指向的web服务器（或虚拟主机）的目录（若填写域名，将文件放置在域名根目录下，例如wx.qq.com/MP_verify_4GgDwWddnaSwTLuY.txt；若填写路径，将文件放置在路径目录下，例如wx.qq.com/mp/MP_verify_4GgDwWddnaSwTLuY.txt），并确保可以访问。<br>4、一个自然月内最多可修改并保存三次，本月剩余保存次数：3</p>
+<h3 id="网页授权域名"><a href="#网页授权域名" class="headerlink" title="网页授权域名"></a>网页授权域名</h3><p>用户在网页授权页同意授权给公众号后，微信会将授权数据传给一个回调页面，回调页面需在此域名下，以确保安全可靠。<br>注意事项：<br>1、回调页面域名或路径需使用字母、数字及“-”的组合（例：wx.qq.com或wx.qq.com/mp），不支持IP地址、端口号及短链域名。填写的域名或路径需与实际回调URL中的域名或路径相同。<br>2、填写的域名须通过ICP备案的验证。<br>3、将文件MP_verify_4GgDwWddnaSwTLuY.txt（点击下载）上传至填写域名或路径指向的web服务器（或虚拟主机）的目录（若填写域名，将文件放置在域名根目录下，例如wx.qq.com/MP_verify_4GgDwWddnaSwTLuY.txt；若填写路径，将文件放置在路径目录下，例如wx.qq.com/mp/MP_verify_4GgDwWddnaSwTLuY.txt），并确保可以访问。</p>
+<p>授权接口的 redirect_uri 必须从属于该域名，OR 客户端报错  redirect_uri 参数错误</p>
+<p>微信公众平台 - 设置 - 安全中心<br>风险操作保护<br>IP白名单</p>
+<p>微信支付 -  是否是同一个微信公众号的微信支付 注意 openid 的使用</p>
+<p>没有必要注册微信公众平台账号<br>需要申请测试账号，可以用于测试接口<br>需要有自己的域名和web服务器<br>后台管理永远离不开一款富文本编辑器，最好能定制化应对手机展示效果</p>
+<h1 id="公众平台接口域名"><a href="#公众平台接口域名" class="headerlink" title="公众平台接口域名"></a>公众平台接口域名</h1><p>公众平台接口域名说明<br>开发者可以根据自己的服务器部署情况，选择最佳的接入点（延时更低，稳定性更高）。除此之外，可以将其他接入点用作容灾用途，当网络链路发生故障时，可以考虑选择备用接入点来接入。</p>
+<ol>
+<li>通用域名(api.weixin.qq.com)，使用该域名将访问官方指定就近的接入点；</li>
+<li>上海域名(sh.api.weixin.qq.com)，使用该域名将访问上海的接入点；</li>
+<li>深圳域名(sz.api.weixin.qq.com)，使用该域名将访问深圳的接入点；</li>
+<li>香港域名(hk.api.weixin.qq.com)，使用该域名将访问香港的接入点。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/28/shell-demo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -727,753 +1474,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/20/notes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/20/notes/" itemprop="url">Notes - 开发环境相关</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T12:51:50+08:00">
-                2017-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>开发相关的杂记。<br>在本地开发中需要用到很多工具来构建本地的开发环境，包含代码的管理，开发，测试和部署。<br>管理方面主要是对项目代码的版本控制，对变更记录和保存，目前最常见的版本控制器有 svn(集中式) 和  git(分布式) 。<br>在电脑上需要有工作区的概念，用来把工作的相关文件代码什么的与平时的其他文件区分开。<br>不同的开发需要不同的一套工具，选用合适强大的工具对开发效率和开发质量很有意义。下面就从PHP开发切入，随便说说涉及的东西。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/20/notes/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/nodejs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/16/nodejs/" itemprop="url">Node.js</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-16T02:01:21+08:00">
-                2017-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="http://riny.net/2014/cnpm/" target="_blank" rel="noopener">国内优秀npm镜像推荐及使用</a><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/16/nodejs/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/http/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/15/http/" itemprop="url">http</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T11:54:01+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含HTTP状态码的信息头（server header）用以响应浏览器的请求。</p>
-<p>HTTP状态码的英文为HTTP Status Code。 下面是常见的HTTP状态码：</p>
-<p>200 - 请求成功<br>301 - 资源（网页等）被永久转移到其它URL<br>404 - 请求的资源（网页等）不存在<br>500 - 内部服务器错误  </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/15/http/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/15/git/" itemprop="url">Around  Git</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T10:50:32+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Say-something"><a href="#Say-something" class="headerlink" title="Say something"></a>Say something</h1><p>Git 是一种辅助版本控制的软件。<br>版本控制器是在软件开发过程中帮助多人协作和版本控制的软件，目前最常见的版本控制器有 svn 和 git 。</p>
-<h1 id="Learn-about-it"><a href="#Learn-about-it" class="headerlink" title="Learn about it"></a>Learn about it</h1><ul>
-<li>代码仓库</li>
-<li>分布式</li>
-<li>基于行的差异算法</li>
-<li>托管</li>
-<li>基本构成工作区、暂存取和本地仓库</li>
-<li>本地仓库和远端仓库</li>
-</ul>
-<p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git官网</a> 和  <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰Git教程</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/15/git/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/git-orders/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/15/git-orders/" itemprop="url">Git 常用命令记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T10:43:11+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这里记录一些使用过的Git命令。</p>
-<p> git reset –hard<br> git push -f</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/win-shortcuts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/15/win-shortcuts/" itemprop="url">win-shortcuts</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T10:00:47+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1524,7 +1524,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-count">77</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1535,7 +1535,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1546,7 +1546,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
