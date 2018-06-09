@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="使用 macbook 刻录 U 盘启动盘使用 dd 命令可以很方便的在 macbook 上将系统镜像文件刻录到 U盘上dd 命令做usb启动盘十分方便1sudo dd if=xxx.iso of=/dev/sdb bs=1M 用以上命令前必须卸载u盘，sdb是你的u盘，bs=1M是块的大小，后面的数值大，写的速度相对块一点，但也不是无限的，我一般选2M，注意，执行命令后很块完成，但u盘还在闪，等不">
+<meta name="description" content="使用 macbook 刻录 U 盘启动盘使用 dd 命令可以很方便的在 macbook 上将系统镜像文件刻录到 U 盘上1sudo dd if=xxx.iso of=/dev/disk2 bs=1M 注意事项：  刻录前必须将 U 盘卸载掉 disk2  为 U 盘设备 bs=1M 表示设置输入输出的块的大小 命令执行很快，但可能读写还在执行，如果 U 盘有读写指示灯的花等到灯不闪了再移除 被刻录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MacBook disk order">
 <meta property="og:url" content="http://yoursite.com/2018/06/09/mac-disk-order/index.html">
 <meta property="og:site_name" content="Nslyx">
-<meta property="og:description" content="使用 macbook 刻录 U 盘启动盘使用 dd 命令可以很方便的在 macbook 上将系统镜像文件刻录到 U盘上dd 命令做usb启动盘十分方便1sudo dd if=xxx.iso of=/dev/sdb bs=1M 用以上命令前必须卸载u盘，sdb是你的u盘，bs=1M是块的大小，后面的数值大，写的速度相对块一点，但也不是无限的，我一般选2M，注意，执行命令后很块完成，但u盘还在闪，等不">
+<meta property="og:description" content="使用 macbook 刻录 U 盘启动盘使用 dd 命令可以很方便的在 macbook 上将系统镜像文件刻录到 U 盘上1sudo dd if=xxx.iso of=/dev/disk2 bs=1M 注意事项：  刻录前必须将 U 盘卸载掉 disk2  为 U 盘设备 bs=1M 表示设置输入输出的块的大小 命令执行很快，但可能读写还在执行，如果 U 盘有读写指示灯的花等到灯不闪了再移除 被刻录">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-09T09:01:42.741Z">
+<meta property="og:updated_time" content="2018-06-09T09:18:49.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacBook disk order">
-<meta name="twitter:description" content="使用 macbook 刻录 U 盘启动盘使用 dd 命令可以很方便的在 macbook 上将系统镜像文件刻录到 U盘上dd 命令做usb启动盘十分方便1sudo dd if=xxx.iso of=/dev/sdb bs=1M 用以上命令前必须卸载u盘，sdb是你的u盘，bs=1M是块的大小，后面的数值大，写的速度相对块一点，但也不是无限的，我一般选2M，注意，执行命令后很块完成，但u盘还在闪，等不">
+<meta name="twitter:description" content="使用 macbook 刻录 U 盘启动盘使用 dd 命令可以很方便的在 macbook 上将系统镜像文件刻录到 U 盘上1sudo dd if=xxx.iso of=/dev/disk2 bs=1M 注意事项：  刻录前必须将 U 盘卸载掉 disk2  为 U 盘设备 bs=1M 表示设置输入输出的块的大小 命令执行很快，但可能读写还在执行，如果 U 盘有读写指示灯的花等到灯不闪了再移除 被刻录">
 
 
 
@@ -332,8 +332,15 @@
       
 
       
-        <h2 id="使用-macbook-刻录-U-盘启动盘"><a href="#使用-macbook-刻录-U-盘启动盘" class="headerlink" title="使用 macbook 刻录 U 盘启动盘"></a>使用 macbook 刻录 U 盘启动盘</h2><p>使用 <code>dd</code> 命令可以很方便的在 macbook 上将系统镜像文件刻录到 U盘上<br><code>dd</code> 命令做usb启动盘十分方便<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="keyword">if</span>=xxx.iso of=/dev/sdb bs=1M</span><br></pre></td></tr></table></figure></p>
-<p>用以上命令前必须卸载u盘，sdb是你的u盘，bs=1M是块的大小，后面的数值大，写的速度相对块一点，但也不是无限的，我一般选2M，注意，执行命令后很块完成，但u盘还在闪，等不闪了，安全移除。<br>注意：你的镜像需要支持dd命令。</p>
+        <h2 id="使用-macbook-刻录-U-盘启动盘"><a href="#使用-macbook-刻录-U-盘启动盘" class="headerlink" title="使用 macbook 刻录 U 盘启动盘"></a>使用 macbook 刻录 U 盘启动盘</h2><p>使用 <code>dd</code> 命令可以很方便的在 macbook 上将系统镜像文件刻录到 U 盘上<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="keyword">if</span>=xxx.iso of=/dev/disk2 bs=1M</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意事项</strong>：</p>
+<ol>
+<li>刻录前必须将 U 盘卸载掉</li>
+<li><code>disk2</code>  为 U 盘设备</li>
+<li><code>bs=1M</code> 表示设置输入输出的块的大小</li>
+<li>命令执行很快，但可能读写还在执行，如果 U 盘有读写指示灯的花等到灯不闪了再移除</li>
+<li>被刻录的镜像文件需要支持<code>dd</code>命令</li>
+</ol>
 <h2 id="格式化-恢复-U-盘系统盘"><a href="#格式化-恢复-U-盘系统盘" class="headerlink" title="格式化/恢复 U 盘系统盘"></a>格式化/恢复 U 盘系统盘</h2><p>这里需要用到的是 <code>diskutil</code> 命令<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">diskutil info /dev/disk2</span><br><span class="line">diskutil partitionDisk /dev/disk2 1 MBRFormat <span class="string">"MS-DOS FAT32"</span> EDISON 32.2GB</span><br></pre></td></tr></table></figure></p>
 <p><a href="http://rexstjohn.com/fixing-does-not-appear-to-be-a-valid-volume-name-for-its-file-system/" target="_blank" rel="noopener">参见原文</a></p>
 
