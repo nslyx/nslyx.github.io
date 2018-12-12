@@ -251,7 +251,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/overview/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/lang-c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhang xiaotian">
@@ -270,7 +270,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/13/overview/" itemprop="url">overview</a></h1>
+                <a class="post-title-link" href="/2018/06/13/lang-c/" itemprop="url">学一点点 C 语言</a></h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T14:29:35+08:00">
-                2018-04-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T18:04:20+08:00">
+                2018-06-13
               </time>
             
 
@@ -322,7 +322,142 @@
       
         
           
+            <h2 id="一点点基础"><a href="#一点点基础" class="headerlink" title="一点点基础"></a>一点点基础</h2><ol>
+<li>c 语言脚本的源文件后缀位 .c</li>
+<li>编译器: gcc 编译命令形如: <code>gcc -o exe.o source.c</code></li>
+<li>编译输出的后缀名为<code>.o</code>文件即为可执行文件</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/mac-disk-order/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/09/mac-disk-order/" itemprop="url">MacBook disk order</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T16:48:21+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="使用-macbook-刻录-U-盘启动盘"><a href="#使用-macbook-刻录-U-盘启动盘" class="headerlink" title="使用 macbook 刻录 U 盘启动盘"></a>使用 macbook 刻录 U 盘启动盘</h2><p>使用 <code>dd</code> 命令可以很方便的在 macbook 上将系统镜像文件刻录到 U 盘上<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="keyword">if</span>=xxx.iso of=/dev/disk2 bs=1M</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意事项</strong>：</p>
+<ol>
+<li>刻录前必须将 U 盘卸载掉</li>
+<li><code>disk2</code>  为 U 盘设备</li>
+<li><code>bs=1M</code> 表示设置输入输出的块的大小</li>
+<li>命令执行很快，但可能读写还在执行，如果 U 盘有读写指示灯的花等到灯不闪了再移除</li>
+<li>被刻录的镜像文件需要支持<code>dd</code>命令</li>
+</ol>
+<h2 id="格式化-恢复-U-盘系统盘"><a href="#格式化-恢复-U-盘系统盘" class="headerlink" title="格式化/恢复 U 盘系统盘"></a>格式化/恢复 U 盘系统盘</h2><p>这里需要用到的是 <code>diskutil</code> 命令<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">diskutil info /dev/disk2</span><br><span class="line">diskutil partitionDisk /dev/disk2 1 MBRFormat <span class="string">"MS-DOS FAT32"</span> EDISON 32.2GB</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://rexstjohn.com/fixing-does-not-appear-to-be-a-valid-volume-name-for-its-file-system/" target="_blank" rel="noopener">参见原文</a></p>
+
           
         
       
@@ -928,7 +1063,7 @@ location / {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/06/php-num-convert/" itemprop="url">PHP 数字的进制转换</a></h1>
+                <a class="post-title-link" href="/2018/03/06/php-num-convert/" itemprop="url">PHP 数字的进制转换速度</a></h1>
         
 
         <div class="post-meta">
@@ -950,6 +1085,28 @@ location / {
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1536,146 +1693,6 @@ location / {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/26/wxpay/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/26/wxpay/" itemprop="url">微信支付学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-26T17:33:30+08:00">
-                2017-12-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="WxPay-Study"><a href="#WxPay-Study" class="headerlink" title="WxPay Study"></a>WxPay Study</h1><p>需要详细深入的了解下微信支付的完整过程</p>
-<h2 id="sd-H5-网页支付模式"><a href="#sd-H5-网页支付模式" class="headerlink" title="sd H5 网页支付模式"></a>sd H5 网页支付模式</h2><pre><code>/**  流程 文字叙述
- * 1. 服务端 生成 图文消息 或 二维码 通过微信客户端 展示给 微信支付用户
- * 2. 微信支付用户 点击图文消息 或 扫描二维码 在微信浏览器中 打开商户 H5 页面
- * 3. 网页内请求生成支付订单
- * 4. 服务端 接收请求 并生成商户订单
- * 5. 在服务端调用  [微信支付]统一下单 Api ，请求微信支付系统 生成预付单，接收 返回的 预付单信息(prepay_id)
- * 6. 生成 JSAPI 页面调用的支付参数并签名，返回支付参数(prepay_id, paySign等)到 微信客户端
- * 7. 用户点击发起支付， JSAPI 接口向微信支付系统 请求支付
- * 8. 微信支付系统 检查支付参数合法性 和 授权域权限，然后返回验证结果 并要求支付授权，即在微信客户端上提示输入密码
- * 9. 用户确认支付，输入密码，提交支付授权到微信支付服务器，由服务器验证授权
- * Alt 并行处理
- * 10. 异步通知商户支付结果
- * 11. 告知微信通知处理结果
- * 12. 微信支付服务器向微信客户端 返回 支付结果，并发微信消息提示，微信客户端展示支付消息给客户
- * 13. 微信跳转回商户 H5 页面，查询商户后台支付结果
- * Alt 支付结果
- * 14. 未收到支付通知，调用查询 API，查询支付结果，微信支付系统 返回支付结果，服务端接收 并 向微信客户端返回支付结果。
- * 15. 商户发货及支付后个性化页面提示
- */
-</code></pre><p><a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_4" target="_blank" rel="noopener">点此查看官方业务流程</a>。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1726,7 +1743,7 @@ location / {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1737,7 +1754,7 @@ location / {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1748,7 +1765,7 @@ location / {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

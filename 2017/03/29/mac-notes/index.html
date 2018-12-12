@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Nslyx">
 <meta property="og:description" content="两个命令12sudo scutil --get HostNamesudo scutil --get ComputerName 在安装软件隐私中找不到任何来源选项解决方法在终端执行下面的命令   【master前面为两短-】1sudo spctl --master-disable .DS_Store.DS_Store是Mac OS保存文件夹的自定义属性的隐藏文件，如文件的图标位置或背景色，相当于Wi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-13T11:03:16.415Z">
+<meta property="og:updated_time" content="2018-11-02T02:55:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac-notes">
 <meta name="twitter:description" content="两个命令12sudo scutil --get HostNamesudo scutil --get ComputerName 在安装软件隐私中找不到任何来源选项解决方法在终端执行下面的命令   【master前面为两短-】1sudo spctl --master-disable .DS_Store.DS_Store是Mac OS保存文件夹的自定义属性的隐藏文件，如文件的图标位置或背景色，相当于Wi">
@@ -324,6 +324,7 @@
         <h2 id="两个命令"><a href="#两个命令" class="headerlink" title="两个命令"></a>两个命令</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo scutil --get HostName</span><br><span class="line">sudo scutil --get ComputerName</span><br></pre></td></tr></table></figure>
 <h2 id="在安装软件隐私中找不到任何来源选项解决方法"><a href="#在安装软件隐私中找不到任何来源选项解决方法" class="headerlink" title="在安装软件隐私中找不到任何来源选项解决方法"></a>在安装软件隐私中找不到任何来源选项解决方法</h2><p>在终端执行下面的命令   【master前面为两短-】<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure></p>
 <h2 id="DS-Store"><a href="#DS-Store" class="headerlink" title=".DS_Store"></a>.DS_Store</h2><p>.DS_Store是Mac OS保存文件夹的自定义属性的隐藏文件，如文件的图标位置或背景色，相当于Windows的desktop.ini . 打开   “终端” ，复制黏贴下面的命令，回车执行，重启Mac即可生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 禁止.DS_store生成</span><br><span class="line">defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE2</span><br><span class="line">// 恢复.DS_store生成</span><br><span class="line">defaults delete com.apple.desktopservices DSDontWriteNetworkStores</span><br></pre></td></tr></table></figure></p>
+<h3 id="制作-mac-装系统-U盘"><a href="#制作-mac-装系统-U盘" class="headerlink" title="制作 mac 装系统 U盘"></a>制作 mac 装系统 U盘</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/mojave  /Applications/Install\ macOS\ Mojave.app --nointeraction</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -439,7 +440,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -450,7 +451,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -461,7 +462,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -496,7 +497,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#两个命令"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x4E24;&#x4E2A;&#x547D;&#x4EE4;" class="headerlink" title="&#x4E24;&#x4E2A;&#x547D;&#x4EE4;"></a>&#x4E24;&#x4E2A;&#x547D;&#x4EE4;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在安装软件隐私中找不到任何来源选项解决方法"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5728;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#x9690;&#x79C1;&#x4E2D;&#x627E;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x6765;&#x6E90;&#x9009;&#x9879;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;" class="headerlink" title="&#x5728;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#x9690;&#x79C1;&#x4E2D;&#x627E;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x6765;&#x6E90;&#x9009;&#x9879;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;"></a>&#x5728;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#x9690;&#x79C1;&#x4E2D;&#x627E;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x6765;&#x6E90;&#x9009;&#x9879;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DS-Store"><span class="nav-number">3.</span> <span class="nav-text"><a href="#DS-Store" class="headerlink" title=".DS_Store"></a>.DS_Store</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#两个命令"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x4E24;&#x4E2A;&#x547D;&#x4EE4;" class="headerlink" title="&#x4E24;&#x4E2A;&#x547D;&#x4EE4;"></a>&#x4E24;&#x4E2A;&#x547D;&#x4EE4;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在安装软件隐私中找不到任何来源选项解决方法"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5728;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#x9690;&#x79C1;&#x4E2D;&#x627E;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x6765;&#x6E90;&#x9009;&#x9879;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;" class="headerlink" title="&#x5728;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#x9690;&#x79C1;&#x4E2D;&#x627E;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x6765;&#x6E90;&#x9009;&#x9879;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;"></a>&#x5728;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#x9690;&#x79C1;&#x4E2D;&#x627E;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x6765;&#x6E90;&#x9009;&#x9879;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DS-Store"><span class="nav-number">3.</span> <span class="nav-text"><a href="#DS-Store" class="headerlink" title=".DS_Store"></a>.DS_Store</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#制作-mac-装系统-U盘"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x5236;&#x4F5C;-mac-&#x88C5;&#x7CFB;&#x7EDF;-U&#x76D8;" class="headerlink" title="&#x5236;&#x4F5C; mac &#x88C5;&#x7CFB;&#x7EDF; U&#x76D8;"></a>&#x5236;&#x4F5C; mac &#x88C5;&#x7CFB;&#x7EDF; U&#x76D8;</span></a></li></ol></li></ol></div>
             
 
           </div>
