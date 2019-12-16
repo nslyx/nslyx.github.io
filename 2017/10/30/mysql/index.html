@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="MySql," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="MySQL 命令1234567select @@sql_mode;set global sql_mode=&amp;apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&amp;apos;;set session sql_">
+<meta name="description" content="Sql 语句记录12345678910111213141516171819# 查看 sql 模式select @@sql_mode;# 全局设置set global sql_mode=&amp;apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENG">
+<meta name="keywords" content="MySql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL - Sth">
+<meta property="og:title" content="MySQL 笔记">
 <meta property="og:url" content="http://yoursite.com/2017/10/30/mysql/index.html">
 <meta property="og:site_name" content="Nslyx">
-<meta property="og:description" content="MySQL 命令1234567select @@sql_mode;set global sql_mode=&amp;apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&amp;apos;;set session sql_">
+<meta property="og:description" content="Sql 语句记录12345678910111213141516171819# 查看 sql 模式select @@sql_mode;# 全局设置set global sql_mode=&amp;apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENG">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-13T11:06:36.000Z">
+<meta property="og:updated_time" content="2019-12-16T06:47:38.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL - Sth">
-<meta name="twitter:description" content="MySQL 命令1234567select @@sql_mode;set global sql_mode=&amp;apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&amp;apos;;set session sql_">
+<meta name="twitter:title" content="MySQL 笔记">
+<meta name="twitter:description" content="Sql 语句记录12345678910111213141516171819# 查看 sql 模式select @@sql_mode;# 全局设置set global sql_mode=&amp;apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENG">
 
 
 
@@ -125,7 +126,7 @@
 
 
 
-  <title>MySQL - Sth | Nslyx</title>
+  <title>MySQL 笔记 | Nslyx</title>
   
 
 
@@ -271,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL - Sth</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL 笔记</h1>
         
 
         <div class="post-meta">
@@ -293,6 +294,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySql/" itemprop="url" rel="index">
+                    <span itemprop="name">MySql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -321,9 +344,9 @@
       
 
       
-        <h1 id="MySQL-命令"><a href="#MySQL-命令" class="headerlink" title="MySQL 命令"></a>MySQL 命令</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select @@sql_mode;</span><br><span class="line">set global sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br><span class="line">set session sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">GRANT ALL PRIVILEGES ON iread.* TO &apos;iread&apos;@&apos;%&apos; IDENTIFIED BY &apos;aXJlYWRwYXNz&apos; WITH GRANT OPTION;</span><br><span class="line">GRANT ALL PRIVILEGES ON iread.* TO &apos;iread&apos;@&apos;%&apos; IDENTIFIED BY &apos;aXJlYWRwYXNz&apos; WITH GRANT OPTION;</span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">SPWD=workpath</span><br><span class="line"></span><br><span class="line">d=`date <span class="string">"+%Y%m%d%H%M%S"</span>`</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$SPWD</span></span><br><span class="line">/usr/bin/mysqldump -h[domain|ip] -u[user] -p<span class="string">'password'</span> dbname &gt; export_to_file.sql</span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> -e <span class="string">"drop database dbname;"</span></span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> -e <span class="string">"create database dbname default charset utf8mb4"</span></span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> dbname &lt; <span class="variable">$SPWD</span>/import_data_file.sql</span><br><span class="line">mv data_bk_file.sql backup/<span class="variable">$d</span>.bk_name.sql</span><br></pre></td></tr></table></figure>
-
+        <h3 id="Sql-语句记录"><a href="#Sql-语句记录" class="headerlink" title="Sql 语句记录"></a>Sql 语句记录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 查看 sql 模式</span><br><span class="line">select @@sql_mode;</span><br><span class="line"># 全局设置</span><br><span class="line">set global sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br><span class="line"># 会话设置</span><br><span class="line">set session sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br><span class="line"></span><br><span class="line"># 修改 root 用户密码</span><br><span class="line">ALTER USER user() root IDENTIFIED BY &apos;********&apos;;</span><br><span class="line"></span><br><span class="line"># 创建用户并赋予权限 with 语句表示账号有分配已有权限的能力</span><br><span class="line">GRANT ALL PRIVILEGES ON dbName.* TO &apos;username&apos;@&apos;%&apos; IDENTIFIED BY &apos;********&apos; WITH GRANT OPTION;</span><br><span class="line">GRANT ALL PRIVILEGES ON dbName.* TO &apos;username&apos;@&apos;%&apos;; # 分配权限</span><br><span class="line"># 撤销权限</span><br><span class="line">REVOKE ALL PRIVILEGES ON dbName FROM &apos;username&apos;@&apos;%&apos;;</span><br><span class="line">REVOKE ALL ON dbName FROM &apos;username&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line"># 1 ~ 100 随机数 </span><br><span class="line">select FLOOR(1 + RAND() * (100 - 1 + 1));</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="自动备份脚本"><a href="#自动备份脚本" class="headerlink" title="自动备份脚本"></a>自动备份脚本</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">SPWD=workpath</span><br><span class="line"></span><br><span class="line">d=`date <span class="string">"+%Y%m%d%H%M%S"</span>`</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$SPWD</span></span><br><span class="line">/usr/bin/mysqldump -h[domain|ip] -u[user] -p<span class="string">'password'</span> dbname &gt; export_to_file.sql</span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> -e <span class="string">"drop database dbname;"</span></span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> -e <span class="string">"create database dbname default charset utf8mb4"</span></span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> dbname &lt; <span class="variable">$SPWD</span>/import_data_file.sql</span><br><span class="line">mv data_bk_file.sql backup/<span class="variable">$d</span>.bk_name.sql</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -337,6 +360,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySql/" rel="tag"># MySql</a>
+          
+        </div>
       
 
       
@@ -438,7 +467,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -449,7 +478,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -460,7 +489,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -495,7 +524,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-命令"><span class="nav-number">1.</span> <span class="nav-text"><a href="#MySQL-&#x547D;&#x4EE4;" class="headerlink" title="MySQL &#x547D;&#x4EE4;"></a>MySQL &#x547D;&#x4EE4;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sql-语句记录"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Sql-&#x8BED;&#x53E5;&#x8BB0;&#x5F55;" class="headerlink" title="Sql &#x8BED;&#x53E5;&#x8BB0;&#x5F55;"></a>Sql &#x8BED;&#x53E5;&#x8BB0;&#x5F55;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动备份脚本"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x81EA;&#x52A8;&#x5907;&#x4EFD;&#x811A;&#x672C;" class="headerlink" title="&#x81EA;&#x52A8;&#x5907;&#x4EFD;&#x811A;&#x672C;"></a>&#x81EA;&#x52A8;&#x5907;&#x4EFD;&#x811A;&#x672C;</span></a></li></ol></div>
             
 
           </div>

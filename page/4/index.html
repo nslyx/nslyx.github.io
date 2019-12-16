@@ -251,6 +251,640 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/javascript-slice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/21/javascript-slice/" itemprop="url">javascript-slice</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-21T14:23:23+08:00">
+                2017-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Some-Code"><a href="#Some-Code" class="headerlink" title="Some Code"></a>Some Code</h1><h2 id="Date对象-简单的时间格式化能力扩充"><a href="#Date对象-简单的时间格式化能力扩充" class="headerlink" title="Date对象 简单的时间格式化能力扩充"></a>Date对象 简单的时间格式化能力扩充</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Date 简单的时间格式化能力扩充</span></span><br><span class="line"><span class="built_in">Date</span>.prototype.Format = <span class="function"><span class="keyword">function</span> (<span class="params">DateExp</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> TRANS = &#123;</span><br><span class="line">        Y: <span class="keyword">this</span>.getFullYear(),</span><br><span class="line">        m: <span class="keyword">this</span>.getMonth() + <span class="number">1</span>,</span><br><span class="line">        d: <span class="keyword">this</span>.getDate(),</span><br><span class="line">        H: <span class="keyword">this</span>.getHours(),</span><br><span class="line">        i: <span class="keyword">this</span>.getMinutes(),</span><br><span class="line">        s: <span class="keyword">this</span>.getSeconds(),</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Q: Math.floor((this.getMonth() + 3) / 3), //季度 </span></span><br><span class="line">        <span class="comment">// M: this.getMilliseconds() //毫秒 </span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> TRANS)</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">`(<span class="subst">$&#123;i&#125;</span>)`</span>).test(DateExp))</span><br><span class="line">            DateExp = DateExp.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (n = TRANS[i]) &lt; <span class="number">10</span> ? <span class="string">'0'</span> + n : n);</span><br><span class="line">    <span class="keyword">return</span> DateExp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/am-i-a-coder/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/21/am-i-a-coder/" itemprop="url">身为码农</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-21T10:28:07+08:00">
+                2017-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这段时间又深陷技术栈的泥潭不可自拔，带着一定的好奇心探索却一再发现新世界，看到了却难以掌控，不禁感叹现今技术日新月异，疑惑如何自处身为码农，我又是否能跟上技术的脚步，是否会迷失在技术的潮洪…<br>以后或许会写个总结，或许会写段学习经历，或许什么都不会写。学习还是第一位的，先立个标题吧，至少现在还是期待着自己的成长的。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/19/impro-tmp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/19/impro-tmp/" itemprop="url">未经整理的一些内容</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T10:17:53+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="很多的待整理的内容"><a href="#很多的待整理的内容" class="headerlink" title="很多的待整理的内容"></a>很多的待整理的内容</h1><pre><code>希望能够抽时间一点点消灭掉～～～～～
+</code></pre>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/19/impro-tmp/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/19/php-slice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/19/php-slice/" itemprop="url">PHP 代码段收录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T09:26:37+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CodeSlice/" itemprop="url" rel="index">
+                    <span itemprop="name">CodeSlice</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="2的幂和参数"><a href="#2的幂和参数" class="headerlink" title="2的幂和参数"></a>2的幂和参数</h2><p>只用一个数字传参，可以被解析为多个选项的状态。<br>在有限选项集合中，分别用<code>2^0</code>、<code>2^1</code>、<code>2^2</code>…为<code>id</code>标识选项，以选中项的<code>id</code>和为参数进行参数传递，此类参数使用前需要进行拆分解析。<br>这种方式的特点有：1.任何多个id的和绝对唯一；2.实际是二进制的开关<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 构建题目场景：</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">build_q</span><span class="params">($option_length = <span class="number">10</span>, $choose_length = <span class="number">3</span>)</span></span>&#123;</span><br><span class="line">    $q = $options = [];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构建一定长度的选项集合</span></span><br><span class="line">    <span class="keyword">for</span>($i=<span class="number">0</span>; $i&lt;$option_length; $i++)&#123;</span><br><span class="line">        $k = pow(<span class="number">2</span>, $i);</span><br><span class="line">        $v = <span class="string">'可选项 no.'</span> . ($i + <span class="number">1</span>);</span><br><span class="line">        $options[$k] = $v;</span><br><span class="line">    &#125;</span><br><span class="line">    $q[<span class="string">'可选集合'</span>] = json_encode($options, <span class="number">256</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 随机选择几个选项</span></span><br><span class="line">    $choosen = array_rand($options, $choose_length);</span><br><span class="line">    $q[<span class="string">'已选选项id'</span>] = json_encode($choosen);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算已选id之和</span></span><br><span class="line">    $sum = array_sum($choosen);</span><br><span class="line">    $q[<span class="string">'id之和为'</span>] = $sum;</span><br><span class="line">    print_r($q);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [$options, $sum];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 传参后的幂和拆解</span></span><br><span class="line"><span class="comment">// 减拆解必须知道全部选项id的集合，用于枚举</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">subtraction</span><span class="params">($sum, $options)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    $choosen = [];</span><br><span class="line">    $ids = array_keys($options);</span><br><span class="line">    rsort($ids);</span><br><span class="line">    <span class="keyword">foreach</span>($ids <span class="keyword">as</span> $id)&#123;</span><br><span class="line">        <span class="keyword">if</span>($sum &gt;= $id) &#123;</span><br><span class="line">            $choosen[] = $id;</span><br><span class="line">            $sum -= $id;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sort($choosen);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'subtraction result:'</span> . json_encode($choosen) . <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> $choosen;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 尝试直接转二进制读取开关</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trybin</span><span class="params">($sum)</span></span>&#123;</span><br><span class="line">    $bin = strrev(decbin($sum));</span><br><span class="line">    $len = strlen($bin);</span><br><span class="line">    $choosen = [];</span><br><span class="line">    <span class="keyword">for</span>($i=<span class="number">0</span>; $i&lt;$len; $i++)&#123;</span><br><span class="line">        $bin[$i] == <span class="string">'1'</span> &amp;&amp; $choosen[] = pow(<span class="number">2</span>, $i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'bin result:'</span> . json_encode($choosen) . <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> $choosen;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$Q = build_q();</span><br><span class="line">$s = subtraction($Q[<span class="number">1</span>], $Q[<span class="number">0</span>]);</span><br><span class="line">$b = trybin($Q[<span class="number">1</span>]);</span><br></pre></td></tr></table></figure></p>
+<h2 id="PHP-简单的跨域许可设计"><a href="#PHP-简单的跨域许可设计" class="headerlink" title="PHP 简单的跨域许可设计"></a>PHP 简单的跨域许可设计</h2><p>跨域的报错是浏览器判断的，在请求被响应之后。所以只要在响应中明确许可该域名就能够实现跨域。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 `header` 头里面加上`Access-Control-Allow-Origin:*` 即能够实现所有的跨域，避免 js 请求因为跨域而报错。</span></span><br><span class="line"><span class="comment">// 跨域许可 - 少量的可以写为数组，多的可以创建数据表进行控制 </span></span><br><span class="line">$origin = $_SERVER[<span class="string">'HTTP_ORIGIN'</span>];</span><br><span class="line">$allowed = [</span><br><span class="line">    <span class="string">'http://localhost:8080'</span>, <span class="comment">// Origin 信息包含：协议、域名和端口</span></span><br><span class="line">];</span><br><span class="line">! in_array($origin, $allowed) || header(<span class="string">'Access-Control-Allow-Origin: '</span>.$origin);</span><br></pre></td></tr></table></figure></p>
+<h2 id="模拟-伪造请求-三种方式"><a href="#模拟-伪造请求-三种方式" class="headerlink" title="模拟/伪造请求(三种方式)"></a>模拟/伪造请求(三种方式)</h2><p>三种方式均可伪造 user_agent 信息。</p>
+<h3 id="几种-user-agent"><a href="#几种-user-agent" class="headerlink" title="几种 user_agent"></a>几种 user_agent</h3><h3 id="curl-方式"><a href="#curl-方式" class="headerlink" title="curl 方式"></a>curl 方式</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// user_agent 可自行指定</span></span><br><span class="line">$user_agent = <span class="string">'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506; .NET CLR 3.5.21022; .NET CLR 1.0.3705; .NET CLR 1.1.4322)'</span>;</span><br><span class="line"><span class="comment">// 构造请求</span></span><br><span class="line">$curl = curl_init();</span><br><span class="line">curl_setopt($curl, CURLOPT_URL, <span class="string">'http://dev.nslyx.cn/aa.php?aa=qqq'</span>);</span><br><span class="line">curl_setopt($curl, CURLOPT_REFERER, <span class="string">"http://www.ailishuo.com/"</span>);</span><br><span class="line">curl_setopt($curl, CURLOPT_USERAGENT, $user_agent);</span><br><span class="line">curl_setopt($curl, CURLOPT_POSTFIELDS, <span class="string">'pst=123&amp;zxc=qwe'</span>);</span><br><span class="line">curl_setopt($curl, CURLOPT_POST, <span class="number">1</span>);</span><br><span class="line">curl_setopt($curl, CURLOPT_RETURNTRANSFER, <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 发送请求</span></span><br><span class="line">$data = curl_exec($curl); </span><br><span class="line"> <span class="comment">// 获取 http code</span></span><br><span class="line">$code = curl_getinfo($curl,CURLINFO_HTTP_CODE); </span><br><span class="line"><span class="keyword">echo</span> $code;</span><br><span class="line"><span class="keyword">echo</span> $data;</span><br></pre></td></tr></table></figure>
+<h3 id="socket-方式"><a href="#socket-方式" class="headerlink" title="socket 方式"></a>socket 方式</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$data = <span class="keyword">array</span> (<span class="string">'foo'</span> =&gt; <span class="string">'bar'</span>, <span class="string">'bar'</span> =&gt; <span class="string">'baz'</span>);</span><br><span class="line">$data = http_build_query($data);</span><br><span class="line">$fp = fsockopen(<span class="string">"dev.nslyx.cn"</span>, <span class="number">80</span>, $errno, $errstr, <span class="number">30</span>);</span><br><span class="line"><span class="keyword">if</span> (!$fp) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"$errstr ($errno)&lt;br /&gt;\n"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $out = <span class="string">"POST /?a4=64 HTTP/1.1 \r\n"</span>;</span><br><span class="line">    $out .= <span class="string">"Host: dev.nslyx.cn \r\n"</span>;</span><br><span class="line">    $out .= <span class="string">"Referer: myreferer \r\n"</span>;</span><br><span class="line">    $out .= <span class="string">"user-agent: myreferer \r\n"</span>;</span><br><span class="line">    $out .= <span class="string">"Content-Type: application/x-www-form-urlencoded \r\n"</span>;</span><br><span class="line">    $out .= <span class="string">"Content-Length: "</span>.strlen($data).<span class="string">"\r\n"</span>;</span><br><span class="line">    $out .= <span class="string">"Connection: Close \r\n\r\n"</span>;</span><br><span class="line">    <span class="comment">// $out .= "Connection: Keep-alive \r\n\r\n";</span></span><br><span class="line">    $out .= <span class="string">"$data \r\n"</span>;</span><br><span class="line">    fwrite($fp, $out);</span><br><span class="line">    <span class="keyword">while</span> (!feof($fp)) &#123;</span><br><span class="line">        <span class="comment">// echo fgets($fp, 128);</span></span><br><span class="line">        $lines[] = fgets($fp, <span class="number">128</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    fclose($fp);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span>  implode(<span class="string">''</span>, array_slice($lines, <span class="number">9</span>, count($lines) - <span class="number">12</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="file-get-contents-方式"><a href="#file-get-contents-方式" class="headerlink" title="file_get_contents 方式"></a>file_get_contents 方式</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$url = <span class="string">'http://dev.nslyx.cn/aa.php?qq=pppp'</span>;</span><br><span class="line"><span class="comment">// $url = 'http://dev.nslyx.cn/?qq=pppp';</span></span><br><span class="line">$refer = <span class="string">'myweb'</span>;</span><br><span class="line">$data = <span class="keyword">array</span> (<span class="string">'foo'</span> =&gt; <span class="string">'bar'</span>, <span class="string">'bar'</span> =&gt; <span class="string">'baz'</span>);</span><br><span class="line">$data = http_build_query($data);</span><br><span class="line">$opt=[</span><br><span class="line">    <span class="string">'http'</span> =&gt; [</span><br><span class="line">        <span class="string">'method'</span> =&gt; <span class="string">'POST'</span>,</span><br><span class="line">        <span class="string">'header'</span>=&gt;</span><br><span class="line">            <span class="string">"Referer: $refer \r\n"</span></span><br><span class="line">           .<span class="string">"USER-AGENT:$refer \r\n"</span></span><br><span class="line">           .<span class="string">"Content-type: application/x-www-form-urlencoded \r\n"</span></span><br><span class="line">           .<span class="string">"Content-Length: "</span> . strlen($data).<span class="string">"\r\n"</span>,</span><br><span class="line">        <span class="string">'content'</span> =&gt; $data</span><br><span class="line">        ],</span><br><span class="line">]; </span><br><span class="line">$context=stream_context_create($opt); </span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    $data = @file_get_contents($url,<span class="keyword">false</span>, $context);</span><br><span class="line">    $e = error_get_last();</span><br><span class="line">    <span class="keyword">if</span>(!is_null($e)) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Exception</span>($e[<span class="string">'message'</span>], $e[<span class="string">'type'</span>]);</span><br><span class="line">&#125; <span class="keyword">catch</span>(<span class="keyword">Exception</span> $e)&#123;</span><br><span class="line">    var_dump($e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> $data;</span><br></pre></td></tr></table></figure>
+<h2 id="时间计算"><a href="#时间计算" class="headerlink" title="时间计算"></a>时间计算</h2><p>在项目中往往涉及到相对时间计算，这里给出几个列子：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 任意时间节点，格式化后的表述</span></span><br><span class="line">$timestamp = date(<span class="string">'Y-m-d H:i:s'</span>);</span><br><span class="line"><span class="comment">// 下一次的周日日期是给出时间往后找周日日期</span></span><br><span class="line">$next_sunday = date(<span class="string">"Y-m-d"</span>, strtotime(<span class="string">"$timestamp Sunday"</span>));</span><br><span class="line"><span class="comment">// 周一的日期为周日往前数6天</span></span><br><span class="line">$last_monday = date(<span class="string">"Y-m-d"</span>, strtotime(<span class="string">"$next_sunday - 6 days"</span>)); </span><br><span class="line"><span class="comment">// 本月月初时间为固定的 1号</span></span><br><span class="line">$this_month_begin = date(<span class="string">'Y-m-01'</span>, strtotime($timestamp));</span><br><span class="line"><span class="comment">// 本月月末日期为下月月初前一天</span></span><br><span class="line">$this_month_end = date(<span class="string">'Y-m-d'</span>, strtotime(<span class="string">"$this_month_begin +1 month -1 day"</span>));</span><br></pre></td></tr></table></figure>
+<h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><h2 id="mysqli-链接数据库"><a href="#mysqli-链接数据库" class="headerlink" title="mysqli 链接数据库"></a>mysqli 链接数据库</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 面向对象</span></span><br><span class="line">$mysqli = @<span class="keyword">new</span> mysqli(<span class="string">'localhost'</span>, <span class="string">'fake_user'</span>, <span class="string">'my_password'</span>, <span class="string">'my_db'</span>);</span><br><span class="line"><span class="keyword">if</span> ($mysqli-&gt;connect_error) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">'Connect Error: '</span> . $mysqli-&gt;connect_error);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 面向过程</span></span><br><span class="line">$link = @mysqli_connect(<span class="string">'localhost'</span>, <span class="string">'fake_user'</span>, <span class="string">'my_password'</span>, <span class="string">'my_db'</span>);</span><br><span class="line"><span class="keyword">if</span> (!$link) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">'Connect Error: '</span> . mysqli_connect_error());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/19/phpcode201712170913/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/19/phpcode201712170913/" itemprop="url">phpcode201712170913</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T09:13:27+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="递归遍历目录"><a href="#递归遍历目录" class="headerlink" title="递归遍历目录"></a>递归遍历目录</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tree</span><span class="params">($directory)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $dir = dir($directory);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;ul&gt;\n"</span>;</span><br><span class="line">    <span class="keyword">while</span>($file = $dir-&gt;read())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>($file == <span class="string">"."</span> || $file == <span class="string">".."</span>) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span>(is_dir(<span class="string">"$directory/$file"</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;li&gt;&lt;span&gt;|+&lt;/span&gt;&lt;font color=\"#00b3ee\"&gt;&lt;b&gt;$file&lt;/b&gt;&lt;/font&gt;&lt;/li&gt;\n"</span>;</span><br><span class="line">            $subDir = $directory.$file.DIRECTORY_SEPARATOR;</span><br><span class="line">            tree($subDir);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;li&gt;&lt;span&gt;|-&lt;/span&gt;&lt;a href='"</span>.$directory.<span class="string">"$file'&gt;$file&lt;/a&gt;&lt;/li&gt;\n"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;/ul&gt;\n"</span>;</span><br><span class="line">    $dir-&gt;close();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//开始运行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;h2&gt;目录&lt;/h2&gt;&lt;br&gt;\n"</span>;</span><br><span class="line">tree(<span class="string">"./"</span>);</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/07/self-taught/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -472,9 +1106,9 @@
 <h2 id="Library-Java-JavaVirtualMachines-jdk1-8-0-45-jdk-Contents-Home-1"><a href="#Library-Java-JavaVirtualMachines-jdk1-8-0-45-jdk-Contents-Home-1" class="headerlink" title="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"></a>/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home</h2><h2 id="java-version的原理："><a href="#java-version的原理：" class="headerlink" title="java -version的原理："></a>java -version的原理：</h2><p>dingdong@dingdongdeMacBook-Air ~$ which java<br>/usr/bin/java<br>dingdong@dingdongdeMacBook-Air ~$ ls -al /usr/bin/java</p>
 <h2 id="lrwxr-xr-x-1-root-wheel-74-9-12-2014-usr-bin-java-gt-System-Library-Frameworks-JavaVM-framework-Versions-Current-Commands-java"><a href="#lrwxr-xr-x-1-root-wheel-74-9-12-2014-usr-bin-java-gt-System-Library-Frameworks-JavaVM-framework-Versions-Current-Commands-java" class="headerlink" title="lrwxr-xr-x  1 root  wheel  74  9 12  2014 /usr/bin/java -&gt; /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java"></a>lrwxr-xr-x  1 root  wheel  74  9 12  2014 /usr/bin/java -&gt; /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java</h2><p>其实当用户在shell中输入java -version的时候，会执行’/usr/bin/java’这个链接文件，如上图所示，通过实际的指向的java去查找版本号，读者可以命令行里输入:<br>/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java 查看下它的参数。<br>我的配置文件如下：</p>
 <hr>
-<p>export JAVA_6_HOME=$(/usr/libexec/java_home -v1.6)<br>export JAVA_7_HOME=$(/usr/libexec/java_home -v1.7)<br>export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)</p>
-<p>export JAVA_HOME=$JAVA_7_HOME</p>
-<p>alias jdk6=”export JAVA_HOME=$JAVA_6_HOME”<br>alias jdk7=”export JAVA_HOME=$JAVA_7_HOME”</p>
+<p><code>export JAVA_6_HOME=$(/usr/libexec/java_home -v1.6)</code><br><code>export JAVA_7_HOME=$(/usr/libexec/java_home -v1.7)</code><br><code>export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)</code></p>
+<p><code>export JAVA_HOME=$JAVA_7_HOME</code></p>
+<p><code>alias jdk6=&quot;export JAVA_HOME=$JAVA_6_HOME&quot;</code><br><code>alias jdk7=&quot;export JAVA_HOME=$JAVA_7_HOME&quot;</code></p>
 <h2 id="alias-jdk8-”export-JAVA-HOME-JAVA-8-HOME”"><a href="#alias-jdk8-”export-JAVA-HOME-JAVA-8-HOME”" class="headerlink" title="alias jdk8=”export JAVA_HOME=$JAVA_8_HOME”"></a>alias jdk8=”export JAVA_HOME=$JAVA_8_HOME”</h2><p>我默认配置为jdk7<br>配置好保存文件，然后 source ~/.bash_profile 让配置文件生效。<br>然后打开shell，可以自由切换jdk版本了：</p>
 <p>大功告成！<br>PS: 如果你的系统版本是Mac OSX 10.5以前的，可以用jdk具体版本的绝对路径来代替：$(/usr/libexec/java_home -v 1.x).<br>参考资料：</p>
 <ol>
@@ -506,7 +1140,7 @@
 <p>1.打开终端，输入命令cd /usr/local/bin，进入bin文件夹，此操作需要输入密码进行授权<br>2.输入命令cd xxx/xxx/apltool，进入下载的apktool文件夹中<br>3.输入命令sudo cp apltool apktool.jar aapt /usr/local/bin，讲上面所述的三个文件拷贝到bin文件夹中</p>
 <p>判断apktool是否安装成功</p>
 <p>打开终端，执行apktool命令，看是否出现以下数据，如果出现，说么安装成功</p>
-<p>Apktool v2.0.0-RC2 - a tool for reengineering Android apk files<br>with smali v2.0.3 and baksmali v2.0.3<br>Copyright 2010 Ryszard Wiśniewski <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#x62;&#114;&#x75;&#116;&#46;&#97;&#x6c;&#108;&#x6c;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">&#x62;&#114;&#x75;&#116;&#46;&#97;&#x6c;&#108;&#x6c;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a><br>Updated by Connor Tumbleson <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x63;&#111;&#110;&#x6e;&#x6f;&#x72;&#x2e;&#116;&#117;&#x6d;&#98;&#x6c;&#101;&#x73;&#111;&#x6e;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#x63;&#111;&#110;&#x6e;&#x6f;&#x72;&#x2e;&#116;&#117;&#x6d;&#98;&#x6c;&#101;&#x73;&#111;&#x6e;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+<p>Apktool v2.0.0-RC2 - a tool for reengineering Android apk files<br>with smali v2.0.3 and baksmali v2.0.3<br>Copyright 2010 Ryszard Wiśniewski <a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#98;&#x72;&#x75;&#x74;&#x2e;&#97;&#108;&#108;&#108;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#98;&#x72;&#x75;&#x74;&#x2e;&#97;&#108;&#108;&#108;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a><br>Updated by Connor Tumbleson <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#99;&#x6f;&#x6e;&#x6e;&#111;&#114;&#x2e;&#116;&#x75;&#109;&#x62;&#108;&#x65;&#115;&#x6f;&#x6e;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#111;&#109;">&#99;&#x6f;&#x6e;&#x6e;&#111;&#114;&#x2e;&#116;&#x75;&#109;&#x62;&#108;&#x65;&#115;&#x6f;&#x6e;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#111;&#109;</a></p>
 <p>usage: apktool<br> -advance,–advanced   prints advance information.<br> -version,–version    prints the version then exits<br>usage: apktool if|install-framework [options] <framework.apk><br> -p,–frame-path <dir>   Stores framework files into <dir>.<br> -t,–tag <tag>          Tag frameworks using <tag>.<br>usage: apktool d[ecode] [options] <file_apk><br> -f,–force              Force delete destination directory.<br> -o,–output <dir>       The name of folder that gets written. Default is apk.out<br> -p,–frame-path <dir>   Uses framework files located in <dir>.<br> -r,–no-res             Do not decode resources.<br> -s,–no-src             Do not decode sources.<br> -t,–frame-tag <tag>    Uses framework files tagged by <tag>.<br>usage: apktool b[uild] [options] <app_path><br> -f,–force-all          Skip changes detection and build all files.<br> -o,–output <dir>       The name of apk that gets written. Default is dist/name.apk<br> -p,–frame-path <dir>   Uses framework files located in <dir>.</dir></dir></dir></app_path></tag></tag></dir></dir></dir></file_apk></tag></tag></dir></dir></framework.apk></p>
 <p>For additional info, see: <a href="http://code.google.com/p/android-apktool/" target="_blank" rel="noopener">http://code.google.com/p/android-apktool/</a><br>For smali/baksmali info, see: <a href="http://code.google.com/p/smali/" target="_blank" rel="noopener">http://code.google.com/p/smali/</a></p>
 <p>dex2jar不需要安装</p>
@@ -950,676 +1584,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/02/vim/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/02/vim/" itemprop="url">vim</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-02T12:28:27+08:00">
-                2017-11-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vim/" itemprop="url" rel="index">
-                    <span itemprop="name">vim</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Vim-使用笔记"><a href="#Vim-使用笔记" class="headerlink" title="Vim 使用笔记"></a>Vim 使用笔记</h1><p>~ 目录中配置文件名为  .vimrc<br>常用配置内容<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> tabstop=<span class="number">4</span></span><br><span class="line"><span class="keyword">set</span> <span class="built_in">shiftwidth</span>=<span class="number">4</span></span><br><span class="line"><span class="keyword">set</span> expandtab</span><br><span class="line"><span class="keyword">set</span> autoindent</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> <span class="built_in">cindent</span></span><br><span class="line"><span class="keyword">set</span> modeline</span><br><span class="line"><span class="keyword">set</span> ruler</span><br><span class="line"><span class="keyword">set</span> showcmd</span><br><span class="line"><span class="keyword">set</span>  <span class="keyword">nu</span></span><br><span class="line"><span class="keyword">set</span> showfulltag</span><br><span class="line"><span class="keyword">set</span> showmode</span><br><span class="line"><span class="keyword">set</span> smartcase</span><br><span class="line"><span class="keyword">set</span> smartindent</span><br><span class="line"><span class="keyword">set</span> imcmdline</span><br><span class="line"><span class="keyword">set</span> previewwindow</span><br><span class="line"><span class="keyword">set</span> hlsearch</span><br><span class="line"><span class="keyword">syntax</span> <span class="keyword">on</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">colorscheme</span> ron</span><br></pre></td></tr></table></figure></p>
-<h2 id="常用的一些命令"><a href="#常用的一些命令" class="headerlink" title="常用的一些命令"></a>常用的一些命令</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">" 显/隐行号</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">nu</span></span><br><span class="line"><span class="keyword">set</span> nonu</span><br><span class="line"> <span class="comment">" 开/关粘贴模式</span></span><br><span class="line"><span class="keyword">set</span> paste</span><br><span class="line"><span class="keyword">set</span> nopaste</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/02/dev-language/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/02/dev-language/" itemprop="url">开发语言</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-02T10:37:43+08:00">
-                2017-11-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>想总概一下编程语言，<br>却发现学识尚浅。<br>也罢，毕竟学海无涯，<br>唯有边学边记…</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/02/dev-language/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/01/full-stack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/01/full-stack/" itemprop="url">Full Stack Developer</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-01T11:57:09+08:00">
-                2017-11-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>How can I be a Full Stack Developer ? </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/01/full-stack/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/31/hexo/" itemprop="url">Hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-31T17:46:09+08:00">
-                2017-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Hexo-是什么"><a href="#Hexo-是什么" class="headerlink" title="Hexo 是什么"></a>Hexo 是什么</h1><h1 id="TA可以做什么"><a href="#TA可以做什么" class="headerlink" title="TA可以做什么"></a>TA可以做什么</h1><p>在 GitHub 上用 Hexo 构建了自己的 Blog ，整体都挺好，就怕某天 GFW 不让上这个，没事还得多学习如何科学上网～～<br>好吧，废话偏多，这里记录下使用 heox 的一些点，慢慢的维护吧。</p>
-<h1 id="Hexo-Blog-榜样"><a href="#Hexo-Blog-榜样" class="headerlink" title="Hexo Blog 榜样"></a>Hexo Blog 榜样</h1><p>我学习搞这东西的时候它已经不是什么新鲜的玩意儿了，网上有一堆优秀的应用案例，下面是我发现的，值得学习和借鉴～后续有新发现也会加入这个List：</p>
-<ul>
-<li><a href="http://shenzekun.cn/" target="_blank" rel="noopener">Moorez</a></li>
-<li><a href="https://www.ezlippi.com/" target="_blank" rel="noopener">ezlippi</a></li>
-</ul>
-<h2 id="主题样式"><a href="#主题样式" class="headerlink" title="主题样式"></a>主题样式</h2><ul>
-<li><a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="noopener">GitHub Ribbons</a></li>
-</ul>
-<h2 id="参考学习"><a href="#参考学习" class="headerlink" title="参考学习"></a>参考学习</h2><p><a href="https://www.ezlippi.com/blog/2017/02/hexo-search.html" target="_blank" rel="noopener">hexo  站内搜索</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/excel/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/31/excel/" itemprop="url">Excel</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-31T16:40:12+08:00">
-                2017-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Office/" itemprop="url" rel="index">
-                    <span itemprop="name">Office</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Excel-相关的记录"><a href="#Excel-相关的记录" class="headerlink" title="Excel 相关的记录"></a>Excel 相关的记录</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/31/excel/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1665,7 +1634,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1676,7 +1645,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1687,7 +1656,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

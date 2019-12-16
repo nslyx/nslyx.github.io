@@ -251,6 +251,673 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/02/vim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/02/vim/" itemprop="url">vim</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-02T12:28:27+08:00">
+                2017-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vim/" itemprop="url" rel="index">
+                    <span itemprop="name">vim</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Vim-使用笔记"><a href="#Vim-使用笔记" class="headerlink" title="Vim 使用笔记"></a>Vim 使用笔记</h1><p>~ 目录中配置文件名为  .vimrc<br>常用配置内容<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">" Tab 键的长度</span></span><br><span class="line"><span class="keyword">set</span> tabstop=<span class="number">4</span></span><br><span class="line"><span class="keyword">set</span> <span class="built_in">shiftwidth</span>=<span class="number">4</span></span><br><span class="line"><span class="comment">" 使用空格代替制表符</span></span><br><span class="line"><span class="keyword">set</span> expandtab</span><br><span class="line"></span><br><span class="line"><span class="comment">" 自动缩进</span></span><br><span class="line"><span class="keyword">set</span> autoindent</span><br><span class="line"><span class="keyword">set</span> <span class="built_in">cindent</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> modeline</span><br><span class="line"><span class="keyword">set</span> ruler</span><br><span class="line"><span class="keyword">set</span> showcmd</span><br><span class="line"><span class="keyword">set</span> <span class="keyword">nu</span></span><br><span class="line"><span class="keyword">set</span> showfulltag</span><br><span class="line"><span class="keyword">set</span> showmode</span><br><span class="line"><span class="keyword">set</span> smartcase</span><br><span class="line"><span class="keyword">set</span> smartindent</span><br><span class="line"><span class="keyword">set</span> imcmdline</span><br><span class="line"><span class="keyword">set</span> previewwindow</span><br><span class="line"><span class="keyword">set</span> hlsearch</span><br><span class="line"><span class="keyword">syntax</span> <span class="keyword">on</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">colorscheme</span> ron</span><br></pre></td></tr></table></figure></p>
+<h2 id="常用的一些命令"><a href="#常用的一些命令" class="headerlink" title="常用的一些命令"></a>常用的一些命令</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">" 显/隐行号</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">nu</span></span><br><span class="line"><span class="keyword">set</span> nonu</span><br><span class="line"> <span class="comment">" 开/关粘贴模式</span></span><br><span class="line"><span class="keyword">set</span> paste</span><br><span class="line"><span class="keyword">set</span> nopaste</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line">set sw=4</span><br><span class="line">set ts=4</span><br><span class="line">set et</span><br><span class="line">set smarttab</span><br><span class="line">set smartindent</span><br><span class="line">set lbr</span><br><span class="line">set fo+=mB</span><br><span class="line">set sm</span><br><span class="line">set selection=inclusive</span><br><span class="line">set wildmenu</span><br><span class="line">set mousemodel=popup</span><br><span class="line"></span><br><span class="line">set rtp+=$GOROOT/misc/vim</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot; 显示相关</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">syntax on</span><br><span class="line">set cul &quot;高亮光标所在行</span><br><span class="line">set cuc</span><br><span class="line">set shortmess=atI   &quot; 启动的时候不显示那个援助乌干达儿童的提示</span><br><span class="line">set go=             &quot; 不要图形按钮</span><br><span class="line">&quot;color desert     &quot; 设置背景主题</span><br><span class="line">color ron     &quot; 设置背景主题</span><br><span class="line">&quot;color torte     &quot; 设置背景主题</span><br><span class="line">&quot;set guifont=Courier_New:h10:cANSI   &quot; 设置字体</span><br><span class="line">&quot;autocmd InsertLeave * se nocul  &quot; 用浅色高亮当前行</span><br><span class="line">autocmd InsertEnter * se cul    &quot; 用浅色高亮当前行</span><br><span class="line">set ruler           &quot; 显示标尺</span><br><span class="line">set showcmd         &quot; 输入的命令显示出来，看的清楚些</span><br><span class="line">&quot;set whichwrap+=&lt;,&gt;,h,l   &quot; 允许backspace和光标键跨越行边界(不建议)</span><br><span class="line">set scrolloff=3     &quot; 光标移动到buffer的顶部和底部时保持3行距离</span><br><span class="line">set statusline=%F%m%r%h%w\ [FORMAT=%&#123;&amp;ff&#125;]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %&#123;strftime(\&quot;%d/%m/%y\ -\ %H:%M\&quot;)&#125;   &quot;状态行显示的内容</span><br><span class="line">set laststatus=2    &quot; 启动显示状态行(1),总是显示状态行(2)</span><br><span class="line">&quot;set foldenable      &quot; 允许折叠</span><br><span class="line">&quot;&quot;set foldmethod=manual   &quot; 手动折叠</span><br><span class="line">set nocompatible  &quot;去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限</span><br><span class="line">&quot; 显示中文帮助</span><br><span class="line">if version &gt;= 603</span><br><span class="line">	set helplang=cn</span><br><span class="line">	set encoding=utf-8</span><br><span class="line">endif</span><br><span class="line">&quot; 自动缩进</span><br><span class="line">set autoindent</span><br><span class="line">set cindent</span><br><span class="line">&quot; Tab键的宽度</span><br><span class="line">set tabstop=4</span><br><span class="line">&quot; 统一缩进为4</span><br><span class="line">set softtabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line">&quot; 使用空格代替制表符</span><br><span class="line">set expandtab</span><br><span class="line">&quot; 在行和段开始处使用制表符</span><br><span class="line">set smarttab</span><br><span class="line">&quot; 显示行号</span><br><span class="line">set number</span><br><span class="line">&quot; 历史记录数</span><br><span class="line">set history=1000</span><br><span class="line">&quot;搜索逐字符高亮</span><br><span class="line">set hlsearch</span><br><span class="line">set incsearch</span><br><span class="line">&quot;语言设置</span><br><span class="line">set langmenu=zh_CN.UTF-8</span><br><span class="line">set helplang=cn</span><br><span class="line">&quot; 总是显示状态行</span><br><span class="line">set cmdheight=2</span><br><span class="line">&quot; 侦测文件类型</span><br><span class="line">filetype on</span><br><span class="line">&quot; 载入文件类型插件</span><br><span class="line">filetype plugin on</span><br><span class="line">&quot; 为特定文件类型载入相关缩进文件</span><br><span class="line">filetype indent on</span><br><span class="line">&quot; 保存全局变量</span><br><span class="line">set viminfo+=!</span><br><span class="line">&quot; 带有如下符号的单词不要被换行分割</span><br><span class="line">set iskeyword+=_,$,@,%,#,-</span><br><span class="line">&quot; 字符间插入的像素行数目</span><br><span class="line"></span><br><span class="line">&quot;markdown配置</span><br><span class="line">au BufRead,BufNewFile *.&#123;md,mdown,mkd,mkdn,markdown,mdwn&#125;   set filetype=mkd</span><br><span class="line">au BufRead,BufNewFile *.&#123;go&#125;   set filetype=go</span><br><span class="line">au BufRead,BufNewFile *.&#123;js&#125;   set filetype=javascript</span><br><span class="line">&quot;rkdown to HTML</span><br><span class="line">nmap md :!~/.vim/markdown.pl % &gt; %.html &lt;CR&gt;&lt;CR&gt;</span><br><span class="line">nmap fi :!firefox %.html &amp; &lt;CR&gt;&lt;CR&gt;</span><br><span class="line">nmap \ \cc</span><br><span class="line">vmap \ \cc</span><br><span class="line"></span><br><span class="line">&quot;将tab替换为空格</span><br><span class="line">nmap tt :%s/\t/    /g&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot;&quot;实用设置</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">if has(&quot;autocmd&quot;)</span><br><span class="line">      autocmd BufReadPost *</span><br><span class="line">          \ if line(&quot;&apos;\&quot;&quot;) &gt; 0 &amp;&amp; line(&quot;&apos;\&quot;&quot;) &lt;= line(&quot;$&quot;) |</span><br><span class="line">          \   exe &quot;normal g`\&quot;&quot; |</span><br><span class="line">          \ endif</span><br><span class="line">endif</span><br><span class="line">&quot;当打开vim且没有文件时自动打开NERDTree</span><br><span class="line">&quot;autocmd vimenter * if !argc() | NERDTree | endif</span><br><span class="line">&quot; 只剩 NERDTree时自动关闭</span><br><span class="line">autocmd bufenter * if (winnr(&quot;$&quot;) == 1 &amp;&amp; exists(&quot;b:NERDTreeType&quot;) &amp;&amp; b:NERDTreeType == &quot;primary&quot;) | q | endif</span><br><span class="line"></span><br><span class="line">&quot; 设置当文件被改动时自动载入</span><br><span class="line">set autoread</span><br><span class="line">&quot; quickfix模式</span><br><span class="line">autocmd FileType c,cpp map &lt;buffer&gt; &lt;leader&gt;&lt;space&gt; :w&lt;cr&gt;:make&lt;cr&gt;</span><br><span class="line">&quot;代码补全</span><br><span class="line">set completeopt=preview,menu</span><br><span class="line">&quot;允许插件</span><br><span class="line">&quot;filetype plugin on</span><br><span class="line">&quot;共享剪贴板</span><br><span class="line">&quot;set clipboard+=unnamed</span><br><span class="line">&quot;自动保存</span><br><span class="line">set autowrite</span><br><span class="line">&quot;set ruler                   &quot; 打开状态栏标尺</span><br><span class="line">&quot;set cursorline              &quot; 突出显示当前行</span><br><span class="line">set magic                   &quot; 设置魔术</span><br><span class="line">set guioptions-=T           &quot; 隐藏工具栏</span><br><span class="line">set guioptions-=m           &quot; 隐藏菜单栏</span><br><span class="line">&quot;&quot;set foldcolumn=0</span><br><span class="line">&quot;&quot;set foldmethod=indent</span><br><span class="line">&quot;&quot;set foldlevel=3</span><br><span class="line">&quot; 不要使用vi的键盘模式，而是vim自己的</span><br><span class="line">set nocompatible</span><br><span class="line">&quot; 去掉输入错误的提示声音</span><br><span class="line">set noeb</span><br><span class="line">&quot; 在处理未保存或只读文件的时候，弹出确认</span><br><span class="line">set confirm</span><br><span class="line">&quot;禁止生成临时文件</span><br><span class="line">set nobackup</span><br><span class="line">set noswapfile</span><br><span class="line">&quot;搜索忽略大小写</span><br><span class="line">set ignorecase</span><br><span class="line"></span><br><span class="line">set linespace=0</span><br><span class="line">&quot; 增强模式中的命令行自动完成操作</span><br><span class="line">set wildmenu</span><br><span class="line">&quot; 使回格键（backspace）正常处理indent, eol, start等</span><br><span class="line">set backspace=2</span><br><span class="line">&quot; 允许backspace和光标键跨越行边界</span><br><span class="line">set whichwrap+=&lt;,&gt;,h,l</span><br><span class="line">&quot; 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）</span><br><span class="line">set mouse=a</span><br><span class="line">set selection=exclusive</span><br><span class="line">set selectmode=mouse,key</span><br><span class="line">&quot; 通过使用: commands命令，告诉我们文件的哪一行被改变过</span><br><span class="line">set report=0</span><br><span class="line">&quot; 在被分割的窗口间显示空白，便于阅读</span><br><span class="line">set fillchars=vert:\ ,stl:\ ,stlnc:\</span><br><span class="line">&quot; 高亮显示匹配的括号</span><br><span class="line">set showmatch</span><br><span class="line">&quot; 匹配括号高亮的时间（单位是十分之一秒）</span><br><span class="line">set matchtime=1</span><br><span class="line">&quot; 光标移动到buffer的顶部和底部时保持3行距离</span><br><span class="line">set scrolloff=3</span><br><span class="line"></span><br><span class="line">&quot;中文显示</span><br><span class="line">set iskeyword+=.</span><br><span class="line">set termencoding=utf-8</span><br><span class="line">set encoding=utf8</span><br><span class="line">set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030</span><br><span class="line"></span><br><span class="line">autocmd FileType python set omnifunc=pythoncomplete#Complete</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/02/dev-language/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/02/dev-language/" itemprop="url">开发语言</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-02T10:37:43+08:00">
+                2017-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>想总概一下编程语言，<br>却发现学识尚浅。<br>也罢，毕竟学海无涯，<br>唯有边学边记…</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/02/dev-language/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/01/full-stack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/01/full-stack/" itemprop="url">Full Stack Developer</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-01T11:57:09+08:00">
+                2017-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>How can I be a Full Stack Developer ? </p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/01/full-stack/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/31/hexo/" itemprop="url">Hexo</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-31T17:46:09+08:00">
+                2017-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Hexo-是什么"><a href="#Hexo-是什么" class="headerlink" title="Hexo 是什么"></a>Hexo 是什么</h1><h1 id="TA可以做什么"><a href="#TA可以做什么" class="headerlink" title="TA可以做什么"></a>TA可以做什么</h1><p>在 GitHub 上用 Hexo 构建了自己的 Blog ，整体都挺好，就怕某天 GFW 不让上这个，没事还得多学习如何科学上网～～<br>好吧，废话偏多，这里记录下使用 heox 的一些点，慢慢的维护吧。</p>
+<h1 id="Hexo-Blog-榜样"><a href="#Hexo-Blog-榜样" class="headerlink" title="Hexo Blog 榜样"></a>Hexo Blog 榜样</h1><p>我学习搞这东西的时候它已经不是什么新鲜的玩意儿了，网上有一堆优秀的应用案例，下面是我发现的，值得学习和借鉴～后续有新发现也会加入这个List：</p>
+<ul>
+<li><a href="http://shenzekun.cn/" target="_blank" rel="noopener">Moorez</a></li>
+<li><a href="https://www.ezlippi.com/" target="_blank" rel="noopener">ezlippi</a></li>
+</ul>
+<h2 id="主题样式"><a href="#主题样式" class="headerlink" title="主题样式"></a>主题样式</h2><ul>
+<li><a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="noopener">GitHub Ribbons</a></li>
+</ul>
+<h2 id="参考学习"><a href="#参考学习" class="headerlink" title="参考学习"></a>参考学习</h2><p><a href="https://www.ezlippi.com/blog/2017/02/hexo-search.html" target="_blank" rel="noopener">hexo  站内搜索</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/excel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/31/excel/" itemprop="url">Excel</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-31T16:40:12+08:00">
+                2017-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Office/" itemprop="url" rel="index">
+                    <span itemprop="name">Office</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Excel-相关的记录"><a href="#Excel-相关的记录" class="headerlink" title="Excel 相关的记录"></a>Excel 相关的记录</h2>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/31/excel/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/vue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -521,7 +1188,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/30/mysql/" itemprop="url">MySQL - Sth</a></h1>
+                <a class="post-title-link" href="/2017/10/30/mysql/" itemprop="url">MySQL 笔记</a></h1>
         
 
         <div class="post-meta">
@@ -543,6 +1210,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySql/" itemprop="url" rel="index">
+                    <span itemprop="name">MySql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -572,11 +1261,14 @@
 
       
         
-          
-            <h1 id="MySQL-命令"><a href="#MySQL-命令" class="headerlink" title="MySQL 命令"></a>MySQL 命令</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select @@sql_mode;</span><br><span class="line">set global sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br><span class="line">set session sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">GRANT ALL PRIVILEGES ON iread.* TO &apos;iread&apos;@&apos;%&apos; IDENTIFIED BY &apos;aXJlYWRwYXNz&apos; WITH GRANT OPTION;</span><br><span class="line">GRANT ALL PRIVILEGES ON iread.* TO &apos;iread&apos;@&apos;%&apos; IDENTIFIED BY &apos;aXJlYWRwYXNz&apos; WITH GRANT OPTION;</span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">SPWD=workpath</span><br><span class="line"></span><br><span class="line">d=`date <span class="string">"+%Y%m%d%H%M%S"</span>`</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$SPWD</span></span><br><span class="line">/usr/bin/mysqldump -h[domain|ip] -u[user] -p<span class="string">'password'</span> dbname &gt; export_to_file.sql</span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> -e <span class="string">"drop database dbname;"</span></span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> -e <span class="string">"create database dbname default charset utf8mb4"</span></span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> dbname &lt; <span class="variable">$SPWD</span>/import_data_file.sql</span><br><span class="line">mv data_bk_file.sql backup/<span class="variable">$d</span>.bk_name.sql</span><br></pre></td></tr></table></figure>
-
-          
+          <h3 id="Sql-语句记录"><a href="#Sql-语句记录" class="headerlink" title="Sql 语句记录"></a>Sql 语句记录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 查看 sql 模式</span><br><span class="line">select @@sql_mode;</span><br><span class="line"># 全局设置</span><br><span class="line">set global sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br><span class="line"># 会话设置</span><br><span class="line">set session sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br><span class="line"></span><br><span class="line"># 修改 root 用户密码</span><br><span class="line">ALTER USER user() root IDENTIFIED BY &apos;********&apos;;</span><br><span class="line"></span><br><span class="line"># 创建用户并赋予权限 with 语句表示账号有分配已有权限的能力</span><br><span class="line">GRANT ALL PRIVILEGES ON dbName.* TO &apos;username&apos;@&apos;%&apos; IDENTIFIED BY &apos;********&apos; WITH GRANT OPTION;</span><br><span class="line">GRANT ALL PRIVILEGES ON dbName.* TO &apos;username&apos;@&apos;%&apos;; # 分配权限</span><br><span class="line"># 撤销权限</span><br><span class="line">REVOKE ALL PRIVILEGES ON dbName FROM &apos;username&apos;@&apos;%&apos;;</span><br><span class="line">REVOKE ALL ON dbName FROM &apos;username&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line"># 1 ~ 100 随机数 </span><br><span class="line">select FLOOR(1 + RAND() * (100 - 1 + 1));</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/30/mysql/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -855,664 +1547,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/04/inode/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/04/inode/" itemprop="url">inode</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-04T17:14:46+08:00">
-                2017-09-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Jenkins-构建时报错：-No-space-left-on-device"><a href="#Jenkins-构建时报错：-No-space-left-on-device" class="headerlink" title="Jenkins 构建时报错： No space left on device"></a>Jenkins 构建时报错： No space left on device</h1><p>报错的意思是磁盘上没有空间了，但是上服务器看了看，空间明明还有一堆。。。<br>这个时候就应该意识到时 inode 不足了，<code>df</code> 查看磁盘空间余量，<code>df -i</code> 查看 inode 余量。</p>
-<p>inode 感觉一般默认设置的上限是够用的，如果发生溢满就需要进行追究原因，如果是正常情况不够用了，可以考虑修改上限默认值。很明显，这里并不准备讲正常情况。<br>在服务器 <code>/var/spool/clientmqueue/</code>目录下有定时任务的输出记录文件，多数情况下 inode 是被这里的文件占用消耗完的。所以在设置定时任务的时候需要注意将不必要的输出销毁。这里的文件一般都可以之间删掉就可以释放很多inode ，没什么影响。不过因为文件数量太多，所以直接 <code>rm -rf  *</code> 会因为目录信息太大而执行不了。可以用 <code>lsattr ./|awk -F&quot;/&quot; &#39;{print $2}&#39;|xargs -i rm -rf {}</code> 命令删除，文件多删除执行时间也会比较长。需要注意下 $2 是不是文件名称。<br>释放完inode 后，上述报错也就自然没有了</p>
-<h1 id="查看-inode-数量"><a href="#查看-inode-数量" class="headerlink" title="查看 inode 数量"></a>查看 inode 数量</h1><p><code>for i in /*; do echo $i; find $i | wc -l | sort -nr; done</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/04/shell-command/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/04/shell-command/" itemprop="url">shell-command</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-04T11:42:26+08:00">
-                2017-09-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="命令提示符-终端-操作快捷键"><a href="#命令提示符-终端-操作快捷键" class="headerlink" title="命令提示符/终端 操作快捷键"></a>命令提示符/终端 操作快捷键</h1><table>
-<thead>
-<tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">操作描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Ctrl + D</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + H</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + K</td>
-</tr>
-</tbody>
-</table>
-<p>删除<br> ctrl + k ctrl + u ctrl + w ctrl + y ctrl + ? alt + r alt + d<br>移动<br>ctrl + a<br>ctrl + e<br>ctrl + f<br>ctrl + b<br>ctrl + 方向键左键 ctrl + 方向键右键 ctrl + x<br>alt + f<br>替换 ctrl + t<br>删除光标所在位置上的字符相当于 VIM 里 x 或者 dl 删除光标所在位置前的字符相当于 VIM 里 hx 或者 dh 删除光标后面所有字符相当于 VIM 里 d shift+$ 删除光标前面所有字符相当于 VIM 里 d shift+^ 删除光标前一个单词相当于 VIM 里 db<br>恢复 ctrl+u 上次执行时删除的字符 撤消前一次输入<br>撤消前一次动作 删除光标所在位置的后单词<br>将光标移动到命令行开头相当于 VIM 里 shift+^ 将光标移动到命令行结尾处相当于 VIM 里 shift+$ 光标向后移动一个字符相当于 VIM 里 l 光标向前移动一个字符相当于 VIM 里 h<br>光标移动到前一个单词开头<br>光标移动到后一个单词结尾 在上次光标所在字符和当前光标所在字符之间跳转<br>跳到光标所在位置单词尾部<br>将光标当前字符与前面一个字符替换 交换两个光标当前所处位置单词和光标前一个单词 把光标当前位置单词变为大写<br>把光标当前位置单词变为小写 把光标当前位置单词头一个字母变为大写 替换前一次命令中字符串<br>alt<br>alt<br>alt<br>alt ^oldstr^newstr</p>
-<ul>
-<li>t + u + l + c<br>历史命令编辑<br>ctrl + p 返回上一次输入命令字符 ctrl + r 输入单词搜索历史命令<br>alt alt<br>其它 ctrl + ctrl + ctrl + ctrl + ctrl + ctrl + alt</li>
-<li>+<br>s q l c i o +<br>p 输入字符查找与字符相接近的历史命令 &gt; 返回上一次执行命令<br>锁住终端 解锁终端<br>清屏相当于命令 clear 另起一行<br>类似 TAB 健补全功能 重复执行命令<br>数字键 操作的次数<br>#c+l 清屏先 minuit@suse:~&gt;str1 str2 str3 到开头按 a+c<br>minuit@suse:~&gt; Str1 str2 str3<br>个单词要全大写(这样的命令真是玩死人:( )好吧如果你当前光标在第二个单词,那直 接 a+u 把这个单词改变,如果不在的话那按住 c+a 接着 c+f 跳到第二个单词那再 a+u 就 OK 了结果像下面所示。<br>minuit@suse:~&gt; Str1 STR2 str3 #我想换过来怎么办我的位置已经在最后一个单 词这个好办按住 a+2+b 哈哈跳到了第二个单词再来一下 a+l 这下第二个单词全小写了<br>实际操作:<br>minuit@suse:~&gt; welcome to chinaunix! a+3+c 看看效果<br>minuit@suse:~&gt; Welcome To Chinaunix! 我们再来试试替换<br>#不就是变个大小写吗? 按住 c+a 接着 #GOOD 很简单<br>#还是这三单词 c+a 跳到开头再接着跳到<br>#输入三个单词发现第一单词需要大写好按 c+a 跳<br>#好现在单词就变成了现在这个样子,又发现第二<br>minuit@suse:~&gt; Welcome To Chinaunix!<br>第二个单词那(因为 a+t 只能跟前一个单词做替换所以不能在第一个单词按 a+t)按住<br>a+t<br>minuit@suse:~&gt; To Welcome Chinaunix!<br>那又变了一个样<br>minuit@suse:~&gt; Chinaunix!<br>minuit@suse:~&gt;ls /tmp/<br>file1 file2 file3 ….. ..<br>minuit@suse:~&gt;^ls^cd 就行了在命令很长时用这个替换可以省掉很多按 a+b 或 a+f 的时间 cd /tmp/<br>minuit@suse:/tmp&gt; #进入了 tmp 目录了 跳转的命令就不试了大家自己体会试也看不见^_^</li>
-</ul>
-<hr>
-<p>Ctrl + a 可以快速切换到命令行开始处<br>Ctrl + e 切换到命令行末尾<br>Ctrl + r 在历史命令中查找<br>Ctrl + u 删除光标所在位置之前的所有字符<br>Ctrl + k 删除光标所在位置之后的所有字符<br>ctrl + w 删除光标之前的一个单词<br>Ctrl + d 结束当前输入、退出 shell<br>ctrl + s 可用来停留在当前屏 ctrl + q 恢复刷屏 ctrl + l 清屏<br>CTRL 键相关的快捷键:<br>Ctrl + a - Jump to the start of the line<br>Ctrl + b - Move back a char<br>Ctrl + c - Terminate the command //用的最多了吧? Ctrl + d - Delete from under the cursor<br>Ctrl + e - Jump to the end of the line<br>Ctrl + f - Move forward a char<br>Ctrl + k - Delete to EOL<br>Welcome To</p>
-<p>#好了来一点比较常用的 #看看下面有些什么</p>
-<p>#现在成这样子的了如果我用再按 a+2+t</p>
-<p>#现在再又想进入目录很简单的健入替换命令<br>Ctrl + l - Clear the screen //清屏，类似 clear 命令<br>Ctrl + r - Search the history backwards //查找历史命令<br>Ctrl + R - Search the history backwards with multi occurrence Ctrl + u - Delete backward from cursor // 密码输入错误的时候比较有用 Ctrl + xx - Move between EOL and current cursor position<br>Ctrl + x @ - Show possible hostname completions<br>Ctrl + z - Suspend/ Stop the command<br>补充:<br>Ctrl + h - 删除当前字符<br>Ctrl + w - 删除最后输入的单词<br>ALT 键相关的快捷键:<br>平时很少用。有些和远程登陆工具冲突。<br>Alt + &lt; - Move to the first line in the history Alt + &gt; - Move to the last line in the history Alt + ? - Show current completion list<br>Alt + <em> - Insert all possible completions<br>Alt + / - Attempt to complete filename<br>Alt + . - Yank last argument to previous command<br>Alt + b - Move backward<br>Alt + c - Capitalize the word<br>Alt + d - Delete word<br>Alt + f - Move forward<br>Alt + l - Make word lowercase<br>Alt + n - Search the history forwards non-incremental Alt + p - Search the history backwards non-incremental Alt + r - Recall command<br>Alt + t - Move words around<br>Alt + u - Make word uppercase<br>Alt + back-space - Delete backward from cursor<br>// SecureCRT 如果没有配置好，这个就很管用了。<br>其他特定的键绑定:<br>输入 bind -P 可以查看所有的键盘绑定。这一系列我觉得更为实用。<br>Here “2T” means Press TAB twice<br>$ 2T - All available commands(common) //命令行补全，我认为是 Bash 最好用的一点 $ (string)2T - All available commands starting with (string)<br>$ /2T - Entire directory structure including Hidden one<br>$ ./2T - Only Sub Dirs inside including Hidden one<br>$ </em>2T - Only Sub Dirs inside without Hidden one<br>$ ~2T - All Present Users on system from “/etc/passwd” //第一次见到，很好用 $ $2T - All Sys variables //写 Shell 脚本的时候很实用<br>$ @2T - Entries from “/etc/hosts” //第一次见到<br>$ =2T - Output like ls or dir //好像还不如 ls 快捷<br>补充:<br>Esc + T - 交换光标前面的两个单词<br>表2-<br>1<br>浏览命令行的击键<br>       击键<br>          全名<br>        含义<br>      Ctrl+F<br>  字符向前<br>  向前移动一个字符<br>        Ctrl+B<br>           字符向后<br>          向后移动一个字符<br>      Alt+F<br>  单词向前<br>  向前移动一个单词<br>        Alt+B<br>      单词向后<br>     向后移动一个单词<br>        Ctrl+A<br>      行头<br>    到当前行的开始<br>        Ctrl+E<br>         行尾<br>        到行的末尾</p>
-<pre><code>    Ctrl+L
-     清屏
-   清除屏幕，并在屏幕顶端留下一行
-表 2-2 中的击键可以用来编辑命令行。
-</code></pre><p>表2- 2<br>使用表 2-3 中的击键可在命令行上剪切和粘贴文本。<br>表2- 3<br>在命令行上剪切和粘贴文本的击键<br>编辑命令行的击键<br>       击键<br>          全名<br>         含义<br>     Ctrl+D<br>      删除当前内容<br>       删除当前字符<br>        Backspace 或 Rubout<br>  删除以前内容<br>  删除前一个字符<br>        Ctrl+T<br>           调换字符<br>            交换当前字符和前一个字符的位置<br>        Alt+T<br>  调换单词<br>  交换当前单词和前一个单词的位置<br>         Alt+U<br>       大写单词<br>       将当前单词变为大写<br>         Alt+L<br>       小写单词<br>       将当前单词变为小写<br>       Alt+C<br>          首字母大写<br>           将当前单词的首字母变为大写<br>       Ctrl+V<br>     插入特殊字符<br>      添加特殊字符。例如，按 Ctrl+V+Tab 可 添加一个 Tab 字符<br>           击键<br>          全名<br>         含义<br>       Ctrl+K<br>  剪切行尾<br>  剪切文本到该行末尾<br>        Ctrl+U<br>         剪切行头<br>          剪切文到该行开头</p>
-<pre><code> Ctrl+W
-    剪切前个单词
-    剪切光标前的一个单词
-Alt+D
-剪切下个单词
- 剪切光标后的一个单词
-  Ctrl+Y
-</code></pre><p>  粘贴最近的文本<br>  粘贴最近剪切的文本<br>         Alt+Y<br>       粘贴早期的文本<br>       轮回到先前剪切的文本并粘贴它<br>         Ctrl+C<br>          删除整行<br>           删除一整行<br>    表2- 4<br>用于文本补全的组合键<br>            组合键<br>用于<br>              Alt+~<br>用用户名补全文本<br>               Alt+$<br>用变量补全文本<br>            Alt+@<br>用主机名补全文本<br>              Alt+!<br>shell<br>用命令名(以别名、保留字、   函数、   内置命令和文 件名的顺序依次检查)补全文本。换句话说，用以前运行过 的命令补全这个按键序列<br>shell<br>                Ctrl+X+/<br>列出可能的补全用户名文本<br>               Ctrl+X+$<br>列出可能的补全环境变量<br>                Ctrl+X+@<br>列出可能的补全主机名<br>                Ctrl+X+!<br>列出可能的补全命令名<br>       表2- 5<br>使用命令历史的击键<br>                  键<br>功能名<br>描述<br>                     方向键 (↑或↓)<br>步进<br>按上和下箭头可步进浏览历史列表中的每个 命令行，直到所需的位置(Ctrl+P 和 Ctrl+N 分 别有同样的功能)<br>                       Ctrl+R<br>反向渐进搜索<br>按下这些键后，输入一个搜索字符串进行反向 搜索。输入此字符串后，匹配的命令行即会出 现，可以运行或编辑它<br>                   Ctrl+S<br>前向渐进搜索<br>与前一个功能相似，只不过是前向搜索<br>                      Alt+P<br>反向搜索<br>按下这些键后，输入一个字符串进行反向搜 索。输入一个字符串并且按 Enter 键可看到包 含该字符串的最近已用命令<br>                      Alt+N<br>前向搜索<br>与前一个功能类似，只不过是前向搜索<br>                     Alt+&lt;<br>历史列表的开 头<br>到历史列表的第一项<br>                      Alt+&gt;<br>历史列表的末 尾<br>到历史列表的最后一项</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/03/linux-mixed/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/03/linux-mixed/" itemprop="url">Linux 学习笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-03T10:03:13+08:00">
-                2017-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Linux 系统，话说我也不知道该怎么说这玩意，反正就是用着用着就不想它是个什么东西了，只要记住是个操作系统就行了，跟 windows 性质一样，是个计算机系统。Linux 属于 unix 派系，下面的分支众多，反正常用的(我听说过的)也就几种，因为一大堆乱七八糟的理由，这玩意普遍用作服务端系统，里面有很多道道是需要掌握和学习的，了解了这玩意儿，就会发现与之前 玩windows时 被灌输的诸多认知有多么大的差异。</p>
-<h2 id="vim-编辑器"><a href="#vim-编辑器" class="headerlink" title="vim 编辑器"></a>vim 编辑器</h2><pre><code>话说 vi 与 vim  不是一回事，虽然时常有人 将 vim 命令 alias 成 vi, 但是不一样就是不一样。
-</code></pre><p>vim 的配置文件为 ～／.vimrc 这里可以对vim 进行配置，如果没有该文件，可自行创建.<br>我常用的简单配置如下，这时的配色是默认的。配色文件在 /usr/share/vim/vim74/colors/ 里面 ，  不同版本的数字可能不一样，指定配色文件只需要 在配置文件中加上<code>colorscheme  file_name</code>即可，file_name 不含<code>.vim</code>后缀。然后应该就会在下次使用vim命令时生效。就是这样子。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">set tabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set expandtab</span><br><span class="line">set autoindent</span><br><span class="line"></span><br><span class="line">set cindent</span><br><span class="line">set modeline</span><br><span class="line">set ruler</span><br><span class="line">set showcmd</span><br><span class="line">set  nu</span><br><span class="line">set showfulltag</span><br><span class="line">set showmode</span><br><span class="line">set smartcase</span><br><span class="line">set smartindent</span><br><span class="line">set imcmdline</span><br><span class="line">set previewwindow</span><br><span class="line">set hlsearch</span><br><span class="line">syntax on</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/01/daily-2017-08-01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/01/daily-2017-08-01/" itemprop="url">daily-2017-08-01</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T15:52:21+08:00">
-                2017-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>买的服务器快到期了，一直以来都没能充分利用上，在思考要不要续下去。Coding 现在也收费了，送的钻石会员也没几天了，一堆陈旧的没嚼透的代码都扔在上面，不久后或许就不能正常访问了，以前整理过，背过的知识点又经历了一次漫长的遗忘，不知道什么时候能捡起来，而这段时间又经受了一波知识轰炸，还没融汇贯通，只感觉脑袋中乱糟糟一团东西，并且电脑上也堆积了许多的未整理的网页书签和参考项目代码有待梳理消减，还有就是王者荣耀掉段也掉的心塞。或许是时候强制一波打理了，希望能有所收获，加油。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/17/jenkins/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/17/jenkins/" itemprop="url">Jenkins CI</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-17T18:03:13+08:00">
-                2017-07-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="https://jenkins.io/" target="_blank" rel="noopener">Jenkins</a> 是一个 CI(<a href="https://en.wikipedia.org/wiki/Continuous_integration" target="_blank" rel="noopener">Continuous integrati</a>) 工具.</p>
-<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p><a href="https://jenkins.io/doc/" target="_blank" rel="noopener">Jenkins User Documentation </a></p>
-<h1 id="Nginx-配置"><a href="#Nginx-配置" class="headerlink" title="Nginx 配置"></a>Nginx 配置</h1><p><a href="https://wiki.jenkins.io/display/JENKINS/Jenkins+behind+an+NGinX+reverse+proxy" target="_blank" rel="noopener">Run Jenkins behind Nginx</a></p>
-<h1 id="自启脚本"><a href="#自启脚本" class="headerlink" title="自启脚本"></a>自启脚本</h1><p><a href="https://wiki.jenkins.io/display/JENKINS/JenkinsLinuxStartupScript" target="_blank" rel="noopener">自启脚本文档</a></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cnblogs.com/shihuc/p/5145536.html" target="_blank" rel="noopener">Jenkins 基础</a></p>
-<h1 id="FQA"><a href="#FQA" class="headerlink" title="FQA"></a>FQA</h1><h2 id="构建时报错：-No-space-left-on-device"><a href="#构建时报错：-No-space-left-on-device" class="headerlink" title="构建时报错： No space left on device"></a>构建时报错： No space left on device</h2><p>报错的意思是磁盘上没有空间了，但是上服务器看了看，空间明明还有一堆。。。<br>这个时候就应该意识到时 inode 不足了，<code>df</code> 查看磁盘空间余量，<code>df -i</code> 查看 inode 余量。</p>
-<p>inode 感觉一般默认设置的上限是够用的，如果发生溢满就需要进行追究原因，如果是正常情况不够用了，可以考虑修改上限默认值。很明显，这里并不准备讲正常情况。<br>在服务器 <code>/var/spool/clientmqueue/</code>目录下有定时任务的输出记录文件，多数情况下 inode 是被这里的文件占用消耗完的。所以在设置定时任务的时候需要注意将不必要的输出销毁。这里的文件一般都可以之间删掉就可以释放很多inode ，没什么影响。不过因为文件数量太多，所以直接 <code>rm -rf  *</code> 会因为目录信息太大而执行不了。可以用 <code>lsattr ./|awk -F&quot;/&quot; &#39;{print $3}&#39;|xargs -i rm -rf {}</code> 命令删除，文件多删除执行时间也会比较长。<br>释放完inode 后，上述报错也就自然没有了</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1558,7 +1597,7 @@ Alt+D
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1569,7 +1608,7 @@ Alt+D
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1580,7 +1619,7 @@ Alt+D
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

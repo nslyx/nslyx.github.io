@@ -251,6 +251,632 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/wechat-dev/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/29/wechat-dev/" itemprop="url">微信服务号开发笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T13:27:32+08:00">
+                2017-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="基础配置验证"><a href="#基础配置验证" class="headerlink" title="基础配置验证"></a>基础配置验证</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$request_method = strtoupper($_SERVER[<span class="string">'REQUEST_METHOD'</span>]);</span><br><span class="line"><span class="string">'GET'</span> == $request_method || <span class="keyword">die</span>(<span class="string">'Http method Error!'</span>);</span><br><span class="line">!<span class="keyword">empty</span>($_GET[<span class="string">'echostr'</span>]) || <span class="keyword">die</span>(<span class="string">'Not the right Request!'</span>);</span><br><span class="line"></span><br><span class="line">$echostr 	= trim($_GET[<span class="string">"echostr"</span>]);</span><br><span class="line">$signature 	= $_GET[<span class="string">"signature"</span>];</span><br><span class="line"></span><br><span class="line">$token		= <span class="string">'The token which you set'</span>; <span class="comment">// 必须与配置页面设置的一致</span></span><br><span class="line">$timestamp 	= $_GET[<span class="string">"timestamp"</span>];</span><br><span class="line">$nonce 		= $_GET[<span class="string">"nonce"</span>];</span><br><span class="line"></span><br><span class="line">$tmpArr = [$token, $timestamp, $nonce];</span><br><span class="line">sort($tmpArr, SORT_STRING); <span class="comment">// 字典序</span></span><br><span class="line">$tmpStr = implode($tmpArr);</span><br><span class="line">$tmpStr = sha1($tmpStr); <span class="comment">// 计算签名</span></span><br><span class="line"></span><br><span class="line">$echostr = ($tmpStr == $signature) ? $echostr : <span class="string">'The Wechat is not supported!'</span>;</span><br><span class="line"><span class="keyword">die</span>($echostr);</span><br></pre></td></tr></table></figure>
+<h1 id="服务号开发"><a href="#服务号开发" class="headerlink" title="服务号开发"></a>服务号开发</h1><p>微信公众平台 - 开发 - 基本配置<br>这里面的有开发需要的基本设置<br>开发者ID<br>开发者密码<br>IP白名单</p>
+<p>服务器配置<br>服务器地址<br>令牌消息加解密密钥<br>消息加解密方式</p>
+<p>微信公众平台 - 设置 - 公众号设置</p>
+<h3 id="业务域名"><a href="#业务域名" class="headerlink" title="业务域名"></a>业务域名</h3><p>设置业务域名后，在微信内访问该域名下页面时，不会被重新排版。用户在该域名上进行输入时，不出现下图所示的安全提示。<br>注意事项：<br>1、可填写三个域名或路径（例：wx.qq.com或wx.qq.com/mp），需使用字母、数字及“-”的组合，不支持IP地址、端口号及短链域名。<br>2、填写的域名须通过ICP备案的验证。<br>3、将文件MP_verify_4GgDwWddnaSwTLuY.txt（点击下载）上传至填写域名或路径指向的web服务器（或虚拟主机）的目录（若填写域名，将文件放置在域名根目录下，例如wx.qq.com/MP_verify_4GgDwWddnaSwTLuY.txt；若填写路径，将文件放置在路径目录下，例如wx.qq.com/mp/MP_verify_4GgDwWddnaSwTLuY.txt），并确保可以访问。<br>4、一个自然月内最多可修改并保存三次，本月剩余保存次数：3</p>
+<h3 id="JS接口安全域名"><a href="#JS接口安全域名" class="headerlink" title="JS接口安全域名"></a>JS接口安全域名</h3><p>设置JS接口安全域名后，公众号开发者可在该域名下调用微信开放的JS接口。<br>注意事项：<br>1、可填写三个域名或路径（例：wx.qq.com或wx.qq.com/mp），需使用字母、数字及“-”的组合，不支持IP地址、端口号及短链域名。<br>2、填写的域名须通过ICP备案的验证。<br>3、将文件MP_verify_4GgDwWddnaSwTLuY.txt（点击下载）上传至填写域名或路径指向的web服务器（或虚拟主机）的目录（若填写域名，将文件放置在域名根目录下，例如wx.qq.com/MP_verify_4GgDwWddnaSwTLuY.txt；若填写路径，将文件放置在路径目录下，例如wx.qq.com/mp/MP_verify_4GgDwWddnaSwTLuY.txt），并确保可以访问。<br>4、一个自然月内最多可修改并保存三次，本月剩余保存次数：3</p>
+<h3 id="网页授权域名"><a href="#网页授权域名" class="headerlink" title="网页授权域名"></a>网页授权域名</h3><p>用户在网页授权页同意授权给公众号后，微信会将授权数据传给一个回调页面，回调页面需在此域名下，以确保安全可靠。<br>注意事项：<br>1、回调页面域名或路径需使用字母、数字及“-”的组合（例：wx.qq.com或wx.qq.com/mp），不支持IP地址、端口号及短链域名。填写的域名或路径需与实际回调URL中的域名或路径相同。<br>2、填写的域名须通过ICP备案的验证。<br>3、将文件MP_verify_4GgDwWddnaSwTLuY.txt（点击下载）上传至填写域名或路径指向的web服务器（或虚拟主机）的目录（若填写域名，将文件放置在域名根目录下，例如wx.qq.com/MP_verify_4GgDwWddnaSwTLuY.txt；若填写路径，将文件放置在路径目录下，例如wx.qq.com/mp/MP_verify_4GgDwWddnaSwTLuY.txt），并确保可以访问。</p>
+<p>授权接口的 redirect_uri 必须从属于该域名，OR 客户端报错  redirect_uri 参数错误</p>
+<p>微信公众平台 - 设置 - 安全中心<br>风险操作保护<br>IP白名单</p>
+<p>微信支付 -  是否是同一个微信公众号的微信支付 注意 openid 的使用</p>
+<p>没有必要注册微信公众平台账号<br>需要申请测试账号，可以用于测试接口<br>需要有自己的域名和web服务器<br>后台管理永远离不开一款富文本编辑器，最好能定制化应对手机展示效果</p>
+<h1 id="公众平台接口域名"><a href="#公众平台接口域名" class="headerlink" title="公众平台接口域名"></a>公众平台接口域名</h1><p>公众平台接口域名说明<br>开发者可以根据自己的服务器部署情况，选择最佳的接入点（延时更低，稳定性更高）。除此之外，可以将其他接入点用作容灾用途，当网络链路发生故障时，可以考虑选择备用接入点来接入。</p>
+<ol>
+<li>通用域名(api.weixin.qq.com)，使用该域名将访问官方指定就近的接入点；</li>
+<li>上海域名(sh.api.weixin.qq.com)，使用该域名将访问上海的接入点；</li>
+<li>深圳域名(sz.api.weixin.qq.com)，使用该域名将访问深圳的接入点；</li>
+<li>香港域名(hk.api.weixin.qq.com)，使用该域名将访问香港的接入点。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/28/shell-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/28/shell-demo/" itemprop="url">使用过的 shell 脚本 demo 记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-28T13:17:51+08:00">
+                2017-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="SSH-登陆脚本"><a href="#SSH-登陆脚本" class="headerlink" title="SSH 登陆脚本"></a>SSH 登陆脚本</h2><p>可以用终端登陆远程服务器的 expect 脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#! /usr/bin/expect -f</span><br><span class="line"></span><br><span class="line">set user [login name  maybe root]</span><br><span class="line">set host [remote host]</span><br><span class="line">set port 22</span><br><span class="line">set pass [password for login name]</span><br><span class="line">set timeout -1</span><br><span class="line"></span><br><span class="line">spawn ssh -p$port $user@$host</span><br><span class="line"></span><br><span class="line">expect &#123;</span><br><span class="line">    &quot;*(yes/no)?&quot; &#123;</span><br><span class="line">        send &quot;yes\r&quot;</span><br><span class="line">        expect &quot;$pass&quot;</span><br><span class="line">    &#125;   </span><br><span class="line">    &quot;*assword:*&quot; &#123;</span><br><span class="line">        send &quot;$pass\r&quot;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interact</span><br></pre></td></tr></table></figure></p>
+<h2 id="SSH-映射到本地端口"><a href="#SSH-映射到本地端口" class="headerlink" title="SSH 映射到本地端口"></a>SSH 映射到本地端口</h2><p>打通一个 SSH 通道并且映射到本地的一个端口，可以支持 phpstorm 远程调试设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/expect -f</span><br><span class="line"></span><br><span class="line">set user [username]</span><br><span class="line">set host [host]</span><br><span class="line">set port 22</span><br><span class="line">set password [password]</span><br><span class="line">set timeout -1</span><br><span class="line"></span><br><span class="line">#spawn ssh -p$port $user@$host</span><br><span class="line">spawn ssh -R 7777:localhost:7778 -p$port $user@$host</span><br><span class="line"></span><br><span class="line">#expect &quot;*yes/no*\?&quot;</span><br><span class="line">#send &quot;yes\r&quot;</span><br><span class="line"></span><br><span class="line">expect &quot;*assword:*&quot;</span><br><span class="line">send &quot;$password\r&quot;</span><br><span class="line"></span><br><span class="line">interact</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/28/yaf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/28/yaf/" itemprop="url">PHP Yaf 框架</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-28T13:14:23+08:00">
+                2017-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Yaf-框架-Nginx-推荐配置"><a href="#Yaf-框架-Nginx-推荐配置" class="headerlink" title="Yaf 框架 Nginx 推荐配置"></a>Yaf 框架 Nginx 推荐配置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"># drtest virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">#</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">#    listen       somename:8080;</span><br><span class="line">#    server_name  somename  alias  another.alias;</span><br><span class="line">    server_name www.drtest.com;</span><br><span class="line"></span><br><span class="line">    root   /Users/zxtian/code/drtest;</span><br><span class="line">    location / &#123;</span><br><span class="line">        index  index.php index.html index.htm;</span><br><span class="line">        if (!-e $request_filename) &#123;</span><br><span class="line">            rewrite  ^/(.*)$  /index.php/$1  last;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$ &#123;</span><br><span class="line">        expires 100d;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ .*\.(js|css)?$ &#123;</span><br><span class="line">        expires 30d;</span><br><span class="line">    &#125;</span><br><span class="line">    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span><br><span class="line">    #</span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        fastcgi_pass   127.0.0.1:9000;</span><br><span class="line">        fastcgi_index  index.php;</span><br><span class="line">        fastcgi_param  SCRIPT_FILENAME  /$document_root$fastcgi_script_name;</span><br><span class="line">        include        fastcgi_params;</span><br><span class="line"></span><br><span class="line">        set $fastcgi_script_name2 $fastcgi_script_name;</span><br><span class="line">        if ($fastcgi_script_name ~ &quot;^(.+\.php)(/.+)$&quot;) &#123;</span><br><span class="line">            set $fastcgi_script_name2 $1;</span><br><span class="line">            set $path_info $2;</span><br><span class="line">        &#125;</span><br><span class="line">        fastcgi_param   PATH_INFO $path_info;</span><br><span class="line">        fastcgi_param   SCRIPT_FILENAME   $document_root$fastcgi_script_name2;</span><br><span class="line">        fastcgi_param   SCRIPT_NAME   $fastcgi_script_name2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">#</span><br><span class="line">#server &#123;</span><br><span class="line">#    listen       8000;</span><br><span class="line">#    listen       somename:8080;</span><br><span class="line">#    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">#    location / &#123;</span><br><span class="line">#        root   html;</span><br><span class="line">#        index  index.html index.htm;</span><br><span class="line">#    &#125;</span><br><span class="line">#&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/28/svn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/28/svn/" itemprop="url">svn</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-28T12:57:53+08:00">
+                2017-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Svn 常见的版本控制器之一，全名叫 Subversion。<br>Svn 是集中式的版本控制器，有。。。</p>
+<p>Linux 中Svn 在本地的路径前需要加上文件协议名，像是<code>file:///Users/zxtian/code/tmp/repo/zrepo/</code>这样。</p>
+<p>Svn 仓库管理命令<br>svnadmin 命令</p>
+<p>Svn 检出仓库命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn checkout RepoPath --username=xxx --password=xxx</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/28/yii2-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/28/yii2-notes/" itemprop="url">Yii2 使用记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-28T09:23:57+08:00">
+                2017-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="使用-Composer-创建-Yii2-项目"><a href="#使用-Composer-创建-Yii2-项目" class="headerlink" title="使用 Composer 创建 Yii2 项目"></a>使用 Composer 创建 Yii2 项目</h1><p> 创建基础模版<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist yiisoft/yii2-app-basic basic</span><br></pre></td></tr></table></figure></p>
+<p>创建高级模版<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist yiisoft/yii2-app-advanced advanced</span><br></pre></td></tr></table></figure></p>
+<p>末尾两个参数为包名和创建出的项目根目录名称，经过对比，目名仅仅是项目的根目录，与项目其他部分没有影响</p>
+<p>是否用布局文件</p>
+<p>控制器成员属性控制<br>public $layout = false;<br>public $layout = “main”;</p>
+<p>控制器成员方法内控制<br>$this-&gt;layout = false;<br>$this-&gt;layout = “main”;</p>
+<p>视图模版内控制<br>$this-&gt;contant-&gt;layout = false;<br>$this-&gt;content-&gt;layout = “main”;</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/20/notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -867,631 +1493,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/win-shortcuts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/15/win-shortcuts/" itemprop="url">win-shortcuts</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T10:00:47+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/mac-shortcuts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/15/mac-shortcuts/" itemprop="url">MAC OS 快捷键记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T10:00:32+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>避免以后忘记，就做个小小的记录</p>
-<h1 id="常见功能键图标对照："><a href="#常见功能键图标对照：" class="headerlink" title="常见功能键图标对照："></a>常见功能键图标对照：</h1><p><code>⎋</code>（esc）、<code>⇪</code>（caps lock）、<code>⇧</code>（shift）、<code>⌃</code>（control）、<code>⌥</code>（option）、<code>⌘</code>（command）、<code>⌅</code>（enter）、<code>⎇</code>（option）、<code>⇟</code>（pagedown）、<code>⇞</code>（pageup）</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/15/mac-shortcuts/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/homebrew/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/15/homebrew/" itemprop="url">Homebrew</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T09:23:00+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p><a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a> 是 Mac 系统上的一款软件包管理工具。</p>
-<h2 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Example usage:</span><br><span class="line">  brew search [TEXT|/REGEX/] <span class="comment"># 用于查找需要的依赖包，参数可是文本或正则</span></span><br><span class="line">  brew info [FORMULA...] <span class="comment"># 查看包信息&amp;依赖关系， </span></span><br><span class="line">  brew install FORMULA... <span class="comment"># 安装依赖包</span></span><br><span class="line">  brew update <span class="comment"># 更新 brew 自身，其后，依赖库在 brew 中或有新记录可更新</span></span><br><span class="line">  brew upgrade [FORMULA...] <span class="comment"># 升级指定包至最新稳定版</span></span><br><span class="line">  brew uninstall FORMULA... <span class="comment"># 卸载指定包</span></span><br><span class="line">  brew list [FORMULA...] </span><br><span class="line"></span><br><span class="line">Troubleshooting:</span><br><span class="line">  brew config</span><br><span class="line">  brew doctor</span><br><span class="line">  brew install --verbose --debug FORMULA</span><br><span class="line"></span><br><span class="line">Contributing:</span><br><span class="line">  brew create [URL [--no-fetch]]</span><br><span class="line">  brew edit [FORMULA...]</span><br><span class="line"></span><br><span class="line">Further <span class="built_in">help</span>:</span><br><span class="line">  brew commands</span><br><span class="line">  brew <span class="built_in">help</span> [COMMAND]</span><br><span class="line">  man brew</span><br><span class="line">  https://docs.brew.sh</span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">brew services list </span><br><span class="line">brew search &lt;package&gt;</span><br><span class="line">brew install &lt;package&gt;</span><br><span class="line">brew services start &lt;service&gt;</span><br><span class="line"></span><br><span class="line">brew deps --tree nginx</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/15/homebrew/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/php-fig/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/11/php-fig/" itemprop="url">PHP框架协作组(PHP-FIG)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T16:51:07+08:00">
-                2017-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在PHP框架介绍中PSR规范时常被提及，PhpStorm IDE 也有对该规范的支持。So, just learn something about it.</p>
-<p><a href="http://www.php-fig.org/" target="_blank" rel="noopener">PHP-FIG — PHP Framework Interop Group</a>，直译为PHP框架互操作组，互操作可以理解为协作，所以就是PHP框架协作组。官网说它旨在通过合作和标准推进PHP的发展。其实就是对通过协商制定一些规范从而推进PHP框架的规范化进程，有助于提升PHP框架易用性与促进PHP框架的快速发展。<a href="http://www.php-fig.org/psr/" target="_blank" rel="noopener">PHP Standards Recommendations</a>，即PSRs系列标准规范，也就是这个组织的成果了。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/11/php-fig/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/11/algorithm/" itemprop="url">Algorithm - 算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T10:04:52+08:00">
-                2017-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>记录一些算法的思想。<br>可供参考：<br><a href="http://www.lupaworld.com/article-242544-1.html" target="_blank" rel="noopener">十大编程算法助程序员走上高手之路</a><br><a href="http://www.cnblogs.com/kkun/archive/2011/11/23/2260280.html" target="_blank" rel="noopener">经典排序算法冒泡排序Bubble sort</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/11/algorithm/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1537,7 +1543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1548,7 +1554,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1559,7 +1565,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
