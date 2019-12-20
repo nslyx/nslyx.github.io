@@ -251,6 +251,272 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/html-meta/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/31/html-meta/" itemprop="url">界面开发记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T07:34:39+08:00">
+                2017-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>viewport是网页默认的宽度和高度，上面这行代码的意思是，网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积的100%。<br>所有主流浏览器都支持这个设置，包括IE9。对于那些老式浏览器（主要是IE6、7、8），需要使用css3-mediaqueries.js。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//手机端判断各个平台浏览器及操作系统平台</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">checkPlatform</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="regexp">/android/i</span>.test(navigator.userAgent))&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Android'browser."</span>);<span class="comment">//这是Android平台下浏览器</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="regexp">/(iPhone|iPad|iPod|iOS)/i</span>.test(navigator.userAgent))&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"This is iOS'browser."</span>);<span class="comment">//这是iOS平台下浏览器</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="regexp">/Linux/i</span>.test(navigator.userAgent))&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Linux'browser."</span>);<span class="comment">//这是Linux平台下浏览器</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="regexp">/Linux/i</span>.test(navigator.platform))&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"This is Linux operating system."</span>);<span class="comment">//这是Linux操作系统平台</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="regexp">/MicroMessenger/i</span>.test(navigator.userAgent))&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"This is MicroMessenger'browser."</span>);<span class="comment">//这是微信平台下浏览器</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> browser = &#123;</span><br><span class="line">      versions: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">var</span> u = navigator.userAgent, app = navigator.appVersion;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="comment">//移动终端浏览器版本信息</span></span><br><span class="line">            Trident     :   nu.indexOf(<span class="string">'Trident'</span>)   &gt; <span class="number">-1</span>,      <span class="comment">//IE内核</span></span><br><span class="line">            Presto      :   nu.indexOf(<span class="string">'Presto'</span>)    &gt; <span class="number">-1</span>,        <span class="comment">//opera内核</span></span><br><span class="line">            AppleWebKit :   nu.indexOf(<span class="string">'AppleWebKit'</span>)   &gt; <span class="number">-1</span>,   <span class="comment">//苹果、谷歌内核</span></span><br><span class="line">            Gecko       :   nu.indexOf(<span class="string">'Gecko'</span>)     &gt; <span class="number">-1</span> &amp;&amp; nu.indexOf(<span class="string">'KHTML'</span>) == <span class="number">-1</span>,  <span class="comment">//火狐内核</span></span><br><span class="line">            Mobile      :   !!nu.match(<span class="regexp">/AppleWebKit.*Mobile/i</span>) || !!nu.match(<span class="regexp">/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/</span>),   <span class="comment">//是否为移动终端</span></span><br><span class="line">            ios         :   !!nu.match(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>),     <span class="comment">//ios终端</span></span><br><span class="line">            iPad        :   nu.indexOf(<span class="string">'iPad'</span>)      &gt; <span class="number">-1</span>,            <span class="comment">//是否iPad</span></span><br><span class="line">            iPhone      :   nu.indexOf(<span class="string">'iPhone'</span>)    &gt; <span class="number">-1</span> || nu.indexOf(<span class="string">'Mac'</span>)   &gt; <span class="number">-1</span>, <span class="comment">//是否为iPhone或者QQHD浏览器</span></span><br><span class="line">            Android     :   nu.indexOf(<span class="string">'Android'</span>)   &gt; <span class="number">-1</span> || nu.indexOf(<span class="string">'Linux'</span>) &gt; <span class="number">-1</span>, <span class="comment">//android终端或者uc浏览器           </span></span><br><span class="line">            webApp      :   nu.indexOf(<span class="string">'Safari'</span>)    == <span class="number">-1</span>        <span class="comment">//是否web应该程序，没有头部与底部</span></span><br><span class="line">          &#125;;</span><br><span class="line">      &#125;(),</span><br><span class="line">      language: (navigator.browserLanguage || navigator.language).toLowerCase()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">load</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchstart'</span>,touch, <span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchmove'</span>,touch, <span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'touchend'</span>,touch, <span class="literal">false</span>);</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">touch</span> (<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> event = event || <span class="built_in">window</span>.event;</span><br><span class="line">         </span><br><span class="line">        <span class="keyword">var</span> oInp = <span class="built_in">document</span>.getElementById(<span class="string">"inp"</span>);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">switch</span>(event.type)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"touchstart"</span>:</span><br><span class="line">                oInp.innerHTML = <span class="string">"Touch started ("</span> + event.touches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.touches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"touchend"</span>:</span><br><span class="line">                oInp.innerHTML = <span class="string">"&lt;br&gt;Touch end ("</span> + event.changedTouches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.changedTouches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"touchmove"</span>:</span><br><span class="line">                event.preventDefault();</span><br><span class="line">                oInp.innerHTML = <span class="string">"&lt;br&gt;Touch moved ("</span> + event.touches[<span class="number">0</span>].clientX + <span class="string">","</span> + event.touches[<span class="number">0</span>].clientY + <span class="string">")"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>,load, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/20170329mac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/29/20170329mac/" itemprop="url">Mac 使用笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T17:00:53+08:00">
+                2017-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index">
+                    <span itemprop="name">Mac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="两个命令"><a href="#两个命令" class="headerlink" title="两个命令"></a>两个命令</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo scutil --get HostName</span><br><span class="line">sudo scutil --get ComputerName</span><br></pre></td></tr></table></figure>
+<h2 id="在安装软件隐私中找不到任何来源选项解决方法"><a href="#在安装软件隐私中找不到任何来源选项解决方法" class="headerlink" title="在安装软件隐私中找不到任何来源选项解决方法"></a>在安装软件隐私中找不到任何来源选项解决方法</h2><p>在终端执行下面的命令   【master前面为两短-】<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure></p>
+<h2 id="DS-Store"><a href="#DS-Store" class="headerlink" title=".DS_Store"></a>.DS_Store</h2><p>.DS_Store是Mac OS保存文件夹的自定义属性的隐藏文件，如文件的图标位置或背景色，相当于Windows的desktop.ini . 打开   “终端” ，复制黏贴下面的命令，回车执行，重启Mac即可生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 禁止.DS_store生成</span><br><span class="line">defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE2</span><br><span class="line">// 恢复.DS_store生成</span><br><span class="line">defaults delete com.apple.desktopservices DSDontWriteNetworkStores</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/wechat-dev/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1239,260 +1505,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/15/git/" itemprop="url">Around  Git</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T10:50:32+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Say-something"><a href="#Say-something" class="headerlink" title="Say something"></a>Say something</h1><p>Git 是一种辅助版本控制的软件。<br>版本控制器是在软件开发过程中帮助多人协作和版本控制的软件，目前最常见的版本控制器有 svn 和 git 。</p>
-<h1 id="Learn-about-it"><a href="#Learn-about-it" class="headerlink" title="Learn about it"></a>Learn about it</h1><ul>
-<li>代码仓库</li>
-<li>分布式</li>
-<li>基于行的差异算法</li>
-<li>托管</li>
-<li>基本构成工作区、暂存取和本地仓库</li>
-<li>本地仓库和远端仓库</li>
-</ul>
-<p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git官网</a> 和  <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰Git教程</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/15/git/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/git-orders/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/15/git-orders/" itemprop="url">Git 常用命令记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T10:43:11+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这里记录一些使用过的Git命令。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git checkout -b 本地分支名x origin/远程分支名x</span><br><span class="line">git fetch origin 远程分支名x:本地分支名x</span><br><span class="line">git reset --hard </span><br><span class="line">git push -f</span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span> --graph --decorate --oneline --simplify-by-decoration --all</span><br><span class="line">git <span class="built_in">log</span> --oneline --graph --decorate --all</span><br><span class="line">git <span class="built_in">log</span> --graph --all --pretty=format:<span class="string">'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'</span> --abbrev-commit --date=relative</span><br><span class="line"><span class="comment"># 设置别名</span></span><br><span class="line">git config --global alias.lg <span class="string">"log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit --date=relative"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#忽略跟踪</span></span><br><span class="line">git update-index  --assume-unchanged [file]</span><br><span class="line"></span><br><span class="line"> <span class="comment">#恢复跟踪</span></span><br><span class="line">git update-index --no-assume-unchanged [file]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">查看本地仓库哪些文件被加入忽略列表</span><br><span class="line">git  ls-files -v</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1543,7 +1555,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1554,7 +1566,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1565,7 +1577,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

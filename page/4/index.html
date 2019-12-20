@@ -251,6 +251,268 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/javascript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/21/javascript/" itemprop="url">javascript</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-21T17:18:22+08:00">
+                2017-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><p>在es6里面新出的promise 也是一个重点，最需要理解的就是下面四种使用的差异<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Promise </span></span><br><span class="line"><span class="comment"> * @return Another promise | Undefined | Sync value</span></span><br><span class="line"><span class="comment"> * @throws An sync error</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * Keep thinking the difference:</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * doSomething().then(() =&gt; &#123; return doSomethingElse(); &#125;);</span></span><br><span class="line"><span class="comment"> * doSomething().then(() =&gt; &#123; doSomethingElse() &#125;);</span></span><br><span class="line"><span class="comment"> * doSomething().then(doSomethingElse());</span></span><br><span class="line"><span class="comment"> * doSomething().then(doSomethingElse);</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * Think above with `.then(finalHandler)`;</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/naming/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/21/naming/" itemprop="url">常见命名法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-21T14:50:52+08:00">
+                2017-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>下划线命名法(UnderScoreCase)<ul>
+<li>单词间以下划线<code>_</code>相连</li>
+</ul>
+</li>
+<li>连字符(HyphenNaming)<ul>
+<li>单词间以连字符<code>-</code>相连</li>
+</ul>
+</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%8C%88%E7%89%99%E5%88%A9%E5%91%BD%E5%90%8D%E6%B3%95" target="_blank" rel="noopener">匈牙利命名法</a><ul>
+<li>前缀表示类型之类的，分系统和应用两种命名方式</li>
+</ul>
+</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%A7%9D%E5%B3%B0%E5%BC%8F%E5%A4%A7%E5%B0%8F%E5%AF%AB" target="_blank" rel="noopener">驼峰式命名法(Camel-Case)</a><ul>
+<li>小驼峰式命名法（lower camel case）首字母小写</li>
+<li>大驼峰式命名法（upper camel case）首字母大写</li>
+</ul>
+</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%B8%95%E6%96%AF%E5%8D%A1%E5%91%BD%E5%90%8D%E6%B3%95" target="_blank" rel="noopener">帕斯卡命名法Pascal</a><ul>
+<li>等同大驼峰</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/javascript-slice/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1140,7 +1402,7 @@
 <p>1.打开终端，输入命令cd /usr/local/bin，进入bin文件夹，此操作需要输入密码进行授权<br>2.输入命令cd xxx/xxx/apltool，进入下载的apktool文件夹中<br>3.输入命令sudo cp apltool apktool.jar aapt /usr/local/bin，讲上面所述的三个文件拷贝到bin文件夹中</p>
 <p>判断apktool是否安装成功</p>
 <p>打开终端，执行apktool命令，看是否出现以下数据，如果出现，说么安装成功</p>
-<p>Apktool v2.0.0-RC2 - a tool for reengineering Android apk files<br>with smali v2.0.3 and baksmali v2.0.3<br>Copyright 2010 Ryszard Wiśniewski <a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#98;&#x72;&#x75;&#x74;&#x2e;&#97;&#108;&#108;&#108;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#98;&#x72;&#x75;&#x74;&#x2e;&#97;&#108;&#108;&#108;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a><br>Updated by Connor Tumbleson <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#99;&#x6f;&#x6e;&#x6e;&#111;&#114;&#x2e;&#116;&#x75;&#109;&#x62;&#108;&#x65;&#115;&#x6f;&#x6e;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#111;&#109;">&#99;&#x6f;&#x6e;&#x6e;&#111;&#114;&#x2e;&#116;&#x75;&#109;&#x62;&#108;&#x65;&#115;&#x6f;&#x6e;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#111;&#109;</a></p>
+<p>Apktool v2.0.0-RC2 - a tool for reengineering Android apk files<br>with smali v2.0.3 and baksmali v2.0.3<br>Copyright 2010 Ryszard Wiśniewski <a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#x62;&#x72;&#x75;&#x74;&#46;&#97;&#x6c;&#108;&#x6c;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#109;">&#x62;&#x72;&#x75;&#x74;&#46;&#97;&#x6c;&#108;&#x6c;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#109;</a><br>Updated by Connor Tumbleson <a href="&#109;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#99;&#x6f;&#x6e;&#110;&#111;&#x72;&#46;&#x74;&#x75;&#x6d;&#98;&#108;&#101;&#115;&#111;&#x6e;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;">&#99;&#x6f;&#x6e;&#110;&#111;&#x72;&#46;&#x74;&#x75;&#x6d;&#98;&#108;&#101;&#115;&#111;&#x6e;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;</a></p>
 <p>usage: apktool<br> -advance,–advanced   prints advance information.<br> -version,–version    prints the version then exits<br>usage: apktool if|install-framework [options] <framework.apk><br> -p,–frame-path <dir>   Stores framework files into <dir>.<br> -t,–tag <tag>          Tag frameworks using <tag>.<br>usage: apktool d[ecode] [options] <file_apk><br> -f,–force              Force delete destination directory.<br> -o,–output <dir>       The name of folder that gets written. Default is apk.out<br> -p,–frame-path <dir>   Uses framework files located in <dir>.<br> -r,–no-res             Do not decode resources.<br> -s,–no-src             Do not decode sources.<br> -t,–frame-tag <tag>    Uses framework files tagged by <tag>.<br>usage: apktool b[uild] [options] <app_path><br> -f,–force-all          Skip changes detection and build all files.<br> -o,–output <dir>       The name of apk that gets written. Default is dist/name.apk<br> -p,–frame-path <dir>   Uses framework files located in <dir>.</dir></dir></dir></app_path></tag></tag></dir></dir></dir></file_apk></tag></tag></dir></dir></framework.apk></p>
 <p>For additional info, see: <a href="http://code.google.com/p/android-apktool/" target="_blank" rel="noopener">http://code.google.com/p/android-apktool/</a><br>For smali/baksmali info, see: <a href="http://code.google.com/p/smali/" target="_blank" rel="noopener">http://code.google.com/p/smali/</a></p>
 <p>dex2jar不需要安装</p>
@@ -1343,247 +1605,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/09/verify/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/09/verify/" itemprop="url">验证</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-09T10:42:13+08:00">
-                2017-11-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="字符串验证"><a href="#字符串验证" class="headerlink" title="字符串验证"></a>字符串验证</h1><h2 id="身份证号码验证算法"><a href="#身份证号码验证算法" class="headerlink" title="身份证号码验证算法"></a>身份证号码验证算法</h2><p>参考：<a href="cnblogs.com/xudong-bupt/p/3293838.html">旭东的博客-身份证号码验证算法</a> </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/06/scripts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/06/scripts/" itemprop="url">一些有用的脚本记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-06T15:44:41+08:00">
-                2017-11-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Linux-下通过域名获取ip"><a href="#Linux-下通过域名获取ip" class="headerlink" title="Linux 下通过域名获取ip"></a>Linux 下通过域名获取ip</h2><h1 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netdb.h&gt;  </span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (argc != <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Usage:%s domain_name\n"</span>, argv[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">hostent</span> *<span class="title">he</span>;</span></span><br><span class="line">    he = gethostbyname( argv[<span class="number">1</span>] );</span><br><span class="line">    <span class="keyword">char</span> destIP[<span class="number">128</span>];</span><br><span class="line">    <span class="keyword">char</span> **phe = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">for</span>( phe=he-&gt;h_addr_list ; <span class="literal">NULL</span> != *phe ; ++phe ) &#123;</span><br><span class="line">        inet_ntop(he-&gt;h_addrtype,*phe,destIP,<span class="keyword">sizeof</span>(destIP));</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,destIP);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"># 编译 gcc -o file thisfile.c</span><br></pre></td></tr></table></figure>
-<h1 id="原文、参考-列表"><a href="#原文、参考-列表" class="headerlink" title="原文、参考 列表"></a>原文、参考 列表</h1><p><a href="http://blog.csdn.net/zzz_781111/article/details/7372247" target="_blank" rel="noopener">linux 通过域名获得ip</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1634,7 +1655,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1645,7 +1666,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1656,7 +1677,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
