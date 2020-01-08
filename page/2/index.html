@@ -251,6 +251,583 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/compare-cr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/13/compare-cr/" itemprop="url">Mac BeyondCompare 无限试用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-13T11:53:44+08:00">
+                2019-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在网上看到的方法， 记录下</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/13/compare-cr/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/mac20181212/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/12/mac20181212/" itemprop="url">刻录 Mac 镜像到 u 盘</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-12T22:17:03+08:00">
+                2018-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index">
+                    <span itemprop="name">Mac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="获取-Mac-系统镜像"><a href="#获取-Mac-系统镜像" class="headerlink" title="获取 Mac 系统镜像"></a>获取 <code>Mac</code> 系统镜像</h2><p>可以在 <code>App Store</code> 中搜索需要的 <code>Mac</code> 系统版本，然后点击查看，下载。</p>
+<h2 id="刻录镜像至U盘"><a href="#刻录镜像至U盘" class="headerlink" title="刻录镜像至U盘"></a>刻录镜像至U盘</h2><p>将下载的系统镜像挂载到  <code>Application</code> 中，U盘也准备好。<br>可以用以下命令进行烧录制作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/Virgo /Applications/Install\ macOS\ Mojave.app --nointeraction</span><br></pre></td></tr></table></figure>
+<h2 id="命令拆解："><a href="#命令拆解：" class="headerlink" title="命令拆解："></a>命令拆解：</h2><ul>
+<li><code>/Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia</code> - 创建媒介程序</li>
+<li><code>--volume /Volumes/Virgo</code> 指定外置媒介挂载点，<code>/Volumes/Virgo</code> - 已挂载U盘的绝对路径</li>
+<li><code>--applicationpath /Applications/Install\ macOS\ Mojave.app</code> - 镜像系统的绝对路径</li>
+<li><code>--nointeraction</code> 表示不要任何交互</li>
+</ul>
+<p>参考 <a href="https://www.iplaysoft.com/macos-usb-install-drive.html" target="_blank" rel="noopener">制作 macOS Mojave U盘USB启动安装盘方法教程</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/temp-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/12/temp-1/" itemprop="url">temp-1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-12T22:01:30+08:00">
+                2018-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>iptables可以实现端口转发<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// -- 中转机器上</span><br><span class="line">iptables -A INPUT -s 请求端IP -p tcp --dport 22 -j ACCEPT</span><br><span class="line">iptables -A INPUT -s 被请求端IP -p tcp --dport 51521 -j ACCEPT</span><br><span class="line"></span><br><span class="line">ssh -CNfR 51521:ip:1314 -b 0.0.0.0 username@10.32.0.154</span><br><span class="line">ssh -CNfR 51022:ip:22 -b 0.0.0.0 username@10.32.0.154</span><br><span class="line"></span><br><span class="line">rsync -razh --delete  --delete-exclude --exclude <span class="string">'.git'</span> --exclude <span class="string">'.idea'</span> --exclude <span class="string">'storage'</span> ./ zhangxiaotian@@47.93.180.203:~/www/jinse-master-new</span><br><span class="line">rsync -razh --delete --exclude <span class="string">'.git'</span> ./ zhangxiaotian@47.93.180.203:~/www/jinse-master-new</span><br><span class="line"></span><br><span class="line">wget -c -m -k  -np -p -E -U Mozilla --no-check-certificate</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 魔方</span></span><br><span class="line"><span class="comment"> * 存在于空间中，6个面对应六个方位</span></span><br><span class="line"><span class="comment"> * 有六个面，在颜色最秩序时，每个面仅有不同于其他面的单一颜色，总计6种颜色，用1-6表示</span></span><br><span class="line"><span class="comment"> * 有6个面心块，12个棱边块，8个顶角块 共计26个外露块，核心块在构造上不存在</span></span><br><span class="line"><span class="comment"> * 面心块，棱边块，顶角块分别有 1，2，3种颜色</span></span><br><span class="line"><span class="comment"> * 每个块特点在体系中唯一，可用三位颜色组标识块，0补位</span></span><br><span class="line"><span class="comment"> * 因为方位限制，不存在对立面颜色组合</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 所有外露块表示：</span></span><br><span class="line"><span class="comment"> * 001，002，003，004，005，006</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> **/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// header("Access-Control-Allow-Methods: POST, PUT, DELETE");</span></span><br><span class="line">var_dump($_SERVER);</span><br></pre></td></tr></table></figure>
+<h2 id="微信上面有些需要文件验证的方式"><a href="#微信上面有些需要文件验证的方式" class="headerlink" title="微信上面有些需要文件验证的方式"></a>微信上面有些需要文件验证的方式</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">// nginx 中的匹配转发到验证文件</span></span><br><span class="line"><span class="comment">    location ~^/MP_verify_\w+.txt$ &#123;</span></span><br><span class="line"><span class="comment">        rewrite .* /verify.php;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">// 验证文件的内容如下：</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">$verify_str = str_replace([<span class="string">'/MP_verify_'</span>, <span class="string">'.txt'</span>], <span class="string">''</span>, $_SERVER[<span class="string">'REQUEST_URI'</span>]);</span><br><span class="line"><span class="keyword">exit</span>($verify_str);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mysqldump 导出数据库</span><br><span class="line">mysqldump -u root -p coffee_stage &gt; coffee_stage_20170411.sql -S /tmp/mysql.sock</span><br><span class="line"></span><br><span class="line">通过 scp 下载文件</span><br><span class="line">scp zhangxiaotian@47.93.114.89:/data/www/zhangxiaotian/coffee_stage_bak.sql coffee_stage_bak.sql</span><br><span class="line">composer crete-project codeigniter/framework</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tailf</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> paste</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> nopaste</span><br></pre></td></tr></table></figure>
+<p>项目相关问题</p>
+<p>$env = isset($_SERVER[‘HTTP_JCENV’]) ? $_SERVER[‘HTTP_JCENV’] : ‘’;<br>$protocol = isset($_SERVER[‘HTTP_JCPROTOCAL’]) ? $_SERVER[‘HTTP_JCPROTOCAL’] : ((isset($_SERVER[‘HTTPS’]) &amp;&amp; $_SERVER[‘HTTPS’] == “on”) ? “https” : “http”);<br>$config[‘base_url’] = $protocol;<br>$config[‘base_url’] .= “://“.$_SERVER[‘HTTP_HOST’] . “/“ . $env;<br>$config[‘base_url’] .= str_replace(basename($_SERVER[‘SCRIPT_NAME’]),””,$_SERVER[‘SCRIPT_NAME’]);</p>
+<p>$config[‘sess_driver’] = ‘database’;<br>$config[‘sess_save_path’] = ‘ci_sessions’;</p>
+<p>Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set ‘always_populate_raw_post_data’ to ‘-1’ in php.ini and use the php://input stream instead.</p>
+<p>mysql&gt; select @@sql_mode;<br>+——————————————————————————————————————————————-+<br>| @@sql_mode                                                                                                                                |<br>+——————————————————————————————————————————————-+<br>| ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |<br>+——————————————————————————————————————————————-+<br>1 row in set (0.00 sec)</p>
+<p>set global</p>
+<p>set global sql_mode=’STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION’;</p>
+<p>;;;;mysql&gt; set session sql_mode=’STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION’;</p>
+<p>⌘ + d: 垂直分屏，</p>
+<p>⌘ + shift + d: 水平分屏。</p>
+<p>⌘ + ]和⌘ + [在最近使用的分屏直接切换.</p>
+<p>⌘ + opt + 方向键切换到指定位置的分屏。</p>
+<p>⌘ + 数字: 切换标签页。</p>
+<p>⌘ + 方向键 按方向切换标签页。</p>
+<p>shift + ⌘ + s: 保存当前窗口快照。</p>
+<p>⌘ + opt + b: 快照回放。很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//$im = imagecreatetruecolor(400,400);</span></span><br><span class="line"><span class="comment">//$gray = imagecolorallocate($im,255,255,255);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//imagefill($im,0,0,$gray);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//// 4: 保存成图片 imagepng(画布 [, 保存位置 ]),imagejpeg(),imagegif()</span></span><br><span class="line"><span class="comment">//header('content-type:image/jpeg');</span></span><br><span class="line"><span class="comment">//// header('Content-Type:image/png');</span></span><br><span class="line"><span class="comment">//imagepng($im);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//// 5: 销毁画布  销毁画面 imagedestroy(画布)</span></span><br><span class="line"><span class="comment">//imagedestroy($im);</span></span><br><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment">    步骤：</span></span><br><span class="line"><span class="comment">        1.创建画布</span></span><br><span class="line"><span class="comment">        2.造颜料</span></span><br><span class="line"><span class="comment">        3.填充背景颜色</span></span><br><span class="line"><span class="comment">        4.画干扰点</span></span><br><span class="line"><span class="comment">        5.画噪点</span></span><br><span class="line"><span class="comment">        6.写字符串</span></span><br><span class="line"><span class="comment">        7.输出图片</span></span><br><span class="line"><span class="comment">        8.销毁画布</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">//1.创建画布</span></span><br><span class="line">    $im=imagecreatetruecolor(<span class="number">400</span>, <span class="number">240</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2.造颜料</span></span><br><span class="line">    $gray = imagecolorallocate($im,<span class="number">30</span>,<span class="number">30</span>,<span class="number">30</span>);</span><br><span class="line">    $red = imagecolorallocate($im,<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    $blue = imagecolorallocate($im, <span class="number">100</span>, <span class="number">255</span>, <span class="number">255</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3.填充背景颜色</span></span><br><span class="line">    imagefill($im,<span class="number">0</span>,<span class="number">0</span>,$blue);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//4.画干扰点</span></span><br><span class="line">    <span class="keyword">for</span> ($i=<span class="number">0</span>; $i &lt;<span class="number">4</span> ; $i++) &#123;</span><br><span class="line">         imageline($im, rand(<span class="number">0</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">100</span>,rand(<span class="number">0</span>,<span class="number">60</span>),$red);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//5.画噪点</span></span><br><span class="line">        <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;<span class="number">100</span>;$i++)&#123;</span><br><span class="line">            imagesetpixel($im,rand(<span class="number">0</span>,<span class="number">50</span>),rand(<span class="number">0</span>,<span class="number">30</span>),$gray);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//6.写字符串</span></span><br><span class="line">    $str=substr(str_shuffle(<span class="string">'ABCDEFGHIJKMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789'</span>),<span class="number">0</span>,<span class="number">4</span>);</span><br><span class="line">    imagestring($im,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>,$str,$red);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//7.输出图片</span></span><br><span class="line">        header(<span class="string">'content-type:image/png'</span>);</span><br><span class="line">        imagepng($im);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//8.销毁画布</span></span><br><span class="line">        imagedestroy($im);</span><br></pre></td></tr></table></figure>
+<h1 id="phpStorm"><a href="#phpStorm" class="headerlink" title="phpStorm"></a>phpStorm</h1><p>phpstorm<br>折叠 shift + cmd + +/-<br>    cmd + +/-</p>
+<p>command + a 全选<br>command + c 复制<br>command + v 粘贴<br>command + z 撤消<br>command + l 输入行号跳到某一行<br>command + / 单行注释<br>command + option + / 块注释<br>ctrl + shift + / 块注释<br>command + e 列出最近打开的文件<br>shift + command + x 打开 Command Line Tools Console<br>shift + command + r 查找替换<br>shift + command + c 复制当前文件所在绝对路径<br>shift + f6(fn+f6): 选中左侧的文件名   进行文件重命名<br>command + D 复制出一行到下一行<br>control + tab　　打开的文件间切换　　control + shift + tab 向上切换<br>command + B　　函数追踪（等同：comaand + 单击）<br>command + delete　　删除整行<br>option + command + O 搜索项目中函数，变量或者其他的标示符<br>shift + command + o　　搜索项目中的文件<br>command + o　　搜索项目中的类文件<br>command + [        跳转到上一个位置<br>command + ]        跳转到下一个位置<br>option + j  多选单个单词，即一次可以对多个同样单词进行修改<br>option + comman +enter　　下面增加一行<br>control + up/down　　在打开的mac应用程序窗口之间切换<br>在写好的函数上面，/** 然后回车，可以生成php doc注释，这个和一些编辑器的敲tab略有不同<br>^+space　　可以在<img src="images/"> 输入/之后使用，提示出文件列表</p>
+<h1 id="sublime"><a href="#sublime" class="headerlink" title="sublime"></a>sublime</h1><p>打开/前往<br>⌘T    前往文件<br>⌘⌃P    前往项目<br>⌘R    前往 method<br><code>⌘⇧P</code>    命令提示<br>⌃G    前往行<br>⌘KB    开关侧栏<br>⌃ `    python 控制台<br>⌘⇧N    新建窗口<br>编辑<br>⌘L    选择行 (重复按下将下一行加入选择)<br>⌘D    选择词 (重复按下时多重选择相同的词进行多重编辑)<br>⌃⇧M    选择括号内的内容<br>⌘⇧↩    在当前行前插入新行<br>⌘↩    在当前行后插入新行<br>⌃⇧K    删除行<br>⌘KK    从光标处删除至行尾<br>⌘K⌫    从光标处删除至行首<br>⌘⇧D    复制(多)行<br>⌘J    合并(多)行<br>⌘KU    改为大写<br>⌘KL    改为小写<br>⌘ /    注释<br>⌘⌥ /    块注释<br>⌘Y    恢复或重复<br>⌘⇧V    粘贴并自动缩进<br>⌃ space    自动完成(重复按下选择下一个提示)<br>⌃M    跳转至对应的括号<br>⌘U    软撤销（可撤销光标移动）<br>⌘⇧U    软重做（可重做光标移动）<br>XML/HTML<br>⌘⇧A    选择标签内的内容<br>⌘⌥ .    闭合当前标签<br>查找/替换<br>⌘F    查找<br>⌘⌥F    替换<br>⌘⌥G    查找下一个符合当前所选的内容<br>⌘⌃G    查找所有符合当前所选的内容进行多重编辑<br>⌘⇧F    在所有打开的文件中进行查找<br>拆分窗口/标签页<br>⌘⌥1    单列<br>⌘⌥2    双列<br>⌘⌥5    网格 (4组)<br>⌃[1,2,3,4]    焦点移动至相应组<br>⌃⇧[1,2,3,4]    将当前文件移动至相应组<br>⌘[1,2,3…]    选择相应标签页<br>书签<br>⌘F2    添加/去除书签<br>F2    下一个书签<br>⇧F2    前一个书签<br>⌘⇧F2    清除书签<br>标记<br>⌘K space    设置标记<br>⌘KW    从光标位置删除至标记<br>⌘KA    从光标位置选择至标记<br>⌘KG    清除标记</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/31/docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/31/docker/" itemprop="url">Notes For Docker</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-31T15:49:19+08:00">
+                2018-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Desc"><a href="#Desc" class="headerlink" title="Desc"></a>Desc</h3><p>docker 有 docker-io 早起版本, docker-ce 社区版本, docker-ee 企业版本<br>以下操作基于 Centos 中实践、整理。</p>
+<h3 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h3><p>Docker 软件包已经包括在默认的 CentOS-Extras 软件源里。因此想要安装 docker，只需要运行下面的 yum 命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-io -y</span><br></pre></td></tr></table></figure></p>
+<p>直接yum安装，安装成功后查看版本<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker -v</span><br></pre></td></tr></table></figure></p>
+<p>启动docker</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker start</span><br></pre></td></tr></table></figure>
+<p>设置开机启动<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig docker on</span><br></pre></td></tr></table></figure></p>
+<p>配置 Docker 源</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 腾讯云： 因为国内访问 Docker Hub 较慢, 可以使用腾讯云提供的国内镜像源, 加速访问 Docker Hub，依次执行以下命令</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"OPTIONS='--registry-mirror=https://mirror.ccs.tencentyun.com'"</span> &gt;&gt; /etc/sysconfig/docker</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">service docker restart</span><br><span class="line"></span><br><span class="line"><span class="comment">## 新版推荐使用 daemon.json 文件 </span></span><br><span class="line"><span class="comment"># 文件 /etc/docker/daemon.json</span></span><br><span class="line"><span class="comment"># 内容如下即可，可自选镜像地址，可配置多个镜像地址</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"registry-mirrors"</span>: [</span><br><span class="line">        <span class="string">"https://mirror.ccs.tencentyun.com"</span>,</span><br><span class="line">        <span class="string">"https://registry.docker-cn.com"</span>,</span><br><span class="line">        <span class="string">"https://hub-mirror.c.163.com"</span>,</span><br><span class="line">        <span class="string">"https://docker.mirrors.ustc.edu.cn"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 最后也需要重载配置，重启服务</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><p>下载镜像，下载一个官方的 CentOS 镜像到本地<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull centos</span><br></pre></td></tr></table></figure></p>
+<p>下载好的镜像就会出现在镜像列表里<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line"><span class="comment"># 等价于</span></span><br><span class="line">docker image ls</span><br></pre></td></tr></table></figure></p>
+<p>运行容器，这时我们可以在刚才下载的 CentOS 镜像生成的容器内操作了。生成一个 centos 镜像为模板的容器并使用 bash shell<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -it centos /bin/bash</span><br><span class="line"><span class="comment"># 这个时候可以看到命令行的前端已经变成了 [root@(一串 hash Id)] 的形式, 这说明我们已经成功进入了 CentOS 容器。</span></span><br><span class="line"><span class="comment"># 在容器内执行任意命令, 不会影响到宿主机。</span></span><br><span class="line"><span class="comment"># 如果要后台运行容器但是不进入容器，可以在 加上 -d 参数</span></span><br></pre></td></tr></table></figure></p>
+<p>退出容器</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span> <span class="comment"># 通过 docker 命令进入的，使用这个命令退出后，容器将停止运行</span></span><br><span class="line"><span class="comment"># 如果不想停止容器，可以用 CTRL+P 然后 CTRL+Q 保持容器运行并退出，回到宿主机</span></span><br></pre></td></tr></table></figure>
+<p>查看容器信息， 能获取容器的id<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br><span class="line">docker ps -a <span class="comment"># 最常用，所有的</span></span><br><span class="line">docker ps -l</span><br></pre></td></tr></table></figure></p>
+<p>保存镜像</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker commit -m=<span class="string">"备注"</span> 你的CONTAINER_ID 你的IMAGE</span><br><span class="line"><span class="comment"># 这里只是在本地，基于当前容器构建了一个镜像，并不会发布出去</span></span><br></pre></td></tr></table></figure>
+<p>删除容器<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 容器必须先停止才能被删除</span></span><br><span class="line">docker sotp</span><br><span class="line">docker rm `container_name_or_id`</span><br></pre></td></tr></table></figure></p>
+<p>删除镜像<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 镜像只有没有正在使用他的容器时才能被删除</span></span><br><span class="line">docker rmi `image_name_or_id`</span><br></pre></td></tr></table></figure></p>
+<h3 id="查看容器ip"><a href="#查看容器ip" class="headerlink" title="查看容器ip"></a>查看容器ip</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在宿主机中查看 容器ip</span></span><br><span class="line">docker inspect `container_name` | grep IPAddress</span><br><span class="line">docker inspect --format <span class="string">'&#123;&#123; .NetworkSettings.IPAddress &#125;&#125;'</span> `id_or_name` <span class="comment">## 查看容器 ip</span></span><br><span class="line">docker inspect -f <span class="string">'&#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;'</span> `id_or_name` <span class="comment">## 同上</span></span><br><span class="line">docker inspect -f <span class="string">'&#123;&#123;.Name&#125;&#125; - &#123;&#123;.NetworkSettings.IPAddress &#125;&#125;'</span> $(docker ps -aq) <span class="comment">## 获取所有容器 ip</span></span><br><span class="line">docker inspect --format=<span class="string">'&#123;&#123;.Name&#125;&#125; - &#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;'</span> $(docker ps -aq)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在容器中查看当前 ip，先装网络工具</span></span><br><span class="line">yum install -y net-tools </span><br><span class="line"><span class="comment">## 安装容器中查看 ip 命令： </span></span><br><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+<h2 id="创建子网"><a href="#创建子网" class="headerlink" title="创建子网"></a>创建子网</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create --subnet 172.19.0.1/16 snet</span><br></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>sduo systemctl restart docker</p>
+<p> sudo curl -L <a href="https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname" target="_blank" rel="noopener">https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname</a> -s<code>-</code>uname -m` -o /usr/local/bin/docker-compose<br>sudo chmod +x /usr/local/bin/docker-compose<br> docker-compose –version<br>docker-compose version 1.24.0, build 0aa59064</p>
+<h2 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h2><p>Doc  <a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener">https://docs.docker.com/compose/install/</a></p>
+<p>sudo curl -L “<a href="https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname" target="_blank" rel="noopener">https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname</a> -s)-$(uname -m)” -o /usr/local/bin/docker-compose</p>
+<p>sudo curl -L <a href="https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname" target="_blank" rel="noopener">https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname</a> -s<code>-</code>uname -m` -o /usr/local/bin/docker-compose<br>sudo chmod +x /usr/local/bin/docker-compose<br> docker-compose –version<br>docker-compose version 1.24.0, build 0aa59064</p>
+<h2 id="添加端口映射"><a href="#添加端口映射" class="headerlink" title="添加端口映射"></a>添加端口映射</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 对于运行中的容器，没有直接的 docker 命令修改端口映射，只有 `run` 命令可以带上端口映射。一般流程为：</span></span><br><span class="line">docker ps -s <span class="comment">## 查看容器运行信息</span></span><br><span class="line">docker stop `id_or_name` <span class="comment">## 停止运行容器</span></span><br><span class="line">docker commit `id_or_name` `image_name` <span class="comment">## 基于容器，创建 docker 镜像</span></span><br><span class="line">docker run -itd  -p `mp1`:`vp1` -p `mp2`:`vp2`  -v `md1`:`md1` `image_name`</span><br><span class="line"><span class="comment">## run 命令常用参数</span></span><br><span class="line"><span class="comment">## --privileged  		赋予 root 权限</span></span><br><span class="line"><span class="comment">## --name `name`  	给容器起名</span></span><br><span class="line"><span class="comment">## -i 							交互模式</span></span><br><span class="line"><span class="comment">## -t 							分配伪终端</span></span><br><span class="line"><span class="comment">## -d 							后台运行，返回id</span></span><br><span class="line"><span class="comment">## -p 							端口映射 host : container</span></span><br><span class="line"><span class="comment">## -v 							目录挂载 host : container</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 但是上述方式适合在刚开始构建环境用，后续修改和调整不方便，所以，另一种方式是，获取到 容器在宿主机上的 ip 通过 宿主机器的 iptables 命令直接实现端口映射。一般流程为先获取容器ip 然后在宿主机器上进行绑定映射</span></span><br><span class="line">ip address <span class="comment">## centos7查看ip地址命令</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看是否开启 ip 转发 ipv4</span></span><br><span class="line">sysctl net.ipv4.ip_forward </span><br><span class="line">cat /proc/sys/net/ipv4/ip_forward</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"\e[38;5;220m[\e[38;5;201m\u\e[38;5;226m@MBP:\e[38;5;46m\W\e[38;5;220m]\e[0m\n$"</span></span><br><span class="line"><span class="string">"\e[38;5;201m\u@\h \W]\$"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'\e[38;5;220m[\e[38;5;201m\u\e[38;5;226m@\h:\e[38;5;46m\W\e[38;5;220m]\e[0m\n$'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">pro=<span class="string">'tcp'</span></span><br><span class="line">NAT_Host=<span class="string">'192.168.56.101'</span></span><br><span class="line">NAT_Port=3480</span><br><span class="line">Dst_Host=<span class="string">'192.168.56.102'</span></span><br><span class="line">Dst_Port=80</span><br><span class="line">iptables -t nat -A PREROUTING -m <span class="variable">$pro</span> -p <span class="variable">$pro</span> --dport <span class="variable">$NAT_Port</span> -j DNAT --to-destination <span class="variable">$Dst_Host</span>:<span class="variable">$Dst_Port</span></span><br><span class="line">iptables -t nat -A POSTROUTING -m <span class="variable">$pro</span> -p <span class="variable">$pro</span> --dport <span class="variable">$Dst_Port</span> -d <span class="variable">$Dst_Host</span> -j SNAT --to-source <span class="variable">$NAT_Host</span></span><br><span class="line"></span><br><span class="line">5、如果不需要端口映射了，可以删除添加的规则</span><br><span class="line">sudo iptables -t nat -vnL PREROUTING --line-number</span><br><span class="line">sudo iptables -t nat -nL --line-number</span><br><span class="line">sudo iptables -t nat -D PREROUTING 1</span><br><span class="line">sudo iptables -t nat -D POSTROUTING 1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">$iptables</span> -t nat -nL --line-numbers</span><br><span class="line">Chain PREROUTING (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    DOCKER     all  --  0.0.0.0/0            0.0.0.0/0            ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain INPUT (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line"></span><br><span class="line">Chain OUTPUT (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    DOCKER     all  --  0.0.0.0/0           !127.0.0.0/8          ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain POSTROUTING (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    MASQUERADE  all  --  172.18.0.0/16        0.0.0.0/0</span><br><span class="line">2    MASQUERADE  tcp  --  172.18.0.3           172.18.0.3           tcp dpt:80</span><br><span class="line"></span><br><span class="line">Chain DOCKER (2 references)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    RETURN     all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">2    DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:30001 to:172.18.0.3:80</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">$iptables</span> -t nat -nL --line-numbers</span><br><span class="line">Chain PREROUTING (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    DOCKER     all  --  0.0.0.0/0            0.0.0.0/0            ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain INPUT (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line"></span><br><span class="line">Chain OUTPUT (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    DOCKER     all  --  0.0.0.0/0           !127.0.0.0/8          ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain POSTROUTING (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    MASQUERADE  all  --  172.18.0.0/16        0.0.0.0/0</span><br><span class="line"></span><br><span class="line">Chain DOCKER (2 references)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    RETURN     all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Chain PREROUTING (policy ACCEPT 168 packets, 8024 bytes)</span><br><span class="line">num   pkts bytes target     prot opt <span class="keyword">in</span>     out     <span class="built_in">source</span>               destination</span><br><span class="line">1     203K 8999K DOCKER     all  --  *      *       0.0.0.0/0            0.0.0.0/0            ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain INPUT (policy ACCEPT 129 packets, 5600 bytes)</span><br><span class="line">num   pkts bytes target     prot opt <span class="keyword">in</span>     out     <span class="built_in">source</span>               destination</span><br><span class="line"></span><br><span class="line">Chain OUTPUT (policy ACCEPT 16 packets, 1202 bytes)</span><br><span class="line">num   pkts bytes target     prot opt <span class="keyword">in</span>     out     <span class="built_in">source</span>               destination</span><br><span class="line">1        0     0 DOCKER     all  --  *      *       0.0.0.0/0           !127.0.0.0/8          ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain POSTROUTING (policy ACCEPT 58 packets, 3834 bytes)</span><br><span class="line">num   pkts bytes target     prot opt <span class="keyword">in</span>     out     <span class="built_in">source</span>               destination</span><br><span class="line">1      900 54656 MASQUERADE  all  --  *      !docker0  172.18.0.0/16        0.0.0.0/0</span><br><span class="line">2        0     0 MASQUERADE  tcp  --  *      *       172.18.0.2           172.18.0.2           tcp dpt:80</span><br><span class="line"></span><br><span class="line">Chain DOCKER (2 references)</span><br><span class="line">num   pkts bytes target     prot opt <span class="keyword">in</span>     out     <span class="built_in">source</span>               destination</span><br><span class="line">1        0     0 RETURN     all  --  docker0 *       0.0.0.0/0            0.0.0.0/0</span><br><span class="line">2       42  2632 DNAT       tcp  --  !docker0 *       0.0.0.0/0            0.0.0.0/0            tcp dpt:80 to:172.18.0.2:80</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -t nat -A DOCKER 			-m tcp -p tcp  --dport 80 -j DNAT --to-destination </span><br><span class="line"></span><br><span class="line">iptables -t nat -A DOCKER 			-m tcp -p tcp  --dport 80 -j DNAT --to-destination 172.18.0.3:80</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -t nat -A POSTROUTING 	-m tcp -p tcp --dport <span class="variable">$Dst_Port</span> -d <span class="variable">$Dst_Host</span> -j SNAT --to-source <span class="variable">$NAT_Host</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -t nat -A PREROUTING  -m tcp -p tcp  --dport 8888 -j DNAT --to-destination 94.191.100.112:8888 172.18.0.3:80</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// -P INPUT ACCEPT</span><br><span class="line">// -P FORWARD DROP</span><br><span class="line">-P OUTPUT ACCEPT</span><br><span class="line">-N DOCKER</span><br><span class="line">-N DOCKER-ISOLATION</span><br><span class="line">-A FORWARD -j DOCKER-ISOLATION</span><br><span class="line">-A FORWARD -o docker0 -j DOCKER</span><br><span class="line">-A FORWARD -o docker0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">-A FORWARD -i docker0 ! -o docker0 -j ACCEPT</span><br><span class="line">-A FORWARD -i docker0 -o docker0 -j ACCEPT</span><br><span class="line">-A DOCKER -d 172.18.0.3/32 ! -i docker0 -o docker0 -p tcp -m tcp --dport 80 -j ACCEPT</span><br><span class="line">-A DOCKER-ISOLATION -j RETURN</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// -P INPUT ACCEPT</span><br><span class="line">// -P FORWARD DROP</span><br><span class="line">-P OUTPUT ACCEPT</span><br><span class="line">-N DOCKER</span><br><span class="line">-N DOCKER-ISOLATION</span><br><span class="line">-A FORWARD -j DOCKER-ISOLATION</span><br><span class="line">-A FORWARD -o docker0 -j DOCKER</span><br><span class="line">-A FORWARD -o docker0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">-A FORWARD -i docker0 ! -o docker0 -j ACCEPT</span><br><span class="line">-A FORWARD -i docker0 -o docker0 -j ACCEPT</span><br><span class="line">-A DOCKER-ISOLATION -j RETURN</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-A DOCKER -d 172.18.0.3/32 ! -i docker0 -o docker0 -p tcp -m tcp --dport 80 -j ACCEPT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -t nat -A DOCKER ! -i docker0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.17.0.5:80</span><br><span class="line"></span><br><span class="line">iptables -t filter -A DOCKER -d 172.18.0.2/32 ! -i docker0 -o docker0 -p tcp -m tcp --dport 80 -j ACCEPT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -t nat -A OUTPUT -d 127.0.0.1 -j DNAT --to-destination 94.191.100.112</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run --rm -d -p 80:80 -v /vol/nginx/conf:/etc/nginx/conf.d:ro -v /vol/nginx/html:/usr/share/nginx/html:ro  --name nginx nginx:alpine</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">查看当前运行的容器</span><br><span class="line"><span class="comment">#docker ps</span></span><br><span class="line">查看当前未运行的容器</span><br><span class="line"><span class="comment">#docker ps -l</span></span><br><span class="line">查看所有操作过的容器</span><br><span class="line"><span class="comment">#docker ps -a</span></span><br><span class="line">启动/关闭/重启容器</span><br><span class="line"><span class="comment">#docker start/stop/restart container-name</span></span><br><span class="line">进入容器内部</span><br><span class="line"><span class="comment">#docker exec -idt container-name /bin/bash</span></span><br><span class="line">删除容器</span><br><span class="line"><span class="comment">#docker rm container-name</span></span><br><span class="line">查看容器信息</span><br><span class="line"><span class="comment">#docker inspect container-name</span></span><br></pre></td></tr></table></figure>
+<p>docker run -u root –rm -d –net dknet –ip 172.19.0.3 -v /vol/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean<br>  -p 8080:8080<br>  -p 50000:50000 \<br>  -v jenkins-data:/var/jenkins_home \<br>  -v /var/run/docker.sock:/var/run/docker.sock \<br>  jenkinsci/blueocean</p>
+<p>docker run -u root –rm -d –name jenkins -p 8020:8080  -v /vol/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean</p>
+<p>docker run -itd –name c5 –net snet –ip 172.18.0.5 ctos:lnmp /bin/bash</p>
+<p>docker run -itd –name cx –privileged=true –net snet –ip 172.18.0.6 ctos:lnmp /sbin/init<br>docker exec -it cx /bin/bash</p>
+<p>docker run –rm -d  –net dknet –ip 172.19.0.3 -v /vol/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean</p>
+<h3 id="容器开启-ssh"><a href="#容器开启-ssh" class="headerlink" title="容器开启 ssh"></a>容器开启 ssh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 安装服务</span><br><span class="line">yum install -y openssh-server</span><br><span class="line"># 生成密钥对儿 第一个可选</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;备注&quot;</span><br><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_ed25519_key</span><br><span class="line"></span><br><span class="line"># 宿主机 公钥 放入 容器 authorized_keys 文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Docker Centos 中编译安装 Nginx</span></span><br><span class="line">yum install -y gcc gcc-c++ libtool autoconf make automake pcre-devel zlib-devel openssl openssl-devel</span><br><span class="line">./configure --with-http_ssl_module</span><br><span class="line">make &amp;&amp; make install</span><br><span class="line">ln -s  /usr/<span class="built_in">local</span>/nginx/sbin/nginx  /usr/bin/nginx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Err ./configure: error: the HTTP rewrite module requires the PCRE library.</span></span><br><span class="line">yum -y install pcre-devel</span><br><span class="line"><span class="comment"># Err ./configure: error: the HTTP gzip module requires the zlib library.</span></span><br><span class="line">yum install -y zlib-devel</span><br><span class="line"><span class="comment"># Err ./configure: error: SSL modules require the OpenSSL library.</span></span><br><span class="line">yum -y install openssl openssl-devel</span><br><span class="line"><span class="comment"># Err bash: make: command not found</span></span><br><span class="line"></span><br><span class="line">yum install initscripts</span><br><span class="line"><span class="comment">## docker centos nginx 设置开机自启失败了</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">chmod a+x nginx</span><br><span class="line">chkconfig --add /etc/init.d/nginx</span><br><span class="line">service nginx start //开户nginx</span><br><span class="line">service nginx stop //关闭nginx</span><br><span class="line">chkconfig nginx on // 添加到开机自启</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Filename /etc/init.d/nginx</span></span><br><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># nginx - this script starts and stops the nginx daemon</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># chkconfig:   - 85 15</span></span><br><span class="line"><span class="comment"># description:  NGINX is an HTTP(S) server, HTTP(S) reverse \</span></span><br><span class="line"><span class="comment">#               proxy and IMAP/POP3 proxy server</span></span><br><span class="line"><span class="comment"># processname: nginx</span></span><br><span class="line"><span class="comment"># config:      /etc/nginx/nginx.conf</span></span><br><span class="line"><span class="comment"># config:      /etc/sysconfig/nginx</span></span><br><span class="line"><span class="comment"># pidfile:     /var/run/nginx.pid</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Source function library.</span></span><br><span class="line">. /etc/rc.d/init.d/<span class="built_in">functions</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Source networking configuration.</span></span><br><span class="line">. /etc/sysconfig/network</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check that networking is up.</span></span><br><span class="line">[ <span class="string">"<span class="variable">$NETWORKING</span>"</span> = <span class="string">"no"</span> ] &amp;&amp; <span class="built_in">exit</span> 0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 需要改成你的执行文件路径</span></span><br><span class="line">nginx=<span class="string">"/usr/sbin/nginx"</span></span><br><span class="line">prog=$(basename <span class="variable">$nginx</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 需要改成你的配置文件路径</span></span><br><span class="line">NGINX_CONF_FILE=<span class="string">"/etc/nginx/nginx.conf"</span></span><br><span class="line"></span><br><span class="line">[ -f /etc/sysconfig/nginx ] &amp;&amp; . /etc/sysconfig/nginx</span><br><span class="line"></span><br><span class="line">lockfile=/var/lock/subsys/nginx</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">make_dirs</span></span>() &#123;</span><br><span class="line">   <span class="comment"># make required directories</span></span><br><span class="line">   user=`<span class="variable">$nginx</span> -V 2&gt;&amp;1 | grep <span class="string">"configure arguments:.*--user="</span> | sed <span class="string">'s/[^*]*--user=\([^ ]*\).*/\1/g'</span> -`</span><br><span class="line">   <span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$user</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">      <span class="keyword">if</span> [ -z <span class="string">"`grep <span class="variable">$user</span> /etc/passwd`"</span> ]; <span class="keyword">then</span></span><br><span class="line">         useradd -M -s /bin/nologin <span class="variable">$user</span></span><br><span class="line">      <span class="keyword">fi</span></span><br><span class="line">      options=`<span class="variable">$nginx</span> -V 2&gt;&amp;1 | grep <span class="string">'configure arguments:'</span>`</span><br><span class="line">      <span class="keyword">for</span> opt <span class="keyword">in</span> <span class="variable">$options</span>; <span class="keyword">do</span></span><br><span class="line">          <span class="keyword">if</span> [ `<span class="built_in">echo</span> <span class="variable">$opt</span> | grep <span class="string">'.*-temp-path'</span>` ]; <span class="keyword">then</span></span><br><span class="line">              value=`<span class="built_in">echo</span> <span class="variable">$opt</span> | cut -d <span class="string">"="</span> -f 2`</span><br><span class="line">              <span class="keyword">if</span> [ ! -d <span class="string">"<span class="variable">$value</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">                  <span class="comment"># echo "creating" $value</span></span><br><span class="line">                  mkdir -p <span class="variable">$value</span> &amp;&amp; chown -R <span class="variable">$user</span> <span class="variable">$value</span></span><br><span class="line">              <span class="keyword">fi</span></span><br><span class="line">          <span class="keyword">fi</span></span><br><span class="line">       <span class="keyword">done</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">start</span></span>() &#123;</span><br><span class="line">    [ -x <span class="variable">$nginx</span> ] || <span class="built_in">exit</span> 5</span><br><span class="line">    [ -f <span class="variable">$NGINX_CONF_FILE</span> ] || <span class="built_in">exit</span> 6</span><br><span class="line">    make_dirs</span><br><span class="line">    <span class="built_in">echo</span> -n $<span class="string">"Starting <span class="variable">$prog</span>: "</span></span><br><span class="line">    daemon <span class="variable">$nginx</span> -c <span class="variable">$NGINX_CONF_FILE</span></span><br><span class="line">    retval=$?</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    [ <span class="variable">$retval</span> -eq 0 ] &amp;&amp; touch <span class="variable">$lockfile</span></span><br><span class="line">    <span class="built_in">return</span> <span class="variable">$retval</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">stop</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> -n $<span class="string">"Stopping <span class="variable">$prog</span>: "</span></span><br><span class="line">    killproc <span class="variable">$prog</span> -QUIT</span><br><span class="line">    retval=$?</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    [ <span class="variable">$retval</span> -eq 0 ] &amp;&amp; rm -f <span class="variable">$lockfile</span></span><br><span class="line">    <span class="built_in">return</span> <span class="variable">$retval</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">restart</span></span>() &#123;</span><br><span class="line">    configtest || <span class="built_in">return</span> $?</span><br><span class="line">    stop</span><br><span class="line">    sleep 1</span><br><span class="line">    start</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">reload</span></span>() &#123;</span><br><span class="line">    configtest || <span class="built_in">return</span> $?</span><br><span class="line">    <span class="built_in">echo</span> -n $<span class="string">"Reloading <span class="variable">$prog</span>: "</span></span><br><span class="line">    killproc <span class="variable">$prog</span> -HUP</span><br><span class="line">    retval=$?</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">force_reload</span></span>() &#123;</span><br><span class="line">    restart</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">configtest</span></span>() &#123;</span><br><span class="line">  <span class="variable">$nginx</span> -t -c <span class="variable">$NGINX_CONF_FILE</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">rh_status</span></span>() &#123;</span><br><span class="line">    status <span class="variable">$prog</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">rh_status_q</span></span>() &#123;</span><br><span class="line">    rh_status &gt;/dev/null 2&gt;&amp;1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span></span><br><span class="line">    start)</span><br><span class="line">        rh_status_q &amp;&amp; <span class="built_in">exit</span> 0</span><br><span class="line">        <span class="variable">$1</span></span><br><span class="line">        ;;</span><br><span class="line">    stop)</span><br><span class="line">        rh_status_q || <span class="built_in">exit</span> 0</span><br><span class="line">        <span class="variable">$1</span></span><br><span class="line">        ;;</span><br><span class="line">    restart|configtest)</span><br><span class="line">        <span class="variable">$1</span></span><br><span class="line">        ;;</span><br><span class="line">    reload)</span><br><span class="line">        rh_status_q || <span class="built_in">exit</span> 7</span><br><span class="line">        <span class="variable">$1</span></span><br><span class="line">        ;;</span><br><span class="line">    force-reload)</span><br><span class="line">        force_reload</span><br><span class="line">        ;;</span><br><span class="line">    status)</span><br><span class="line">        rh_status</span><br><span class="line">        ;;</span><br><span class="line">    condrestart|try-restart)</span><br><span class="line">        rh_status_q || <span class="built_in">exit</span> 0</span><br><span class="line">            ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> $<span class="string">"Usage: <span class="variable">$0</span> &#123;start|stop|status|restart|condrestart|try-restart|reload|force-reload|configtest&#125;"</span></span><br><span class="line">        <span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+<p>yum -y install rsync  </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 补充 yum 源</span></span><br><span class="line">yum install -y epel-release</span><br><span class="line"><span class="comment"># 安装编译依赖</span></span><br><span class="line">yum install -y libxml2-dev curl-devel libjpeg-devel libpng-devel libXpm-devel freetype-devel libmcrypt-devel</span><br><span class="line"><span class="comment"># 不用配置环境变量，在 /usr/bin/ 下加上 php phpize 和 php-fpm 三个软连接就好</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 报错</span></span><br><span class="line">configure: error: xml2-config not found. Please check your libxml2 installation.</span><br><span class="line">yum install -y libxml2 libxml2-dev</span><br><span class="line"></span><br><span class="line">configure: error: Please reinstall the libcurl distribution -</span><br><span class="line">yum install -y curl curl-devel</span><br><span class="line"></span><br><span class="line">configure: error: jpeglib.h not found.</span><br><span class="line">yum install -y libjpeg libjpeg-devel</span><br><span class="line"></span><br><span class="line">configure: error: png.h not found.</span><br><span class="line">yum install -y libpng libpng-devel</span><br><span class="line"></span><br><span class="line">yum install -y libXpm-devel</span><br><span class="line"></span><br><span class="line">configure: error: freetype-config not found.</span><br><span class="line">yum install -y freetype-devel</span><br><span class="line"></span><br><span class="line">configure: error: mcrypt.h not found. Please reinstall libmcrypt.</span><br><span class="line">yum install -y epel-release</span><br><span class="line">yum install -y libmcrypt-devel</span><br><span class="line"></span><br><span class="line">yum install psmisc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">wget http://pear.php.net/go-pear.phar</span><br><span class="line">php go-pear.phar</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># 先安装 ssh</span><br><span class="line">yum install -y openssh-server expect</span><br><span class="line"># 进入目录</span><br><span class="line">dir=/etc/ssh</span><br><span class="line">cd $&#123;dir&#125;</span><br><span class="line"># 遍历执行生成密钥文件</span><br><span class="line">cmds=(\</span><br><span class="line">&apos;rsa -f ssh_host_rsa_key&apos;</span><br><span class="line">&apos;dsa -f ssh_host_dsa_key&apos;</span><br><span class="line">&apos;rsa -f ssh_host_ecdsa_key&apos;</span><br><span class="line">&apos;rsa -f ssh_host_ed25519_key&apos;</span><br><span class="line">)</span><br><span class="line">len=$&#123;#cmds[@]&#125;</span><br><span class="line">for((i=0;i&lt;$&#123;len&#125;;i++))</span><br><span class="line">do</span><br><span class="line">    expect &lt;&lt;EOF</span><br><span class="line">spawn ssh-keygen -t $&#123;cmds[i]&#125;</span><br><span class="line">expect &#123;</span><br><span class="line">  &quot;Overwrite (y/n)?&quot; &#123;</span><br><span class="line">    send &quot;y\r&quot;</span><br><span class="line">    expect &quot;Enter passphrase (empty for no passphrase)*&quot;</span><br><span class="line">    send &quot;\r&quot;</span><br><span class="line">    expect &quot;Enter same passphrase again*&quot;</span><br><span class="line">    send &quot;\r&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  &quot;Enter passphrase (empty for no passphrase):&quot; &#123;</span><br><span class="line">    send &quot;\r&quot;</span><br><span class="line">    expect &quot;Enter same passphrase again*&quot;</span><br><span class="line">    send &quot;\r&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">expect eof</span><br><span class="line">EOF</span><br><span class="line">done;</span><br><span class="line"># 开启 sshd</span><br><span class="line">/usr/sbin/sshd</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 创建 centos 实例</span><br><span class="line">docker run -it --name cc centos /bin/bash</span><br><span class="line"></span><br><span class="line"># 补充 yum 源, screen 也在这个源中</span><br><span class="line">yum install -y epel-release</span><br><span class="line"></span><br><span class="line"># 安装基础能力</span><br><span class="line">yun install -y git wget expect screen net-tools openssh-server rsync vim</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/reverse-ip-js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -973,519 +1550,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/php-yield/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/13/php-yield/" itemprop="url">php-yield</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T18:52:21+08:00">
-                2018-06-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>关于 yield 这个东东，可以花点时间好好的理解一下<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gen_one_to_three</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">3</span>; $i++) &#123;</span><br><span class="line">        <span class="comment">//注意变量$i的值在不同的yield之间是保持传递的。</span></span><br><span class="line">        <span class="keyword">yield</span> $i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$generator = gen_one_to_three();</span><br><span class="line"><span class="keyword">foreach</span> ($generator <span class="keyword">as</span> $value) &#123;</span><br><span class="line">    <span class="comment">// sleep(3);</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"$value\n"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/lang-c/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/13/lang-c/" itemprop="url">学一点点 C 语言</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T18:04:20+08:00">
-                2018-06-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="一点点基础"><a href="#一点点基础" class="headerlink" title="一点点基础"></a>一点点基础</h2><ol>
-<li>c 语言脚本的源文件后缀位 .c</li>
-<li>编译器: gcc 编译命令形如: <code>gcc -o exe.o source.c</code></li>
-<li>编译输出的后缀名为<code>.o</code>文件即为可执行文件</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/mac-disk-order/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/09/mac-disk-order/" itemprop="url">MacBook disk order</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T16:48:21+08:00">
-                2018-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="使用-macbook-刻录-U-盘启动盘"><a href="#使用-macbook-刻录-U-盘启动盘" class="headerlink" title="使用 macbook 刻录 U 盘启动盘"></a>使用 macbook 刻录 U 盘启动盘</h2><p>使用 <code>dd</code> 命令可以很方便的在 macbook 上将系统镜像文件刻录到 U 盘上<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="keyword">if</span>=xxx.iso of=/dev/disk2 bs=1M</span><br></pre></td></tr></table></figure></p>
-<p><strong>注意事项</strong>：</p>
-<ol>
-<li>刻录前必须将 U 盘卸载掉</li>
-<li><code>disk2</code>  为 U 盘设备</li>
-<li><code>bs=1M</code> 表示设置输入输出的块的大小</li>
-<li>命令执行很快，但可能读写还在执行，如果 U 盘有读写指示灯的花等到灯不闪了再移除</li>
-<li>被刻录的镜像文件需要支持<code>dd</code>命令</li>
-</ol>
-<h2 id="格式化-恢复-U-盘系统盘"><a href="#格式化-恢复-U-盘系统盘" class="headerlink" title="格式化/恢复 U 盘系统盘"></a>格式化/恢复 U 盘系统盘</h2><p>这里需要用到的是 <code>diskutil</code> 命令<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">diskutil info /dev/disk2</span><br><span class="line">diskutil partitionDisk /dev/disk2 1 MBRFormat <span class="string">"MS-DOS FAT32"</span> EDISON 32.2GB</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://rexstjohn.com/fixing-does-not-appear-to-be-a-valid-volume-name-for-its-file-system/" target="_blank" rel="noopener">参见原文</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/04/restful/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/04/restful/" itemprop="url">Restful - 整理点认知</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-04T17:11:13+08:00">
-                2018-04-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>常用状态码<br>/**</p>
-<ul>
-<li>含义       解释</li>
-<li>200        OK                确认GET、PUT和DELETE操作成功</li>
-<li>201        Created           确认POST操作成功</li>
-<li>304        Not Modified      用于条件GET访问，告诉客户端资源没有被修改 HTTP缓存有效。</li>
-<li>400        Bad Request       通常用于POST或者PUT请求，表明请求的内容是非法的 请求格式错误</li>
-<li>401        Unauthorized      未授权，需要授权</li>
-<li>403        Forbidden         鉴权成功，但是该用户没有权限</li>
-<li>404        Not Found         请求的资源不存在，服务器上没有资源</li>
-<li>405        Method Not Allowed    请求方法不能被用于请求相应的资源</li>
-<li>409        Conflict          访问和当前状态存在冲突</li>
-<li>410        gone              这个url对应的资源现在不可用。</li>
-<li>415        unsupported media type    请求类型错误。</li>
-<li>422        unprocessable entity - 校验错误时用。</li>
-<li>429        too many request - 请求过多。</li>
-<li>500        internal server error - 通用错误响应。</li>
-<li>503        service unavailable - 服务当前无法处理请求。<br>*</li>
-<li>To be continue…<br>*/</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1536,7 +1600,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">98</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1547,7 +1611,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1558,7 +1622,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1597,7 +1661,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="无限从属，简单来说就是无限级分类这样的设计形式。 与递归思想一样是两层标准化嵌套的模式，父子相对，只需要在一层思考作为相对两种层次的处理。常见的无限级分类数据表设计就是 id,pid相互绑定，下面这段复杂的sql 语句可以基于绑定刻画除层级和路径信息，或许能有点用。 12345678910111213141516171819-- 无限级分类结构查询出 leve 和 pathSELECT id, p">
+<meta name="description" content="无限从属，简单来说就是无限级分类这样的设计形式。 与递归思想一样是两层标准化嵌套的模式，父子相对，只需要在一层思考作为相对两种层次的处理。常见的无限级分类数据表设计就是 id,pid相互绑定，下面这段复杂的sql 语句可以基于绑定刻画出层级和路径信息，或许能有点用。 12345678910111213141516171819-- 无限级分类结构查询出 leve 和 pathSELECT id, p">
 <meta name="keywords" content="Design">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单位换算设计">
 <meta property="og:url" content="http://yoursite.com/2018/01/05/Infinite-subordinate/index.html">
 <meta property="og:site_name" content="Nslyx">
-<meta property="og:description" content="无限从属，简单来说就是无限级分类这样的设计形式。 与递归思想一样是两层标准化嵌套的模式，父子相对，只需要在一层思考作为相对两种层次的处理。常见的无限级分类数据表设计就是 id,pid相互绑定，下面这段复杂的sql 语句可以基于绑定刻画除层级和路径信息，或许能有点用。 12345678910111213141516171819-- 无限级分类结构查询出 leve 和 pathSELECT id, p">
+<meta property="og:description" content="无限从属，简单来说就是无限级分类这样的设计形式。 与递归思想一样是两层标准化嵌套的模式，父子相对，只需要在一层思考作为相对两种层次的处理。常见的无限级分类数据表设计就是 id,pid相互绑定，下面这段复杂的sql 语句可以基于绑定刻画出层级和路径信息，或许能有点用。 12345678910111213141516171819-- 无限级分类结构查询出 leve 和 pathSELECT id, p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-16T07:06:24.023Z">
+<meta property="og:updated_time" content="2019-12-23T07:49:40.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单位换算设计">
-<meta name="twitter:description" content="无限从属，简单来说就是无限级分类这样的设计形式。 与递归思想一样是两层标准化嵌套的模式，父子相对，只需要在一层思考作为相对两种层次的处理。常见的无限级分类数据表设计就是 id,pid相互绑定，下面这段复杂的sql 语句可以基于绑定刻画除层级和路径信息，或许能有点用。 12345678910111213141516171819-- 无限级分类结构查询出 leve 和 pathSELECT id, p">
+<meta name="twitter:description" content="无限从属，简单来说就是无限级分类这样的设计形式。 与递归思想一样是两层标准化嵌套的模式，父子相对，只需要在一层思考作为相对两种层次的处理。常见的无限级分类数据表设计就是 id,pid相互绑定，下面这段复杂的sql 语句可以基于绑定刻画出层级和路径信息，或许能有点用。 12345678910111213141516171819-- 无限级分类结构查询出 leve 和 pathSELECT id, p">
 
 
 
@@ -345,7 +345,7 @@
 
       
         <p>无限从属，简单来说就是无限级分类这样的设计形式。</p>
-<p>与递归思想一样是两层标准化嵌套的模式，父子相对，只需要在一层思考作为相对两种层次的处理。<br>常见的无限级分类数据表设计就是 <code>id</code>,<code>pid</code>相互绑定，下面这段复杂的sql 语句可以基于绑定刻画除层级和路径信息，或许能有点用。</p>
+<p>与递归思想一样是两层标准化嵌套的模式，父子相对，只需要在一层思考作为相对两种层次的处理。<br>常见的无限级分类数据表设计就是 <code>id</code>,<code>pid</code>相互绑定，下面这段复杂的sql 语句可以基于绑定刻画出层级和路径信息，或许能有点用。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 无限级分类结构查询出 leve 和 path</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>, pid, leve, <span class="keyword">path</span> <span class="keyword">FROM</span> (</span><br><span class="line">     <span class="keyword">SELECT</span> <span class="keyword">id</span>,pid,</span><br><span class="line">     @le:= <span class="keyword">IF</span> (pid = <span class="number">0</span> ,<span class="number">0</span>,  </span><br><span class="line">         <span class="keyword">IF</span>( <span class="keyword">LOCATE</span>( <span class="keyword">CONCAT</span>(<span class="string">'|'</span>,pid,<span class="string">':'</span>),@pathlevel)   &gt; <span class="number">0</span>  ,      </span><br><span class="line">                  SUBSTRING_INDEX( SUBSTRING_INDEX(@pathlevel,<span class="keyword">CONCAT</span>(<span class="string">'|'</span>,pid,<span class="string">':'</span>),<span class="number">-1</span>),<span class="string">'|'</span>,<span class="number">1</span>) +<span class="number">1</span></span><br><span class="line">        ,@le+<span class="number">1</span>) ) leve</span><br><span class="line">     , @pathlevel:= <span class="keyword">CONCAT</span>(@pathlevel,<span class="string">'|'</span>,<span class="keyword">id</span>,<span class="string">':'</span>, @le ,<span class="string">'|'</span>) pathlevel</span><br><span class="line">      , @pathnodes:= <span class="keyword">IF</span>( pid =<span class="number">0</span>,<span class="string">'0'</span>, </span><br><span class="line">           <span class="keyword">CONCAT_WS</span>(<span class="string">','</span>,</span><br><span class="line">           <span class="keyword">IF</span>( <span class="keyword">LOCATE</span>( <span class="keyword">CONCAT</span>(<span class="string">'|'</span>,pid,<span class="string">':'</span>),@pathall) &gt; <span class="number">0</span>  , </span><br><span class="line">               SUBSTRING_INDEX( SUBSTRING_INDEX(@pathall,<span class="keyword">CONCAT</span>(<span class="string">'|'</span>,pid,<span class="string">':'</span>),<span class="number">-1</span>),<span class="string">'|'</span>,<span class="number">1</span>)</span><br><span class="line">              ,@pathnodes ) ,pid  ) )<span class="keyword">path</span></span><br><span class="line">    ,@pathall:=<span class="keyword">CONCAT</span>(@pathall,<span class="string">'|'</span>,<span class="keyword">id</span>,<span class="string">':'</span>, @pathnodes ,<span class="string">'|'</span>) pathall </span><br><span class="line">        <span class="keyword">FROM</span>  metric, </span><br><span class="line">    (<span class="keyword">SELECT</span> @le:=<span class="number">0</span>,@pathlevel:=<span class="string">''</span>, @pathall:=<span class="string">''</span>,@pathnodes:=<span class="string">''</span>) vv</span><br><span class="line">    <span class="keyword">ORDER</span> <span class="keyword">BY</span>  pid,<span class="keyword">id</span></span><br><span class="line">    ) src</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="计量·规格·换算"><a href="#计量·规格·换算" class="headerlink" title="计量·规格·换算"></a>计量·规格·换算</h2><p>无论是电商还是供应链，只要涉及到物料，就一定会涉及到 <code>单位·规格·换算</code>，需要注意的是在任何实操过程中，所有值都是估约值，所以小误差量级后会变成大灾难，所以在物料管理这一情境中，有盘点行为来多次修正偏差，提升精确程度。</p>
@@ -618,7 +618,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">98</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -629,7 +629,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -640,7 +640,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -695,7 +695,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

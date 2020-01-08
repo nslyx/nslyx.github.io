@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Nslyx">
 <meta property="og:description" content="Sql 语句记录12345678910111213141516171819# 查看 sql 模式select @@sql_mode;# 全局设置set global sql_mode=&amp;apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENG">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-16T06:47:38.363Z">
+<meta property="og:updated_time" content="2019-12-23T09:03:49.036Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 笔记">
 <meta name="twitter:description" content="Sql 语句记录12345678910111213141516171819# 查看 sql 模式select @@sql_mode;# 全局设置set global sql_mode=&amp;apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENG">
@@ -347,6 +347,8 @@
         <h3 id="Sql-语句记录"><a href="#Sql-语句记录" class="headerlink" title="Sql 语句记录"></a>Sql 语句记录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 查看 sql 模式</span><br><span class="line">select @@sql_mode;</span><br><span class="line"># 全局设置</span><br><span class="line">set global sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br><span class="line"># 会话设置</span><br><span class="line">set session sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br><span class="line"></span><br><span class="line"># 修改 root 用户密码</span><br><span class="line">ALTER USER user() root IDENTIFIED BY &apos;********&apos;;</span><br><span class="line"></span><br><span class="line"># 创建用户并赋予权限 with 语句表示账号有分配已有权限的能力</span><br><span class="line">GRANT ALL PRIVILEGES ON dbName.* TO &apos;username&apos;@&apos;%&apos; IDENTIFIED BY &apos;********&apos; WITH GRANT OPTION;</span><br><span class="line">GRANT ALL PRIVILEGES ON dbName.* TO &apos;username&apos;@&apos;%&apos;; # 分配权限</span><br><span class="line"># 撤销权限</span><br><span class="line">REVOKE ALL PRIVILEGES ON dbName FROM &apos;username&apos;@&apos;%&apos;;</span><br><span class="line">REVOKE ALL ON dbName FROM &apos;username&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line"># 1 ~ 100 随机数 </span><br><span class="line">select FLOOR(1 + RAND() * (100 - 1 + 1));</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="自动备份脚本"><a href="#自动备份脚本" class="headerlink" title="自动备份脚本"></a>自动备份脚本</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">SPWD=workpath</span><br><span class="line"></span><br><span class="line">d=`date <span class="string">"+%Y%m%d%H%M%S"</span>`</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$SPWD</span></span><br><span class="line">/usr/bin/mysqldump -h[domain|ip] -u[user] -p<span class="string">'password'</span> dbname &gt; export_to_file.sql</span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> -e <span class="string">"drop database dbname;"</span></span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> -e <span class="string">"create database dbname default charset utf8mb4"</span></span><br><span class="line">mysql -h[domain|ip] -u[user] -p<span class="string">'password'</span> dbname &lt; <span class="variable">$SPWD</span>/import_data_file.sql</span><br><span class="line">mv data_bk_file.sql backup/<span class="variable">$d</span>.bk_name.sql</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -p <span class="comment">--all-databases &gt; sqlfile.sql</span></span><br><span class="line">source sqlfile.sql</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -467,7 +469,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">98</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -478,7 +480,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -489,7 +491,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -544,7 +546,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Nslyx">
 <meta property="og:description" content="Descdocker 有 docker-io 早起版本, docker-ce 社区版本, docker-ee 企业版本以下操作基于 Centos 中实践、整理。 安装 DockerDocker 软件包已经包括在默认的 CentOS-Extras 软件源里。因此想要安装 docker，只需要运行下面的 yum 命令：1yum install docker-io -y 直接yum安装，安装成功后查看版">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-19T03:56:16.065Z">
+<meta property="og:updated_time" content="2019-12-25T09:49:10.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Notes For Docker">
 <meta name="twitter:description" content="Descdocker 有 docker-io 早起版本, docker-ce 社区版本, docker-ee 企业版本以下操作基于 Centos 中实践、整理。 安装 DockerDocker 软件包已经包括在默认的 CentOS-Extras 软件源里。因此想要安装 docker，只需要运行下面的 yum 命令：1yum install docker-io -y 直接yum安装，安装成功后查看版">
@@ -340,6 +340,7 @@
 <p>删除容器<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 容器必须先停止才能被删除</span></span><br><span class="line">docker sotp</span><br><span class="line">docker rm `container_name_or_id`</span><br></pre></td></tr></table></figure></p>
 <p>删除镜像<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 镜像只有没有正在使用他的容器时才能被删除</span></span><br><span class="line">docker rmi `image_name_or_id`</span><br></pre></td></tr></table></figure></p>
 <h3 id="查看容器ip"><a href="#查看容器ip" class="headerlink" title="查看容器ip"></a>查看容器ip</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在宿主机中查看 容器ip</span></span><br><span class="line">docker inspect `container_name` | grep IPAddress</span><br><span class="line">docker inspect --format <span class="string">'&#123;&#123; .NetworkSettings.IPAddress &#125;&#125;'</span> `id_or_name` <span class="comment">## 查看容器 ip</span></span><br><span class="line">docker inspect -f <span class="string">'&#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;'</span> `id_or_name` <span class="comment">## 同上</span></span><br><span class="line">docker inspect -f <span class="string">'&#123;&#123;.Name&#125;&#125; - &#123;&#123;.NetworkSettings.IPAddress &#125;&#125;'</span> $(docker ps -aq) <span class="comment">## 获取所有容器 ip</span></span><br><span class="line">docker inspect --format=<span class="string">'&#123;&#123;.Name&#125;&#125; - &#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;'</span> $(docker ps -aq)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在容器中查看当前 ip，先装网络工具</span></span><br><span class="line">yum install -y net-tools </span><br><span class="line"><span class="comment">## 安装容器中查看 ip 命令： </span></span><br><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+<h2 id="创建子网"><a href="#创建子网" class="headerlink" title="创建子网"></a>创建子网</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create --subnet 172.19.0.1/16 snet</span><br></pre></td></tr></table></figure>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>sduo systemctl restart docker</p>
 <p> sudo curl -L <a href="https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname" target="_blank" rel="noopener">https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname</a> -s<code>-</code>uname -m` -o /usr/local/bin/docker-compose<br>sudo chmod +x /usr/local/bin/docker-compose<br> docker-compose –version<br>docker-compose version 1.24.0, build 0aa59064</p>
 <h2 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h2><p>Doc  <a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener">https://docs.docker.com/compose/install/</a></p>
@@ -474,7 +475,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">98</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -485,7 +486,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -496,7 +497,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -531,7 +532,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Desc"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Desc" class="headerlink" title="Desc"></a>Desc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Docker"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;-Docker" class="headerlink" title="&#x5B89;&#x88C5; Docker"></a>&#x5B89;&#x88C5; Docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x57FA;&#x672C;&#x64CD;&#x4F5C;" class="headerlink" title="&#x57FA;&#x672C;&#x64CD;&#x4F5C;"></a>&#x57FA;&#x672C;&#x64CD;&#x4F5C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看容器ip"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x67E5;&#x770B;&#x5BB9;&#x5668;ip" class="headerlink" title="&#x67E5;&#x770B;&#x5BB9;&#x5668;ip"></a>&#x67E5;&#x770B;&#x5BB9;&#x5668;ip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x5176;&#x4ED6;" class="headerlink" title="&#x5176;&#x4ED6;"></a>&#x5176;&#x4ED6;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-compose"><span class="nav-number"></span> <span class="nav-text"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加端口映射"><span class="nav-number"></span> <span class="nav-text"><a href="#&#x6DFB;&#x52A0;&#x7AEF;&#x53E3;&#x6620;&#x5C04;" class="headerlink" title="&#x6DFB;&#x52A0;&#x7AEF;&#x53E3;&#x6620;&#x5C04;"></a>&#x6DFB;&#x52A0;&#x7AEF;&#x53E3;&#x6620;&#x5C04;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#容器开启-ssh"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5BB9;&#x5668;&#x5F00;&#x542F;-ssh" class="headerlink" title="&#x5BB9;&#x5668;&#x5F00;&#x542F; ssh"></a>&#x5BB9;&#x5668;&#x5F00;&#x542F; ssh</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Desc"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Desc" class="headerlink" title="Desc"></a>Desc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Docker"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;-Docker" class="headerlink" title="&#x5B89;&#x88C5; Docker"></a>&#x5B89;&#x88C5; Docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x57FA;&#x672C;&#x64CD;&#x4F5C;" class="headerlink" title="&#x57FA;&#x672C;&#x64CD;&#x4F5C;"></a>&#x57FA;&#x672C;&#x64CD;&#x4F5C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看容器ip"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x67E5;&#x770B;&#x5BB9;&#x5668;ip" class="headerlink" title="&#x67E5;&#x770B;&#x5BB9;&#x5668;ip"></a>&#x67E5;&#x770B;&#x5BB9;&#x5668;ip</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建子网"><span class="nav-number"></span> <span class="nav-text"><a href="#&#x521B;&#x5EFA;&#x5B50;&#x7F51;" class="headerlink" title="&#x521B;&#x5EFA;&#x5B50;&#x7F51;"></a>&#x521B;&#x5EFA;&#x5B50;&#x7F51;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5176;&#x4ED6;" class="headerlink" title="&#x5176;&#x4ED6;"></a>&#x5176;&#x4ED6;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-compose"><span class="nav-number"></span> <span class="nav-text"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加端口映射"><span class="nav-number"></span> <span class="nav-text"><a href="#&#x6DFB;&#x52A0;&#x7AEF;&#x53E3;&#x6620;&#x5C04;" class="headerlink" title="&#x6DFB;&#x52A0;&#x7AEF;&#x53E3;&#x6620;&#x5C04;"></a>&#x6DFB;&#x52A0;&#x7AEF;&#x53E3;&#x6620;&#x5C04;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#容器开启-ssh"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5BB9;&#x5668;&#x5F00;&#x542F;-ssh" class="headerlink" title="&#x5BB9;&#x5668;&#x5F00;&#x542F; ssh"></a>&#x5BB9;&#x5668;&#x5F00;&#x542F; ssh</span></a></li></ol></div>
             
 
           </div>
@@ -551,7 +552,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

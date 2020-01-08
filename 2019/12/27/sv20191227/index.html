@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="EOS,Record," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="EOS 基础信息1234567## 基础信息&amp;gt;lsb_release -aLSB Version:	:core-4.1-amd64:core-4.1-noarchDistributor ID:	CentOSDescription:	CentOS Linux release 7.6.1810 (Core)Release:	7.6.1810Codename:	Core 重置系统盘 对目标服务器做">
+<meta name="keywords" content="EOS,Record">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录一次 EOS 系统盘重置后的操作">
+<meta property="og:url" content="http://yoursite.com/2019/12/27/sv20191227/index.html">
+<meta property="og:site_name" content="Nslyx">
+<meta property="og:description" content="EOS 基础信息1234567## 基础信息&amp;gt;lsb_release -aLSB Version:	:core-4.1-amd64:core-4.1-noarchDistributor ID:	CentOSDescription:	CentOS Linux release 7.6.1810 (Core)Release:	7.6.1810Codename:	Core 重置系统盘 对目标服务器做">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-27T08:51:22.606Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记录一次 EOS 系统盘重置后的操作">
+<meta name="twitter:description" content="EOS 基础信息1234567## 基础信息&amp;gt;lsb_release -aLSB Version:	:core-4.1-amd64:core-4.1-noarchDistributor ID:	CentOSDescription:	CentOS Linux release 7.6.1810 (Core)Release:	7.6.1810Codename:	Core 重置系统盘 对目标服务器做">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/27/sv20191227/"/>
+
+
+
+
+
+  <title>记录一次 EOS 系统盘重置后的操作 | Nslyx</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <a href="https://github.com/nslyx/nslyx.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nslyx</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/27/sv20191227/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">记录一次 EOS 系统盘重置后的操作</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-27T14:30:22+08:00">
+                2019-12-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/EOS/" itemprop="url" rel="index">
+                    <span itemprop="name">EOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/EOS/Record/" itemprop="url" rel="index">
+                    <span itemprop="name">Record</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="EOS-基础信息"><a href="#EOS-基础信息" class="headerlink" title="EOS 基础信息"></a>EOS 基础信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 基础信息</span></span><br><span class="line">&gt;lsb_release -a</span><br><span class="line">LSB Version:	:core-4.1-amd64:core-4.1-noarch</span><br><span class="line">Distributor ID:	CentOS</span><br><span class="line">Description:	CentOS Linux release 7.6.1810 (Core)</span><br><span class="line">Release:	7.6.1810</span><br><span class="line">Codename:	Core</span><br></pre></td></tr></table></figure>
+<h2 id="重置系统盘"><a href="#重置系统盘" class="headerlink" title="重置系统盘"></a>重置系统盘</h2><ol>
+<li><p>对目标服务器做好数据备份，避免重要数据的丢失</p>
+</li>
+<li><p>登录阿里云控制台，在实例管理页面中，停止目标服务器</p>
+</li>
+<li><p>在实例列表页面，操作 &gt; 更多 &gt; 磁盘和镜像 &gt; 重新初始化磁盘</p>
+</li>
+<li><p>接下来一顿按提示操作，然后就初始化了</p>
+</li>
+</ol>
+<p>为了方便 <code>ssh</code> 登录，可以提前在 网络与安全 &gt; 密钥对 里面将自己的公钥保存起来，在初始化的时候可以直接选择使用。</p>
+<h2 id="系统漏洞问题"><a href="#系统漏洞问题" class="headerlink" title="系统漏洞问题"></a>系统漏洞问题</h2><p>总是有提示说系统有几个漏洞没有处理，但是呢，管理后台直接点修复就让升级买服务什么的，有点坑啊。个人用户一点必要也没有。</p>
+<p>大部分都可以直接查看漏洞对应程序，然后登录上去升级一下就差不多了。</p>
+<h2 id="PS1-设置"><a href="#PS1-设置" class="headerlink" title="PS1 设置"></a>PS1 设置</h2><p>一般都是白花花的，不好看，个人喜欢有点颜色的，在<code>.bashrc</code> 文件中添加 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># PS1 设置</span></span><br><span class="line">PS1=<span class="string">'\e[38;5;220m[\e[38;5;201m\u\e[38;5;226m@\h:\e[38;5;46m\W\e[38;5;220m]\e[0m\n$'</span></span><br></pre></td></tr></table></figure>
+<p>别人喜不喜欢不清楚，反正我常用这个配色。</p>
+<h2 id="history-历史条数"><a href="#history-历史条数" class="headerlink" title="history 历史条数"></a>history 历史条数</h2><p>常常在 history 中扒历史命令的，这个默认条数是 1000 ，可以通过 <code>echo $HISTSIZE</code>来查看，感觉有点不够，索性加一点设置到 20000 条，</p>
+<p>在 <code>/etc/profile</code> 中找到 <code>HISTSIZE</code> 设置，修改后面数值为 <code>20000</code> 保存。然后 <code>source /etc/profile</code> 生效。</p>
+<h2 id="vim-配置"><a href="#vim-配置" class="headerlink" title="vim 配置"></a>vim 配置</h2><p>默认情况下 vim 打开都是白花花的，不好看，就整个配置，调调设置配色啥的，直接创建 <code>.vimrc</code> 文件，添加下面内容，保存即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sw=4</span><br><span class="line"><span class="built_in">set</span> ts=4</span><br><span class="line"><span class="built_in">set</span> et</span><br><span class="line"><span class="built_in">set</span> smarttab</span><br><span class="line"><span class="built_in">set</span> smartindent</span><br><span class="line"><span class="built_in">set</span> lbr</span><br><span class="line"><span class="built_in">set</span> fo+=mB</span><br><span class="line"><span class="built_in">set</span> sm</span><br><span class="line"><span class="built_in">set</span> selection=inclusive</span><br><span class="line"><span class="built_in">set</span> wildmenu</span><br><span class="line"><span class="built_in">set</span> mousemodel=popup</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> rtp+=<span class="variable">$GOROOT</span>/misc/vim</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">"</span> 显示相关</span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line">syntax on</span><br><span class="line"><span class="built_in">set</span> cul <span class="string">"高亮光标所在行</span></span><br><span class="line"><span class="string">set cuc</span></span><br><span class="line"><span class="string">set shortmess=atI   "</span> 启动的时候不显示那个援助乌干达儿童的提示</span><br><span class="line"><span class="built_in">set</span> go=             <span class="string">" 不要图形按钮</span></span><br><span class="line"><span class="string">"</span>color desert     <span class="string">" 设置背景主题</span></span><br><span class="line"><span class="string">color ron     "</span> 设置背景主题</span><br><span class="line"><span class="string">"color torte     "</span> 设置背景主题</span><br><span class="line"><span class="string">"set guifont=Courier_New:h10:cANSI   "</span> 设置字体</span><br><span class="line"><span class="string">"autocmd InsertLeave * se nocul  "</span> 用浅色高亮当前行</span><br><span class="line">autocmd InsertEnter * se cul    <span class="string">" 用浅色高亮当前行</span></span><br><span class="line"><span class="string">set ruler           "</span> 显示标尺</span><br><span class="line"><span class="built_in">set</span> showcmd         <span class="string">" 输入的命令显示出来，看的清楚些</span></span><br><span class="line"><span class="string">"</span><span class="built_in">set</span> whichwrap+=&lt;,&gt;,h,l   <span class="string">" 允许backspace和光标键跨越行边界(不建议)</span></span><br><span class="line"><span class="string">set scrolloff=3     "</span> 光标移动到buffer的顶部和底部时保持3行距离</span><br><span class="line"><span class="built_in">set</span> statusline=%F%m%r%h%w\ [FORMAT=%&#123;&amp;ff&#125;]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %&#123;strftime(\<span class="string">"%d/%m/%y\ -\ %H:%M\")&#125;   "</span>状态行显示的内容</span><br><span class="line"><span class="built_in">set</span> laststatus=2    <span class="string">" 启动显示状态行(1),总是显示状态行(2)</span></span><br><span class="line"><span class="string">"</span><span class="built_in">set</span> foldenable      <span class="string">" 允许折叠</span></span><br><span class="line"><span class="string">"</span><span class="string">"set foldmethod=manual   "</span> 手动折叠</span><br><span class="line"><span class="built_in">set</span> nocompatible  <span class="string">"去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限</span></span><br><span class="line"><span class="string">"</span> 显示中文帮助</span><br><span class="line"><span class="keyword">if</span> version &gt;= 603</span><br><span class="line">	<span class="built_in">set</span> helplang=cn</span><br><span class="line">	<span class="built_in">set</span> encoding=utf-8</span><br><span class="line">endif</span><br><span class="line"><span class="string">" 自动缩进</span></span><br><span class="line"><span class="string">set autoindent</span></span><br><span class="line"><span class="string">set cindent</span></span><br><span class="line"><span class="string">"</span> Tab键的宽度</span><br><span class="line"><span class="built_in">set</span> tabstop=4</span><br><span class="line"><span class="string">" 统一缩进为4</span></span><br><span class="line"><span class="string">set softtabstop=4</span></span><br><span class="line"><span class="string">set shiftwidth=4</span></span><br><span class="line"><span class="string">"</span> 使用空格代替制表符</span><br><span class="line"><span class="built_in">set</span> expandtab</span><br><span class="line"><span class="string">" 在行和段开始处使用制表符</span></span><br><span class="line"><span class="string">set smarttab</span></span><br><span class="line"><span class="string">"</span> 显示行号</span><br><span class="line"><span class="built_in">set</span> number</span><br><span class="line"><span class="string">" 历史记录数</span></span><br><span class="line"><span class="string">set history=1000</span></span><br><span class="line"><span class="string">"</span>搜索逐字符高亮</span><br><span class="line"><span class="built_in">set</span> hlsearch</span><br><span class="line"><span class="built_in">set</span> incsearch</span><br><span class="line"><span class="string">"语言设置</span></span><br><span class="line"><span class="string">set langmenu=zh_CN.UTF-8</span></span><br><span class="line"><span class="string">set helplang=cn</span></span><br><span class="line"><span class="string">"</span> 总是显示状态行</span><br><span class="line"><span class="built_in">set</span> cmdheight=2</span><br><span class="line"><span class="string">" 侦测文件类型</span></span><br><span class="line"><span class="string">filetype on</span></span><br><span class="line"><span class="string">"</span> 载入文件类型插件</span><br><span class="line">filetype plugin on</span><br><span class="line"><span class="string">" 为特定文件类型载入相关缩进文件</span></span><br><span class="line"><span class="string">filetype indent on</span></span><br><span class="line"><span class="string">"</span> 保存全局变量</span><br><span class="line"><span class="built_in">set</span> viminfo+=!</span><br><span class="line"><span class="string">" 带有如下符号的单词不要被换行分割</span></span><br><span class="line"><span class="string">set iskeyword+=_,$,@,%,#,-</span></span><br><span class="line"><span class="string">"</span> 字符间插入的像素行数目</span><br><span class="line"></span><br><span class="line"><span class="string">"markdown配置</span></span><br><span class="line"><span class="string">au BufRead,BufNewFile *.&#123;md,mdown,mkd,mkdn,markdown,mdwn&#125;   set filetype=mkd</span></span><br><span class="line"><span class="string">au BufRead,BufNewFile *.&#123;go&#125;   set filetype=go</span></span><br><span class="line"><span class="string">au BufRead,BufNewFile *.&#123;js&#125;   set filetype=javascript</span></span><br><span class="line"><span class="string">"</span>rkdown to HTML</span><br><span class="line">nmap md :!~/.vim/markdown.pl % &gt; %.html &lt;CR&gt;&lt;CR&gt;</span><br><span class="line">nmap <span class="keyword">fi</span> :!firefox %.html &amp; &lt;CR&gt;&lt;CR&gt;</span><br><span class="line">nmap \ \cc</span><br><span class="line">vmap \ \cc</span><br><span class="line"></span><br><span class="line"><span class="string">"将tab替换为空格</span></span><br><span class="line"><span class="string">nmap tt :%s/\t/    /g&lt;CR&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">"</span><span class="string">"实用设置</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> has(<span class="string">"autocmd"</span>)</span><br><span class="line">      autocmd BufReadPost *</span><br><span class="line">          \ <span class="keyword">if</span> line(<span class="string">"'\""</span>) &gt; 0 &amp;&amp; line(<span class="string">"'\""</span>) &lt;= line(<span class="string">"$"</span>) |</span><br><span class="line">          \   exe <span class="string">"normal g`\""</span> |</span><br><span class="line">          \ endif</span><br><span class="line">endif</span><br><span class="line"><span class="string">"当打开vim且没有文件时自动打开NERDTree</span></span><br><span class="line"><span class="string">"</span>autocmd vimenter * <span class="keyword">if</span> !argc() | NERDTree | endif</span><br><span class="line"><span class="string">" 只剩 NERDTree时自动关闭</span></span><br><span class="line"><span class="string">autocmd bufenter * if (winnr("</span>$<span class="string">") == 1 &amp;&amp; exists("</span>b:NERDTreeType<span class="string">") &amp;&amp; b:NERDTreeType == "</span>primary<span class="string">") | q | endif</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"</span> 设置当文件被改动时自动载入</span><br><span class="line"><span class="built_in">set</span> autoread</span><br><span class="line"><span class="string">" quickfix模式</span></span><br><span class="line"><span class="string">autocmd FileType c,cpp map &lt;buffer&gt; &lt;leader&gt;&lt;space&gt; :w&lt;cr&gt;:make&lt;cr&gt;</span></span><br><span class="line"><span class="string">"</span>代码补全</span><br><span class="line"><span class="built_in">set</span> completeopt=preview,menu</span><br><span class="line"><span class="string">"允许插件</span></span><br><span class="line"><span class="string">"</span>filetype plugin on</span><br><span class="line"><span class="string">"共享剪贴板</span></span><br><span class="line"><span class="string">"</span><span class="built_in">set</span> clipboard+=unnamed</span><br><span class="line"><span class="string">"自动保存</span></span><br><span class="line"><span class="string">set autowrite</span></span><br><span class="line"><span class="string">"</span><span class="built_in">set</span> ruler                   <span class="string">" 打开状态栏标尺</span></span><br><span class="line"><span class="string">"</span><span class="built_in">set</span> cursorline              <span class="string">" 突出显示当前行</span></span><br><span class="line"><span class="string">set magic                   "</span> 设置魔术</span><br><span class="line"><span class="built_in">set</span> guioptions-=T           <span class="string">" 隐藏工具栏</span></span><br><span class="line"><span class="string">set guioptions-=m           "</span> 隐藏菜单栏</span><br><span class="line"><span class="string">""</span><span class="built_in">set</span> foldcolumn=0</span><br><span class="line"><span class="string">""</span><span class="built_in">set</span> foldmethod=indent</span><br><span class="line"><span class="string">""</span><span class="built_in">set</span> foldlevel=3</span><br><span class="line"><span class="string">" 不要使用vi的键盘模式，而是vim自己的</span></span><br><span class="line"><span class="string">set nocompatible</span></span><br><span class="line"><span class="string">"</span> 去掉输入错误的提示声音</span><br><span class="line"><span class="built_in">set</span> noeb</span><br><span class="line"><span class="string">" 在处理未保存或只读文件的时候，弹出确认</span></span><br><span class="line"><span class="string">set confirm</span></span><br><span class="line"><span class="string">"</span>禁止生成临时文件</span><br><span class="line"><span class="built_in">set</span> nobackup</span><br><span class="line"><span class="built_in">set</span> noswapfile</span><br><span class="line"><span class="string">"搜索忽略大小写</span></span><br><span class="line"><span class="string">set ignorecase</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">set linespace=0</span></span><br><span class="line"><span class="string">"</span> 增强模式中的命令行自动完成操作</span><br><span class="line"><span class="built_in">set</span> wildmenu</span><br><span class="line"><span class="string">" 使回格键（backspace）正常处理indent, eol, start等</span></span><br><span class="line"><span class="string">set backspace=2</span></span><br><span class="line"><span class="string">"</span> 允许backspace和光标键跨越行边界</span><br><span class="line"><span class="built_in">set</span> whichwrap+=&lt;,&gt;,h,l</span><br><span class="line"><span class="string">" 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）</span></span><br><span class="line"><span class="string">set mouse=a</span></span><br><span class="line"><span class="string">set selection=exclusive</span></span><br><span class="line"><span class="string">set selectmode=mouse,key</span></span><br><span class="line"><span class="string">"</span> 通过使用: commands命令，告诉我们文件的哪一行被改变过</span><br><span class="line"><span class="built_in">set</span> report=0</span><br><span class="line"><span class="string">" 在被分割的窗口间显示空白，便于阅读</span></span><br><span class="line"><span class="string">set fillchars=vert:\ ,stl:\ ,stlnc:\</span></span><br><span class="line"><span class="string">"</span> 高亮显示匹配的括号</span><br><span class="line"><span class="built_in">set</span> showmatch</span><br><span class="line"><span class="string">" 匹配括号高亮的时间（单位是十分之一秒）</span></span><br><span class="line"><span class="string">set matchtime=1</span></span><br><span class="line"><span class="string">"</span> 光标移动到buffer的顶部和底部时保持3行距离</span><br><span class="line"><span class="built_in">set</span> scrolloff=3</span><br><span class="line"></span><br><span class="line"><span class="string">"中文显示</span></span><br><span class="line"><span class="string">set iskeyword+=.</span></span><br><span class="line"><span class="string">set termencoding=utf-8</span></span><br><span class="line"><span class="string">set encoding=utf8</span></span><br><span class="line"><span class="string">set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">autocmd FileType python set omnifunc=pythoncomplete#Complete</span></span><br></pre></td></tr></table></figure>
+<p>这个配置是基于<a href="https://github.com/ma6174/vim" target="_blank" rel="noopener">ma6174 vim 超强配置</a>安装后的 <code>.vimrc</code> 文件，去掉那些安装的插件，然后自己再个别调整出来的。</p>
+<p>直接安装 <code>ma6174</code> 也可以，不过下载的插件不少，还有编辑 js 的插件的问题需要处理，有点麻烦，个人对插件没啥使用度，直接静态配置更方便</p>
+<h2 id="补充-yum-源"><a href="#补充-yum-源" class="headerlink" title="补充 yum 源"></a>补充 yum 源</h2><p>有些软件包再默认的源中没有，需要补充源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 补充 epel 源，如 screen 包在 epel 里面就有</span></span><br><span class="line">yum install -y epel-release</span><br></pre></td></tr></table></figure>
+<p>安装 yum 源管理工具， 安装后就可使用 <code>yum-config-manager</code> 命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils</span><br></pre></td></tr></table></figure>
+<h2 id="虚拟终端-screen"><a href="#虚拟终端-screen" class="headerlink" title="虚拟终端 screen"></a>虚拟终端 screen</h2><p>ssh 连接到服务器执行任务，中断终端连接会让任务终止，为了避免，用 虚拟终端就很合适，执行安装即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y screen</span><br></pre></td></tr></table></figure>
+<p>常用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 创建并进入名为 ‘name’ 的会话</span></span><br><span class="line">screen -S `name` </span><br><span class="line"><span class="comment">## 在会话中，不销毁退出，可以用 Ctrl+A，D</span></span><br><span class="line"><span class="comment">## 在会话中，退出并销毁，执行: exit</span></span><br><span class="line"><span class="comment">## 在会话外，销毁会话</span></span><br><span class="line">screen -S `idOrName` -X quit</span><br><span class="line"><span class="comment">## 查看所有会话</span></span><br><span class="line">screen -ls</span><br><span class="line"><span class="comment">## 进入已有会话</span></span><br><span class="line">screen -r `idOrName`</span><br></pre></td></tr></table></figure>
+<p>screen 会话中，vim. 无法上下滚动，创建 <code>.screenrc</code>，并添加一下内容就好</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">termcapinfo xterm* ti@:te@</span><br><span class="line">termcapinfo xterm|xterms|xs|rxvt <span class="string">'hs:ts=\E]2;:fs=07:ds=\E]2;screen07'</span></span><br></pre></td></tr></table></figure>
+<h2 id="Docker-安装"><a href="#Docker-安装" class="headerlink" title="Docker 安装"></a>Docker 安装</h2><p>作为自己瞎折腾的服务器，<code>Docker</code> 不能少。不管临时玩什么，创建个容器就好，用完就删，多 Happy。</p>
+<p>Docker 有几种版本，docker, docker-io,  docker-engine 都是相对早起的版本，现在的是 docker-ce(社区版)和 docker-ee(企业版)。</p>
+<p>之前玩的都是 docker-io，直接 <code>yum install -y docker-io</code> 就可以安装上。</p>
+<p>现在想整个新店的，docker-ce，也好体会下有没有啥变化，yum 直接安装显示没有匹配的，需要补充下源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p>然后执行命令安装最新版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 直接安装的话就默认最新版本</span></span><br><span class="line">yum install -y docker-ce</span><br></pre></td></tr></table></figure>
+<p>查看可安装版本命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 查看可安装的版本，并倒序</span></span><br><span class="line">yum list docker-ce --showduplicates | sort -r</span><br></pre></td></tr></table></figure>
+<p>启动&amp;自启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 启动服务 &amp;&amp; 开机自启</span></span><br><span class="line">systemctl start docker</span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br></pre></td></tr></table></figure>
+<p>到这里 Docker 也就安装完了</p>
+<h2 id="Docker-安装-Nginx"><a href="#Docker-安装-Nginx" class="headerlink" title="Docker 安装 Nginx"></a>Docker 安装 Nginx</h2><p>启动服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm -d -p 80:80 -v /vol/nginx/conf:/etc/nginx/conf.d:ro -v /vol/nginx/html:/usr/share/nginx/html:ro  --name nginx nginx:alpine</span><br></pre></td></tr></table></figure>
+<p>参数释义:</p>
+<ul>
+<li>–rm 在运行起来后删除实例，多在启动服务型的软件时使用</li>
+<li>-d 后台执行并打印 容器id<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/EOS/" rel="tag"># EOS</a>
+          
+            <a href="/tags/Record/" rel="tag"># Record</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/25/ssh20191225/" rel="next" title="ssh 自动完成">
+                <i class="fa fa-chevron-left"></i> ssh 自动完成
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">zhang xiaotian</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#EOS-基础信息"><span class="nav-number">1.</span> <span class="nav-text"><a href="#EOS-&#x57FA;&#x7840;&#x4FE1;&#x606F;" class="headerlink" title="EOS &#x57FA;&#x7840;&#x4FE1;&#x606F;"></a>EOS &#x57FA;&#x7840;&#x4FE1;&#x606F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重置系统盘"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x91CD;&#x7F6E;&#x7CFB;&#x7EDF;&#x76D8;" class="headerlink" title="&#x91CD;&#x7F6E;&#x7CFB;&#x7EDF;&#x76D8;"></a>&#x91CD;&#x7F6E;&#x7CFB;&#x7EDF;&#x76D8;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统漏洞问题"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x7CFB;&#x7EDF;&#x6F0F;&#x6D1E;&#x95EE;&#x9898;" class="headerlink" title="&#x7CFB;&#x7EDF;&#x6F0F;&#x6D1E;&#x95EE;&#x9898;"></a>&#x7CFB;&#x7EDF;&#x6F0F;&#x6D1E;&#x95EE;&#x9898;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS1-设置"><span class="nav-number">4.</span> <span class="nav-text"><a href="#PS1-&#x8BBE;&#x7F6E;" class="headerlink" title="PS1 &#x8BBE;&#x7F6E;"></a>PS1 &#x8BBE;&#x7F6E;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history-历史条数"><span class="nav-number">5.</span> <span class="nav-text"><a href="#history-&#x5386;&#x53F2;&#x6761;&#x6570;" class="headerlink" title="history &#x5386;&#x53F2;&#x6761;&#x6570;"></a>history &#x5386;&#x53F2;&#x6761;&#x6570;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-配置"><span class="nav-number">6.</span> <span class="nav-text"><a href="#vim-&#x914D;&#x7F6E;" class="headerlink" title="vim &#x914D;&#x7F6E;"></a>vim &#x914D;&#x7F6E;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充-yum-源"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x8865;&#x5145;-yum-&#x6E90;" class="headerlink" title="&#x8865;&#x5145; yum &#x6E90;"></a>&#x8865;&#x5145; yum &#x6E90;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟终端-screen"><span class="nav-number">8.</span> <span class="nav-text"><a href="#&#x865A;&#x62DF;&#x7EC8;&#x7AEF;-screen" class="headerlink" title="&#x865A;&#x62DF;&#x7EC8;&#x7AEF; screen"></a>&#x865A;&#x62DF;&#x7EC8;&#x7AEF; screen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-安装"><span class="nav-number">9.</span> <span class="nav-text"><a href="#Docker-&#x5B89;&#x88C5;" class="headerlink" title="Docker &#x5B89;&#x88C5;"></a>Docker &#x5B89;&#x88C5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-安装-Nginx"><span class="nav-number">10.</span> <span class="nav-text"><a href="#Docker-&#x5B89;&#x88C5;-Nginx" class="headerlink" title="Docker &#x5B89;&#x88C5; Nginx"></a>Docker &#x5B89;&#x88C5; Nginx</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhang xiaotian</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

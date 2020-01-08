@@ -251,6 +251,519 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/php-yield/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/13/php-yield/" itemprop="url">php-yield</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T18:52:21+08:00">
+                2018-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>关于 yield 这个东东，可以花点时间好好的理解一下<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gen_one_to_three</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">3</span>; $i++) &#123;</span><br><span class="line">        <span class="comment">//注意变量$i的值在不同的yield之间是保持传递的。</span></span><br><span class="line">        <span class="keyword">yield</span> $i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$generator = gen_one_to_three();</span><br><span class="line"><span class="keyword">foreach</span> ($generator <span class="keyword">as</span> $value) &#123;</span><br><span class="line">    <span class="comment">// sleep(3);</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"$value\n"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/lang-c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/13/lang-c/" itemprop="url">学一点点 C 语言</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T18:04:20+08:00">
+                2018-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一点点基础"><a href="#一点点基础" class="headerlink" title="一点点基础"></a>一点点基础</h2><ol>
+<li>c 语言脚本的源文件后缀位 .c</li>
+<li>编译器: gcc 编译命令形如: <code>gcc -o exe.o source.c</code></li>
+<li>编译输出的后缀名为<code>.o</code>文件即为可执行文件</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/mac-disk-order/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/09/mac-disk-order/" itemprop="url">MacBook disk order</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T16:48:21+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="使用-macbook-刻录-U-盘启动盘"><a href="#使用-macbook-刻录-U-盘启动盘" class="headerlink" title="使用 macbook 刻录 U 盘启动盘"></a>使用 macbook 刻录 U 盘启动盘</h2><p>使用 <code>dd</code> 命令可以很方便的在 macbook 上将系统镜像文件刻录到 U 盘上<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="keyword">if</span>=xxx.iso of=/dev/disk2 bs=1M</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意事项</strong>：</p>
+<ol>
+<li>刻录前必须将 U 盘卸载掉</li>
+<li><code>disk2</code>  为 U 盘设备</li>
+<li><code>bs=1M</code> 表示设置输入输出的块的大小</li>
+<li>命令执行很快，但可能读写还在执行，如果 U 盘有读写指示灯的花等到灯不闪了再移除</li>
+<li>被刻录的镜像文件需要支持<code>dd</code>命令</li>
+</ol>
+<h2 id="格式化-恢复-U-盘系统盘"><a href="#格式化-恢复-U-盘系统盘" class="headerlink" title="格式化/恢复 U 盘系统盘"></a>格式化/恢复 U 盘系统盘</h2><p>这里需要用到的是 <code>diskutil</code> 命令<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">diskutil info /dev/disk2</span><br><span class="line">diskutil partitionDisk /dev/disk2 1 MBRFormat <span class="string">"MS-DOS FAT32"</span> EDISON 32.2GB</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://rexstjohn.com/fixing-does-not-appear-to-be-a-valid-volume-name-for-its-file-system/" target="_blank" rel="noopener">参见原文</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/04/restful/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/04/restful/" itemprop="url">Restful - 整理点认知</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-04T17:11:13+08:00">
+                2018-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>常用状态码<br>/**</p>
+<ul>
+<li>含义       解释</li>
+<li>200        OK                确认GET、PUT和DELETE操作成功</li>
+<li>201        Created           确认POST操作成功</li>
+<li>304        Not Modified      用于条件GET访问，告诉客户端资源没有被修改 HTTP缓存有效。</li>
+<li>400        Bad Request       通常用于POST或者PUT请求，表明请求的内容是非法的 请求格式错误</li>
+<li>401        Unauthorized      未授权，需要授权</li>
+<li>403        Forbidden         鉴权成功，但是该用户没有权限</li>
+<li>404        Not Found         请求的资源不存在，服务器上没有资源</li>
+<li>405        Method Not Allowed    请求方法不能被用于请求相应的资源</li>
+<li>409        Conflict          访问和当前状态存在冲突</li>
+<li>410        gone              这个url对应的资源现在不可用。</li>
+<li>415        unsupported media type    请求类型错误。</li>
+<li>422        unprocessable entity - 校验错误时用。</li>
+<li>429        too many request - 请求过多。</li>
+<li>500        internal server error - 通用错误响应。</li>
+<li>503        service unavailable - 服务当前无法处理请求。<br>*</li>
+<li>To be continue…<br>*/</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/03/develop-overview/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -566,44 +1079,7 @@
       
         
           
-            <p>upstream jenkins {<br>      server 127.0.0.1:8070 fail_timeout=0;</p>
-<pre><code>#server 127.0.0.1:8082 fail_timeout=0;
-</code></pre><p>}</p>
-<p>server {</p>
-<pre><code>listen 80;
-server_name jenkins.jccafe.com.cn;
-
-location ~^/\.well-known/pki-validation/fileauth.txt$ {
-    set $content 2018011101520956gz3ikju0gw0w54zdwphbi0g08jz6usmxr85hgjay44xzb14i;
-    default_type text/html;
-    add_header Content-Type &apos;text/html; charset=utf-8&apos;;
-    return 200 $content;
-}
-
-location / {
-    return 301 https://$host$request_uri;
-}
-</code></pre><p>}</p>
-<p>server {<br>    listen       443 ssl;<br>    server_name  jenkins.jccafe.com.cn;</p>
-<pre><code>ssl_certificate      ssl/1_jccafe.com.cn_bundle.crt;
-ssl_certificate_key  ssl/2_jccafe.com.cn.key;
-
-location / {
-    proxy_set_header        Host $host:$server_port;
-    proxy_set_header        X-Real-IP $remote_addr;
-    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header        X-Forwarded-Proto $scheme;
-    proxy_redirect          http:// https://;
-    proxy_pass              http://jenkins;
-    # Required for new HTTP-based CLI
-    #proxy_http_version 1.1;
-    #proxy_request_buffering off;
-    #proxy_buffering off; # Required for HTTP-based CLI to work over SSL
-    # workaround for https://issues.jenkins-ci.org/browse/JENKINS-45651
-    #add_header &apos;X-SSH-Endpoint&apos; $host&apos;:50022&apos; always;
-}
-</code></pre><p>}</p>
-
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">upstream jenkins &#123;</span><br><span class="line">      server 127.0.0.1:8070 fail_timeout=0;</span><br><span class="line">      #server 127.0.0.1:8082 fail_timeout=0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line">    server_name jenkins.jccafe.com.cn;</span><br><span class="line">    </span><br><span class="line">    location ~^/\.well-known/pki-validation/fileauth.txt$ &#123;</span><br><span class="line">        set $content 2018011101520956gz3ikju0gw0w54zdwphbi0g08jz6usmxr85hgjay44xzb14i;</span><br><span class="line">        default_type text/html;</span><br><span class="line">        add_header Content-Type &apos;text/html; charset=utf-8&apos;;</span><br><span class="line">        return 200 $content;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    location / &#123;</span><br><span class="line">        return 301 https://$host$request_uri;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen       443 ssl;</span><br><span class="line">    server_name  jenkins.jccafe.com.cn;</span><br><span class="line"></span><br><span class="line">    ssl_certificate      ssl/1_jccafe.com.cn_bundle.crt;</span><br><span class="line">    ssl_certificate_key  ssl/2_jccafe.com.cn.key;</span><br><span class="line">    </span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_set_header        Host $host:$server_port;</span><br><span class="line">        proxy_set_header        X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header        X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_redirect          http:// https://;</span><br><span class="line">        proxy_pass              http://jenkins;</span><br><span class="line">        # Required for new HTTP-based CLI</span><br><span class="line">        #proxy_http_version 1.1;</span><br><span class="line">        #proxy_request_buffering off;</span><br><span class="line">        #proxy_buffering off; # Required for HTTP-based CLI to work over SSL</span><br><span class="line">        # workaround for https://issues.jenkins-ci.org/browse/JENKINS-45651</span><br><span class="line">        #add_header &apos;X-SSH-Endpoint&apos; $host&apos;:50022&apos; always;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1044,7 +1520,7 @@ location / {
       
         
           <p>无限从属，简单来说就是无限级分类这样的设计形式。</p>
-<p>与递归思想一样是两层标准化嵌套的模式，父子相对，只需要在一层思考作为相对两种层次的处理。<br>常见的无限级分类数据表设计就是 <code>id</code>,<code>pid</code>相互绑定，下面这段复杂的sql 语句可以基于绑定刻画除层级和路径信息，或许能有点用。</p>
+<p>与递归思想一样是两层标准化嵌套的模式，父子相对，只需要在一层思考作为相对两种层次的处理。<br>常见的无限级分类数据表设计就是 <code>id</code>,<code>pid</code>相互绑定，下面这段复杂的sql 语句可以基于绑定刻画出层级和路径信息，或许能有点用。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 无限级分类结构查询出 leve 和 path</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>, pid, leve, <span class="keyword">path</span> <span class="keyword">FROM</span> (</span><br><span class="line">     <span class="keyword">SELECT</span> <span class="keyword">id</span>,pid,</span><br><span class="line">     @le:= <span class="keyword">IF</span> (pid = <span class="number">0</span> ,<span class="number">0</span>,  </span><br><span class="line">         <span class="keyword">IF</span>( <span class="keyword">LOCATE</span>( <span class="keyword">CONCAT</span>(<span class="string">'|'</span>,pid,<span class="string">':'</span>),@pathlevel)   &gt; <span class="number">0</span>  ,      </span><br><span class="line">                  SUBSTRING_INDEX( SUBSTRING_INDEX(@pathlevel,<span class="keyword">CONCAT</span>(<span class="string">'|'</span>,pid,<span class="string">':'</span>),<span class="number">-1</span>),<span class="string">'|'</span>,<span class="number">1</span>) +<span class="number">1</span></span><br><span class="line">        ,@le+<span class="number">1</span>) ) leve</span><br><span class="line">     , @pathlevel:= <span class="keyword">CONCAT</span>(@pathlevel,<span class="string">'|'</span>,<span class="keyword">id</span>,<span class="string">':'</span>, @le ,<span class="string">'|'</span>) pathlevel</span><br><span class="line">      , @pathnodes:= <span class="keyword">IF</span>( pid =<span class="number">0</span>,<span class="string">'0'</span>, </span><br><span class="line">           <span class="keyword">CONCAT_WS</span>(<span class="string">','</span>,</span><br><span class="line">           <span class="keyword">IF</span>( <span class="keyword">LOCATE</span>( <span class="keyword">CONCAT</span>(<span class="string">'|'</span>,pid,<span class="string">':'</span>),@pathall) &gt; <span class="number">0</span>  , </span><br><span class="line">               SUBSTRING_INDEX( SUBSTRING_INDEX(@pathall,<span class="keyword">CONCAT</span>(<span class="string">'|'</span>,pid,<span class="string">':'</span>),<span class="number">-1</span>),<span class="string">'|'</span>,<span class="number">1</span>)</span><br><span class="line">              ,@pathnodes ) ,pid  ) )<span class="keyword">path</span></span><br><span class="line">    ,@pathall:=<span class="keyword">CONCAT</span>(@pathall,<span class="string">'|'</span>,<span class="keyword">id</span>,<span class="string">':'</span>, @pathnodes ,<span class="string">'|'</span>) pathall </span><br><span class="line">        <span class="keyword">FROM</span>  metric, </span><br><span class="line">    (<span class="keyword">SELECT</span> @le:=<span class="number">0</span>,@pathlevel:=<span class="string">''</span>, @pathall:=<span class="string">''</span>,@pathnodes:=<span class="string">''</span>) vv</span><br><span class="line">    <span class="keyword">ORDER</span> <span class="keyword">BY</span>  pid,<span class="keyword">id</span></span><br><span class="line">    ) src</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1053,520 +1529,6 @@ location / {
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/28/hexo-next/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/28/hexo-next/" itemprop="url">Next - A hexo theme</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T10:52:40+08:00">
-                2017-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://shenzekun.cn/hexo%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF.html" target="_blank" rel="noopener">next主题如何添加动态背景</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/26/wxpay/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/26/wxpay/" itemprop="url">微信支付学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-26T17:33:30+08:00">
-                2017-12-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="WxPay-Study"><a href="#WxPay-Study" class="headerlink" title="WxPay Study"></a>WxPay Study</h1><p>需要详细深入的了解下微信支付的完整过程</p>
-<h2 id="sd-H5-网页支付模式"><a href="#sd-H5-网页支付模式" class="headerlink" title="sd H5 网页支付模式"></a>sd H5 网页支付模式</h2><pre><code>/**  流程 文字叙述
- * 1. 服务端 生成 图文消息 或 二维码 通过微信客户端 展示给 微信支付用户
- * 2. 微信支付用户 点击图文消息 或 扫描二维码 在微信浏览器中 打开商户 H5 页面
- * 3. 网页内请求生成支付订单
- * 4. 服务端 接收请求 并生成商户订单
- * 5. 在服务端调用  [微信支付]统一下单 Api ，请求微信支付系统 生成预付单，接收 返回的 预付单信息(prepay_id)
- * 6. 生成 JSAPI 页面调用的支付参数并签名，返回支付参数(prepay_id, paySign等)到 微信客户端
- * 7. 用户点击发起支付， JSAPI 接口向微信支付系统 请求支付
- * 8. 微信支付系统 检查支付参数合法性 和 授权域权限，然后返回验证结果 并要求支付授权，即在微信客户端上提示输入密码
- * 9. 用户确认支付，输入密码，提交支付授权到微信支付服务器，由服务器验证授权
- * Alt 并行处理
- * 10. 异步通知商户支付结果
- * 11. 告知微信通知处理结果
- * 12. 微信支付服务器向微信客户端 返回 支付结果，并发微信消息提示，微信客户端展示支付消息给客户
- * 13. 微信跳转回商户 H5 页面，查询商户后台支付结果
- * Alt 支付结果
- * 14. 未收到支付通知，调用查询 API，查询支付结果，微信支付系统 返回支付结果，服务端接收 并 向微信客户端返回支付结果。
- * 15. 商户发货及支付后个性化页面提示
- */
-</code></pre><p><a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_4" target="_blank" rel="noopener">点此查看官方业务流程</a>。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/front-language/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/25/front-language/" itemprop="url">前端语言积累</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T17:45:19+08:00">
-                2017-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="移动设备，横屏竖屏"><a href="#移动设备，横屏竖屏" class="headerlink" title="移动设备，横屏竖屏"></a>移动设备，横屏竖屏</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;</span><br><span class="line">    &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;yellow&quot; /&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        @media screen and (orientation: portrait) &#123;</span><br><span class="line">            /*竖屏 css*/</span><br><span class="line">            body &#123;</span><br><span class="line">                background: yellow;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        @media screen and (orientation: landscape) &#123;</span><br><span class="line">            /*横屏 css*/</span><br><span class="line">            body &#123;</span><br><span class="line">                background: blue;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/22/stacks/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/22/stacks/" itemprop="url">技术栈</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-22T09:45:28+08:00">
-                2017-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h1><table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Desc</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><a href="https://baike.baidu.com/item/zabbix/6780368?fr=aladdin" target="_blank" rel="noopener">zabbix</a></td>
-<td style="text-align:left">?</td>
-<td style="text-align:left">基于WEB界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案</td>
-</tr>
-</tbody>
-</table>
-
-          
         
       
     </div>
@@ -1650,7 +1612,7 @@ location / {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">98</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1661,7 +1623,7 @@ location / {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1672,7 +1634,7 @@ location / {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1711,7 +1673,7 @@ location / {
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

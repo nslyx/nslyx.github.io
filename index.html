@@ -251,6 +251,626 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/27/sv20191227/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/27/sv20191227/" itemprop="url">记录一次 EOS 系统盘重置后的操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-27T14:30:22+08:00">
+                2019-12-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/EOS/" itemprop="url" rel="index">
+                    <span itemprop="name">EOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/EOS/Record/" itemprop="url" rel="index">
+                    <span itemprop="name">Record</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="EOS-基础信息"><a href="#EOS-基础信息" class="headerlink" title="EOS 基础信息"></a>EOS 基础信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 基础信息</span></span><br><span class="line">&gt;lsb_release -a</span><br><span class="line">LSB Version:	:core-4.1-amd64:core-4.1-noarch</span><br><span class="line">Distributor ID:	CentOS</span><br><span class="line">Description:	CentOS Linux release 7.6.1810 (Core)</span><br><span class="line">Release:	7.6.1810</span><br><span class="line">Codename:	Core</span><br></pre></td></tr></table></figure>
+<h2 id="重置系统盘"><a href="#重置系统盘" class="headerlink" title="重置系统盘"></a>重置系统盘</h2><ol>
+<li><p>对目标服务器做好数据备份，避免重要数据的丢失</p>
+</li>
+<li><p>登录阿里云控制台，在实例管理页面中，停止目标服务器</p>
+</li>
+<li><p>在实例列表页面，操作 &gt; 更多 &gt; 磁盘和镜像 &gt; 重新初始化磁盘</p>
+</li>
+<li><p>接下来一顿按提示操作，然后就初始化了</p>
+</li>
+</ol>
+<p>为了方便 <code>ssh</code> 登录，可以提前在 网络与安全 &gt; 密钥对 里面将自己的公钥保存起来，在初始化的时候可以直接选择使用。</p>
+<h2 id="系统漏洞问题"><a href="#系统漏洞问题" class="headerlink" title="系统漏洞问题"></a>系统漏洞问题</h2><p>总是有提示说系统有几个漏洞没有处理，但是呢，管理后台直接点修复就让升级买服务什么的，有点坑啊。个人用户一点必要也没有。</p>
+<p>大部分都可以直接查看漏洞对应程序，然后登录上去升级一下就差不多了。</p>
+<h2 id="PS1-设置"><a href="#PS1-设置" class="headerlink" title="PS1 设置"></a>PS1 设置</h2><p>一般都是白花花的，不好看，个人喜欢有点颜色的，在<code>.bashrc</code> 文件中添加 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># PS1 设置</span></span><br><span class="line">PS1=<span class="string">'\e[38;5;220m[\e[38;5;201m\u\e[38;5;226m@\h:\e[38;5;46m\W\e[38;5;220m]\e[0m\n$'</span></span><br></pre></td></tr></table></figure>
+<p>别人喜不喜欢不清楚，反正我常用这个配色。</p>
+<h2 id="history-历史条数"><a href="#history-历史条数" class="headerlink" title="history 历史条数"></a>history 历史条数</h2><p>常常在 history 中扒历史命令的，这个默认条数是 1000 ，可以通过 <code>echo $HISTSIZE</code>来查看，感觉有点不够，索性加一点设置到 20000 条，</p>
+<p>在 <code>/etc/profile</code> 中找到 <code>HISTSIZE</code> 设置，修改后面数值为 <code>20000</code> 保存。然后 <code>source /etc/profile</code> 生效。</p>
+<h2 id="vim-配置"><a href="#vim-配置" class="headerlink" title="vim 配置"></a>vim 配置</h2><p>默认情况下 vim 打开都是白花花的，不好看，就整个配置，调调设置配色啥的，直接创建 <code>.vimrc</code> 文件，添加下面内容，保存即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sw=4</span><br><span class="line"><span class="built_in">set</span> ts=4</span><br><span class="line"><span class="built_in">set</span> et</span><br><span class="line"><span class="built_in">set</span> smarttab</span><br><span class="line"><span class="built_in">set</span> smartindent</span><br><span class="line"><span class="built_in">set</span> lbr</span><br><span class="line"><span class="built_in">set</span> fo+=mB</span><br><span class="line"><span class="built_in">set</span> sm</span><br><span class="line"><span class="built_in">set</span> selection=inclusive</span><br><span class="line"><span class="built_in">set</span> wildmenu</span><br><span class="line"><span class="built_in">set</span> mousemodel=popup</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> rtp+=<span class="variable">$GOROOT</span>/misc/vim</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">"</span> 显示相关</span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line">syntax on</span><br><span class="line"><span class="built_in">set</span> cul <span class="string">"高亮光标所在行</span></span><br><span class="line"><span class="string">set cuc</span></span><br><span class="line"><span class="string">set shortmess=atI   "</span> 启动的时候不显示那个援助乌干达儿童的提示</span><br><span class="line"><span class="built_in">set</span> go=             <span class="string">" 不要图形按钮</span></span><br><span class="line"><span class="string">"</span>color desert     <span class="string">" 设置背景主题</span></span><br><span class="line"><span class="string">color ron     "</span> 设置背景主题</span><br><span class="line"><span class="string">"color torte     "</span> 设置背景主题</span><br><span class="line"><span class="string">"set guifont=Courier_New:h10:cANSI   "</span> 设置字体</span><br><span class="line"><span class="string">"autocmd InsertLeave * se nocul  "</span> 用浅色高亮当前行</span><br><span class="line">autocmd InsertEnter * se cul    <span class="string">" 用浅色高亮当前行</span></span><br><span class="line"><span class="string">set ruler           "</span> 显示标尺</span><br><span class="line"><span class="built_in">set</span> showcmd         <span class="string">" 输入的命令显示出来，看的清楚些</span></span><br><span class="line"><span class="string">"</span><span class="built_in">set</span> whichwrap+=&lt;,&gt;,h,l   <span class="string">" 允许backspace和光标键跨越行边界(不建议)</span></span><br><span class="line"><span class="string">set scrolloff=3     "</span> 光标移动到buffer的顶部和底部时保持3行距离</span><br><span class="line"><span class="built_in">set</span> statusline=%F%m%r%h%w\ [FORMAT=%&#123;&amp;ff&#125;]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %&#123;strftime(\<span class="string">"%d/%m/%y\ -\ %H:%M\")&#125;   "</span>状态行显示的内容</span><br><span class="line"><span class="built_in">set</span> laststatus=2    <span class="string">" 启动显示状态行(1),总是显示状态行(2)</span></span><br><span class="line"><span class="string">"</span><span class="built_in">set</span> foldenable      <span class="string">" 允许折叠</span></span><br><span class="line"><span class="string">"</span><span class="string">"set foldmethod=manual   "</span> 手动折叠</span><br><span class="line"><span class="built_in">set</span> nocompatible  <span class="string">"去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限</span></span><br><span class="line"><span class="string">"</span> 显示中文帮助</span><br><span class="line"><span class="keyword">if</span> version &gt;= 603</span><br><span class="line">	<span class="built_in">set</span> helplang=cn</span><br><span class="line">	<span class="built_in">set</span> encoding=utf-8</span><br><span class="line">endif</span><br><span class="line"><span class="string">" 自动缩进</span></span><br><span class="line"><span class="string">set autoindent</span></span><br><span class="line"><span class="string">set cindent</span></span><br><span class="line"><span class="string">"</span> Tab键的宽度</span><br><span class="line"><span class="built_in">set</span> tabstop=4</span><br><span class="line"><span class="string">" 统一缩进为4</span></span><br><span class="line"><span class="string">set softtabstop=4</span></span><br><span class="line"><span class="string">set shiftwidth=4</span></span><br><span class="line"><span class="string">"</span> 使用空格代替制表符</span><br><span class="line"><span class="built_in">set</span> expandtab</span><br><span class="line"><span class="string">" 在行和段开始处使用制表符</span></span><br><span class="line"><span class="string">set smarttab</span></span><br><span class="line"><span class="string">"</span> 显示行号</span><br><span class="line"><span class="built_in">set</span> number</span><br><span class="line"><span class="string">" 历史记录数</span></span><br><span class="line"><span class="string">set history=1000</span></span><br><span class="line"><span class="string">"</span>搜索逐字符高亮</span><br><span class="line"><span class="built_in">set</span> hlsearch</span><br><span class="line"><span class="built_in">set</span> incsearch</span><br><span class="line"><span class="string">"语言设置</span></span><br><span class="line"><span class="string">set langmenu=zh_CN.UTF-8</span></span><br><span class="line"><span class="string">set helplang=cn</span></span><br><span class="line"><span class="string">"</span> 总是显示状态行</span><br><span class="line"><span class="built_in">set</span> cmdheight=2</span><br><span class="line"><span class="string">" 侦测文件类型</span></span><br><span class="line"><span class="string">filetype on</span></span><br><span class="line"><span class="string">"</span> 载入文件类型插件</span><br><span class="line">filetype plugin on</span><br><span class="line"><span class="string">" 为特定文件类型载入相关缩进文件</span></span><br><span class="line"><span class="string">filetype indent on</span></span><br><span class="line"><span class="string">"</span> 保存全局变量</span><br><span class="line"><span class="built_in">set</span> viminfo+=!</span><br><span class="line"><span class="string">" 带有如下符号的单词不要被换行分割</span></span><br><span class="line"><span class="string">set iskeyword+=_,$,@,%,#,-</span></span><br><span class="line"><span class="string">"</span> 字符间插入的像素行数目</span><br><span class="line"></span><br><span class="line"><span class="string">"markdown配置</span></span><br><span class="line"><span class="string">au BufRead,BufNewFile *.&#123;md,mdown,mkd,mkdn,markdown,mdwn&#125;   set filetype=mkd</span></span><br><span class="line"><span class="string">au BufRead,BufNewFile *.&#123;go&#125;   set filetype=go</span></span><br><span class="line"><span class="string">au BufRead,BufNewFile *.&#123;js&#125;   set filetype=javascript</span></span><br><span class="line"><span class="string">"</span>rkdown to HTML</span><br><span class="line">nmap md :!~/.vim/markdown.pl % &gt; %.html &lt;CR&gt;&lt;CR&gt;</span><br><span class="line">nmap <span class="keyword">fi</span> :!firefox %.html &amp; &lt;CR&gt;&lt;CR&gt;</span><br><span class="line">nmap \ \cc</span><br><span class="line">vmap \ \cc</span><br><span class="line"></span><br><span class="line"><span class="string">"将tab替换为空格</span></span><br><span class="line"><span class="string">nmap tt :%s/\t/    /g&lt;CR&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">"</span><span class="string">"实用设置</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> has(<span class="string">"autocmd"</span>)</span><br><span class="line">      autocmd BufReadPost *</span><br><span class="line">          \ <span class="keyword">if</span> line(<span class="string">"'\""</span>) &gt; 0 &amp;&amp; line(<span class="string">"'\""</span>) &lt;= line(<span class="string">"$"</span>) |</span><br><span class="line">          \   exe <span class="string">"normal g`\""</span> |</span><br><span class="line">          \ endif</span><br><span class="line">endif</span><br><span class="line"><span class="string">"当打开vim且没有文件时自动打开NERDTree</span></span><br><span class="line"><span class="string">"</span>autocmd vimenter * <span class="keyword">if</span> !argc() | NERDTree | endif</span><br><span class="line"><span class="string">" 只剩 NERDTree时自动关闭</span></span><br><span class="line"><span class="string">autocmd bufenter * if (winnr("</span>$<span class="string">") == 1 &amp;&amp; exists("</span>b:NERDTreeType<span class="string">") &amp;&amp; b:NERDTreeType == "</span>primary<span class="string">") | q | endif</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"</span> 设置当文件被改动时自动载入</span><br><span class="line"><span class="built_in">set</span> autoread</span><br><span class="line"><span class="string">" quickfix模式</span></span><br><span class="line"><span class="string">autocmd FileType c,cpp map &lt;buffer&gt; &lt;leader&gt;&lt;space&gt; :w&lt;cr&gt;:make&lt;cr&gt;</span></span><br><span class="line"><span class="string">"</span>代码补全</span><br><span class="line"><span class="built_in">set</span> completeopt=preview,menu</span><br><span class="line"><span class="string">"允许插件</span></span><br><span class="line"><span class="string">"</span>filetype plugin on</span><br><span class="line"><span class="string">"共享剪贴板</span></span><br><span class="line"><span class="string">"</span><span class="built_in">set</span> clipboard+=unnamed</span><br><span class="line"><span class="string">"自动保存</span></span><br><span class="line"><span class="string">set autowrite</span></span><br><span class="line"><span class="string">"</span><span class="built_in">set</span> ruler                   <span class="string">" 打开状态栏标尺</span></span><br><span class="line"><span class="string">"</span><span class="built_in">set</span> cursorline              <span class="string">" 突出显示当前行</span></span><br><span class="line"><span class="string">set magic                   "</span> 设置魔术</span><br><span class="line"><span class="built_in">set</span> guioptions-=T           <span class="string">" 隐藏工具栏</span></span><br><span class="line"><span class="string">set guioptions-=m           "</span> 隐藏菜单栏</span><br><span class="line"><span class="string">""</span><span class="built_in">set</span> foldcolumn=0</span><br><span class="line"><span class="string">""</span><span class="built_in">set</span> foldmethod=indent</span><br><span class="line"><span class="string">""</span><span class="built_in">set</span> foldlevel=3</span><br><span class="line"><span class="string">" 不要使用vi的键盘模式，而是vim自己的</span></span><br><span class="line"><span class="string">set nocompatible</span></span><br><span class="line"><span class="string">"</span> 去掉输入错误的提示声音</span><br><span class="line"><span class="built_in">set</span> noeb</span><br><span class="line"><span class="string">" 在处理未保存或只读文件的时候，弹出确认</span></span><br><span class="line"><span class="string">set confirm</span></span><br><span class="line"><span class="string">"</span>禁止生成临时文件</span><br><span class="line"><span class="built_in">set</span> nobackup</span><br><span class="line"><span class="built_in">set</span> noswapfile</span><br><span class="line"><span class="string">"搜索忽略大小写</span></span><br><span class="line"><span class="string">set ignorecase</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">set linespace=0</span></span><br><span class="line"><span class="string">"</span> 增强模式中的命令行自动完成操作</span><br><span class="line"><span class="built_in">set</span> wildmenu</span><br><span class="line"><span class="string">" 使回格键（backspace）正常处理indent, eol, start等</span></span><br><span class="line"><span class="string">set backspace=2</span></span><br><span class="line"><span class="string">"</span> 允许backspace和光标键跨越行边界</span><br><span class="line"><span class="built_in">set</span> whichwrap+=&lt;,&gt;,h,l</span><br><span class="line"><span class="string">" 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）</span></span><br><span class="line"><span class="string">set mouse=a</span></span><br><span class="line"><span class="string">set selection=exclusive</span></span><br><span class="line"><span class="string">set selectmode=mouse,key</span></span><br><span class="line"><span class="string">"</span> 通过使用: commands命令，告诉我们文件的哪一行被改变过</span><br><span class="line"><span class="built_in">set</span> report=0</span><br><span class="line"><span class="string">" 在被分割的窗口间显示空白，便于阅读</span></span><br><span class="line"><span class="string">set fillchars=vert:\ ,stl:\ ,stlnc:\</span></span><br><span class="line"><span class="string">"</span> 高亮显示匹配的括号</span><br><span class="line"><span class="built_in">set</span> showmatch</span><br><span class="line"><span class="string">" 匹配括号高亮的时间（单位是十分之一秒）</span></span><br><span class="line"><span class="string">set matchtime=1</span></span><br><span class="line"><span class="string">"</span> 光标移动到buffer的顶部和底部时保持3行距离</span><br><span class="line"><span class="built_in">set</span> scrolloff=3</span><br><span class="line"></span><br><span class="line"><span class="string">"中文显示</span></span><br><span class="line"><span class="string">set iskeyword+=.</span></span><br><span class="line"><span class="string">set termencoding=utf-8</span></span><br><span class="line"><span class="string">set encoding=utf8</span></span><br><span class="line"><span class="string">set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">autocmd FileType python set omnifunc=pythoncomplete#Complete</span></span><br></pre></td></tr></table></figure>
+<p>这个配置是基于<a href="https://github.com/ma6174/vim" target="_blank" rel="noopener">ma6174 vim 超强配置</a>安装后的 <code>.vimrc</code> 文件，去掉那些安装的插件，然后自己再个别调整出来的。</p>
+<p>直接安装 <code>ma6174</code> 也可以，不过下载的插件不少，还有编辑 js 的插件的问题需要处理，有点麻烦，个人对插件没啥使用度，直接静态配置更方便</p>
+<h2 id="补充-yum-源"><a href="#补充-yum-源" class="headerlink" title="补充 yum 源"></a>补充 yum 源</h2><p>有些软件包再默认的源中没有，需要补充源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 补充 epel 源，如 screen 包在 epel 里面就有</span></span><br><span class="line">yum install -y epel-release</span><br></pre></td></tr></table></figure>
+<p>安装 yum 源管理工具， 安装后就可使用 <code>yum-config-manager</code> 命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils</span><br></pre></td></tr></table></figure>
+<h2 id="虚拟终端-screen"><a href="#虚拟终端-screen" class="headerlink" title="虚拟终端 screen"></a>虚拟终端 screen</h2><p>ssh 连接到服务器执行任务，中断终端连接会让任务终止，为了避免，用 虚拟终端就很合适，执行安装即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y screen</span><br></pre></td></tr></table></figure>
+<p>常用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 创建并进入名为 ‘name’ 的会话</span></span><br><span class="line">screen -S `name` </span><br><span class="line"><span class="comment">## 在会话中，不销毁退出，可以用 Ctrl+A，D</span></span><br><span class="line"><span class="comment">## 在会话中，退出并销毁，执行: exit</span></span><br><span class="line"><span class="comment">## 在会话外，销毁会话</span></span><br><span class="line">screen -S `idOrName` -X quit</span><br><span class="line"><span class="comment">## 查看所有会话</span></span><br><span class="line">screen -ls</span><br><span class="line"><span class="comment">## 进入已有会话</span></span><br><span class="line">screen -r `idOrName`</span><br></pre></td></tr></table></figure>
+<p>screen 会话中，vim. 无法上下滚动，创建 <code>.screenrc</code>，并添加一下内容就好</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">termcapinfo xterm* ti@:te@</span><br><span class="line">termcapinfo xterm|xterms|xs|rxvt <span class="string">'hs:ts=\E]2;:fs=07:ds=\E]2;screen07'</span></span><br></pre></td></tr></table></figure>
+<h2 id="Docker-安装"><a href="#Docker-安装" class="headerlink" title="Docker 安装"></a>Docker 安装</h2><p>作为自己瞎折腾的服务器，<code>Docker</code> 不能少。不管临时玩什么，创建个容器就好，用完就删，多 Happy。</p>
+<p>Docker 有几种版本，docker, docker-io,  docker-engine 都是相对早起的版本，现在的是 docker-ce(社区版)和 docker-ee(企业版)。</p>
+<p>之前玩的都是 docker-io，直接 <code>yum install -y docker-io</code> 就可以安装上。</p>
+<p>现在想整个新店的，docker-ce，也好体会下有没有啥变化，yum 直接安装显示没有匹配的，需要补充下源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p>然后执行命令安装最新版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 直接安装的话就默认最新版本</span></span><br><span class="line">yum install -y docker-ce</span><br></pre></td></tr></table></figure>
+<p>查看可安装版本命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 查看可安装的版本，并倒序</span></span><br><span class="line">yum list docker-ce --showduplicates | sort -r</span><br></pre></td></tr></table></figure>
+<p>启动&amp;自启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 启动服务 &amp;&amp; 开机自启</span></span><br><span class="line">systemctl start docker</span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br></pre></td></tr></table></figure>
+<p>到这里 Docker 也就安装完了</p>
+<h2 id="Docker-安装-Nginx"><a href="#Docker-安装-Nginx" class="headerlink" title="Docker 安装 Nginx"></a>Docker 安装 Nginx</h2><p>启动服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm -d -p 80:80 -v /vol/nginx/conf:/etc/nginx/conf.d:ro -v /vol/nginx/html:/usr/share/nginx/html:ro  --name nginx nginx:alpine</span><br></pre></td></tr></table></figure>
+<p>参数释义:</p>
+<ul>
+<li>–rm 在运行起来后删除实例，多在启动服务型的软件时使用</li>
+<li>-d 后台执行并打印 容器id<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/ssh20191225/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/25/ssh20191225/" itemprop="url">ssh 自动完成</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-25T15:19:31+08:00">
+                2019-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="ssh-自动完成实现方法"><a href="#ssh-自动完成实现方法" class="headerlink" title="ssh 自动完成实现方法"></a>ssh 自动完成实现方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># complete -W "$(echo $(grep '^ssh ' .bash_history | sort -u | sed 's/^ssh //'))" ssh</span></span><br><span class="line">complete -W <span class="string">"<span class="variable">$(echo $(grep -i '^host\s\+' ~/.ssh/config | sort -u | sed 's/^host\s\+//i')</span>)"</span> ssh</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Host TargetHost 		<span class="comment"># 提示显示的内容 选项“Host”只对能够匹配后面字串的计算机有效。* 表示所有的计算机</span></span><br><span class="line">HostName 127.0.0.1 	<span class="comment"># 目标的域名/ip</span></span><br><span class="line">Port 22							<span class="comment"># 目标端口</span></span><br><span class="line">User root						<span class="comment"># 登录使用的用户</span></span><br><span class="line">Cipher blowfish	    <span class="comment"># 设置加密用的密码</span></span><br><span class="line">IdentityFile kFile  <span class="comment"># ssh key的路径</span></span><br><span class="line">IdentitiesOnly yes  <span class="comment"># 仅使用此处指定</span></span><br><span class="line">EscapeChar ~	      <span class="comment"># 设置escape字符</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.51cto.com/3381847248/2066599" target="_blank" rel="noopener">.ssh/config 参考</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/23/php20191223/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/23/php20191223/" itemprop="url">php 构建无限级分类关系树</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-23T15:50:17+08:00">
+                2019-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>PHP 实现无限级分类其实很简单，如下函数，一次 foreach  就能够构建完成</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 无限级分类</span></span><br><span class="line"><span class="comment"> * 数据字段需要有 id 和 pid</span></span><br><span class="line"><span class="comment"> * 若记录结果二维数组 为 $items</span></span><br><span class="line"><span class="comment"> /</span></span><br><span class="line"><span class="comment">function tree(Array $items)</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    foreach ($items as &amp;$item) &#123;</span></span><br><span class="line"><span class="comment">        $items[$item['pid']]['children'][$item['id']] = &amp;$item;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    return isset($items[0]) ? $items[0]['children'] : [];</span></span><br><span class="line"><span class="comment">&#125;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/12/23/php20191223/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/23/i20191223/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/23/i20191223/" itemprop="url">Nothing</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-23T15:27:28+08:00">
+                2019-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/i/" itemprop="url" rel="index">
+                    <span itemprop="name">i</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>能说什么呢？也不能说什么。</p>
+<p>可远观，可近看，该来来，该散散；</p>
+<p>不心甘，不惫懒，有花香，有彼岸。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/20/mac20191220/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -270,7 +890,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/12/20/mac20191220/" itemprop="url">Issue for Macbook</a></h1>
+                <a class="post-title-link" href="/2019/12/20/mac20191220/" itemprop="url">Macbook 使用笔记</a></h1>
         
 
         <div class="post-meta">
@@ -355,8 +975,11 @@
       
         
           
-            <p>#Mac Issue - 使用问题记录 </p>
-<p><a href="mac20181212.md">刻录 Mac 镜像到 u 盘</a></p>
+            <h2 id="使用终端"><a href="#使用终端" class="headerlink" title="使用终端"></a>使用终端</h2><h3 id="Console"><a href="#Console" class="headerlink" title="Console"></a>Console</h3><p>系统默认自带<code>终端</code>这个这个App，有些没变成中文的就是<code>Console</code> 。</p>
+<h3 id="Iterm2"><a href="#Iterm2" class="headerlink" title="Iterm2"></a>Iterm2</h3><h3 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Get the aliases and functions</span></span><br><span class="line"><span class="keyword">if</span> [ -f ~/.bashrc ]; <span class="keyword">then</span></span><br><span class="line">	. ~/.bashrc</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># PS1</span></span><br><span class="line">PS1=<span class="string">"\e[38;5;220m[\e[38;5;201m\u\e[38;5;226m@MBP:\e[38;5;46m\W\e[38;5;220m]\e[0m\n$"</span></span><br><span class="line"><span class="built_in">export</span> PS1</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac cli colors</span></span><br><span class="line"><span class="built_in">export</span> CLICOLOR=1</span><br><span class="line"><span class="built_in">export</span> LSCOLORS=gxfxaxdxcxegedabagacad</span><br><span class="line"></span><br><span class="line"><span class="comment"># gettext</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/opt/gettext/bin:<span class="variable">$PATH</span>"</span></span><br><span class="line"><span class="comment"># export LDFLAGS="-L/usr/local/opt/gettext/lib"</span></span><br><span class="line"><span class="comment"># export CPPFLAGS="-I/usr/local/opt/gettext/include"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># openssl</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/opt/openssl/bin:<span class="variable">$PATH</span>"</span></span><br><span class="line"><span class="comment"># export LDFLAGS="-L/usr/local/opt/openssl/lib"</span></span><br><span class="line"><span class="comment"># export CPPFLAGS="-I/usr/local/opt/openssl/include"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Mysql@5.7</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/opt/mysql@5.7/bin:<span class="variable">$PATH</span>"</span></span><br><span class="line"><span class="comment"># For compilers to find mysql@5.7 you may need to set:</span></span><br><span class="line"><span class="comment"># export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"</span></span><br><span class="line"><span class="comment"># export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># For pkg-config to find mysql@5.7 you may need to set:</span></span><br><span class="line"><span class="comment"># export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> JS_CMD=<span class="string">"node"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># alias</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -l'</span></span><br><span class="line"><span class="built_in">export</span> HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles</span><br></pre></td></tr></table></figure>
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><p>从 <code>Catalina</code> 版本开始，终端默认使用 <code>zsh</code>，之前版本默认是 <code>bash</code>，这两者是有些使用区别的，暂时没有整理，可参考 <a href="https://segmentfault.com/a/1190000011122024" target="_blank" rel="noopener">Zsh和Bash的兼容性问题</a>。</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加载之前使用 bash 时的各个配置</span></span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 命令补全</span></span><br><span class="line"><span class="built_in">autoload</span> -U compinit</span><br><span class="line">compinit</span><br><span class="line"><span class="built_in">setopt</span> completealiases</span><br><span class="line"></span><br><span class="line"><span class="comment"># 消除历史记录中的重复条目</span></span><br><span class="line"><span class="built_in">setopt</span> HIST_IGNORE_DUPS</span><br><span class="line"></span><br><span class="line"><span class="comment">## 命令提示符</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 预设彩色提示符</span></span><br><span class="line"><span class="comment"># autoload -U promptinit</span></span><br><span class="line"><span class="comment"># promptinit # 开启</span></span><br><span class="line"><span class="comment"># prompt -l  # 查看可用提示符</span></span><br><span class="line"><span class="comment"># prompt walters # 应用提示符</span></span><br><span class="line"><span class="comment"># prompt -p  # 查看所有提示符主题</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 开启彩色提示符设置</span></span><br><span class="line"><span class="built_in">autoload</span> -U colors &amp;&amp; colors</span><br><span class="line"><span class="comment"># 支持颜色</span></span><br><span class="line"><span class="comment"># 黑 black or 0	红 red     or 1</span></span><br><span class="line"><span class="comment"># 绿 green or 2	黄 yellow  or 3</span></span><br><span class="line"><span class="comment"># 蓝 blue  or 4	紫 magenta or 5</span></span><br><span class="line"><span class="comment"># 青 cyan  or 6	白 white   or 7</span></span><br><span class="line"><span class="comment"># 设置命令提示符</span></span><br><span class="line">PROMPT=<span class="string">"%B%F&#123;3&#125;[%f%F&#123;5&#125;%n%f%F&#123;3&#125;@MBP:%f%F&#123;2&#125;%1~%f%F&#123;3&#125;]%f</span></span><br><span class="line"><span class="string">%#%b "</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> EDITOR=/usr/bin/vim</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/opt/node@8/bin:<span class="variable">$PATH</span>"</span></span><br></pre></td></tr></table></figure>
+<h2 id="其他记录"><a href="#其他记录" class="headerlink" title="其他记录"></a>其他记录</h2><p><a href="/2018/12/12/mac20181212">刻录 Mac 镜像到 u 盘</a></p>
 
           
         
@@ -1026,582 +1649,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/compare-cr/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/13/compare-cr/" itemprop="url">Mac BeyondCompare 无限试用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-13T11:53:44+08:00">
-                2019-04-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在网上看到的方法， 记录下</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/13/compare-cr/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/mac20181212/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/12/mac20181212/" itemprop="url">刻录 Mac 镜像到 u 盘</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-12T22:17:03+08:00">
-                2018-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="获取-Mac-系统镜像"><a href="#获取-Mac-系统镜像" class="headerlink" title="获取 Mac 系统镜像"></a>获取 <code>Mac</code> 系统镜像</h2><p>可以在 <code>App Store</code> 中搜索需要的 <code>Mac</code> 系统版本，然后点击查看，下载。</p>
-<h2 id="刻录镜像至U盘"><a href="#刻录镜像至U盘" class="headerlink" title="刻录镜像至U盘"></a>刻录镜像至U盘</h2><p>将下载的系统镜像挂载到  <code>Application</code> 中，U盘也准备好。<br>可以用以下命令进行烧录制作：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/Virgo /Applications/Install\ macOS\ Mojave.app --nointeraction</span><br></pre></td></tr></table></figure>
-<h2 id="命令拆解："><a href="#命令拆解：" class="headerlink" title="命令拆解："></a>命令拆解：</h2><ul>
-<li><code>/Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia</code> - 创建媒介程序</li>
-<li><code>--volume /Volumes/Virgo</code> 指定外置媒介挂载点，<code>/Volumes/Virgo</code> - 已挂载U盘的绝对路径</li>
-<li><code>--applicationpath /Applications/Install\ macOS\ Mojave.app</code> - 镜像系统的绝对路径</li>
-<li><code>--nointeraction</code> 表示不要任何交互</li>
-</ul>
-<p>参考 <a href="https://www.iplaysoft.com/macos-usb-install-drive.html" target="_blank" rel="noopener">制作 macOS Mojave U盘USB启动安装盘方法教程</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/temp-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/12/temp-1/" itemprop="url">temp-1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-12T22:01:30+08:00">
-                2018-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>iptables可以实现端口转发<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// -- 中转机器上</span><br><span class="line">iptables -A INPUT -s 请求端IP -p tcp --dport 22 -j ACCEPT</span><br><span class="line">iptables -A INPUT -s 被请求端IP -p tcp --dport 51521 -j ACCEPT</span><br><span class="line"></span><br><span class="line">ssh -CNfR 51521:ip:1314 -b 0.0.0.0 username@10.32.0.154</span><br><span class="line">ssh -CNfR 51022:ip:22 -b 0.0.0.0 username@10.32.0.154</span><br><span class="line"></span><br><span class="line">rsync -razh --delete  --delete-exclude --exclude <span class="string">'.git'</span> --exclude <span class="string">'.idea'</span> --exclude <span class="string">'storage'</span> ./ zhangxiaotian@@47.93.180.203:~/www/jinse-master-new</span><br><span class="line">rsync -razh --delete --exclude <span class="string">'.git'</span> ./ zhangxiaotian@47.93.180.203:~/www/jinse-master-new</span><br><span class="line"></span><br><span class="line">wget -c -m -k  -np -p -E -U Mozilla --no-check-certificate</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 魔方</span></span><br><span class="line"><span class="comment"> * 存在于空间中，6个面对应六个方位</span></span><br><span class="line"><span class="comment"> * 有六个面，在颜色最秩序时，每个面仅有不同于其他面的单一颜色，总计6种颜色，用1-6表示</span></span><br><span class="line"><span class="comment"> * 有6个面心块，12个棱边块，8个顶角块 共计26个外露块，核心块在构造上不存在</span></span><br><span class="line"><span class="comment"> * 面心块，棱边块，顶角块分别有 1，2，3种颜色</span></span><br><span class="line"><span class="comment"> * 每个块特点在体系中唯一，可用三位颜色组标识块，0补位</span></span><br><span class="line"><span class="comment"> * 因为方位限制，不存在对立面颜色组合</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 所有外露块表示：</span></span><br><span class="line"><span class="comment"> * 001，002，003，004，005，006</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> **/</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// header("Access-Control-Allow-Methods: POST, PUT, DELETE");</span></span><br><span class="line">var_dump($_SERVER);</span><br></pre></td></tr></table></figure>
-<h2 id="微信上面有些需要文件验证的方式"><a href="#微信上面有些需要文件验证的方式" class="headerlink" title="微信上面有些需要文件验证的方式"></a>微信上面有些需要文件验证的方式</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">// nginx 中的匹配转发到验证文件</span></span><br><span class="line"><span class="comment">    location ~^/MP_verify_\w+.txt$ &#123;</span></span><br><span class="line"><span class="comment">        rewrite .* /verify.php;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">// 验证文件的内容如下：</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">$verify_str = str_replace([<span class="string">'/MP_verify_'</span>, <span class="string">'.txt'</span>], <span class="string">''</span>, $_SERVER[<span class="string">'REQUEST_URI'</span>]);</span><br><span class="line"><span class="keyword">exit</span>($verify_str);</span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mysqldump 导出数据库</span><br><span class="line">mysqldump -u root -p coffee_stage &gt; coffee_stage_20170411.sql -S /tmp/mysql.sock</span><br><span class="line"></span><br><span class="line">通过 scp 下载文件</span><br><span class="line">scp zhangxiaotian@47.93.114.89:/data/www/zhangxiaotian/coffee_stage_bak.sql coffee_stage_bak.sql</span><br><span class="line">composer crete-project codeigniter/framework</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tailf</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> paste</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> nopaste</span><br></pre></td></tr></table></figure>
-<p>项目相关问题</p>
-<p>$env = isset($_SERVER[‘HTTP_JCENV’]) ? $_SERVER[‘HTTP_JCENV’] : ‘’;<br>$protocol = isset($_SERVER[‘HTTP_JCPROTOCAL’]) ? $_SERVER[‘HTTP_JCPROTOCAL’] : ((isset($_SERVER[‘HTTPS’]) &amp;&amp; $_SERVER[‘HTTPS’] == “on”) ? “https” : “http”);<br>$config[‘base_url’] = $protocol;<br>$config[‘base_url’] .= “://“.$_SERVER[‘HTTP_HOST’] . “/“ . $env;<br>$config[‘base_url’] .= str_replace(basename($_SERVER[‘SCRIPT_NAME’]),””,$_SERVER[‘SCRIPT_NAME’]);</p>
-<p>$config[‘sess_driver’] = ‘database’;<br>$config[‘sess_save_path’] = ‘ci_sessions’;</p>
-<p>Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set ‘always_populate_raw_post_data’ to ‘-1’ in php.ini and use the php://input stream instead.</p>
-<p>mysql&gt; select @@sql_mode;<br>+——————————————————————————————————————————————-+<br>| @@sql_mode                                                                                                                                |<br>+——————————————————————————————————————————————-+<br>| ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |<br>+——————————————————————————————————————————————-+<br>1 row in set (0.00 sec)</p>
-<p>set global</p>
-<p>set global sql_mode=’STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION’;</p>
-<p>;;;;mysql&gt; set session sql_mode=’STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION’;</p>
-<p>⌘ + d: 垂直分屏，</p>
-<p>⌘ + shift + d: 水平分屏。</p>
-<p>⌘ + ]和⌘ + [在最近使用的分屏直接切换.</p>
-<p>⌘ + opt + 方向键切换到指定位置的分屏。</p>
-<p>⌘ + 数字: 切换标签页。</p>
-<p>⌘ + 方向键 按方向切换标签页。</p>
-<p>shift + ⌘ + s: 保存当前窗口快照。</p>
-<p>⌘ + opt + b: 快照回放。很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//$im = imagecreatetruecolor(400,400);</span></span><br><span class="line"><span class="comment">//$gray = imagecolorallocate($im,255,255,255);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//imagefill($im,0,0,$gray);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//// 4: 保存成图片 imagepng(画布 [, 保存位置 ]),imagejpeg(),imagegif()</span></span><br><span class="line"><span class="comment">//header('content-type:image/jpeg');</span></span><br><span class="line"><span class="comment">//// header('Content-Type:image/png');</span></span><br><span class="line"><span class="comment">//imagepng($im);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//// 5: 销毁画布  销毁画面 imagedestroy(画布)</span></span><br><span class="line"><span class="comment">//imagedestroy($im);</span></span><br><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment">    步骤：</span></span><br><span class="line"><span class="comment">        1.创建画布</span></span><br><span class="line"><span class="comment">        2.造颜料</span></span><br><span class="line"><span class="comment">        3.填充背景颜色</span></span><br><span class="line"><span class="comment">        4.画干扰点</span></span><br><span class="line"><span class="comment">        5.画噪点</span></span><br><span class="line"><span class="comment">        6.写字符串</span></span><br><span class="line"><span class="comment">        7.输出图片</span></span><br><span class="line"><span class="comment">        8.销毁画布</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">//1.创建画布</span></span><br><span class="line">    $im=imagecreatetruecolor(<span class="number">400</span>, <span class="number">240</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2.造颜料</span></span><br><span class="line">    $gray = imagecolorallocate($im,<span class="number">30</span>,<span class="number">30</span>,<span class="number">30</span>);</span><br><span class="line">    $red = imagecolorallocate($im,<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    $blue = imagecolorallocate($im, <span class="number">100</span>, <span class="number">255</span>, <span class="number">255</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3.填充背景颜色</span></span><br><span class="line">    imagefill($im,<span class="number">0</span>,<span class="number">0</span>,$blue);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//4.画干扰点</span></span><br><span class="line">    <span class="keyword">for</span> ($i=<span class="number">0</span>; $i &lt;<span class="number">4</span> ; $i++) &#123;</span><br><span class="line">         imageline($im, rand(<span class="number">0</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">100</span>,rand(<span class="number">0</span>,<span class="number">60</span>),$red);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//5.画噪点</span></span><br><span class="line">        <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;<span class="number">100</span>;$i++)&#123;</span><br><span class="line">            imagesetpixel($im,rand(<span class="number">0</span>,<span class="number">50</span>),rand(<span class="number">0</span>,<span class="number">30</span>),$gray);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//6.写字符串</span></span><br><span class="line">    $str=substr(str_shuffle(<span class="string">'ABCDEFGHIJKMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789'</span>),<span class="number">0</span>,<span class="number">4</span>);</span><br><span class="line">    imagestring($im,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>,$str,$red);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//7.输出图片</span></span><br><span class="line">        header(<span class="string">'content-type:image/png'</span>);</span><br><span class="line">        imagepng($im);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//8.销毁画布</span></span><br><span class="line">        imagedestroy($im);</span><br></pre></td></tr></table></figure>
-<h1 id="phpStorm"><a href="#phpStorm" class="headerlink" title="phpStorm"></a>phpStorm</h1><p>phpstorm<br>折叠 shift + cmd + +/-<br>    cmd + +/-</p>
-<p>command + a 全选<br>command + c 复制<br>command + v 粘贴<br>command + z 撤消<br>command + l 输入行号跳到某一行<br>command + / 单行注释<br>command + option + / 块注释<br>ctrl + shift + / 块注释<br>command + e 列出最近打开的文件<br>shift + command + x 打开 Command Line Tools Console<br>shift + command + r 查找替换<br>shift + command + c 复制当前文件所在绝对路径<br>shift + f6(fn+f6): 选中左侧的文件名   进行文件重命名<br>command + D 复制出一行到下一行<br>control + tab　　打开的文件间切换　　control + shift + tab 向上切换<br>command + B　　函数追踪（等同：comaand + 单击）<br>command + delete　　删除整行<br>option + command + O 搜索项目中函数，变量或者其他的标示符<br>shift + command + o　　搜索项目中的文件<br>command + o　　搜索项目中的类文件<br>command + [        跳转到上一个位置<br>command + ]        跳转到下一个位置<br>option + j  多选单个单词，即一次可以对多个同样单词进行修改<br>option + comman +enter　　下面增加一行<br>control + up/down　　在打开的mac应用程序窗口之间切换<br>在写好的函数上面，/** 然后回车，可以生成php doc注释，这个和一些编辑器的敲tab略有不同<br>^+space　　可以在<img src="images/"> 输入/之后使用，提示出文件列表</p>
-<h1 id="sublime"><a href="#sublime" class="headerlink" title="sublime"></a>sublime</h1><p>打开/前往<br>⌘T    前往文件<br>⌘⌃P    前往项目<br>⌘R    前往 method<br><code>⌘⇧P</code>    命令提示<br>⌃G    前往行<br>⌘KB    开关侧栏<br>⌃ `    python 控制台<br>⌘⇧N    新建窗口<br>编辑<br>⌘L    选择行 (重复按下将下一行加入选择)<br>⌘D    选择词 (重复按下时多重选择相同的词进行多重编辑)<br>⌃⇧M    选择括号内的内容<br>⌘⇧↩    在当前行前插入新行<br>⌘↩    在当前行后插入新行<br>⌃⇧K    删除行<br>⌘KK    从光标处删除至行尾<br>⌘K⌫    从光标处删除至行首<br>⌘⇧D    复制(多)行<br>⌘J    合并(多)行<br>⌘KU    改为大写<br>⌘KL    改为小写<br>⌘ /    注释<br>⌘⌥ /    块注释<br>⌘Y    恢复或重复<br>⌘⇧V    粘贴并自动缩进<br>⌃ space    自动完成(重复按下选择下一个提示)<br>⌃M    跳转至对应的括号<br>⌘U    软撤销（可撤销光标移动）<br>⌘⇧U    软重做（可重做光标移动）<br>XML/HTML<br>⌘⇧A    选择标签内的内容<br>⌘⌥ .    闭合当前标签<br>查找/替换<br>⌘F    查找<br>⌘⌥F    替换<br>⌘⌥G    查找下一个符合当前所选的内容<br>⌘⌃G    查找所有符合当前所选的内容进行多重编辑<br>⌘⇧F    在所有打开的文件中进行查找<br>拆分窗口/标签页<br>⌘⌥1    单列<br>⌘⌥2    双列<br>⌘⌥5    网格 (4组)<br>⌃[1,2,3,4]    焦点移动至相应组<br>⌃⇧[1,2,3,4]    将当前文件移动至相应组<br>⌘[1,2,3…]    选择相应标签页<br>书签<br>⌘F2    添加/去除书签<br>F2    下一个书签<br>⇧F2    前一个书签<br>⌘⇧F2    清除书签<br>标记<br>⌘K space    设置标记<br>⌘KW    从光标位置删除至标记<br>⌘KA    从光标位置选择至标记<br>⌘KG    清除标记</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/31/docker/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/31/docker/" itemprop="url">Notes For Docker</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-31T15:49:19+08:00">
-                2018-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Desc"><a href="#Desc" class="headerlink" title="Desc"></a>Desc</h3><p>docker 有 docker-io 早起版本, docker-ce 社区版本, docker-ee 企业版本<br>以下操作基于 Centos 中实践、整理。</p>
-<h3 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h3><p>Docker 软件包已经包括在默认的 CentOS-Extras 软件源里。因此想要安装 docker，只需要运行下面的 yum 命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-io -y</span><br></pre></td></tr></table></figure></p>
-<p>直接yum安装，安装成功后查看版本<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker -v</span><br></pre></td></tr></table></figure></p>
-<p>启动docker</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker start</span><br></pre></td></tr></table></figure>
-<p>设置开机启动<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig docker on</span><br></pre></td></tr></table></figure></p>
-<p>配置 Docker 源</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 腾讯云： 因为国内访问 Docker Hub 较慢, 可以使用腾讯云提供的国内镜像源, 加速访问 Docker Hub，依次执行以下命令</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"OPTIONS='--registry-mirror=https://mirror.ccs.tencentyun.com'"</span> &gt;&gt; /etc/sysconfig/docker</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">service docker restart</span><br><span class="line"></span><br><span class="line"><span class="comment">## 新版推荐使用 daemon.json 文件 </span></span><br><span class="line"><span class="comment"># 文件 /etc/docker/daemon.json</span></span><br><span class="line"><span class="comment"># 内容如下即可，可自选镜像地址，可配置多个镜像地址</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"registry-mirrors"</span>: [</span><br><span class="line">        <span class="string">"https://mirror.ccs.tencentyun.com"</span>,</span><br><span class="line">        <span class="string">"https://registry.docker-cn.com"</span>,</span><br><span class="line">        <span class="string">"https://hub-mirror.c.163.com"</span>,</span><br><span class="line">        <span class="string">"https://docker.mirrors.ustc.edu.cn"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 最后也需要重载配置，重启服务</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
-<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><p>下载镜像，下载一个官方的 CentOS 镜像到本地<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull centos</span><br></pre></td></tr></table></figure></p>
-<p>下载好的镜像就会出现在镜像列表里<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line"><span class="comment"># 等价于</span></span><br><span class="line">docker image ls</span><br></pre></td></tr></table></figure></p>
-<p>运行容器，这时我们可以在刚才下载的 CentOS 镜像生成的容器内操作了。生成一个 centos 镜像为模板的容器并使用 bash shell<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -it centos /bin/bash</span><br><span class="line"><span class="comment"># 这个时候可以看到命令行的前端已经变成了 [root@(一串 hash Id)] 的形式, 这说明我们已经成功进入了 CentOS 容器。</span></span><br><span class="line"><span class="comment"># 在容器内执行任意命令, 不会影响到宿主机。</span></span><br><span class="line"><span class="comment"># 如果要后台运行容器但是不进入容器，可以在 加上 -d 参数</span></span><br></pre></td></tr></table></figure></p>
-<p>退出容器</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span> <span class="comment"># 通过 docker 命令进入的，使用这个命令退出后，容器将停止运行</span></span><br><span class="line"><span class="comment"># 如果不想停止容器，可以用 CTRL+P 然后 CTRL+Q 保持容器运行并退出，回到宿主机</span></span><br></pre></td></tr></table></figure>
-<p>查看容器信息， 能获取容器的id<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br><span class="line">docker ps -a <span class="comment"># 最常用，所有的</span></span><br><span class="line">docker ps -l</span><br></pre></td></tr></table></figure></p>
-<p>保存镜像</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker commit -m=<span class="string">"备注"</span> 你的CONTAINER_ID 你的IMAGE</span><br><span class="line"><span class="comment"># 这里只是在本地，基于当前容器构建了一个镜像，并不会发布出去</span></span><br></pre></td></tr></table></figure>
-<p>删除容器<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 容器必须先停止才能被删除</span></span><br><span class="line">docker sotp</span><br><span class="line">docker rm `container_name_or_id`</span><br></pre></td></tr></table></figure></p>
-<p>删除镜像<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 镜像只有没有正在使用他的容器时才能被删除</span></span><br><span class="line">docker rmi `image_name_or_id`</span><br></pre></td></tr></table></figure></p>
-<h3 id="查看容器ip"><a href="#查看容器ip" class="headerlink" title="查看容器ip"></a>查看容器ip</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在宿主机中查看 容器ip</span></span><br><span class="line">docker inspect `container_name` | grep IPAddress</span><br><span class="line">docker inspect --format <span class="string">'&#123;&#123; .NetworkSettings.IPAddress &#125;&#125;'</span> `id_or_name` <span class="comment">## 查看容器 ip</span></span><br><span class="line">docker inspect -f <span class="string">'&#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;'</span> `id_or_name` <span class="comment">## 同上</span></span><br><span class="line">docker inspect -f <span class="string">'&#123;&#123;.Name&#125;&#125; - &#123;&#123;.NetworkSettings.IPAddress &#125;&#125;'</span> $(docker ps -aq) <span class="comment">## 获取所有容器 ip</span></span><br><span class="line">docker inspect --format=<span class="string">'&#123;&#123;.Name&#125;&#125; - &#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;'</span> $(docker ps -aq)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在容器中查看当前 ip，先装网络工具</span></span><br><span class="line">yum install -y net-tools </span><br><span class="line"><span class="comment">## 安装容器中查看 ip 命令： </span></span><br><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>sduo systemctl restart docker</p>
-<p> sudo curl -L <a href="https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname" target="_blank" rel="noopener">https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname</a> -s<code>-</code>uname -m` -o /usr/local/bin/docker-compose<br>sudo chmod +x /usr/local/bin/docker-compose<br> docker-compose –version<br>docker-compose version 1.24.0, build 0aa59064</p>
-<h2 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h2><p>Doc  <a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener">https://docs.docker.com/compose/install/</a></p>
-<p>sudo curl -L “<a href="https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname" target="_blank" rel="noopener">https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname</a> -s)-$(uname -m)” -o /usr/local/bin/docker-compose</p>
-<p>sudo curl -L <a href="https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname" target="_blank" rel="noopener">https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname</a> -s<code>-</code>uname -m` -o /usr/local/bin/docker-compose<br>sudo chmod +x /usr/local/bin/docker-compose<br> docker-compose –version<br>docker-compose version 1.24.0, build 0aa59064</p>
-<h2 id="添加端口映射"><a href="#添加端口映射" class="headerlink" title="添加端口映射"></a>添加端口映射</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 对于运行中的容器，没有直接的 docker 命令修改端口映射，只有 `run` 命令可以带上端口映射。一般流程为：</span></span><br><span class="line">docker ps -s <span class="comment">## 查看容器运行信息</span></span><br><span class="line">docker stop `id_or_name` <span class="comment">## 停止运行容器</span></span><br><span class="line">docker commit `id_or_name` `image_name` <span class="comment">## 基于容器，创建 docker 镜像</span></span><br><span class="line">docker run -itd  -p `mp1`:`vp1` -p `mp2`:`vp2`  -v `md1`:`md1` `image_name`</span><br><span class="line"><span class="comment">## run 命令常用参数</span></span><br><span class="line"><span class="comment">## --privileged  		赋予 root 权限</span></span><br><span class="line"><span class="comment">## --name `name`  	给容器起名</span></span><br><span class="line"><span class="comment">## -i 							交互模式</span></span><br><span class="line"><span class="comment">## -t 							分配伪终端</span></span><br><span class="line"><span class="comment">## -d 							后台运行，返回id</span></span><br><span class="line"><span class="comment">## -p 							端口映射 host : container</span></span><br><span class="line"><span class="comment">## -v 							目录挂载 host : container</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 但是上述方式适合在刚开始构建环境用，后续修改和调整不方便，所以，另一种方式是，获取到 容器在宿主机上的 ip 通过 宿主机器的 iptables 命令直接实现端口映射。一般流程为先获取容器ip 然后在宿主机器上进行绑定映射</span></span><br><span class="line">ip address <span class="comment">## centos7查看ip地址命令</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看是否开启 ip 转发 ipv4</span></span><br><span class="line">sysctl net.ipv4.ip_forward </span><br><span class="line">cat /proc/sys/net/ipv4/ip_forward</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"\e[38;5;220m[\e[38;5;201m\u\e[38;5;226m@MBP:\e[38;5;46m\W\e[38;5;220m]\e[0m\n$"</span></span><br><span class="line"><span class="string">"\e[38;5;201m\u@\h \W]\$"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'\e[38;5;220m[\e[38;5;201m\u\e[38;5;226m@\h:\e[38;5;46m\W\e[38;5;220m]\e[0m\n$'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">pro=<span class="string">'tcp'</span></span><br><span class="line">NAT_Host=<span class="string">'192.168.56.101'</span></span><br><span class="line">NAT_Port=3480</span><br><span class="line">Dst_Host=<span class="string">'192.168.56.102'</span></span><br><span class="line">Dst_Port=80</span><br><span class="line">iptables -t nat -A PREROUTING -m <span class="variable">$pro</span> -p <span class="variable">$pro</span> --dport <span class="variable">$NAT_Port</span> -j DNAT --to-destination <span class="variable">$Dst_Host</span>:<span class="variable">$Dst_Port</span></span><br><span class="line">iptables -t nat -A POSTROUTING -m <span class="variable">$pro</span> -p <span class="variable">$pro</span> --dport <span class="variable">$Dst_Port</span> -d <span class="variable">$Dst_Host</span> -j SNAT --to-source <span class="variable">$NAT_Host</span></span><br><span class="line"></span><br><span class="line">5、如果不需要端口映射了，可以删除添加的规则</span><br><span class="line">sudo iptables -t nat -vnL PREROUTING --line-number</span><br><span class="line">sudo iptables -t nat -nL --line-number</span><br><span class="line">sudo iptables -t nat -D PREROUTING 1</span><br><span class="line">sudo iptables -t nat -D POSTROUTING 1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">$iptables</span> -t nat -nL --line-numbers</span><br><span class="line">Chain PREROUTING (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    DOCKER     all  --  0.0.0.0/0            0.0.0.0/0            ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain INPUT (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line"></span><br><span class="line">Chain OUTPUT (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    DOCKER     all  --  0.0.0.0/0           !127.0.0.0/8          ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain POSTROUTING (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    MASQUERADE  all  --  172.18.0.0/16        0.0.0.0/0</span><br><span class="line">2    MASQUERADE  tcp  --  172.18.0.3           172.18.0.3           tcp dpt:80</span><br><span class="line"></span><br><span class="line">Chain DOCKER (2 references)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    RETURN     all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">2    DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:30001 to:172.18.0.3:80</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">$iptables</span> -t nat -nL --line-numbers</span><br><span class="line">Chain PREROUTING (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    DOCKER     all  --  0.0.0.0/0            0.0.0.0/0            ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain INPUT (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line"></span><br><span class="line">Chain OUTPUT (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    DOCKER     all  --  0.0.0.0/0           !127.0.0.0/8          ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain POSTROUTING (policy ACCEPT)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    MASQUERADE  all  --  172.18.0.0/16        0.0.0.0/0</span><br><span class="line"></span><br><span class="line">Chain DOCKER (2 references)</span><br><span class="line">num  target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line">1    RETURN     all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Chain PREROUTING (policy ACCEPT 168 packets, 8024 bytes)</span><br><span class="line">num   pkts bytes target     prot opt <span class="keyword">in</span>     out     <span class="built_in">source</span>               destination</span><br><span class="line">1     203K 8999K DOCKER     all  --  *      *       0.0.0.0/0            0.0.0.0/0            ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain INPUT (policy ACCEPT 129 packets, 5600 bytes)</span><br><span class="line">num   pkts bytes target     prot opt <span class="keyword">in</span>     out     <span class="built_in">source</span>               destination</span><br><span class="line"></span><br><span class="line">Chain OUTPUT (policy ACCEPT 16 packets, 1202 bytes)</span><br><span class="line">num   pkts bytes target     prot opt <span class="keyword">in</span>     out     <span class="built_in">source</span>               destination</span><br><span class="line">1        0     0 DOCKER     all  --  *      *       0.0.0.0/0           !127.0.0.0/8          ADDRTYPE match dst-type LOCAL</span><br><span class="line"></span><br><span class="line">Chain POSTROUTING (policy ACCEPT 58 packets, 3834 bytes)</span><br><span class="line">num   pkts bytes target     prot opt <span class="keyword">in</span>     out     <span class="built_in">source</span>               destination</span><br><span class="line">1      900 54656 MASQUERADE  all  --  *      !docker0  172.18.0.0/16        0.0.0.0/0</span><br><span class="line">2        0     0 MASQUERADE  tcp  --  *      *       172.18.0.2           172.18.0.2           tcp dpt:80</span><br><span class="line"></span><br><span class="line">Chain DOCKER (2 references)</span><br><span class="line">num   pkts bytes target     prot opt <span class="keyword">in</span>     out     <span class="built_in">source</span>               destination</span><br><span class="line">1        0     0 RETURN     all  --  docker0 *       0.0.0.0/0            0.0.0.0/0</span><br><span class="line">2       42  2632 DNAT       tcp  --  !docker0 *       0.0.0.0/0            0.0.0.0/0            tcp dpt:80 to:172.18.0.2:80</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -t nat -A DOCKER 			-m tcp -p tcp  --dport 80 -j DNAT --to-destination </span><br><span class="line"></span><br><span class="line">iptables -t nat -A DOCKER 			-m tcp -p tcp  --dport 80 -j DNAT --to-destination 172.18.0.3:80</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -t nat -A POSTROUTING 	-m tcp -p tcp --dport <span class="variable">$Dst_Port</span> -d <span class="variable">$Dst_Host</span> -j SNAT --to-source <span class="variable">$NAT_Host</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -t nat -A PREROUTING  -m tcp -p tcp  --dport 8888 -j DNAT --to-destination 94.191.100.112:8888 172.18.0.3:80</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// -P INPUT ACCEPT</span><br><span class="line">// -P FORWARD DROP</span><br><span class="line">-P OUTPUT ACCEPT</span><br><span class="line">-N DOCKER</span><br><span class="line">-N DOCKER-ISOLATION</span><br><span class="line">-A FORWARD -j DOCKER-ISOLATION</span><br><span class="line">-A FORWARD -o docker0 -j DOCKER</span><br><span class="line">-A FORWARD -o docker0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">-A FORWARD -i docker0 ! -o docker0 -j ACCEPT</span><br><span class="line">-A FORWARD -i docker0 -o docker0 -j ACCEPT</span><br><span class="line">-A DOCKER -d 172.18.0.3/32 ! -i docker0 -o docker0 -p tcp -m tcp --dport 80 -j ACCEPT</span><br><span class="line">-A DOCKER-ISOLATION -j RETURN</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// -P INPUT ACCEPT</span><br><span class="line">// -P FORWARD DROP</span><br><span class="line">-P OUTPUT ACCEPT</span><br><span class="line">-N DOCKER</span><br><span class="line">-N DOCKER-ISOLATION</span><br><span class="line">-A FORWARD -j DOCKER-ISOLATION</span><br><span class="line">-A FORWARD -o docker0 -j DOCKER</span><br><span class="line">-A FORWARD -o docker0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">-A FORWARD -i docker0 ! -o docker0 -j ACCEPT</span><br><span class="line">-A FORWARD -i docker0 -o docker0 -j ACCEPT</span><br><span class="line">-A DOCKER-ISOLATION -j RETURN</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-A DOCKER -d 172.18.0.3/32 ! -i docker0 -o docker0 -p tcp -m tcp --dport 80 -j ACCEPT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -t nat -A DOCKER ! -i docker0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.17.0.5:80</span><br><span class="line"></span><br><span class="line">iptables -t filter -A DOCKER -d 172.18.0.2/32 ! -i docker0 -o docker0 -p tcp -m tcp --dport 80 -j ACCEPT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -t nat -A OUTPUT -d 127.0.0.1 -j DNAT --to-destination 94.191.100.112</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run --rm -d -p 80:80 -v /vol/nginx/conf:/etc/nginx/conf.d:ro -v /vol/nginx/html:/usr/share/nginx/html:ro  --name nginx nginx:alpine</span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">查看当前运行的容器</span><br><span class="line"><span class="comment">#docker ps</span></span><br><span class="line">查看当前未运行的容器</span><br><span class="line"><span class="comment">#docker ps -l</span></span><br><span class="line">查看所有操作过的容器</span><br><span class="line"><span class="comment">#docker ps -a</span></span><br><span class="line">启动/关闭/重启容器</span><br><span class="line"><span class="comment">#docker start/stop/restart container-name</span></span><br><span class="line">进入容器内部</span><br><span class="line"><span class="comment">#docker exec -idt container-name /bin/bash</span></span><br><span class="line">删除容器</span><br><span class="line"><span class="comment">#docker rm container-name</span></span><br><span class="line">查看容器信息</span><br><span class="line"><span class="comment">#docker inspect container-name</span></span><br></pre></td></tr></table></figure>
-<p>docker run -u root –rm -d –net dknet –ip 172.19.0.3 -v /vol/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean<br>  -p 8080:8080<br>  -p 50000:50000 \<br>  -v jenkins-data:/var/jenkins_home \<br>  -v /var/run/docker.sock:/var/run/docker.sock \<br>  jenkinsci/blueocean</p>
-<p>docker run -u root –rm -d –name jenkins -p 8020:8080  -v /vol/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean</p>
-<p>docker run -itd –name c5 –net snet –ip 172.18.0.5 ctos:lnmp /bin/bash</p>
-<p>docker run -itd –name cx –privileged=true –net snet –ip 172.18.0.6 ctos:lnmp /sbin/init<br>docker exec -it cx /bin/bash</p>
-<p>docker run –rm -d  –net dknet –ip 172.19.0.3 -v /vol/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean</p>
-<h3 id="容器开启-ssh"><a href="#容器开启-ssh" class="headerlink" title="容器开启 ssh"></a>容器开启 ssh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 安装服务</span><br><span class="line">yum install -y openssh-server</span><br><span class="line"># 生成密钥对儿 第一个可选</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;备注&quot;</span><br><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_ed25519_key</span><br><span class="line"></span><br><span class="line"># 宿主机 公钥 放入 容器 authorized_keys 文件</span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Docker Centos 中编译安装 Nginx</span></span><br><span class="line">yum install -y gcc gcc-c++ libtool autoconf make automake pcre-devel zlib-devel openssl openssl-devel</span><br><span class="line">./configure --with-http_ssl_module</span><br><span class="line">make &amp;&amp; make install</span><br><span class="line">ln -s  /usr/<span class="built_in">local</span>/nginx/sbin/nginx  /usr/bin/nginx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Err ./configure: error: the HTTP rewrite module requires the PCRE library.</span></span><br><span class="line">yum -y install pcre-devel</span><br><span class="line"><span class="comment"># Err ./configure: error: the HTTP gzip module requires the zlib library.</span></span><br><span class="line">yum install -y zlib-devel</span><br><span class="line"><span class="comment"># Err ./configure: error: SSL modules require the OpenSSL library.</span></span><br><span class="line">yum -y install openssl openssl-devel</span><br><span class="line"><span class="comment"># Err bash: make: command not found</span></span><br><span class="line"></span><br><span class="line">yum install initscripts</span><br><span class="line"><span class="comment">## docker centos nginx 设置开机自启失败了</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">chmod a+x nginx</span><br><span class="line">chkconfig --add /etc/init.d/nginx</span><br><span class="line">service nginx start //开户nginx</span><br><span class="line">service nginx stop //关闭nginx</span><br><span class="line">chkconfig nginx on // 添加到开机自启</span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Filename /etc/init.d/nginx</span></span><br><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># nginx - this script starts and stops the nginx daemon</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># chkconfig:   - 85 15</span></span><br><span class="line"><span class="comment"># description:  NGINX is an HTTP(S) server, HTTP(S) reverse \</span></span><br><span class="line"><span class="comment">#               proxy and IMAP/POP3 proxy server</span></span><br><span class="line"><span class="comment"># processname: nginx</span></span><br><span class="line"><span class="comment"># config:      /etc/nginx/nginx.conf</span></span><br><span class="line"><span class="comment"># config:      /etc/sysconfig/nginx</span></span><br><span class="line"><span class="comment"># pidfile:     /var/run/nginx.pid</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Source function library.</span></span><br><span class="line">. /etc/rc.d/init.d/<span class="built_in">functions</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Source networking configuration.</span></span><br><span class="line">. /etc/sysconfig/network</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check that networking is up.</span></span><br><span class="line">[ <span class="string">"<span class="variable">$NETWORKING</span>"</span> = <span class="string">"no"</span> ] &amp;&amp; <span class="built_in">exit</span> 0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 需要改成你的执行文件路径</span></span><br><span class="line">nginx=<span class="string">"/usr/sbin/nginx"</span></span><br><span class="line">prog=$(basename <span class="variable">$nginx</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 需要改成你的配置文件路径</span></span><br><span class="line">NGINX_CONF_FILE=<span class="string">"/etc/nginx/nginx.conf"</span></span><br><span class="line"></span><br><span class="line">[ -f /etc/sysconfig/nginx ] &amp;&amp; . /etc/sysconfig/nginx</span><br><span class="line"></span><br><span class="line">lockfile=/var/lock/subsys/nginx</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">make_dirs</span></span>() &#123;</span><br><span class="line">   <span class="comment"># make required directories</span></span><br><span class="line">   user=`<span class="variable">$nginx</span> -V 2&gt;&amp;1 | grep <span class="string">"configure arguments:.*--user="</span> | sed <span class="string">'s/[^*]*--user=\([^ ]*\).*/\1/g'</span> -`</span><br><span class="line">   <span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$user</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">      <span class="keyword">if</span> [ -z <span class="string">"`grep <span class="variable">$user</span> /etc/passwd`"</span> ]; <span class="keyword">then</span></span><br><span class="line">         useradd -M -s /bin/nologin <span class="variable">$user</span></span><br><span class="line">      <span class="keyword">fi</span></span><br><span class="line">      options=`<span class="variable">$nginx</span> -V 2&gt;&amp;1 | grep <span class="string">'configure arguments:'</span>`</span><br><span class="line">      <span class="keyword">for</span> opt <span class="keyword">in</span> <span class="variable">$options</span>; <span class="keyword">do</span></span><br><span class="line">          <span class="keyword">if</span> [ `<span class="built_in">echo</span> <span class="variable">$opt</span> | grep <span class="string">'.*-temp-path'</span>` ]; <span class="keyword">then</span></span><br><span class="line">              value=`<span class="built_in">echo</span> <span class="variable">$opt</span> | cut -d <span class="string">"="</span> -f 2`</span><br><span class="line">              <span class="keyword">if</span> [ ! -d <span class="string">"<span class="variable">$value</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">                  <span class="comment"># echo "creating" $value</span></span><br><span class="line">                  mkdir -p <span class="variable">$value</span> &amp;&amp; chown -R <span class="variable">$user</span> <span class="variable">$value</span></span><br><span class="line">              <span class="keyword">fi</span></span><br><span class="line">          <span class="keyword">fi</span></span><br><span class="line">       <span class="keyword">done</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">start</span></span>() &#123;</span><br><span class="line">    [ -x <span class="variable">$nginx</span> ] || <span class="built_in">exit</span> 5</span><br><span class="line">    [ -f <span class="variable">$NGINX_CONF_FILE</span> ] || <span class="built_in">exit</span> 6</span><br><span class="line">    make_dirs</span><br><span class="line">    <span class="built_in">echo</span> -n $<span class="string">"Starting <span class="variable">$prog</span>: "</span></span><br><span class="line">    daemon <span class="variable">$nginx</span> -c <span class="variable">$NGINX_CONF_FILE</span></span><br><span class="line">    retval=$?</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    [ <span class="variable">$retval</span> -eq 0 ] &amp;&amp; touch <span class="variable">$lockfile</span></span><br><span class="line">    <span class="built_in">return</span> <span class="variable">$retval</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">stop</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> -n $<span class="string">"Stopping <span class="variable">$prog</span>: "</span></span><br><span class="line">    killproc <span class="variable">$prog</span> -QUIT</span><br><span class="line">    retval=$?</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    [ <span class="variable">$retval</span> -eq 0 ] &amp;&amp; rm -f <span class="variable">$lockfile</span></span><br><span class="line">    <span class="built_in">return</span> <span class="variable">$retval</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">restart</span></span>() &#123;</span><br><span class="line">    configtest || <span class="built_in">return</span> $?</span><br><span class="line">    stop</span><br><span class="line">    sleep 1</span><br><span class="line">    start</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">reload</span></span>() &#123;</span><br><span class="line">    configtest || <span class="built_in">return</span> $?</span><br><span class="line">    <span class="built_in">echo</span> -n $<span class="string">"Reloading <span class="variable">$prog</span>: "</span></span><br><span class="line">    killproc <span class="variable">$prog</span> -HUP</span><br><span class="line">    retval=$?</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">force_reload</span></span>() &#123;</span><br><span class="line">    restart</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">configtest</span></span>() &#123;</span><br><span class="line">  <span class="variable">$nginx</span> -t -c <span class="variable">$NGINX_CONF_FILE</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">rh_status</span></span>() &#123;</span><br><span class="line">    status <span class="variable">$prog</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">rh_status_q</span></span>() &#123;</span><br><span class="line">    rh_status &gt;/dev/null 2&gt;&amp;1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span></span><br><span class="line">    start)</span><br><span class="line">        rh_status_q &amp;&amp; <span class="built_in">exit</span> 0</span><br><span class="line">        <span class="variable">$1</span></span><br><span class="line">        ;;</span><br><span class="line">    stop)</span><br><span class="line">        rh_status_q || <span class="built_in">exit</span> 0</span><br><span class="line">        <span class="variable">$1</span></span><br><span class="line">        ;;</span><br><span class="line">    restart|configtest)</span><br><span class="line">        <span class="variable">$1</span></span><br><span class="line">        ;;</span><br><span class="line">    reload)</span><br><span class="line">        rh_status_q || <span class="built_in">exit</span> 7</span><br><span class="line">        <span class="variable">$1</span></span><br><span class="line">        ;;</span><br><span class="line">    force-reload)</span><br><span class="line">        force_reload</span><br><span class="line">        ;;</span><br><span class="line">    status)</span><br><span class="line">        rh_status</span><br><span class="line">        ;;</span><br><span class="line">    condrestart|try-restart)</span><br><span class="line">        rh_status_q || <span class="built_in">exit</span> 0</span><br><span class="line">            ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> $<span class="string">"Usage: <span class="variable">$0</span> &#123;start|stop|status|restart|condrestart|try-restart|reload|force-reload|configtest&#125;"</span></span><br><span class="line">        <span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
-<p>yum -y install rsync  </p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 补充 yum 源</span></span><br><span class="line">yum install -y epel-release</span><br><span class="line"><span class="comment"># 安装编译依赖</span></span><br><span class="line">yum install -y libxml2-dev curl-devel libjpeg-devel libpng-devel libXpm-devel freetype-devel libmcrypt-devel</span><br><span class="line"><span class="comment"># 不用配置环境变量，在 /usr/bin/ 下加上 php phpize 和 php-fpm 三个软连接就好</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 报错</span></span><br><span class="line">configure: error: xml2-config not found. Please check your libxml2 installation.</span><br><span class="line">yum install -y libxml2 libxml2-dev</span><br><span class="line"></span><br><span class="line">configure: error: Please reinstall the libcurl distribution -</span><br><span class="line">yum install -y curl curl-devel</span><br><span class="line"></span><br><span class="line">configure: error: jpeglib.h not found.</span><br><span class="line">yum install -y libjpeg libjpeg-devel</span><br><span class="line"></span><br><span class="line">configure: error: png.h not found.</span><br><span class="line">yum install -y libpng libpng-devel</span><br><span class="line"></span><br><span class="line">yum install -y libXpm-devel</span><br><span class="line"></span><br><span class="line">configure: error: freetype-config not found.</span><br><span class="line">yum install -y freetype-devel</span><br><span class="line"></span><br><span class="line">configure: error: mcrypt.h not found. Please reinstall libmcrypt.</span><br><span class="line">yum install -y epel-release</span><br><span class="line">yum install -y libmcrypt-devel</span><br><span class="line"></span><br><span class="line">yum install psmisc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">wget http://pear.php.net/go-pear.phar</span><br><span class="line">php go-pear.phar</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># 先安装 ssh</span><br><span class="line">yum install -y openssh-server expect</span><br><span class="line"># 进入目录</span><br><span class="line">dir=/etc/ssh</span><br><span class="line">cd $&#123;dir&#125;</span><br><span class="line"># 遍历执行生成密钥文件</span><br><span class="line">cmds=(\</span><br><span class="line">&apos;rsa -f ssh_host_rsa_key&apos;</span><br><span class="line">&apos;dsa -f ssh_host_dsa_key&apos;</span><br><span class="line">&apos;rsa -f ssh_host_ecdsa_key&apos;</span><br><span class="line">&apos;rsa -f ssh_host_ed25519_key&apos;</span><br><span class="line">)</span><br><span class="line">len=$&#123;#cmds[@]&#125;</span><br><span class="line">for((i=0;i&lt;$&#123;len&#125;;i++))</span><br><span class="line">do</span><br><span class="line">    expect &lt;&lt;EOF</span><br><span class="line">spawn ssh-keygen -t $&#123;cmds[i]&#125;</span><br><span class="line">expect &#123;</span><br><span class="line">  &quot;Overwrite (y/n)?&quot; &#123;</span><br><span class="line">    send &quot;y\r&quot;</span><br><span class="line">    expect &quot;Enter passphrase (empty for no passphrase)*&quot;</span><br><span class="line">    send &quot;\r&quot;</span><br><span class="line">    expect &quot;Enter same passphrase again*&quot;</span><br><span class="line">    send &quot;\r&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  &quot;Enter passphrase (empty for no passphrase):&quot; &#123;</span><br><span class="line">    send &quot;\r&quot;</span><br><span class="line">    expect &quot;Enter same passphrase again*&quot;</span><br><span class="line">    send &quot;\r&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">expect eof</span><br><span class="line">EOF</span><br><span class="line">done;</span><br><span class="line"># 开启 sshd</span><br><span class="line">/usr/sbin/sshd</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 创建 centos 实例</span><br><span class="line">docker run -it --name cc centos /bin/bash</span><br><span class="line"></span><br><span class="line"># 补充 yum 源, screen 也在这个源中</span><br><span class="line">yum install -y epel-release</span><br><span class="line"></span><br><span class="line"># 安装基础能力</span><br><span class="line">yun install -y git wget expect screen net-tools openssh-server rsync vim</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1652,7 +1699,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">98</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1663,7 +1710,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1674,7 +1721,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1713,7 +1760,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
