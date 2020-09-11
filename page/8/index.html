@@ -251,6 +251,246 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/28/shell-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/28/shell-demo/" itemprop="url">使用过的 shell 脚本 demo 记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-28T13:17:51+08:00">
+                2017-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="SSH-登陆脚本"><a href="#SSH-登陆脚本" class="headerlink" title="SSH 登陆脚本"></a>SSH 登陆脚本</h2><p>可以用终端登陆远程服务器的 expect 脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#! /usr/bin/expect -f</span><br><span class="line"></span><br><span class="line">set user [login name  maybe root]</span><br><span class="line">set host [remote host]</span><br><span class="line">set port 22</span><br><span class="line">set pass [password for login name]</span><br><span class="line">set timeout -1</span><br><span class="line"></span><br><span class="line">spawn ssh -p$port $user@$host</span><br><span class="line"></span><br><span class="line">expect &#123;</span><br><span class="line">    &quot;*(yes/no)?&quot; &#123;</span><br><span class="line">        send &quot;yes\r&quot;</span><br><span class="line">        expect &quot;$pass&quot;</span><br><span class="line">    &#125;   </span><br><span class="line">    &quot;*assword:*&quot; &#123;</span><br><span class="line">        send &quot;$pass\r&quot;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interact</span><br></pre></td></tr></table></figure></p>
+<h2 id="SSH-映射到本地端口"><a href="#SSH-映射到本地端口" class="headerlink" title="SSH 映射到本地端口"></a>SSH 映射到本地端口</h2><p>打通一个 SSH 通道并且映射到本地的一个端口，可以支持 phpstorm 远程调试设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/expect -f</span><br><span class="line"></span><br><span class="line">set user [username]</span><br><span class="line">set host [host]</span><br><span class="line">set port 22</span><br><span class="line">set password [password]</span><br><span class="line">set timeout -1</span><br><span class="line"></span><br><span class="line">#spawn ssh -p$port $user@$host</span><br><span class="line">spawn ssh -R 7777:localhost:7778 -p$port $user@$host</span><br><span class="line"></span><br><span class="line">#expect &quot;*yes/no*\?&quot;</span><br><span class="line">#send &quot;yes\r&quot;</span><br><span class="line"></span><br><span class="line">expect &quot;*assword:*&quot;</span><br><span class="line">send &quot;$password\r&quot;</span><br><span class="line"></span><br><span class="line">interact</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/28/yaf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/28/yaf/" itemprop="url">PHP Yaf 框架</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-28T13:14:23+08:00">
+                2017-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Yaf-框架-Nginx-推荐配置"><a href="#Yaf-框架-Nginx-推荐配置" class="headerlink" title="Yaf 框架 Nginx 推荐配置"></a>Yaf 框架 Nginx 推荐配置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"># drtest virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">#</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">#    listen       somename:8080;</span><br><span class="line">#    server_name  somename  alias  another.alias;</span><br><span class="line">    server_name www.drtest.com;</span><br><span class="line"></span><br><span class="line">    root   /Users/zxtian/code/drtest;</span><br><span class="line">    location / &#123;</span><br><span class="line">        index  index.php index.html index.htm;</span><br><span class="line">        if (!-e $request_filename) &#123;</span><br><span class="line">            rewrite  ^/(.*)$  /index.php/$1  last;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$ &#123;</span><br><span class="line">        expires 100d;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ .*\.(js|css)?$ &#123;</span><br><span class="line">        expires 30d;</span><br><span class="line">    &#125;</span><br><span class="line">    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span><br><span class="line">    #</span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        fastcgi_pass   127.0.0.1:9000;</span><br><span class="line">        fastcgi_index  index.php;</span><br><span class="line">        fastcgi_param  SCRIPT_FILENAME  /$document_root$fastcgi_script_name;</span><br><span class="line">        include        fastcgi_params;</span><br><span class="line"></span><br><span class="line">        set $fastcgi_script_name2 $fastcgi_script_name;</span><br><span class="line">        if ($fastcgi_script_name ~ &quot;^(.+\.php)(/.+)$&quot;) &#123;</span><br><span class="line">            set $fastcgi_script_name2 $1;</span><br><span class="line">            set $path_info $2;</span><br><span class="line">        &#125;</span><br><span class="line">        fastcgi_param   PATH_INFO $path_info;</span><br><span class="line">        fastcgi_param   SCRIPT_FILENAME   $document_root$fastcgi_script_name2;</span><br><span class="line">        fastcgi_param   SCRIPT_NAME   $fastcgi_script_name2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">#</span><br><span class="line">#server &#123;</span><br><span class="line">#    listen       8000;</span><br><span class="line">#    listen       somename:8080;</span><br><span class="line">#    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">#    location / &#123;</span><br><span class="line">#        root   html;</span><br><span class="line">#        index  index.html index.htm;</span><br><span class="line">#    &#125;</span><br><span class="line">#&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/28/svn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1235,326 +1475,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/20170315mac/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/15/20170315mac/" itemprop="url">MAC OS 快捷键记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T10:00:32+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="常见功能键图标对照："><a href="#常见功能键图标对照：" class="headerlink" title="常见功能键图标对照："></a>常见功能键图标对照：</h2><table>
-<thead>
-<tr>
-<th>图标</th>
-<th>功能</th>
-<th>图标</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>⎋</code></td>
-<td>esc</td>
-<td><code>⇪</code></td>
-<td>caps lock</td>
-</tr>
-<tr>
-<td><code>⇧</code></td>
-<td>shift</td>
-<td><code>⌃</code></td>
-<td>control</td>
-</tr>
-<tr>
-<td><code>⌥</code></td>
-<td>option</td>
-<td><code>⌘</code></td>
-<td>command</td>
-</tr>
-<tr>
-<td><code>⌅</code></td>
-<td>enter</td>
-<td><code>⎇</code></td>
-<td>option</td>
-</tr>
-<tr>
-<td><code>⇟</code></td>
-<td>pagedown</td>
-<td><code>⇞</code></td>
-<td>pageup</td>
-</tr>
-</tbody>
-</table>
-<p>可对照: <a href="https://support.apple.com/zh-cn/guide/mac-help/cpmh0011/mac" target="_blank" rel="noopener">Mac 使用手册: 符号</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/15/20170315mac/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/homebrew/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/15/homebrew/" itemprop="url">Homebrew</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T09:23:00+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p><a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a> 是 Mac 系统上的一款软件包管理工具。</p>
-<h2 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Example usage:</span><br><span class="line">  brew search [TEXT|/REGEX/] <span class="comment"># 用于查找需要的依赖包，参数可是文本或正则</span></span><br><span class="line">  brew info [FORMULA...] <span class="comment"># 查看包信息&amp;依赖关系， </span></span><br><span class="line">  brew install FORMULA... <span class="comment"># 安装依赖包</span></span><br><span class="line">  brew update <span class="comment"># 更新 brew 自身，其后，依赖库在 brew 中或有新记录可更新</span></span><br><span class="line">  brew upgrade [FORMULA...] <span class="comment"># 升级指定包至最新稳定版</span></span><br><span class="line">  brew uninstall FORMULA... <span class="comment"># 卸载指定包</span></span><br><span class="line">  brew list [FORMULA...] </span><br><span class="line"></span><br><span class="line">Troubleshooting:</span><br><span class="line">  brew config</span><br><span class="line">  brew doctor</span><br><span class="line">  brew install --verbose --debug FORMULA</span><br><span class="line"></span><br><span class="line">Contributing:</span><br><span class="line">  brew create [URL [--no-fetch]]</span><br><span class="line">  brew edit [FORMULA...]</span><br><span class="line"></span><br><span class="line">Further <span class="built_in">help</span>:</span><br><span class="line">  brew commands</span><br><span class="line">  brew <span class="built_in">help</span> [COMMAND]</span><br><span class="line">  man brew</span><br><span class="line">  https://docs.brew.sh</span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">brew services list </span><br><span class="line">brew search &lt;package&gt;</span><br><span class="line">brew install &lt;package&gt;</span><br><span class="line">brew services start &lt;service&gt;</span><br><span class="line"></span><br><span class="line">brew deps --tree nginx</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/15/homebrew/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1600,7 +1525,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">99</span>
+                  <span class="site-state-item-count">101</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1611,7 +1536,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1622,7 +1547,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

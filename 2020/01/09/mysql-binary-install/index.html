@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Nslyx">
 <meta property="og:description" content="获取二进制安装包在 MySQL 官网下载页 选择 mysql 5.6 二进制包下载。 下载地址：https://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz 安装配置启动 1234567891011121314151617181920## 准备工作:创建 mysql 用户userad">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-09T16:34:54.966Z">
+<meta property="og:updated_time" content="2020-01-10T01:20:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql-5.6 二进制安装">
 <meta name="twitter:description" content="获取二进制安装包在 MySQL 官网下载页 选择 mysql 5.6 二进制包下载。 下载地址：https://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz 安装配置启动 1234567891011121314151617181920## 准备工作:创建 mysql 用户userad">
@@ -346,8 +346,8 @@
       
         <h2 id="获取二进制安装包"><a href="#获取二进制安装包" class="headerlink" title="获取二进制安装包"></a>获取二进制安装包</h2><p>在 <a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">MySQL 官网下载页</a> 选择 mysql 5.6 二进制包下载。</p>
 <p>下载地址：<code>https://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz</code></p>
-<h2 id="安装配置启动"><a href="#安装配置启动" class="headerlink" title="安装配置启动"></a>安装配置启动</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 准备工作:创建 mysql 用户</span></span><br><span class="line">useradd -r -M -s /bin/<span class="literal">false</span> mysql</span><br><span class="line"><span class="comment">## 解压下载的安装包</span></span><br><span class="line">tar zxf mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz</span><br><span class="line"><span class="comment">## 移动到 /usr/local 下</span></span><br><span class="line">mv mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz /usr/<span class="built_in">local</span>/mysql</span><br><span class="line"><span class="comment">## 修改 /usr/local/mysql 所有者为 mysql 用户</span></span><br><span class="line">chown -R mysql:mysql /usr/<span class="built_in">local</span>/mysql</span><br><span class="line"><span class="comment">## 进入 mysql 目录</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/mysql</span><br><span class="line"><span class="comment">## 初始化 mysql 数据，参数 --datadir=/mysql_data 可指定数据位置</span></span><br><span class="line">scripts/mysql_install_db --user=mysql</span><br><span class="line"><span class="comment">## 配置文件</span></span><br><span class="line">cp my.cnf /etc/my.cnf</span><br><span class="line"><span class="comment">## 设置启动文件</span></span><br><span class="line">cp support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line"><span class="comment">## 启动 mysql</span></span><br><span class="line">/etc/init.d/mysqld start</span><br><span class="line"><span class="comment">## 设置 mysql root 用户密码</span></span><br><span class="line">mysqladmin -u root password <span class="string">'*******'</span></span><br></pre></td></tr></table></figure>
-<h2 id="遇到的报错和解决"><a href="#遇到的报错和解决" class="headerlink" title="遇到的报错和解决"></a>遇到的报错和解决</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">报错</span><br><span class="line">Installing MySQL system tables..../bin/mysqld: error <span class="keyword">while</span> loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory</span><br><span class="line">解决</span><br><span class="line">yum install -y libaio</span><br><span class="line">报错</span><br><span class="line">Installing MySQL system tables..../bin/mysqld: error <span class="keyword">while</span> loading shared libraries: libnuma.so.1: cannot open shared object file: No such file or directory</span><br><span class="line">解决</span><br><span class="line">yum install -y numactl</span><br><span class="line">报错</span><br><span class="line">error <span class="keyword">while</span> loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory</span><br><span class="line">解决</span><br><span class="line">yum install -y  libncurses*</span><br></pre></td></tr></table></figure>
+<h2 id="安装配置启动"><a href="#安装配置启动" class="headerlink" title="安装配置启动"></a>安装配置启动</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 准备工作:创建 mysql 用户</span></span><br><span class="line">useradd -r -M -s /bin/<span class="literal">false</span> mysql</span><br><span class="line"><span class="comment">## 解压下载的安装包</span></span><br><span class="line">tar zxf mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz</span><br><span class="line"><span class="comment">## 移动到 /usr/local 下</span></span><br><span class="line">mv mysql-5.6.46-linux-glibc2.12-x86_64 /usr/<span class="built_in">local</span>/mysql</span><br><span class="line"><span class="comment">## 修改 /usr/local/mysql 所有者为 mysql 用户</span></span><br><span class="line">chown -R mysql:mysql /usr/<span class="built_in">local</span>/mysql</span><br><span class="line"><span class="comment">## 进入 mysql 目录</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/mysql</span><br><span class="line"><span class="comment">## 初始化 mysql 数据，参数 --datadir=/mysql_data 可指定数据位置</span></span><br><span class="line">scripts/mysql_install_db --user=mysql</span><br><span class="line"><span class="comment">## 配置文件</span></span><br><span class="line">cp my.cnf /etc/my.cnf</span><br><span class="line"><span class="comment">## 设置启动文件</span></span><br><span class="line">cp support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line"><span class="comment">## 启动 mysql</span></span><br><span class="line">/etc/init.d/mysqld start</span><br><span class="line"><span class="comment">## 设置 mysql root 用户密码</span></span><br><span class="line">mysqladmin -u root password <span class="string">'*******'</span></span><br></pre></td></tr></table></figure>
+<h2 id="遇到的报错和解决"><a href="#遇到的报错和解决" class="headerlink" title="遇到的报错和解决"></a>遇到的报错和解决</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">报错</span><br><span class="line">Installing MySQL system tables..../bin/mysqld: error <span class="keyword">while</span> loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory</span><br><span class="line">解决</span><br><span class="line">yum install -y libaio</span><br><span class="line">报错</span><br><span class="line">Installing MySQL system tables..../bin/mysqld: error <span class="keyword">while</span> loading shared libraries: libnuma.so.1: cannot open shared object file: No such file or directory</span><br><span class="line">解决</span><br><span class="line">yum install -y numactl</span><br><span class="line">报错</span><br><span class="line">error <span class="keyword">while</span> loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory</span><br><span class="line">解决</span><br><span class="line">yum install -y  libncurses*</span><br><span class="line">报错</span><br><span class="line">FATAL ERROR: please install the following Perl modules before executing scripts/mysql_install_db:</span><br><span class="line">Data::Dumper</span><br><span class="line">解决</span><br><span class="line">yum install -y autoconf</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -378,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/27/sv20191227/" rel="next" title="记录一次 ECS 系统盘重置后的操作">
-                <i class="fa fa-chevron-left"></i> 记录一次 ECS 系统盘重置后的操作
+              <a href="/2019/12/27/sv20191227/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -387,6 +387,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/10/gogs-binary-install/" rel="prev" title="gogs-binary-install">
+                gogs-binary-install <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -465,7 +469,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">99</span>
+                  <span class="site-state-item-count">101</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -476,7 +480,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -487,7 +491,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -87,7 +87,7 @@
 <meta property="og:description" content="在阿里云初始化了系统盘，然后很多软件和配置都需要重新来一遍，而很多东西确实记不清，索性就做个笔记吧。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/734555/201611/734555-20161110094623358-1328655756.png">
-<meta property="og:updated_time" content="2019-11-18T05:45:34.110Z">
+<meta property="og:updated_time" content="2020-09-11T09:15:06.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器相关设置记录">
 <meta name="twitter:description" content="在阿里云初始化了系统盘，然后很多软件和配置都需要重新来一遍，而很多东西确实记不清，索性就做个笔记吧。">
@@ -335,8 +335,7 @@
 <h2 id="gcc-amp-gcc-c"><a href="#gcc-amp-gcc-c" class="headerlink" title="gcc &amp; gcc-c++"></a>gcc &amp; gcc-c++</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y gcc gcc-c++</span><br></pre></td></tr></table></figure>
 <h3 id="查看centos-版本"><a href="#查看centos-版本" class="headerlink" title="查看centos 版本"></a>查看centos 版本</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rpm -q centos-release</span><br><span class="line"></span><br><span class="line">cat /proc/version</span><br><span class="line"></span><br><span class="line">cat /etc/redhat-release</span><br><span class="line"></span><br><span class="line">uname -r</span><br><span class="line"></span><br><span class="line">lsb_release -a</span><br></pre></td></tr></table></figure>
 <h2 id="vi-vim-支持中文"><a href="#vi-vim-支持中文" class="headerlink" title="vi/vim 支持中文"></a>vi/vim 支持中文</h2><p>我们的VPS主要面向国内用户，所以语言基本上都是中文。中文有很多种编码，最流行的就是UTF8和GBK。我们推荐客户使用UTF8编码，因为这是国际标准，能兼容任何语言的编码。在CentOS VPS下修改语言编码：<br>localedef -c -f UTF-8 -i zh_CN zh_CN.utf8<br>export LC_ALL=zh_CN.utf8<br>上面第一步是用来产生编码文件，这一步不是必须，编码文件一般都存在，运行能查看当前编码文件所在的路径。第二步更改当前的编7 以下 版本</p>
-<p>localedef –help </p>
-<p>echo ‘LANG=zh_CN.UTF-8’ &gt; /etc/sysconfig/i18n<br>echo ‘LC_ALL=zh_CN.UTF-8’ &gt;&gt; /etc/sysconfig/i18n<br>7 以上 版本<br>echo ‘LANG=zh_CN.UTF-8’ &gt; /etc/locale.conf<br>echo ‘LC_ALL=zh_CN.UTF-8’ &gt;&gt; /etc/locale.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">localedef --help </span><br><span class="line"></span><br><span class="line">echo &apos;LANG=zh_CN.UTF-8&apos; &gt; /etc/sysconfig/i18n</span><br><span class="line">echo &apos;LC_ALL=zh_CN.UTF-8&apos; &gt;&gt; /etc/sysconfig/i18n</span><br><span class="line">7 以上 版本</span><br><span class="line">echo &apos;LANG=zh_CN.UTF-8&apos; &gt; /etc/locale.conf</span><br><span class="line">echo &apos;LC_ALL=zh_CN.UTF-8&apos; &gt;&gt; /etc/locale.conf</span><br></pre></td></tr></table></figure>
 <h1 id="Nginx配置反向代理"><a href="#Nginx配置反向代理" class="headerlink" title="Nginx配置反向代理"></a>Nginx配置反向代理</h1><p>2018.11.26 23:22:19字数 198阅读 2914</p>
 <p>Nginx 的其中一个用途是做 HTTP 反向代理，下面简单介绍 Nginx 作为反向代理服务器的方法。</p>
 <blockquote>
@@ -375,7 +374,7 @@
 <p>以上几个数字设置为0则无限制，脚本会一直执行下去，直到执行结束。</p>
 <p>所以，需要长时间执行的脚本，一般在php代码开头处添加如下代码就可以了<br><strong>set_time_limit(0);</strong></p>
 <p>Congratulations, Shadowsocks-python server install completed!<br>Your Server IP        :  155.138.196.205<br>Your Server Port      :  19453<br>Your Password         :  teddysun.com<br>Your Encryption Method:  aes-256-gcm</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br><span class="line">chmod +x shadowsocks.sh</span><br><span class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br><span class="line">chmod +x shadowsocks.sh</span><br><span class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">--<span class="built_in">disable</span>-dependency-tracking</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -490,7 +489,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">99</span>
+                  <span class="site-state-item-count">101</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -501,7 +500,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -512,7 +511,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
