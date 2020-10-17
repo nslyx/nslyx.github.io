@@ -251,6 +251,245 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/10/ajax/" itemprop="url">ajax</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T10:04:04+08:00">
+                2018-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>熟悉原生 js 构建 ajax 请求<br>var ajax = new XMLHttpRequest();<br>ajax.open(method, url);<br>ajax.send();<br>ajax.onreadystatechange = function () {<br>    console.log(ajax);<br>   if (ajax.readyState==4 &amp;&amp; ajax.status==200) {<br>　　　　console.log(ajax.responseText);//输入相应的内容<br>  　　}<br>}</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/10/user-agent/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang xiaotian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nslyx">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/10/user-agent/" itemprop="url">user agnet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T16:07:40+08:00">
+                2018-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by PhpStorm.</span></span><br><span class="line"><span class="comment"> * User: zxtian</span></span><br><span class="line"><span class="comment"> * Date: 2017/8/9</span></span><br><span class="line"><span class="comment"> * Time: 下午5:44</span></span><br><span class="line"><span class="comment"> * Processing</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// My Mac</span></span><br><span class="line"><span class="comment">// Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/0.7.0 MicroMessenger/6.3.9 Language/zh_CN webview/0</span></span><br><span class="line"><span class="comment">// Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4</span></span><br><span class="line"><span class="comment">// Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:46.0) Gecko/20100101 Firefox/46.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ZhangQI iphone</span></span><br><span class="line"><span class="comment">// Mozilla/5.0 (iPhone; CPU iPhone OS 10_1 like Mac OS X) AppleWebKit/602.2.14 (KHTML, like Gecko) Mobile/14B72c MicroMessenger/6.5.12 NetType/WIFI Language/zh_CN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Android</span></span><br><span class="line"><span class="comment">// Mozilla/5.0 (Linux; Android 5.1.1; NX529J Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQBrowser/6.2 TBS/043409 Safari/537.36 MicroMessenger/6.5.10.1080 NetType/WIFI Language/zh_CN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Windows Wechat Bower</span></span><br><span class="line"><span class="comment">// Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 MicroMessenger/6.5.2.501 NetType/WIFI WindowsWechat QBCore/3.43.556.400 QQBrowser/9.0.2524.400</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Windows 火狐</span></span><br><span class="line"><span class="comment">// Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0</span></span><br><span class="line"><span class="comment">// Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; rv:11.0) like Gecko</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Android</span></span><br><span class="line"><span class="comment">// Mozilla/5.0 (Linux; Android 7.0; Mi-4c Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQBrowser/6.2 TBS/043409 Safari/537.36 MicroMessenger/6.5.10.1080 NetType/WIFI Language/zh_CN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 MicroMessenger/6.5.2.501 NetType/WIFI WindowsWechat QBCore/3.43.556.400 QQBrowser/9.0.2524.400</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取 HTTP_USER_AGENT</span></span><br><span class="line">$user_agent = <span class="keyword">empty</span>($_SERVER[<span class="string">'HTTP_USER_AGENT'</span>]) ? <span class="string">''</span> : $_SERVER[<span class="string">'HTTP_USER_AGENT'</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 是否是来自微信客户端的请求(包含微信开发者工具)</span></span><br><span class="line"><span class="keyword">if</span> (!defined(<span class="string">'REQUEST_FROM_WECHAT'</span>)) &#123;</span><br><span class="line">    define(<span class="string">'REQUEST_FROM_WECHAT'</span>, preg_match(<span class="string">'/MicroMessenger/'</span>, $user_agent) ? <span class="keyword">true</span> : <span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 是否是来自微信开发者工具的请求</span></span><br><span class="line"><span class="keyword">if</span> (!defined(<span class="string">'REQUEST_FROM_WECHATDEVTOOLS'</span>)) &#123;</span><br><span class="line">    define(<span class="string">'REQUEST_FROM_WECHATDEVTOOLS'</span>, preg_match(<span class="string">'/wechatdevtools/'</span>, $user_agent) ? <span class="keyword">true</span> : <span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/27/psr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1248,248 +1487,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/01/fronted-thinking/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/01/fronted-thinking/" itemprop="url">Front-end and Back-end [前后端]</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T22:33:20+08:00">
-                2018-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>做开发，总得有点基本的流程。不与细节纠结，不在一处等待。</p>
-<h2 id="代码仓库"><a href="#代码仓库" class="headerlink" title="代码仓库"></a>代码仓库</h2><p>仓库是开发必备的，这个的重要性在于记录、推进与回顾。必不可少。一般首推 Git。</p>
-<h2 id="CI-持续集成"><a href="#CI-持续集成" class="headerlink" title="CI 持续集成"></a>CI 持续集成</h2><p>这个主要是在前期实现编译&amp;部署流程，后续可一键操作，或者基于某个时间自动触发</p>
-<h2 id="开发-amp-测试-amp-生产-三种环境"><a href="#开发-amp-测试-amp-生产-三种环境" class="headerlink" title="开发&amp;测试&amp;生产 三种环境"></a>开发&amp;测试&amp;生产 三种环境</h2><p>这个必须体现在代码和服务器环境中，没有万能的解决方案，所以适当的权衡，在不同情境下作出适当的方案就是最好的</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/nginx-configs-notes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhang xiaotian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nslyx">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/15/nginx-configs-notes/" itemprop="url">Nginx Configs Notes</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T09:35:58+08:00">
-                2018-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">upstream jenkins &#123;</span><br><span class="line">      server 127.0.0.1:8070 fail_timeout=0;</span><br><span class="line">      #server 127.0.0.1:8082 fail_timeout=0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line">    server_name jenkins.jccafe.com.cn;</span><br><span class="line">    </span><br><span class="line">    location ~^/\.well-known/pki-validation/fileauth.txt$ &#123;</span><br><span class="line">        set $content 2018011101520956gz3ikju0gw0w54zdwphbi0g08jz6usmxr85hgjay44xzb14i;</span><br><span class="line">        default_type text/html;</span><br><span class="line">        add_header Content-Type &apos;text/html; charset=utf-8&apos;;</span><br><span class="line">        return 200 $content;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    location / &#123;</span><br><span class="line">        return 301 https://$host$request_uri;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen       443 ssl;</span><br><span class="line">    server_name  jenkins.jccafe.com.cn;</span><br><span class="line"></span><br><span class="line">    ssl_certificate      ssl/1_jccafe.com.cn_bundle.crt;</span><br><span class="line">    ssl_certificate_key  ssl/2_jccafe.com.cn.key;</span><br><span class="line">    </span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_set_header        Host $host:$server_port;</span><br><span class="line">        proxy_set_header        X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header        X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_redirect          http:// https://;</span><br><span class="line">        proxy_pass              http://jenkins;</span><br><span class="line">        # Required for new HTTP-based CLI</span><br><span class="line">        #proxy_http_version 1.1;</span><br><span class="line">        #proxy_request_buffering off;</span><br><span class="line">        #proxy_buffering off; # Required for HTTP-based CLI to work over SSL</span><br><span class="line">        # workaround for https://issues.jenkins-ci.org/browse/JENKINS-45651</span><br><span class="line">        #add_header &apos;X-SSH-Endpoint&apos; $host&apos;:50022&apos; always;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">##</span><br><span class="line"># 反向代理，溯源至 docker 实例</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  *.nslyx.cn;</span><br><span class="line"></span><br><span class="line">    access_log   /home/wwwlogs/upsteam.suc.log;</span><br><span class="line">    error_log    /home/wwwlogs/upsteam.err.log;</span><br><span class="line"></span><br><span class="line">    if ($http_host ~* &quot;^(\w+\.)?(\w+)\.wayamobi\.cn$&quot;) &#123;</span><br><span class="line">        set $domain $2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        tcp_nodelay     on;</span><br><span class="line">        proxy_set_header        Host $host:$server_port;</span><br><span class="line">        proxy_set_header        X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header        X-Forwarded-Proto $scheme;</span><br><span class="line"></span><br><span class="line">        if ($domain ~* &quot;^c2&quot;) &#123;</span><br><span class="line">            proxy_pass              http://172.18.0.2;</span><br><span class="line">            add_header &apos;NG-Upstream&apos; $host:c2 always;</span><br><span class="line">        &#125;</span><br><span class="line">        if ($domain ~* &quot;^c3&quot;) &#123;</span><br><span class="line">            proxy_pass              http://172.18.0.3;</span><br><span class="line">            add_header &apos;NG-Upstream&apos; $host:c3 always;</span><br><span class="line">        &#125;</span><br><span class="line">        if ($domain ~* &quot;^c4$&quot;) &#123;</span><br><span class="line">            proxy_pass              http://172.18.0.4;</span><br><span class="line">            add_header &apos;NG-Upstream&apos; $host:c4 always;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1540,7 +1537,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-count">103</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
